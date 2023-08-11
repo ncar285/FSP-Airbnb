@@ -38,7 +38,8 @@ const state =
                 guests: 4,
                 bedrooms: 3,
                 beds: 3,
-                baths: 2
+                baths: 2,
+                image_urls: ["www.AWS...","www.AWS..."]
             },
             2: {
                 id: 2,
@@ -53,7 +54,8 @@ const state =
                 guests: 7,
                 bedrooms: 6,
                 beds: 6,
-                baths: 3
+                baths: 3,
+                image_urls: ["www.AWS...","www.AWS..."]
             },
             3: {
                 id: 2,
@@ -68,7 +70,8 @@ const state =
                 guests: 2,
                 bedrooms: 3,
                 beds: 1,
-                baths: 1
+                baths: 1,
+                image_urls: ["www.AWS...","www.AWS..."]
             }
         },
         bookings: {
