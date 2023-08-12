@@ -1,0 +1,119 @@
+
+
+.bar {
+    /* position: relative; */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: center;
+    /* border-bottom: rgb(210,210,210) solid 0.85px; */
+    border-bottom: #EBEBEB solid 1px;
+    /* #EBEBEB */
+}
+.innerBar {
+    width: 90.5%;
+    height: 100%;
+    /* background-color: rgba(195, 178, 126); */
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    width: calc(100%/3);
+    height: 40px;
+    /* border: 1px solid black; */
+}
+
+.left {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* height:  */
+}
+
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#logo {
+    height: 32px;
+}
+
+.search-bar {
+    width: 350px;
+    height: 45px;
+    border: #dddddd solid 1px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.search-filters{
+    height: 30px;
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-filters .bold {
+    border-right: #dddddd solid 1px;
+}
+
+.search-filters div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 17.5px;
+    /* background-color: aqua; */
+}
+
+.search-filters div p {
+    font-size: 14px;
+    /* background-color: greenyellow; */
+}
+
+#guests {
+    /* background-color: antiquewhite; */
+    padding-right: 0px;
+}
+
+
+
+.s-button {
+    height: 30px;
+    width: 30px;
+    margin: 7.5px;
+    border-radius: 50%;
+    background-color: #fe385c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.s-button img {
+    height: 40%;
+    width: 40%;
+}
+
+
+.register {
+    width: 75px;
+    height: 100%;
+    border: #dddddd solid 1px;
+    border-radius: 25px;
+}

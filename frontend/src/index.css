@@ -1,1 +1,27 @@
 /* TODO Add site wide styles */
+
+@import url('https://fonts.cdnfonts.com/css/c-cereal');
+
+
+@font-face {
+    font-family: 'airbnbCereal';
+    src: url('./assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'airbnbCerealLite';
+    src: url('./assets/airbnb-cereal-font/AirbnbCereal_W_Lt.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    /* font-family: 'c Cereal', sans-serif; */
+    font-family: 'airbnbCereal', sans-serif;
+}
+
+#guests {
+    font-family: 'airbnbCerealLite', sans-serif;
+}

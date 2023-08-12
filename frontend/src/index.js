@@ -5,6 +5,7 @@ import App from './App';
 import configureStore from './store/store';
 import { activateSessionModal, deactivateSessionModal } from './store/uiReducer';
 import { Provider } from 'react-redux'
+import 'normalize.css'
 
 const store = configureStore()
 
