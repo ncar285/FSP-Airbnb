@@ -1,14 +1,27 @@
 //CONSTANTS
-const ACTIVATE_SESSION_MODAL = 'ACTIVATE_SESSION_MODAL';
-const DEACTIVATE_SESSION_MODAL = 'DEACTIVATE_SESSION_MODAL';
+// REGISTRATION
+const ACTIVATE_REGISTER_MODAL = 'ACTIVATE_REGISTER_MODAL';
+const DEACTIVATE_REGISTER_MODAL = 'DEACTIVATE_REGISTER_MODAL';
+
+// SEARCH
+const ACTIVATE_SEARCH_MODAL = 'ACTIVATE_SEARCH_MODAL';
+const DEACTIVATE_SEARCH_MODAL = 'DEACTIVATE_SEARCH_MODAL';
 
 //ACTION CREATORS
-export const activateSessionModal = () => ({
-    type: 'ACTIVATE_SESSION_MODAL'
+export const activateRegisterModal = () => ({
+    type: 'ACTIVATE_REGISTER_MODAL'
 })
 
-export const deactivateSessionModal = () => ({
-    type: 'DEACTIVATE_SESSION_MODAL'
+export const deactivateRegisterModal = () => ({
+    type: 'DEACTIVATE_REGISTER_MODAL'
+})
+
+export const activateSearchModal = () => ({
+    type: 'ACTIVATE_SEARCH_MODAL'
+})
+
+export const deactivateSearchModal = () => ({
+    type: 'DEACTIVATE_SEARCH_MODAL'
 })
 
 // THUNK ACTION CREATORS
@@ -16,12 +29,16 @@ export const deactivateSessionModal = () => ({
 // SELECTORS 
 
 // REDUCER
-const uiReducer = (state = { sessionModal: null}, action) => {
+const uiReducer = (state = { registerModal: null}, action) => {
     switch(action.type){
-        case ACTIVATE_SESSION_MODAL:
-            return {...state, sessionModal: true}
-        case DEACTIVATE_SESSION_MODAL:
-            return {...state, sessionModal: false}
+        case ACTIVATE_REGISTER_MODAL:
+            return {...state, registerModal: true}
+        case DEACTIVATE_REGISTER_MODAL:
+            return {...state, registerModal: false}
+        case ACTIVATE_SEARCH_MODAL:
+            return {...state, searchModal: true}
+        case DEACTIVATE_SEARCH_MODAL:
+            return {...state, searchModal: false}
         default: 
             return state
     }

@@ -1,8 +1,45 @@
 import "./NavBar.css"
 import logo from "../../assets/airbnb.svg"
 import sButton from "../../assets/s-button.png"
+import account from "../../assets/account.png"
+import { activateSearchModal } from "../../store/uiReducer";
+import { useDispatch, useSelector} from "react-redux";
 
-const navBar = () => {
+
+
+// const SearchForm = () => {
+
+    // const dispatch = useDispatch();
+
+    
+    const NavBar = () => {
+        
+    const hideSearchBar = useSelector(state => state.ui.searchModal)
+
+    const dispatch = useDispatch()
+
+    const search = () => {
+        if (hideSearchBar){
+            const sBar = document.querySelector(".bar")
+            sBar.classList.add("s-mode")
+            // const navbar = document.querySelector(".elevated")
+            // sBar.classList.add("s-mode")
+            return (<></>)
+        }else {
+            return (
+                <button onClick={() => dispatch(activateSearchModal())} className="search-bar">
+                        <div className="search-filters">
+                            <div className="bold"><p>Anywhere</p></div>
+                            <div className="bold"><p>Any week</p></div>
+                            <div id="guests"><p>Add guests</p></div>
+                        </div>
+                        <div className="s-button">
+                            <img src={sButton} alt="" />
+                        </div>
+                    </button>
+            )
+        }
+    }
 
     return (
         <div className="bar">
@@ -13,20 +50,22 @@ const navBar = () => {
                     
                 </div>
                 <div className="nav-item middle">
-                    <div className="search-bar">
-                        <div class="search-filters">
-                            <div class="bold"><p>Anywhere</p></div>
-                            <div class="bold"><p>Any week</p></div>
-                            <div id="guests"><p>Add guests</p></div>
-                        </div>
-                        <div class="s-button">
-                            <img src={sButton} alt="" />
-                        </div>
 
-                    </div>
+                {search()}
+
                 </div >
                 <div className="nav-item right">
                     <div className="register">
+                        <div className="menu">
+                            <div className="more">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div className="account">
+                            <img src={account} alt="" />
+                        </div>
 
                     </div>
                 </div>
@@ -38,4 +77,4 @@ const navBar = () => {
 
 }
 
-export default navBar
+export default NavBar

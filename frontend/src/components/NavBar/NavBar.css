@@ -1,7 +1,4 @@
-
-
 .bar {
-    /* position: relative; */
     top: 0;
     left: 0;
     right: 0;
@@ -11,8 +8,17 @@
     justify-content: center;
     /* border-bottom: rgb(210,210,210) solid 0.85px; */
     border-bottom: #EBEBEB solid 1px;
-    /* #EBEBEB */
+    /* transition: height 1s ease; */
 }
+
+.bar.s-mode {
+    /* height: 160px; */
+    border: none;
+    /* background-color: white; */
+    /* z-index: 11; */
+}
+
+
 .innerBar {
     width: 90.5%;
     height: 100%;
@@ -51,6 +57,7 @@
 }
 
 .search-bar {
+    background: none;
     width: 350px;
     height: 45px;
     border: #dddddd solid 1px;
@@ -59,11 +66,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10px;
+    /* padding-left: 10px; */
+}
+
+.search-bar:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .search-filters{
-    height: 30px;
+    height: 27.5px;
     /* background-color: bisque; */
     display: flex;
     justify-content: space-between;
@@ -87,19 +99,23 @@
     /* background-color: greenyellow; */
 }
 
+.bold {
+    font-family: 'airbnb2', sans-serif;
+    font-weight: bold;
+}
+
 #guests {
     /* background-color: antiquewhite; */
     padding-right: 0px;
+    font-family: 'airbnb4', sans-serif;
 }
-
-
 
 .s-button {
     height: 30px;
     width: 30px;
     margin: 7.5px;
     border-radius: 50%;
-    background-color: #fe385c;
+    background-color: var(--brand-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,8 +128,54 @@
 
 
 .register {
+    background-color: white;
     width: 75px;
     height: 100%;
     border: #dddddd solid 1px;
     border-radius: 25px;
+    display: flex;
+}
+
+.register:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu, .account {
+    height: calc(100%-5px);
+    width: calc(50%-2.5px);
+    padding: 5px;
+}
+.account {
+    /* border-radius: 50%; */
+    /* background-color: aquamarine; */
+    /* border: 1px solid; */
+    width: 100%;
+}
+.account img {
+    height: 100%;
+    width: auto;
+    border-radius: 50%;
+}
+
+.menu {
+    /* background-color: aqua; */
+    /* border: 1px solid; */
+    width: 100%
+}
+
+.menu .more {
+    height: 100%;
+    width: calc(50%-10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.more div {
+    width: 14px;
+    height: 1.5px;
+    margin: 1px;
+    background-color: black;
 }

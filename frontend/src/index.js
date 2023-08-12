@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import configureStore from './store/store';
-import { activateSessionModal, deactivateSessionModal } from './store/uiReducer';
+import { activateRegisterModal, deactivateRegisterModal } from './store/uiReducer';
 import { Provider } from 'react-redux'
 import 'normalize.css'
 
 const store = configureStore()
 
 window.store = store
-window.activate = activateSessionModal
-window.deactivate = deactivateSessionModal
+window.activate = activateRegisterModal
+window.deactivate = deactivateRegisterModal
 
 const root = document.getElementById('root')
 
