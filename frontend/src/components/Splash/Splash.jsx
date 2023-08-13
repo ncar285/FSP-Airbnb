@@ -23,3 +23,35 @@ const Splash = () => {
 }
 
 export default Splash
+
+
+// // Example:
+// import { useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { Link } from 'react-router-dom';
+// import ReportIndexItem from './ReportIndexItem';
+// import { getReports, fetchReports } from '../store/reports'
+
+// const ReportIndex = () => {
+//     const dispatch = useDispatch()
+//     useEffect(()=> {
+//         dispatch(fetchReports())
+//     }, [])
+//     const reports = useSelector(getReports)
+//     return (
+//         <>
+//             <div>
+//                     <ul>
+//                         {
+//                         reports.map(
+//                             (report)=>{
+//                         return (<ReportIndexItem key={report.id} report={report}/>)
+//                         })
+//                     }
+//                     </ul>
+//             </div>
+//             <Link to='/reports/new'>New Report</Link>
+//         </>
+//     )
+// }
+// export default ReportIndex

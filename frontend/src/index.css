@@ -4,7 +4,53 @@
 
 :root {
     --brand-color: #fe385c;
-    --main-bg-color: brown;
+    --grid_columns: 1;
+    --img_width: calc((100vw - 160px - (var(--grid_columns) - 1) * 20px) / var(--grid_columns));
+    --margin: 22.5px;
+    --light_light_grey: #EBEBEB; 
+    --light_grey: #dddddd;
+}
+
+@media (min-width: 745px) {
+    :root {
+        --margin: 40px;
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --margin: 80px;
+    }
+}
+
+@media (min-width: 550px) {
+    :root {
+      --grid_columns: 2;
+    }
+}
+
+@media (min-width: 950px) {
+    :root {
+      --grid_columns: 3;
+    }
+}
+
+@media (min-width: 1130px) {
+    :root {
+      --grid_columns: 4;
+    }
+}
+  
+@media (min-width: 1640px) {
+:root {
+    --grid_columns: 5;
+}
+}
+  
+@media (min-width: 1880px) {
+:root {
+    --grid_columns: 6;
+}
 }
 
 
