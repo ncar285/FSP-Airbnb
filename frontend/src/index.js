@@ -8,11 +8,17 @@ import { Provider } from 'react-redux'
 import 'normalize.css'
 import { restoreSession } from './utils/authUtils';
 
+import csrfFetch, { restoreCSRF } from './store/csrf';
+
+
 const store = configureStore()
 
-window.store = store
-window.activate = activateRegisterModal
-window.deactivate = deactivateRegisterModal
+if (process.env.NODE_ENV !== 'production') {
+  window.store = store;
+  window.csrfFetch = csrfFetch;
+  // window.activate = activateRegisterModal
+  // window.deactivate = deactivateRegisterModal
+}
 
 const root = document.getElementById('root')
 
@@ -27,12 +33,21 @@ const renderApp = () => {
     )
 }
 
-const currentUser = sessionStorage.getItem('currentUser')
-const csrfToken = sessionStorage.getItem('csrfToken')
-if (!currentUser || !csrfToken){
-  restoreSession().then(renderApp)
-}else {
-  renderApp()
+// const currentUser = sessionStorage.getItem('currentUser')
+// const csrfToken = sessionStorage.getItem('csrfToken')
+// if (!currentUser || !csrfToken){
+//   restoreSession().then(renderApp)
+// }else {
+//   renderApp()
+// }
+
+if (sessionStorage.getItem("X-CSRF-Token") === null) {
+  restoreCSRF().then(renderApp);
+} else {
+  renderApp();
 }
 
-
+// in rails comnsole:
+// attributes = Faker::Internet.user('name', 'name', 'email', 'password')
+// User.create(attributes)
+// User.create(attributes).tap(&:valid?).errors.messages
