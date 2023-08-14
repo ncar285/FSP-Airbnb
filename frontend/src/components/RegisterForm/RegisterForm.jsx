@@ -12,12 +12,12 @@ import { useDispatch, useSelector } from "react-redux"
 const RegisterForm = props => {
 
 
-    const currentUser = useSelector(state => state.session.currentUser)
+    // const currentUser = useSelector(state => state.session.currentUser)
     // const dispatch = useDispatch()
 
     const dispatch = useDispatch();
 
-    const [email, setEmail] = useState('')
+    // const [email, setEmail] = useState('')
 
     const display = useSelector(state => state.ui.registerModal)
 
@@ -27,21 +27,21 @@ const RegisterForm = props => {
     }
 
     const handleSubmit = async e => {
-        e.preventDefault();
-        const user = await fetch('')
-        User.find_by(email: email)
-        // const user = User.find_by(email: email)
-        const tea = {
-          flavor,
-          price,
-          amount,
-          description
-        }
-        dispatch(createTea(tea))
-        setFlavor('')
-        setPrice('')
-        setAmount('')
-        setDescription('')
+        // e.preventDefault();
+        // const user = await fetch('')
+        // User.find_by(email: email)
+        // // const user = User.find_by(email: email)
+        // const tea = {
+        //   flavor,
+        //   price,
+        //   amount,
+        //   description
+        // }
+        // dispatch(createTea(tea))
+        // setFlavor('')
+        // setPrice('')
+        // setAmount('')
+        // setDescription('')
       }
 
     if (!display) return null
