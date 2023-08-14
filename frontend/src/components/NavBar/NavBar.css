@@ -1,3 +1,5 @@
+
+
 .bar {
     position: relative;
     top: 0;
@@ -24,10 +26,10 @@
     align-items: center;
 }
 
-.nav-item {
+/* .nav-item {
     width: calc(100%/3);
     height: 40px;
-}
+} */
 
 .left {
     display: flex;
@@ -42,11 +44,7 @@
     align-items: center;
 }
 
-.right {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
+
 
 #logo {
     height: 32px;
@@ -120,53 +118,3 @@
     width: 40%;
 }
 
-
-.register {
-    background-color: white;
-    width: 75px;
-    height: 100%;
-    border: #dddddd solid 1px;
-    border-radius: 25px;
-    display: flex;
-}
-
-.register:hover {
-    cursor: pointer;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.menu, .account {
-    height: calc(100%-5px);
-    width: calc(50%-2.5px);
-    padding: 5px;
-}
-/* .account {
-    width: 100%;
-} */
-.account img {
-    height: 100%;
-    width: auto;
-    border-radius: 50%;
-}
-
-.menu {
-    /* background-color: aqua; */
-    /* border: 1px solid; */
-    width: 100%
-}
-
-.menu .more {
-    height: 100%;
-    width: calc(50%-10px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.more div {
-    width: 14px;
-    height: 1.5px;
-    margin: 1px;
-    background-color: black;
-}

@@ -24,6 +24,7 @@ export const deactivateSearchModal = () => ({
     type: 'DEACTIVATE_SEARCH_MODAL'
 })
 
+
 // THUNK ACTION CREATORS
 
 // SELECTORS 

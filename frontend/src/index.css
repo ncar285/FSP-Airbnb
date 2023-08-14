@@ -9,6 +9,7 @@
     --margin: 22.5px;
     --light_light_grey: #EBEBEB; 
     --light_grey: #dddddd;
+    --dark_grey: #222222;
 }
 
 @media (min-width: 745px) {

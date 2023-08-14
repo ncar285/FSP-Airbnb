@@ -1,18 +1,14 @@
 import "./NavBar.css"
 import logo from "../../assets/airbnb.svg"
 import sButton from "../../assets/s-button.png"
-import account from "../../assets/account.png"
+// import account from "../../assets/account.png"
 import { activateSearchModal } from "../../store/uiReducer";
 import { useDispatch, useSelector} from "react-redux";
-
-
-
-// const SearchForm = () => {
-
-    // const dispatch = useDispatch();
+import AccountMenu from "../AccountMenu/AccountMenu.jsx"
+ 
 
     
-    const NavBar = () => {
+const NavBar = () => {
         
     const hideSearchBar = useSelector(state => state.ui.searchModal)
 
@@ -41,6 +37,7 @@ import { useDispatch, useSelector} from "react-redux";
         }
     }
 
+
     return (
         <div className="bar">
             <div className="innerBar">
@@ -50,25 +47,32 @@ import { useDispatch, useSelector} from "react-redux";
                     
                 </div>
                 <div className="nav-item middle">
-
-                {search()}
-
+                    {search()}
                 </div >
-                <div className="nav-item right">
-                    <div className="register">
-                        <div className="menu">
-                            <div className="more">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
-                        <div className="account">
-                            <img src={account} alt="" />
-                        </div>
 
+                <AccountMenu/>
+
+                {/* <button onClick={seeAccountInfo} className="account-button">
+                    <div className="nav-item right">
+                        <div className="register">
+                            <div className="menu">
+                                <div className="more">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div className="account">
+                                <img src={account} alt="" />
+                            </div>
+
+                        </div>
                     </div>
-                </div>
+                </button>
+
+                <div className="account-options hidden" id="account-options">
+
+                </div> */}
 
 
             </div>

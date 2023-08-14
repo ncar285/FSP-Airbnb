@@ -13,11 +13,11 @@ const Splash = () => {
 
     return (
         <>
-            <h2>Splash</h2>
+            {/* <h2>Splash</h2>
             <button onClick={() => dispatch(activateRegisterModal())}>Create an Account</button>
             {showRegister && (
                 <RegisterForm closeModal={true}/>
-            )}
+            )} */}
         </>
     )
 }

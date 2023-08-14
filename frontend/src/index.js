@@ -6,6 +6,7 @@ import configureStore from './store/store';
 import { activateRegisterModal, deactivateRegisterModal } from './store/uiReducer';
 import { Provider } from 'react-redux'
 import 'normalize.css'
+import { restoreSession } from './utils/authUtils';
 
 const store = configureStore()
 
@@ -15,13 +16,23 @@ window.deactivate = deactivateRegisterModal
 
 const root = document.getElementById('root')
 
-ReactDOM.createRoot(root)
-  .render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>
-  )
+const renderApp = () => {
+  ReactDOM.createRoot(root)
+    .render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>
+    )
+}
+
+const currentUser = sessionStorage.getItem('currentUser')
+const csrfToken = sessionStorage.getItem('csrfToken')
+if (!currentUser || !csrfToken){
+  restoreSession().then(renderApp)
+}else {
+  renderApp()
+}
 
 
