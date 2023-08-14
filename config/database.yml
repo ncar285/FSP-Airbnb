@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: FSP_Medium_production
-  username: FSP_Medium
-  password: <%= ENV["FSP_MEDIUM_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATTABASE_URL'] %>

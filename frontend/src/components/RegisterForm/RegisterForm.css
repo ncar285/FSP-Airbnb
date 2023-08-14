@@ -89,6 +89,21 @@
     align-items: center;
 }
 
+.email-input {
+    width: 500px;
+    left: 25px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.continue.main {
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    background-color: var(--brand-color);
+}
+
 .email {
     background-color: var(--brand-color);
 

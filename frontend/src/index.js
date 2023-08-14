@@ -7,6 +7,7 @@ import { activateRegisterModal, deactivateRegisterModal } from './store/uiReduce
 import { Provider } from 'react-redux'
 import 'normalize.css'
 import { restoreSession } from './utils/authUtils';
+import * as sessionActions from './store/session.js'
 
 import csrfFetch, { restoreCSRF } from './store/csrf';
 
@@ -16,6 +17,7 @@ const store = configureStore()
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
+  window.sessionActions = sessionActions;
   // window.activate = activateRegisterModal
   // window.deactivate = deactivateRegisterModal
 }

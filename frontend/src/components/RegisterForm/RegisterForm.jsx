@@ -3,6 +3,7 @@ import "./RegisterForm.css"
 import { deactivateRegisterModal } from "../../store/uiReducer";
 import { useDispatch, useSelector } from "react-redux"
 
+
 // import { useState } from "react"
 // import './TeaForm.css'
 // import { useDispatch, useSelector } from "react-redux"
@@ -10,7 +11,13 @@ import { useDispatch, useSelector } from "react-redux"
 
 const RegisterForm = props => {
 
+
+    const currentUser = useSelector(state => state.session.currentUser)
+    // const dispatch = useDispatch()
+
     const dispatch = useDispatch();
+
+    const [email, setEmail] = useState('')
 
     const display = useSelector(state => state.ui.registerModal)
 
@@ -18,6 +25,24 @@ const RegisterForm = props => {
         e.stopPropagation()
         dispatch(deactivateRegisterModal())
     }
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const user = await fetch('')
+        User.find_by(email: email)
+        // const user = User.find_by(email: email)
+        const tea = {
+          flavor,
+          price,
+          amount,
+          description
+        }
+        dispatch(createTea(tea))
+        setFlavor('')
+        setPrice('')
+        setAmount('')
+        setDescription('')
+      }
 
     if (!display) return null
 
@@ -35,11 +60,16 @@ const RegisterForm = props => {
                 <div className="body">
                     <h1>Welcome to Airbnb</h1>
                     <form action="">
-                        <label htmlFor="">Country/Region
+                        {/* <label htmlFor="">Country/Region
                             <input type="text" placeholder="United States (+1)"/>   
                         </label>
                         <label htmlFor="">
                             <input type="text" placeholder="Phone number "/>   
+                        </label> */}
+                        <label>
+                            {/* <div> */}
+                                <input className="email-input" type="text" placeholder="Email"/>   
+                            {/* </div> */}
                         </label>
                         <button className="continue main">Continue</button>
                     </form>
