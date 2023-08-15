@@ -2,113 +2,55 @@ import "./RegisterForm.css"
 
 import { deactivateRegisterModal, activateRegisterModal} from "../../store/uiReducer";
 import { useDispatch, useSelector } from "react-redux"
+import SignupForm from "./SignupForm/SignupForm";
+import LoginForm from "./LoginForm/LoginForm";
+import InitialForm from "./InitialForm/InitialForm";
+import WelcomeBackForm from "./WelcomeBackForm/WelcomeBackForm";
+// import { getCurrentUser } from "../../store/sessionsReducer";
+import { useState } from "react"
 
 
+const RegisterForm = () => {
 
-// import { useState } from "react"
-// import './TeaForm.css'
-// import { useDispatch, useSelector } from "react-redux"
-// import { createTea, receiveTea } from "../../store/teasReducer";
-
-const RegisterForm = props => {
-
-
-
-
-    // const currentUser = useSelector(state => state.session.currentUser)
-    // const dispatch = useDispatch()
-
-    const dispatch = useDispatch();
-
-    dispatch(activateRegisterModal())
-
-    // const [email, setEmail] = useState('')
-
+    const [formState, setFormState] = useState('initial');
+    const [email, setEmail] = useState('')
+    const currentUser = useSelector(state => state.session.currentUser)
+    const dispatch = useDispatch()
     const display = useSelector(state => state.ui.registerModal)
 
-    const handleBackgroundClick = e => {
-        e.stopPropagation()
-        dispatch(deactivateRegisterModal())
-    }
-
-    const handleSubmit = async e => {
-        // e.preventDefault();
-        // const user = await fetch('')
-        // User.find_by(email: email)
-        // // const user = User.find_by(email: email)
-        // const tea = {
-        //   flavor,
-        //   price,
-        //   amount,
-        //   description
-        // }
-        // dispatch(createTea(tea))
-        // setFlavor('')
-        // setPrice('')
-        // setAmount('')
-        // setDescription('')
-      }
+    // For now, always set the modal to on! Remove later
+    dispatch(activateRegisterModal())
 
     if (!display) return null
 
-    return (
-        <div className="modal">
-            <div className="register-background" onClick={handleBackgroundClick}>
 
-            </div>
-            <div className="register-modal">
-                <div class="modal-header">
-                    <button data-close-button class="close">&times;</button>
-                    <div className="title-box"> <h2 class="title">Log in or sign up</h2></div>
-                   
-                </div>
-                <div className="body">
-                    <h1>Welcome to Airbnb</h1>
-                    <form action="">
-                        {/* <label htmlFor="">Country/Region
-                            <input type="text" placeholder="United States (+1)"/>   
-                        </label>
-                        <label htmlFor="">
-                            <input type="text" placeholder="Phone number "/>   
-                        </label> */}
-                        <label>
-                            {/* <div> */}
-                                <input className="email-input" type="text" placeholder="Email"/>   
-                            {/* </div> */}
-                        </label>
-                        <button className="continue main">Continue</button>
-                    </form>
-                    <div className="spacer">
-                        <div className="line"></div>
-                        <div className="or-text">or</div>
-                        <div className="line"></div>
-                    </div>
-                </div>
-                <div className="quick-sign-up">
-                    <form action="">
-                        <button>
-                            <div>[icon]</div>
-                            <div className="main">Continue with Facebook</div>
-                        </button>
-                        <button>
-                            <div>[icon]</div>
-                            <div className="main">Continue with Google</div>
-                        </button>
-                        <button>
-                            <div>[icon]</div>
-                            <div className="main">Continue with Apple</div>
-                        </button>
-                        <button className="email">
-                            <div>[icon]</div>
-                            <div className="main">Continue with email</div>
-                        </button>
-                    </form>
+   
+    // const handleBackgroundClick = e => {
+    //     e.stopPropagation()
+    //     dispatch(deactivateRegisterModal())
+    // }
 
-                </div>
-            </div>
-        </div>
+    const loginOrSignup = async e => {
+        e.preventDefault();
+        const response = await fetch(`/api/users/checkEmail?email=${email}`);
+        const data = await response.json();
+        if (data.exists) {
+            setFormState('login');
+        } else {
+            setFormState('signup');
+        }
+    };
 
-    )
+    if (currentUser) {
+        return <WelcomeBackForm currentUser={currentUser}/>;
+    } else if (formState === 'initial') {
+        return <InitialForm loginOrSignup={loginOrSignup} />;
+    } else if (formState === 'login') {
+        return <LoginForm currentUser={currentUser}/>;
+    } else if (formState === 'signup') {
+        return <SignupForm />;
+    } 
+
 }
 
 export default RegisterForm
