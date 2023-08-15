@@ -27,10 +27,11 @@ export const login = (user) => async (dispatch) => {
       })
     });
     const data = await response.json();
-    dispatch(setCurrentUser(data.user));
+    debugger
+    dispatch(setCurrentUser(data));
     return response;
 
-    };
+  };
   
   const initialState = { user: null };
   

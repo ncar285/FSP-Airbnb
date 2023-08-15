@@ -48,3 +48,21 @@
 .email {
     background-color: var(--brand-color);
 }
+
+.button-icon {
+    /* background-color: orange; */
+    color: #1a77f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.icon {
+    font-size: 20px;
+}
+
+#apple, #mail {
+    color: var(--dark_grey)
+}

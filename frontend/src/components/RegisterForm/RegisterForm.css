@@ -81,12 +81,20 @@
     justify-content: center;
 }
 
-input {
+.modal-conainter input {
+
     width: 500px;
-    left: 25px;
-    height: 70px;
+    height: 47.5px;
     display: flex;
     align-items: center;
+    margin: 20px 0px;
+    background-color: white;
+    border: var(--dark_grey) 1px solid;
+    border-radius: 10px;
+    color: var(--dark_grey);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
 }
 
 .title-box {
@@ -97,5 +105,9 @@ input {
 
 .button-icon {
     position: absolute;
-    left: 20px;
+    left: 50px;
+}
+
+.button-icon img {
+    height: 20px;
 }

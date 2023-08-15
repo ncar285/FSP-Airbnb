@@ -1,27 +1,42 @@
 import LoginForm from "../LoginForm/LoginForm";
 import SignupForm from "../SignupForm/SignupForm";
-import { useState } from "react"
+import { useState } from "react";
+// import facebookIcon from "../../../assets/icons/1.svg";
+// import googleIcon from "../../../assets/icons/2.svg";
+// import appleIcon from "../../../assets/icons/3.svg";
+// import mailIcon from "../../../assets/icons/4.svg";
+
+import { useRef } from "react";
+
+import { FcGoogle } from 'react-icons/fc';
+import { AiFillFacebook } from 'react-icons/ai';
+import { AiFillApple } from 'react-icons/ai';
+import { AiOutlineMail } from 'react-icons/ai'
+import "./InitialForm.css"
 
 
-const InitialForm = () => {
+const InitialForm = ( {userEmail, setUserEmail, deactivateRegisterModal}) => {
 
+    const greeting = useRef()
+
+    // console.log("YO YO YO ====", userEmail)
     // const [formState, setFormState] = useState('initial');
-    const [email, setEmail] = useState('')
+    // const [email, setEmail] = useState('')
     const [formState, setFormState] = useState('initial');
 
-    const loginOrSignup = async (email) => {
-        const response = await fetch(`/api/users/checkEmail?email=${email}`);
+    const loginOrSignup = async (userEmail) => {
+        const response = await fetch(`/api/users/checkEmail?email=${userEmail}`);
         const data = await response.json();
         return data.exists ? 'login' : 'signup';
-
     };
 
     // const [formState, setFormState] = useState('initial');
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const form = await loginOrSignup(email)
-        console.log(`render the ${form}login form!`)
+        const form = await loginOrSignup(userEmail)
+        greeting.current.style.display = "none";
+        // console.log(`render the ${form}login form!`)
         setFormState(form)
         // if (form === 'login') {
         //     return <LoginForm />;
@@ -32,7 +47,7 @@ const InitialForm = () => {
 
     return (
         <div className="body">
-            <h1 className="initial-form">
+            <h1 ref={greeting} className="initial-form">
                 Welcome to Airbnb
             </h1>
 
@@ -43,7 +58,7 @@ const InitialForm = () => {
                         <input 
                             className="email-input" 
                             type="text" 
-                            onChange={e => setEmail(e.target.value)}
+                            onChange={e => setUserEmail(e.target.value)}
                             placeholder="Email"
                         />   
                     </label>
@@ -51,8 +66,19 @@ const InitialForm = () => {
                 </form>
             )}   
 
-            {formState === 'login' && <LoginForm />}
-            {formState === 'signup' && <SignupForm />}
+            {formState === 'login' && 
+                <LoginForm 
+                    userEmail={userEmail} 
+                    setUserEmail={setUserEmail}
+                    deactivateRegisterModal = {deactivateRegisterModal}/>
+            }
+            
+            {formState === 'signup' && 
+                <SignupForm 
+                    userEmail={userEmail} 
+                    setUserEmail={setUserEmail}
+                    deactivateRegisterModal = {deactivateRegisterModal}/>
+            }
 
             <div className="spacer">
                 <div className="line"></div>
@@ -63,19 +89,31 @@ const InitialForm = () => {
             <div className="quick-sign-up">
                 <form action="">
                     <button>
-                        <div class="button-icon">[icon]</div>
+                        <div className="button-icon">
+                            <AiFillFacebook className="icon" id="facebook"/>
+                            {/* <img src={facebookIcon} alt="" /> */}
+                        </div>
                         <div className="main">Continue with Facebook</div>
                     </button>
                     <button>
-                        <div class="button-icon">[icon]</div>
+                        <div className="button-icon">
+                            <FcGoogle className="icon" id="google"/>
+                            {/* <img src={facebookIcon} alt="" /> */}
+                        </div>
                         <div className="main">Continue with Google</div>
                     </button>
                     <button>
-                        <div class="button-icon">[icon]</div>
+                        <div className="button-icon">
+                            <AiFillApple className="icon" id="apple"/>
+                            {/* <img src={facebookIcon} alt="" /> */}
+                        </div>
                         <div className="main">Continue with Apple</div>
                     </button>
                     <button className="email">
-                        <div class="button-icon">[icon]</div>
+                        <div className="button-icon">
+                            <AiOutlineMail className="icon" id="mail"/>
+                            {/* <img src={facebookIcon} alt="" /> */}
+                        </div>
                         <div className="main">Continue with email</div>
                     </button>
                 </form>

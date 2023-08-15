@@ -2,9 +2,10 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import uiReducer from './uiReducer';
-import sessionReducer from './sessionsReducer';
-// import userReducer f
-// import {createStore, combineReducers, applyMiddleWare} from ''
+import sessionsReducer from './sessionsReducer';
+import usersReducer from './usersReducer';
+import logger from 'redux-logger';
+
 
 export const rootReducer = combineReducers({ 
     ui: uiReducer,
@@ -14,7 +15,7 @@ export const rootReducer = combineReducers({
 
 
 export default function configureStore(preloadedState={}){
-    return createStore(rootReducer, preloadedState, applyMiddleware(thunk))
+    return createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger))
 }
 
 // const configureStore = (initialState = {}) => (

@@ -1,0 +1,24 @@
+#firstname-input {
+    margin: 0;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid var(--dark_grey);
+    background-color: transparent;
+    /* width: 100%; */
+    
+    /* border: none; */
+}
+
+#lastname-input {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    /* width: 100%; */
+}
+
+#name-inputs {
+    border-radius: 10px;
+    border: 1px solid var(--dark_grey);
+    margin: 20px 0px;
+    width: 500px;
+}
