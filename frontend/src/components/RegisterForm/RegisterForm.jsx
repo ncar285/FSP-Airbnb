@@ -1,7 +1,8 @@
 import "./RegisterForm.css"
 
-import { deactivateRegisterModal } from "../../store/uiReducer";
+import { deactivateRegisterModal, activateRegisterModal} from "../../store/uiReducer";
 import { useDispatch, useSelector } from "react-redux"
+
 
 
 // import { useState } from "react"
@@ -12,10 +13,14 @@ import { useDispatch, useSelector } from "react-redux"
 const RegisterForm = props => {
 
 
+
+
     // const currentUser = useSelector(state => state.session.currentUser)
     // const dispatch = useDispatch()
 
     const dispatch = useDispatch();
+
+    dispatch(activateRegisterModal())
 
     // const [email, setEmail] = useState('')
 
