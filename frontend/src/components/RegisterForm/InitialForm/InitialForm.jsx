@@ -23,11 +23,11 @@ const InitialForm = () => {
         const form = await loginOrSignup(email)
         console.log(`render the ${form}login form!`)
         setFormState(form)
-        if (form === 'login') {
-            return <LoginForm />;
-        } else if (form === 'signup') {
-            return <SignupForm />;
-        } 
+        // if (form === 'login') {
+        //     return <LoginForm />;
+        // } else if (form === 'signup') {
+        //     return <SignupForm />;
+        // } 
     }
 
     return (
@@ -49,17 +49,25 @@ const InitialForm = () => {
                         Welcome to Airbnb
                     </h1>
 
-                    <form onSubmit={handleSubmit}>
-                        <label>
-                            <input 
-                                className="email-input" 
-                                type="text" 
-                                onChange={e => setEmail(e.target.value)}
-                                placeholder="Email"
-                            />   
-                        </label>
-                        <button className="continue main">Continue</button>
-                    </form>
+                    {formState === 'initial' && (
+                        <form onSubmit={handleSubmit}>
+                    {/* <form onSubmit={handleSubmit}> */}
+                            <label>
+                                <input 
+                                    className="email-input" 
+                                    type="text" 
+                                    onChange={e => setEmail(e.target.value)}
+                                    placeholder="Email"
+                                />   
+                            </label>
+                            <button className="continue main">Continue</button>
+                        </form>
+                        )}
+                        
+
+                        {formState === 'login' && <LoginForm />}
+                        {formState === 'signup' && <SignupForm />}
+
 
                     <div className="spacer">
                         <div className="line"></div>
@@ -95,3 +103,13 @@ const InitialForm = () => {
 }
 
 export default InitialForm
+
+
+// {formState === 'initial' && (
+//     <form onSubmit={handleSubmit}>
+//         {/* ... */}
+//     </form>
+// )}
+
+// {formState === 'login' && <LoginForm />}
+// {formState === 'signup' && <SignupForm />}
