@@ -11,10 +11,11 @@ const WelcomeBackForm = ({ currentUser }) => {
                     </div>
 
                     <div className="register-modal">
-                        <div class="modal-header">
-                            <button data-close-button class="close">&times;</button>
-                            <div className="title-box">
-                                <h2 class="title">Welcome back, {currentUser.firstname}</h2>
+                        <div className="modal-header">
+                            <button data-close-button className="close">&times;</button>
+                            
+                            <div className="welcomeback-form">
+                                <h2 className="title">Welcome back, {currentUser.firstname}</h2>
                             </div>
                         </div>
                         <div className="body">

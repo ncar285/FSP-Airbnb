@@ -34,10 +34,12 @@ const SignupForm = () => {
                 >
             </div>
             <div className="register-modal">
-                <div class="modal-header">
-                    <button data-close-button class="close">&times;</button>
+                <div className="modal-header">
+                    <button data-close-button className="close">&times;</button>
                     <div className="title-box"> 
-                        <h2 class="title">Finish Signing Up</h2>
+                        <h2 className="signup-form">
+                            Finish Signing Up
+                        </h2>
                     </div>
                 </div>
                 <div className="body">

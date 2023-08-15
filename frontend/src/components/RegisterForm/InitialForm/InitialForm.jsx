@@ -3,20 +3,33 @@ import SignupForm from "../SignupForm/SignupForm";
 import { useState } from "react"
 
 
-const InitialForm = ({ loginOrSignup }) => {
+const InitialForm = () => {
 
+    // const [formState, setFormState] = useState('initial');
     const [email, setEmail] = useState('')
     const [formState, setFormState] = useState('initial');
 
-    const handleSubmit = e => {
+    const loginOrSignup = async (email) => {
+        const response = await fetch(`/api/users/checkEmail?email=${email}`);
+        const data = await response.json();
+        return data.exists ? 'login' : 'signup';
+
+    };
+
+    // const [formState, setFormState] = useState('initial');
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        loginOrSignup()
-        if (formState === 'login') {
+        const form = await loginOrSignup(email)
+        console.log(`render the ${form}login form!`)
+        setFormState(form)
+        if (form === 'login') {
             return <LoginForm />;
-        } else if (formState === 'signup') {
+        } else if (form === 'signup') {
             return <SignupForm />;
         } 
     }
+
     return (
         <div className="modal">
             <div 
@@ -25,14 +38,17 @@ const InitialForm = ({ loginOrSignup }) => {
                 >
             </div>
             <div className="register-modal">
-                <div class="modal-header">
-                    <button data-close-button class="close">&times;</button>
+                <div className="modal-header">
+                    <button data-close-button className="close">&times;</button>
                     <div className="title-box"> 
-                        <h2 class="title">Log in or sign up</h2>
+                        <h2 className="title">Log in or sign up</h2>
                     </div>
                 </div>
                 <div className="body">
-                    <h1>Welcome to Airbnb</h1>
+                    <h1 className="initial-form">
+                        Welcome to Airbnb
+                    </h1>
+
                     <form onSubmit={handleSubmit}>
                         <label>
                             <input 
@@ -44,6 +60,7 @@ const InitialForm = ({ loginOrSignup }) => {
                         </label>
                         <button className="continue main">Continue</button>
                     </form>
+
                     <div className="spacer">
                         <div className="line"></div>
                         <div className="or-text">or</div>

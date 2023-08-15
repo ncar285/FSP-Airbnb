@@ -30,21 +30,21 @@ const RegisterForm = () => {
     //     dispatch(deactivateRegisterModal())
     // }
 
-    const loginOrSignup = async e => {
-        e.preventDefault();
-        const response = await fetch(`/api/users/checkEmail?email=${email}`);
-        const data = await response.json();
-        if (data.exists) {
-            setFormState('login');
-        } else {
-            setFormState('signup');
-        }
-    };
+    // const loginOrSignup = async e => {
+    //     e.preventDefault();
+    //     const response = await fetch(`/api/users/checkEmail?email=${email}`);
+    //     const data = await response.json();
+    //     if (data.exists) {
+    //         setFormState('login');
+    //     } else {
+    //         setFormState('signup');
+    //     }
+    // };
 
     if (currentUser) {
         return <WelcomeBackForm currentUser={currentUser}/>;
     } else if (formState === 'initial') {
-        return <InitialForm loginOrSignup={loginOrSignup} />;
+        return <InitialForm  />;
     } else if (formState === 'login') {
         return <LoginForm currentUser={currentUser}/>;
     } else if (formState === 'signup') {
