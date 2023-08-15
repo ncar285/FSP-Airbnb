@@ -9,17 +9,32 @@ import 'normalize.css'
 import { restoreSession } from './utils/authUtils';
 import * as sessionActions from './store/session.js'
 
+import { deleteSession, postSession, postUser } from './utils/sessionApiUtils';
+import { createUser, loginUser, logoutUser } from './store/usersReducer';
+
 import csrfFetch, { restoreCSRF } from './store/csrf';
 
 
-const store = configureStore()
+// const root = ReactDOM.createRoot(document.getElementById('root'))
+const currentUser = sessionStorage.getItem('currentUser')
+const csrfToken = sessionStorage.getItem('csrfToken')
+
+let initialState = {}
+const currentUserData = JSON.parse(currentUser)
+
+
+
+const store = configureStore(initialState)
 
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
-  window.sessionActions = sessionActions;
-  // window.activate = activateRegisterModal
-  // window.deactivate = deactivateRegisterModal
+  window.postUser = postUser
+  window.postSession = postSession
+  window.deleteSession = deleteSession
+  window.loginUser = loginUser
+  window.logoutUser = logoutUser
+  window.createUser = createUser
 }
 
 const root = document.getElementById('root')
@@ -49,7 +64,3 @@ if (sessionStorage.getItem("X-CSRF-Token") === null) {
   renderApp();
 }
 
-// in rails comnsole:
-// attributes = Faker::Internet.user('name', 'name', 'email', 'password')
-// User.create(attributes)
-// User.create(attributes).tap(&:valid?).errors.messages
