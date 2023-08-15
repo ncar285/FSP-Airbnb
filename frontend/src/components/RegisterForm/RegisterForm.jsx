@@ -8,6 +8,8 @@ import InitialForm from "./InitialForm/InitialForm";
 import WelcomeBackForm from "./WelcomeBackForm/WelcomeBackForm";
 // import { getCurrentUser } from "../../store/sessionsReducer";
 import { useState } from "react"
+import cross from "../../assets/cross.svg"
+
 
 
 const RegisterForm = () => {
@@ -18,38 +20,54 @@ const RegisterForm = () => {
     const dispatch = useDispatch()
     const display = useSelector(state => state.ui.registerModal)
 
-    // For now, always set the modal to on! Remove later
+    //! For now, always set the modal to on! Remove later
     dispatch(activateRegisterModal())
 
     if (!display) return null
 
+    const handleBackgroundClick = e => {
+        e.stopPropagation()
+        dispatch(deactivateRegisterModal())
+    }
 
-   
-    // const handleBackgroundClick = e => {
-    //     e.stopPropagation()
-    //     dispatch(deactivateRegisterModal())
-    // }
+    return (
+        <div className="modal-conainter">
+            <div 
+                className="register-background" 
+                onClick={handleBackgroundClick}
+                >
+            </div>
+            <div className="register-modal">
+                <div className="modal-header">
+                    <button data-close-button id="close-button">
+                        {/* &times; */}
+                        <img src={cross} alt="" />
+                    </button>
+                    <div className="title-box"> 
+                        <h2 className="title">
+                            Log in or sign up
+                        </h2>
+                    </div>
+                </div>
 
-    // const loginOrSignup = async e => {
-    //     e.preventDefault();
-    //     const response = await fetch(`/api/users/checkEmail?email=${email}`);
-    //     const data = await response.json();
-    //     if (data.exists) {
-    //         setFormState('login');
-    //     } else {
-    //         setFormState('signup');
-    //     }
-    // };
+                <InitialForm  />
+                {/* <WelcomeBackForm currentUser={currentUser}/> */}
+                {/* <LoginForm currentUser={currentUser}/> */}
+                {/* <SignupForm /> */}
 
-    if (currentUser) {
-        return <WelcomeBackForm currentUser={currentUser}/>;
-    } else if (formState === 'initial') {
-        return <InitialForm  />;
-    } else if (formState === 'login') {
-        return <LoginForm currentUser={currentUser}/>;
-    } else if (formState === 'signup') {
-        return <SignupForm />;
-    } 
+            </div>
+        </div>
+    )
+
+    // if (currentUser) {
+    //     return <WelcomeBackForm currentUser={currentUser}/>;
+    // } else if (formState === 'initial') {
+    //     return <InitialForm  />;
+    // } else if (formState === 'login') {
+    //     return <LoginForm currentUser={currentUser}/>;
+    // } else if (formState === 'signup') {
+    //     return <SignupForm />;
+    // } 
 
 }
 

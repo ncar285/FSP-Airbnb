@@ -31,72 +31,56 @@ const InitialForm = () => {
     }
 
     return (
-        <div className="modal">
-            <div 
-                className="register-background" 
-                // onClick={handleBackgroundClick}
-                >
+        <div className="body">
+            <h1 className="initial-form">
+                Welcome to Airbnb
+            </h1>
+
+            {formState === 'initial' && (
+                <form onSubmit={handleSubmit}>
+            {/* <form onSubmit={handleSubmit}> */}
+                    <label>
+                        <input 
+                            className="email-input" 
+                            type="text" 
+                            onChange={e => setEmail(e.target.value)}
+                            placeholder="Email"
+                        />   
+                    </label>
+                    <button className="continue main">Continue</button>
+                </form>
+            )}   
+
+            {formState === 'login' && <LoginForm />}
+            {formState === 'signup' && <SignupForm />}
+
+            <div className="spacer">
+                <div className="line"></div>
+                <div className="or-text">or</div>
+                <div className="line"></div>
             </div>
-            <div className="register-modal">
-                <div className="modal-header">
-                    <button data-close-button className="close">&times;</button>
-                    <div className="title-box"> 
-                        <h2 className="title">Log in or sign up</h2>
-                    </div>
-                </div>
-                <div className="body">
-                    <h1 className="initial-form">
-                        Welcome to Airbnb
-                    </h1>
-
-                    {formState === 'initial' && (
-                        <form onSubmit={handleSubmit}>
-                    {/* <form onSubmit={handleSubmit}> */}
-                            <label>
-                                <input 
-                                    className="email-input" 
-                                    type="text" 
-                                    onChange={e => setEmail(e.target.value)}
-                                    placeholder="Email"
-                                />   
-                            </label>
-                            <button className="continue main">Continue</button>
-                        </form>
-                        )}
-                        
-
-                        {formState === 'login' && <LoginForm />}
-                        {formState === 'signup' && <SignupForm />}
-
-
-                    <div className="spacer">
-                        <div className="line"></div>
-                        <div className="or-text">or</div>
-                        <div className="line"></div>
-                    </div>
-                </div>
-                <div className="quick-sign-up">
-                    <form action="">
-                        <button>
-                            <div>[icon]</div>
-                            <div className="main">Continue with Facebook</div>
-                        </button>
-                        <button>
-                            <div>[icon]</div>
-                            <div className="main">Continue with Google</div>
-                        </button>
-                        <button>
-                            <div>[icon]</div>
-                            <div className="main">Continue with Apple</div>
-                        </button>
-                        <button className="email">
-                            <div>[icon]</div>
-                            <div className="main">Continue with email</div>
-                        </button>
-                    </form>
-
-                </div>
+                
+            <div className="quick-sign-up">
+                <form action="">
+                    <button>
+                        <div class="button-icon">[icon]</div>
+                        <div className="main">Continue with Facebook</div>
+                    </button>
+                    <button>
+                        <div class="button-icon">[icon]</div>
+                        <div className="main">Continue with Google</div>
+                    </button>
+                    <button>
+                        <div class="button-icon">[icon]</div>
+                        <div className="main">Continue with Apple</div>
+                    </button>
+                    <button className="email">
+                        <div class="button-icon">[icon]</div>
+                        <div className="main">Continue with email</div>
+                    </button>
+                </form>
             </div>
+
         </div>
     )
 
