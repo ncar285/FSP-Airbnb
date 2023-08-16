@@ -17,7 +17,7 @@ import "./InitialForm.css"
 
 const InitialForm = ( {userEmail, setUserEmail, deactivateRegisterModal}) => {
 
-    const greeting = useRef()
+    const initialFormBody = useRef()
 
     // console.log("YO YO YO ====", userEmail)
     // const [formState, setFormState] = useState('initial');
@@ -35,7 +35,7 @@ const InitialForm = ( {userEmail, setUserEmail, deactivateRegisterModal}) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const form = await loginOrSignup(userEmail)
-        greeting.current.style.display = "none";
+        initialFormBody.current.style.display = "none";
         // console.log(`render the ${form}login form!`)
         setFormState(form)
         // if (form === 'login') {
@@ -46,8 +46,9 @@ const InitialForm = ( {userEmail, setUserEmail, deactivateRegisterModal}) => {
     }
 
     return (
-        <div className="body">
-            <h1 ref={greeting} className="initial-form">
+        <>
+        <div ref={initialFormBody} className="body">
+            <h1 className="initial-form">
                 Welcome to Airbnb
             </h1>
 
@@ -60,25 +61,25 @@ const InitialForm = ( {userEmail, setUserEmail, deactivateRegisterModal}) => {
                             type="text" 
                             onChange={e => setUserEmail(e.target.value)}
                             placeholder="Email"
-                        />   
+                            />   
                     </label>
                     <button className="continue main">Continue</button>
                 </form>
             )}   
 
-            {formState === 'login' && 
+            {/* {formState === 'login' && 
                 <LoginForm 
-                    userEmail={userEmail} 
-                    setUserEmail={setUserEmail}
-                    deactivateRegisterModal = {deactivateRegisterModal}/>
+                userEmail={userEmail} 
+                setUserEmail={setUserEmail}
+                deactivateRegisterModal = {deactivateRegisterModal}/>
             }
             
             {formState === 'signup' && 
-                <SignupForm 
-                    userEmail={userEmail} 
-                    setUserEmail={setUserEmail}
-                    deactivateRegisterModal = {deactivateRegisterModal}/>
-            }
+            <SignupForm 
+            userEmail={userEmail} 
+            setUserEmail={setUserEmail}
+            deactivateRegisterModal = {deactivateRegisterModal}/>
+        } */}
 
             <div className="spacer">
                 <div className="line"></div>
@@ -120,6 +121,22 @@ const InitialForm = ( {userEmail, setUserEmail, deactivateRegisterModal}) => {
             </div>
 
         </div>
+
+        {formState === 'login' && 
+            <LoginForm 
+                userEmail={userEmail} 
+                setUserEmail={setUserEmail}
+                deactivateRegisterModal = {deactivateRegisterModal}/>
+        }
+            
+        {formState === 'signup' && 
+            <SignupForm 
+                userEmail={userEmail} 
+                setUserEmail={setUserEmail}
+                deactivateRegisterModal = {deactivateRegisterModal}/>
+        }
+
+        </>
     )
 
 }

@@ -3,25 +3,26 @@ import profile from "../../../assets/user_pic-225x225.png"
 import "./LoginForm.css"
 import { login } from "../../../store/sessionsReducer"
 import { useState } from "react"
+import { deactivateRegisterModal } from "../../../store/uiReducer"
 
 
-const LoginForm = ( {userEmail, deactivateRegisterModal}) => {
+const LoginForm = ( {userEmail}) => {
 
-    console.log("YO YO YO ====", userEmail)
+    // console.log("YO YO YO ====", userEmail)
 
     const dispatch = useDispatch();
 
-    const [userCredentials, setUserCredentials] = useState({password: ''})
+    const [password, setPassword] = useState('')
 
     const handleSubmit = async e => {
         e.preventDefault();
 
         const newUser = {
             email: userEmail,
-            password: userCredentials.password
+            password
         }
         // debugger
-        const res = dispatch(login(newUser))
+        const res = await dispatch(login(newUser))
         if (res.ok){
             dispatch(deactivateRegisterModal());
         } else {
@@ -45,7 +46,7 @@ const LoginForm = ( {userEmail, deactivateRegisterModal}) => {
                 <form onSubmit={handleSubmit}>
                     <input 
                         type="password" 
-                        onChange={e => setUserCredentials({password: e.target.value})}
+                        onChange={e => setPassword(e.target.value)}
                         placeholder="Password"
                     />  
                     <button className="continue main">Continue</button>

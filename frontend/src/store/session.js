@@ -27,7 +27,7 @@ export const login = (user) => async (dispatch) => {
       })
     });
     const data = await response.json();
-    debugger
+    // debugger
     dispatch(setCurrentUser(data));
     return response;
 

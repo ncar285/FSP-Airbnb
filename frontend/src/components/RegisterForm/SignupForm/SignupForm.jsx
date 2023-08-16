@@ -51,7 +51,7 @@ const SignupForm = ({userEmail, setUserEmail, deactivateRegisterModal}) => {
                     className="email-input" 
                     type="text" 
                     onChange={e => setUserEmail(e.target.value)}
-                    placeholder="Email"
+                    placeholder={userEmail}
                 />    
                 
                 <input 
