@@ -15,6 +15,8 @@ const SignupForm = ({userEmail, setUserEmail, deactivateRegisterModal}) => {
             firstname,
             lastname,
             password
+            // ,
+            // photo
         }
         await dispatch(createUser(user))
         setUserEmail('')
@@ -28,6 +30,14 @@ const SignupForm = ({userEmail, setUserEmail, deactivateRegisterModal}) => {
     const [firstname, setFirstname] = useState('')
     const [lastname, setLastname] = useState('')
     const [password, setPassword] = useState('')
+    // const [photo, setPhoto] = useState(null)
+
+    // const handleFile = e => {
+    //     console.log("handling file")
+    //     const file = e.currentTarget.files[0]
+    //     console.log(file)
+    //     setPhoto(file)
+    // }
 
     return (
         <div className="body">
@@ -61,6 +71,11 @@ const SignupForm = ({userEmail, setUserEmail, deactivateRegisterModal}) => {
                     onChange={e => setPassword(e.target.value)}
                     placeholder="Password"
                 />  
+
+                {/* <input 
+                    type="file" 
+                    onChange={handleFile}
+                /> */}
                
                 <button className="continue main">Continue</button>
             </form>

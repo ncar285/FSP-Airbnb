@@ -42,7 +42,7 @@ const AccountMenu = () => {
     return (
         <>
 
-            <div className='account-options-container'>
+            {/* <div className='account-options-container'>
 
                 <button className="account-button" id="account-button">
     
@@ -58,9 +58,10 @@ const AccountMenu = () => {
         
                 </button>
 
-                {menuButtons()}
 
-            </div>
+            </div> */}
+                
+                {menuButtons()}
 
             {showRegister && (
                 <RegisterForm closeModal={true}/>

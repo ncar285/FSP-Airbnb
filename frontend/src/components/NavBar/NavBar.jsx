@@ -6,25 +6,24 @@ import { activateSearchModal } from "../../store/uiReducer";
 import { useDispatch, useSelector} from "react-redux";
 import AccountMenu from "../AccountMenu/AccountMenu.jsx"
 import { getCurrentUser } from "../../store/sessionsReducer";
- 
+import { useState } from "react";
+// import account
+import account from "../../assets/account.png"
 
     
 const NavBar = () => {
 
-    // const menuButtons = useRef()
-
-    // const menuClick = () => {
-    //     // menuButtons.current.style.display = "none";
-    //     if (menuButtons.classList.contains('hidden')){
-
-    //     }
-    //     menuButtons.classList.add('hidden')
-
-    // }
-        
+    const [menuOpen, setMenuOpen] = useState(false)
     const hideSearchBar = useSelector(state => state.ui.searchModal)
-
     const dispatch = useDispatch()
+
+    const handleMenuClick = () => {
+        if (menuOpen){
+            setMenuOpen(false)
+        }else {
+            setMenuOpen(true)
+        }
+    }
 
     const search = () => {
         if (hideSearchBar){
@@ -62,30 +61,23 @@ const NavBar = () => {
                     {search()}
                 </div >
 
-                <AccountMenu/>
 
-                {/* <button onClick={seeAccountInfo} className="account-button">
-                    <div className="nav-item right">
-                        <div className="register">
-                            <div className="menu">
-                                <div className="more">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                            </div>
-                            <div className="account">
-                                <img src={account} alt="" />
-                            </div>
-
+                <div className='account-options-container'>
+                    <button onClick={handleMenuClick} className="account-button" id="account-button">
+                        <div className="list">
+                            <div></div>
+                            <div></div>
+                            <div></div>
                         </div>
-                    </div>
-                </button>
+                        <div className="profile">
+                            <img src={account} alt="" />
+                        </div>
+                    </button>
+                </div>
 
-                <div className="account-options hidden" id="account-options">
-
-                </div> */}
-
+                {menuOpen &&
+                < AccountMenu/>
+                }
 
             </div>
         </div>
