@@ -20,7 +20,7 @@ export const removeUser = userId => ({
 export const createUser = userData => dispatch => (
     postUser(userData)
         .then(user => {
-            sessionStorage.setItem('currentUser', JSON.stringify(user.user))
+            // sessionStorage.setItem('currentUser', JSON.stringify(user.user))
             dispatch(receiveUser(user))
         })
 )

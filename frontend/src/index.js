@@ -15,17 +15,15 @@ import { createUser, loginUser, logoutUser } from './store/usersReducer';
 import csrfFetch, { restoreCSRF } from './store/csrf';
 
 
-// const root = ReactDOM.createRoot(document.getElementById('root'))
-const currentUser = sessionStorage.getItem('currentUser')
+// const currentUser = sessionStorage.getItem('currentUser')
 const csrfToken = sessionStorage.getItem('csrfToken')
 
 let initialState = {}
-const currentUserData = JSON.parse(currentUser)
+// const currentUserData = JSON.parse(currentUser)
 
 
 
 const store = configureStore(initialState)
-
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
@@ -38,7 +36,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const root = document.getElementById('root')
-
 const renderApp = () => {
   ReactDOM.createRoot(root)
     .render(
@@ -49,14 +46,6 @@ const renderApp = () => {
     </React.StrictMode>
     )
 }
-
-// const currentUser = sessionStorage.getItem('currentUser')
-// const csrfToken = sessionStorage.getItem('csrfToken')
-// if (!currentUser || !csrfToken){
-//   restoreSession().then(renderApp)
-// }else {
-//   renderApp()
-// }
 
 if (sessionStorage.getItem("X-CSRF-Token") === null) {
   restoreCSRF().then(renderApp);

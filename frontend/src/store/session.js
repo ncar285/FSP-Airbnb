@@ -1,8 +1,12 @@
 import csrfFetch from './csrf';
+import { deleteSession, postSession, postUser } from "../utils/sesssionApiUtils"
 
+
+// CONSTANTS
 const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
 
+// ACTION CREATORS
 const setCurrentUser = (user) => {
   return {
     type: SET_CURRENT_USER,
@@ -17,7 +21,9 @@ const removeCurrentUser = () => {
 }
 
 
-export const login = (user) => async (dispatch) => {
+// THUNK ACTION CREATORS
+
+export const login = (user) => async dispatch => {
     const { email, password } = user;
     const response = await csrfFetch('/api/session', {
       method: 'POST',

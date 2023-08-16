@@ -7,7 +7,7 @@ const SignupForm = ({userEmail, setUserEmail, deactivateRegisterModal}) => {
 
     const dispatch = useDispatch()
 
-    const handleSignup = e => {
+    const handleSignup = async e => {
         e.preventDefault();
         const user = {
             email: userEmail,
@@ -15,11 +15,12 @@ const SignupForm = ({userEmail, setUserEmail, deactivateRegisterModal}) => {
             lastname,
             password
         }
-        dispatch(createUser(user))
+        await dispatch(createUser(user))
         setUserEmail('')
         setFirstname('')
         setLastname('')
         setPassword('')
+        await dispatch(deactivateRegisterModal())
     }
 
     // const [email, setEmail] = useState('')

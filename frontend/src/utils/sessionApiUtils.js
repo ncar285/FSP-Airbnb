@@ -2,7 +2,8 @@ import { csrfFetch } from "./authUtils";
 
 //signup
 export const postUser = async userData => {
-    const res = await csrfFetch('api/users', {
+    debugger
+    const res = await csrfFetch('/api/users', {
         method: 'POST',
         body: JSON.stringify(userData)
     })
@@ -12,7 +13,7 @@ export const postUser = async userData => {
 
 //login the user 
 export const postSession = async credentials => {
-    const res = await csrfFetch('api/session', {
+    const res = await csrfFetch('/api/session', {
         method: 'POST',
         body: JSON.stringify(credentials)
     })
@@ -29,5 +30,3 @@ export const deleteSession = async () => {
         console.log('logout successful')
     }
 }
-
-// deleteSession() 
