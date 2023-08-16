@@ -5,15 +5,14 @@ export function storeCSRFToken(response) {
 }
   
 export async function restoreCSRF() {
-const response = await csrfFetch("/api/session");
-storeCSRFToken(response);
-return response;
+    const response = await csrfFetch("/api/session");
+    storeCSRFToken(response);
+    return response;
 }
 
 const csrfFetch = async (url, options={headers: {}, method: 'GET'}) => {
 
     options.method = options.method || 'GET';
-
     options.headers = options.headers || {};
 
     if (options.method.toUpperCase() !== 'GET') {
@@ -24,7 +23,6 @@ const csrfFetch = async (url, options={headers: {}, method: 'GET'}) => {
     const res = await fetch(url, options);
 
     if (res.status >= 400) throw res
-
     return res
 
 }

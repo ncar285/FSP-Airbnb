@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
-import { createUser } from "../../../store/usersReducer";
+// import { createUser } from "../../../store/usersReducer";
+import { createUser } from "../../../store/sessionsReducer";
 import { useState } from "react"
 import "./SignupForm.css"
 

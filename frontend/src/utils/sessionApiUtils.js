@@ -1,8 +1,9 @@
-import { csrfFetch } from "./authUtils";
+// import { csrfFetch } from "./authUtils";
+import csrfFetch from "../store/csrf";
 
 //signup
 export const postUser = async userData => {
-    debugger
+    // debugger
     const res = await csrfFetch('/api/users', {
         method: 'POST',
         body: JSON.stringify(userData)

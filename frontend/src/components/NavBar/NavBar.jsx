@@ -5,10 +5,22 @@ import sButton from "../../assets/s-button.png"
 import { activateSearchModal } from "../../store/uiReducer";
 import { useDispatch, useSelector} from "react-redux";
 import AccountMenu from "../AccountMenu/AccountMenu.jsx"
+import { getCurrentUser } from "../../store/sessionsReducer";
  
 
     
 const NavBar = () => {
+
+    // const menuButtons = useRef()
+
+    // const menuClick = () => {
+    //     // menuButtons.current.style.display = "none";
+    //     if (menuButtons.classList.contains('hidden')){
+
+    //     }
+    //     menuButtons.classList.add('hidden')
+
+    // }
         
     const hideSearchBar = useSelector(state => state.ui.searchModal)
 

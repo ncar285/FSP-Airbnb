@@ -1,21 +1,23 @@
 import profile from "../../../assets/user_pic-225x225.png"
 import { deactivateRegisterModal } from "../../../store/uiReducer"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import InitialForm from "../InitialForm/InitialForm"
 import { useRef } from "react";
-import { logoutUser } from "../../../store/usersReducer";
 import { useEffect } from "react";
+import { logoutUser } from "../../../store/sessionsReducer";
+import { getCurrentUser } from "../../../store/sessionsReducer";
 
-const WelcomeBackForm = ({ setUserEmail, currentUser, userEmail, formState, setFormState}) => {
+const WelcomeBackForm = ({ setUserEmail, currentUser, formState, setFormState}) => {
 
     useEffect(() => {
         setFormState('welcome');
     }, []);
-    // setFormState('welcome')
-
-    const dispatch = useDispatch()
 
     const welcomeBackBody = useRef()
+
+    const sessionUser = useSelector(getCurrentUser);
+
+    const dispatch = useDispatch()
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -24,9 +26,8 @@ const WelcomeBackForm = ({ setUserEmail, currentUser, userEmail, formState, setF
     
     const handleSignOut = async e => {
         e.preventDefault()
-        // const res = dispatch(logoutUser(currentUser.id))
-        await dispatch(logoutUser(currentUser.id));
         welcomeBackBody.current.style.display = "none";
+        dispatch(logoutUser(currentUser.id));
         setFormState('initial');
     }
 
@@ -36,7 +37,7 @@ const WelcomeBackForm = ({ setUserEmail, currentUser, userEmail, formState, setF
                 <div>(welcome-back form)</div>
                 <div className="login-profile">
                     <img src={profile} alt="" />
-                    <div className="user-email">{userEmail}</div>
+                    <div className="user-email">{sessionUser.email}</div>
                 </div>
 
                 <form onSubmit={handleSubmit}>

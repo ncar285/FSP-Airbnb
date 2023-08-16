@@ -1,6 +1,6 @@
-import csrfFetch from './csrf';
-import { deleteSession, postSession, postUser } from "../utils/sesssionApiUtils"
-
+// import csrfFetch from './csrf';
+// import { deleteSession, postSession, postUser } from "../utils/sesssionApiUtils"
+import { deleteSession, postSession, postUser } from "../utils/sessionApiUtils";
 
 // CONSTANTS
 const SET_CURRENT_USER = 'session/setCurrentUser';
@@ -20,36 +20,46 @@ const removeCurrentUser = () => {
   };
 }
 
+// SELECTORS
+
+export const getCurrentUser = state => state.session.user ? state.session.user : null
+
+
 
 // THUNK ACTION CREATORS
 
-export const login = (user) => async dispatch => {
-    const { email, password } = user;
-    const response = await csrfFetch('/api/session', {
-      method: 'POST',
-      body: JSON.stringify({
-        email,
-        password
-      })
-    });
-    const data = await response.json();
-    // debugger
-    dispatch(setCurrentUser(data));
-    return response;
-
-  };
-  
-  const initialState = { user: null };
-  
-  const sessionReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case SET_CURRENT_USER:
-        return { ...state, user: action.payload };
-      case REMOVE_CURRENT_USER:
-        return { ...state, user: null };
-      default:
-        return state;
-    }
+export const createUser = userData => async (dispatch) => {
+  const user = await postUser(userData);
+  sessionStorage.setItem("currentUser", JSON.stringify(user))
+  dispatch(setCurrentUser(user));
 };
 
-export default sessionReducer
+export const login = credentials => async (dispatch) => {
+  const response = await postSession(credentials);
+  // debugger
+  sessionStorage.setItem("currentUser", JSON.stringify(response))
+  // const data = await response.json();
+  dispatch(setCurrentUser(response));
+  return response
+};
+
+export const logoutUser = () => async (dispatch) => {
+  await deleteSession();
+  sessionStorage.setItem('currentUser', null);
+  dispatch(removeCurrentUser());
+};
+  
+const initialState = { user: JSON.parse(sessionStorage.getItem("currentUser"))};
+  
+const sessionsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case SET_CURRENT_USER:
+      return { ...state, user: action.payload };
+    case REMOVE_CURRENT_USER:
+      return { ...state, user: null };
+    default:
+      return state;
+  }
+};
+
+export default sessionsReducer

@@ -18,12 +18,12 @@ import csrfFetch, { restoreCSRF } from './store/csrf';
 // const currentUser = sessionStorage.getItem('currentUser')
 const csrfToken = sessionStorage.getItem('csrfToken')
 
-let initialState = {}
+// let initialState = {}
 // const currentUserData = JSON.parse(currentUser)
 
 
 
-const store = configureStore(initialState)
+const store = configureStore()
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
@@ -47,8 +47,10 @@ const renderApp = () => {
     )
 }
 
-if (sessionStorage.getItem("X-CSRF-Token") === null) {
-  restoreCSRF().then(renderApp);
+if (sessionStorage.getItem("X-CSRF-Token") === null || 
+  sessionStorage.getItem("currentUser") === null) {
+    debugger
+  store.dispatch(restoreSession()).then(renderApp);
 } else {
   renderApp();
 }

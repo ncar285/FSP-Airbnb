@@ -8,7 +8,6 @@ import { deactivateRegisterModal } from "../../../store/uiReducer"
 
 const LoginForm = ( {userEmail}) => {
 
-    // console.log("YO YO YO ====", userEmail)
 
     const dispatch = useDispatch();
 
@@ -16,14 +15,12 @@ const LoginForm = ( {userEmail}) => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-
         const newUser = {
             email: userEmail,
             password
         }
-        // debugger
-        const res = await dispatch(login(newUser))
-        if (res.ok){
+        const res = dispatch(login(newUser))
+        if (res){
             dispatch(deactivateRegisterModal());
         } else {
             console.log(newUser)
