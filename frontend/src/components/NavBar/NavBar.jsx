@@ -1,7 +1,6 @@
 import "./NavBar.css"
 import logo from "../../assets/airbnb.svg"
 import sButton from "../../assets/s-button.png"
-// import account from "../../assets/account.png"
 import { activateSearchModal } from "../../store/uiReducer";
 import { useDispatch, useSelector} from "react-redux";
 import AccountMenu from "../AccountMenu/AccountMenu.jsx"
@@ -9,8 +8,10 @@ import { getCurrentUser } from "../../store/sessionsReducer";
 import { useState } from "react";
 // import account
 import account from "../../assets/account.png"
+// import { AiOutlineSearch } from "react-icons/ai" // (search icon)
+// import { FaAirbnb } from "react-icons/fa"   // airbnb logo
+// import { AiOutlineMenu } from "react-icons/ai" // menu icon
 
-    
 const NavBar = () => {
 
     const [menuOpen, setMenuOpen] = useState(false)
