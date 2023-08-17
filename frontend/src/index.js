@@ -1,27 +1,14 @@
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import configureStore from './store/store';
-import { activateRegisterModal, deactivateRegisterModal } from './store/uiReducer';
 import { Provider } from 'react-redux'
 import 'normalize.css'
 import { restoreSession } from './utils/authUtils';
 import { createUser, login, logoutUser } from './store/sessionsReducer'
-
 import { deleteSession, postSession, postUser } from './utils/sessionApiUtils';
-// import { createUser, loginUser, logoutUser }
-
-import csrfFetch, { restoreCSRF } from './store/csrf';
-
-
-// const currentUser = sessionStorage.getItem('currentUser')
-const csrfToken = sessionStorage.getItem('csrfToken')
-
-// let initialState = {}
-// const currentUserData = JSON.parse(currentUser)
-
-
+import csrfFetch from './store/csrf';
 
 const store = configureStore()
 if (process.env.NODE_ENV !== 'production') {
@@ -49,9 +36,11 @@ const renderApp = () => {
 
 if (sessionStorage.getItem("X-CSRF-Token") === null || 
   sessionStorage.getItem("currentUser") === null) {
-    // debugger
-  store.dispatch(restoreSession).then(renderApp);
+  // debugger
+  store.dispatch(restoreSession()).then(renderApp);
 } else {
-  renderApp();
+  // debugger
+  // renderApp();
+  store.dispatch(restoreSession()).then(renderApp);
 }
 

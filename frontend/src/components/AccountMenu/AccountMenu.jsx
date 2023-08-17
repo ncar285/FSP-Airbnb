@@ -18,7 +18,7 @@ const AccountMenu = () => {
     const handleSignOut = async e => {
         e.preventDefault()
         dispatch(logoutUser());
-        //     window.location.reload(); 
+        window.location.reload(); 
     }
 
     const menuButtons = () => {
@@ -42,26 +42,8 @@ const AccountMenu = () => {
     return (
         <>
 
-            {/* <div className='account-options-container'>
-
-                <button className="account-button" id="account-button">
-    
-                    <div className="list">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-
-                    <div className="profile">
-                        <img src={account} alt="" />
-                    </div>
-        
-                </button>
-
-
-            </div> */}
                 
-                {menuButtons()}
+            {menuButtons()}
 
             {showRegister && (
                 <RegisterForm closeModal={true}/>

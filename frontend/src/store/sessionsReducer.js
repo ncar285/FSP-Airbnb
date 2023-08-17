@@ -7,7 +7,7 @@ const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
 
 // ACTION CREATORS
-const setCurrentUser = (user) => {
+export const setCurrentUser = (user) => {
   return {
     type: SET_CURRENT_USER,
     payload: user
@@ -45,7 +45,7 @@ export const logoutUser = () => async (dispatch) => {
   dispatch(removeCurrentUser());
 };
   
-const initialState = { user: JSON.parse(sessionStorage.getItem("currentUser"))};
+const initialState = {};
   
 const sessionsReducer = (state = initialState, action) => {
   switch (action.type) {
