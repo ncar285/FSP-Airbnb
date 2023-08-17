@@ -1,0 +1,92 @@
+.or-text {
+    width: 40px;
+}
+.line {
+    height: 1px;
+    width: 235px;
+    background-color: var(--light_grey);
+}
+
+.title-box {
+    display: flex;
+    justify-content: center;
+}
+.quick-sign-up {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.spacer {
+    /* width: 100%; */
+    /* margin: 25px 0 25px 0; */
+    /* background-color: var(--light_grey); */
+    margin-top: 25px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.email-input {
+    width: 500px;
+    left: 25px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.continue.main {
+    display: flex;
+    justify-content: center;
+    background-color: var(--brand-color);
+}
+
+.email {
+    background-color: var(--brand-color);
+}
+
+.button-icon {
+    /* background-color: orange; */
+    color: #1a77f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*! ICONS & BUTTONS */
+
+.button-icon, .demo-icon {
+    position: absolute;
+    left: 50px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.button-icon img {
+    height: 20px;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+#apple, #mail {
+    color: var(--dark_grey)
+}
+
+#demo-arrow {
+    color: var(--brand-color);
+    font-size: 30px;
+    position: absolute;
+    right: 50px;
+}
+
+div.demo-icon{
+    position: absolute;
+    right: 50px;
+}

@@ -1,29 +1,28 @@
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import configureStore from './store/store';
-import { activateRegisterModal, deactivateRegisterModal } from './store/uiReducer';
 import { Provider } from 'react-redux'
 import 'normalize.css'
 import { restoreSession } from './utils/authUtils';
-import * as sessionActions from './store/session.js'
-
-import csrfFetch, { restoreCSRF } from './store/csrf';
-
+import { createUser, login, logoutUser } from './store/sessionsReducer'
+import { deleteSession, postSession, postUser } from './utils/sessionApiUtils';
+import csrfFetch from './store/csrf';
 
 const store = configureStore()
-
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
-  window.sessionActions = sessionActions;
-  // window.activate = activateRegisterModal
-  // window.deactivate = deactivateRegisterModal
+  window.postUser = postUser
+  window.postSession = postSession
+  window.deleteSession = deleteSession
+  window.loginUser = login
+  window.logoutUser = logoutUser
+  window.createUser = createUser
 }
 
 const root = document.getElementById('root')
-
 const renderApp = () => {
   ReactDOM.createRoot(root)
     .render(
@@ -35,21 +34,13 @@ const renderApp = () => {
     )
 }
 
-// const currentUser = sessionStorage.getItem('currentUser')
-// const csrfToken = sessionStorage.getItem('csrfToken')
-// if (!currentUser || !csrfToken){
-//   restoreSession().then(renderApp)
-// }else {
-//   renderApp()
-// }
-
-if (sessionStorage.getItem("X-CSRF-Token") === null) {
-  restoreCSRF().then(renderApp);
+if (sessionStorage.getItem("X-CSRF-Token") === null || 
+  sessionStorage.getItem("currentUser") === null) {
+  // debugger
+  store.dispatch(restoreSession()).then(renderApp);
 } else {
-  renderApp();
+  // debugger
+  // renderApp();
+  store.dispatch(restoreSession()).then(renderApp);
 }
 
-// in rails comnsole:
-// attributes = Faker::Internet.user('name', 'name', 'email', 'password')
-// User.create(attributes)
-// User.create(attributes).tap(&:valid?).errors.messages

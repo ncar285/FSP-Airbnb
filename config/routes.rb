@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   namespace :api, defaults: {format: :json} do 
-    resources :users, only: :create
+    resources :users, only: :create do
+      collection do
+        get 'checkEmail'
+      end
+    end
     resource :session, only: [:show, :create, :destroy]
   end
 

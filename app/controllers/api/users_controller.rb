@@ -13,6 +13,13 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def checkEmail
+        email = params[:email]
+        user = User.find_by(email: email)
+        exists = user.present?
+        render json: { exists: exists }
+    end
+
     private 
     def user_params 
         params.require(:user).permit(:email, :firstname, :lastname, :password)
