@@ -7,10 +7,10 @@ import { activateRegisterModal, deactivateRegisterModal } from './store/uiReduce
 import { Provider } from 'react-redux'
 import 'normalize.css'
 import { restoreSession } from './utils/authUtils';
-import * as sessionActions from './store/session.js'
+import { createUser, login, logoutUser } from './store/sessionsReducer'
 
 import { deleteSession, postSession, postUser } from './utils/sessionApiUtils';
-import { createUser, loginUser, logoutUser } from './store/usersReducer';
+// import { createUser, loginUser, logoutUser }
 
 import csrfFetch, { restoreCSRF } from './store/csrf';
 
@@ -30,7 +30,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.postUser = postUser
   window.postSession = postSession
   window.deleteSession = deleteSession
-  window.loginUser = loginUser
+  window.loginUser = login
   window.logoutUser = logoutUser
   window.createUser = createUser
 }
@@ -49,8 +49,8 @@ const renderApp = () => {
 
 if (sessionStorage.getItem("X-CSRF-Token") === null || 
   sessionStorage.getItem("currentUser") === null) {
-    debugger
-  store.dispatch(restoreSession()).then(renderApp);
+    // debugger
+  store.dispatch(restoreSession).then(renderApp);
 } else {
   renderApp();
 }

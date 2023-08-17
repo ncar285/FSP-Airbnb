@@ -27,7 +27,7 @@ const WelcomeBackForm = ({ setUserEmail, currentUser, formState, setFormState}) 
     const handleSignOut = async e => {
         e.preventDefault()
         welcomeBackBody.current.style.display = "none";
-        dispatch(logoutUser(currentUser.id));
+        dispatch(logoutUser());
         setFormState('initial');
     }
 
