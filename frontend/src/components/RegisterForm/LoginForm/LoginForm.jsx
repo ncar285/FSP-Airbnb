@@ -15,15 +15,15 @@ const LoginForm = ( {userEmail}) => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        const newUser = {
+        const user = {
             email: userEmail,
             password
         }
-        const res = dispatch(login(newUser))
+        const res = dispatch(login(user))
         if (res){
             dispatch(deactivateRegisterModal());
         } else {
-            console.log(newUser)
+            console.log(user)
             console.log('ERROR LOGGING IN => CREDENTIALS')
         }
     }

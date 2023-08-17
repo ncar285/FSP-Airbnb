@@ -57,7 +57,19 @@
     align-items: center;
 }
 
+/*! ICONS & BUTTONS */
 
+.button-icon, .demo-icon {
+    position: absolute;
+    left: 50px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.button-icon img {
+    height: 20px;
+}
 
 .icon {
     font-size: 20px;
@@ -65,4 +77,16 @@
 
 #apple, #mail {
     color: var(--dark_grey)
+}
+
+#demo-arrow {
+    color: var(--brand-color);
+    font-size: 30px;
+    position: absolute;
+    right: 50px;
+}
+
+div.demo-icon{
+    position: absolute;
+    right: 50px;
 }

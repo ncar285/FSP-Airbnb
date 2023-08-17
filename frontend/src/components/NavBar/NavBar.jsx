@@ -77,7 +77,7 @@ const NavBar = () => {
                 </div>
 
                 {menuOpen &&
-                < AccountMenu/>
+                < AccountMenu handleMenuClick = {handleMenuClick}/>
                 }
 
             </div>

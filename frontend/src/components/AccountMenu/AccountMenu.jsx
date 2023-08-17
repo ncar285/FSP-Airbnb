@@ -8,7 +8,7 @@ import { getCurrentUser } from '../../store/sessionsReducer';
 import { logoutUser } from '../../store/sessionsReducer';
 
 
-const AccountMenu = () => {
+const AccountMenu = ({ handleMenuClick }) => {
 
     const [showRegister] = useState(false)
     const dispatch = useDispatch();
@@ -21,6 +21,11 @@ const AccountMenu = () => {
         window.location.reload(); 
     }
 
+    const handleRegister = async () => {
+        handleMenuClick()
+        dispatch(activateRegisterModal())
+    }
+
     const menuButtons = () => {
         if (sessionUser)  {
             return  (
@@ -31,8 +36,8 @@ const AccountMenu = () => {
         }else {
             return (
                 <div className="account-options" id="account-options">
-                    <button onClick={() => dispatch(activateRegisterModal())}>Login</button>
-                    <button onClick={() => dispatch(activateRegisterModal())}>Sign up</button>
+                    <button onClick={handleRegister}>Login</button>
+                    <button onClick={handleRegister}>Sign up</button>
                 </div>
             )
 

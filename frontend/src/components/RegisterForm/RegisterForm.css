@@ -103,11 +103,6 @@
     justify-content: center;
 }
 
-.button-icon {
-    position: absolute;
-    left: 50px;
-}
-
-.button-icon img {
-    height: 20px;
+.modal-conainter button:hover{
+    cursor: pointer;
 }
