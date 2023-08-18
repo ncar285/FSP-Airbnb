@@ -9,16 +9,12 @@
     grid-template-columns: repeat(var(--grid_columns), minmax(0, 1fr));
 }
 
-
 .item {
     width: 100%;
     height: 100%;
 }
 
 
-/* .inner-item {
-    border: 1px solid black;
-} */
 
 .main-image {
     width: 100%;

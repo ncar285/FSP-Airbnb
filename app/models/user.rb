@@ -28,8 +28,8 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
 
   
-    # has_many :listings,
-    #     dependent: :destroy
+    has_many :listings
+        # dependent: :destroy
 
     # has_many :bookings,
     #     dependent: :destroy

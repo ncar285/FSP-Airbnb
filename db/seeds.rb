@@ -6,71 +6,75 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-ActiveRecord::Base.transaction do 
+require "open-uri"
 
 
+  puts "Destroying tables..."
+  User.destroy_all
 
-    puts "Destroying tables..."
-    # Unnecessary if using `rails db:seed:replant`
-    User.destroy_all
-  
-    puts "Resetting primary keys..."
-    # For easy testing, so that after seeding, the first `User` has `id` of 1
-    ApplicationRecord.connection.reset_pk_sequence!('users')
-  
-    puts "Creating users..."
-    # Create one user with an easy to remember username, email, and password:
-    User.create!(
-      firstname: 'Demis', 
-      lastname: 'Hassabis', 
-      email: 'demis@user.io', 
+  puts "Resetting primary keys..."
+  ApplicationRecord.connection.reset_pk_sequence!('listings')
+  ApplicationRecord.connection.reset_pk_sequence!('users')
+
+  puts "Creating Demo user..."
+  demis = User.create!(
+    firstname: 'Demis', 
+    lastname: 'Hassabis', 
+    email: 'demis@user.io', 
+    password: 'password'
+  )
+  file = File.open("app/assets/images/demis.jpg")
+  demis.photo.attach(io: file, filename: "demis.jpg")
+  puts "Done!"
+
+  puts "Creating other users..."
+  user = {}
+  file = nil
+  (1..20).each do |i|
+    attributes = {
+      firstname: Faker::Name.unique.first_name,
+      lastname: Faker::Name.unique.last_name,
+      email: Faker::Internet.unique.email,
       password: 'password'
-    )
-  
-    # More users
-    10.times do 
+    }
+    user = User.create!(attributes)
+    file = File.open("app/assets/images/profile_seeds/p#{i}.png")
+    user.photo.attach(io: file, filename: "#{i}p.png")
+  end
 
-        attributes = {
-            firstname: Faker::Name.unique.first_name,
-            lastname: Faker::Name.unique.last_name,
-            email: Faker::Internet.unique.email,
-            password: 'password'
-        }
-      
-      User.create!(attributes) 
-    end
-  
-    puts "Done!"
-
-    
-    # User.destroy_all
-    # # Listing.destroy_all
-    # # Booking.destroy_all
-    # # etc
-
-    # # ActiveRecord::Base.connection.reset_pk_sequence!('user')
-    # # revise these
-
-    # puts "Creating users..."
-    # mike = User.create!(firstname: "Demis", lastname: "Hasibus", email: "demhas@gmail.com", password: "passsword")
+  puts "Done!"
 
 
+  puts "Creating first listing..."
+  first_listing = Listing.create!(
+  owner_id: 1,
+  title: 'Luxury stay in Beverly Hills, California, United States',
+  description: 
+  "
+  This ultra-modern abode is surrounded by nature in 
+  coveted Beverly Hills. High ceilings and an abundance of 
+  light create an airy atmosphere inside. Multiple crackling 
+  fireplaces add a soothing ambiance to the immaculately 
+  designed rooms. After a day of sightseeing, mix a drink 
+  at the bar before sprawling out with a favorite flick in 
+  the cinema room. Plenty of canyon hiking trails await nearby.
+  ",
+  address: '1100 Brooklawn Dr',
+  postcode: '94110',
+  latitude: 37.7749,
+  longitude: -122.4194,
+  price: 4000.00,
+  guests: 2,
+  bedrooms: 2,
+  beds: 2,
+  baths: 2,
+  pets: true
+)
 
-    # #! USING FAKER:
-
-    # # attributes = {
-    # #     firstname: Faker::Name.first_name,
-    # #     lastname: Faker::Name.last_name,
-    # #     email: Faker::Internet.email
-    # #   }
-      
-    # # User.create(attributes)
-
-    # #!U
-    # User.create(firstname: 'usr', lastname: 'smith', email: 'usr@email.io', password: 'starwars')
-    # User.find_by_credentials('usr@email.com', 'starwars')
-    # User.find_by_credentials('usr@email.io', 'startrek')
-    # User.find_by_credentials('usr', 'starwars')
-    # User.find_by_credentials('usr@email.io', 'starwars')
-
+puts "uploading listing's photos..."
+base = "https://fairbnb-user-seeds.s3.us-west-1.amazonaws.com/house1"
+(1..10).each do |i|
+  file = URI.open("#{base}/#{i}.jpg")
+  first_listing.photos.attach(io: file, filename: "#{i}.jpg")
 end
+puts "Done!"

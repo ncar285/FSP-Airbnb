@@ -118,3 +118,11 @@
     width: 40%;
 }
 
+.profile {
+    border-radius: 50%;
+}
+.profile img { 
+    object-fit: contain;
+    border-radius: 50%;
+}
+

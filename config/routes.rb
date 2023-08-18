@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       end
     end
     resource :session, only: [:show, :create, :destroy]
+    resources :listings, only: [:show, :index]
   end
 
   post 'api/test', to: 'application#test'

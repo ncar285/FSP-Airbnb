@@ -1,5 +1,3 @@
-// import csrfFetch from './csrf';
-// import { deleteSession, postSession, postUser } from "../utils/sesssionApiUtils"
 import { deleteSession, postSession, postUser } from "../utils/sessionApiUtils";
 
 // CONSTANTS

@@ -13,6 +13,10 @@ const AccountMenu = ({ handleMenuClick }) => {
     const [showRegister] = useState(false)
     const dispatch = useDispatch();
     const sessionUser = useSelector(getCurrentUser);
+
+    const seeAccount = async e => {
+        e.preventDefault()
+    }
   
     
     const handleSignOut = async e => {
@@ -29,9 +33,20 @@ const AccountMenu = ({ handleMenuClick }) => {
     const menuButtons = () => {
         if (sessionUser)  {
             return  (
-                <div className="account-options" id="account-options">
-                    <button onClick={handleSignOut}>Logout</button>
-                </div>
+                <>
+                    {/* <div id="account-options">  */}
+                        {/* <div className="account-options" id="account-options">
+                            <button onClick={seeAccount}>Account</button>
+                        </div> */}
+                    {/* </div>
+                    <div> */}
+                        <div className="account-options" id="account-options">
+                            <button onClick={seeAccount}>Account</button>
+                            <div class="account-menu-spacer"></div>
+                            <button onClick={handleSignOut}>Logout</button>
+                        </div>
+                    {/* </div> */}
+                </>
             )
         }else {
             return (

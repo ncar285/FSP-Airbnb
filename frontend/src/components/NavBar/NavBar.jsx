@@ -16,6 +16,7 @@ const NavBar = () => {
 
     const [menuOpen, setMenuOpen] = useState(false)
     const hideSearchBar = useSelector(state => state.ui.searchModal)
+    const currentUser = useSelector(getCurrentUser)
     const dispatch = useDispatch()
 
     const handleMenuClick = () => {
@@ -71,7 +72,8 @@ const NavBar = () => {
                             <div></div>
                         </div>
                         <div className="profile">
-                            <img src={account} alt="" />
+                            {/* <img src={account} alt="" /> */}
+                            <img src={currentUser?.photoUrl ? currentUser.photoUrl : account} alt="" />
                         </div>
                     </button>
                 </div>

@@ -84,3 +84,12 @@
     background-color: var(--light_light_grey);
     /* font-size: 14px; */
 }
+
+.account-menu-spacer {
+    /* position: relative; */
+    /* left: 10%; */
+    /* width: 80%; */
+    height: 1px;
+    margin: 7.5px 0px;
+    background-color: var(--light_grey);
+}

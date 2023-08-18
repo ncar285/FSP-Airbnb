@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_13_223942) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_17_190735) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,30 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_13_223942) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "listings", force: :cascade do |t|
+    t.bigint "owner_id", null: false
+    t.string "title", null: false
+    t.text "description", null: false
+    t.string "address", null: false
+    t.string "postcode", null: false
+    t.decimal "latitude", precision: 9, scale: 6, null: false
+    t.decimal "longitude", precision: 9, scale: 6, null: false
+    t.decimal "price", null: false
+    t.integer "guests", null: false
+    t.integer "bedrooms", null: false
+    t.integer "beds", null: false
+    t.integer "baths", null: false
+    t.boolean "pets", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address"], name: "index_listings_on_address", unique: true
+    t.index ["guests"], name: "index_listings_on_guests"
+    t.index ["latitude", "longitude"], name: "index_listings_on_latitude_and_longitude", unique: true
+    t.index ["owner_id"], name: "index_listings_on_owner_id"
+    t.index ["price"], name: "index_listings_on_price"
+    t.index ["title"], name: "index_listings_on_title"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "firstname", null: false
     t.string "lastname", null: false
@@ -56,4 +80,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_13_223942) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "listings", "users", column: "owner_id"
 end
