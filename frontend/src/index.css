@@ -5,12 +5,23 @@
 :root {
     --brand-color: #fe385c;
     --grid_columns: 1;
-    --img_width: calc((100vw - 160px - (var(--grid_columns) - 1) * 20px) / var(--grid_columns));
     --margin: 22.5px;
     --light_light_light_grey: #f7f7f7; 
     --light_light_grey: #EBEBEB; 
     --light_grey: #dddddd;
     --dark_grey: #222222;
+    --grid_spacing: 20px;
+}
+
+@media (min-width: 1px) {
+    :root {
+        --total_margin: calc(2 * var(--margin));
+        --total_grid_gap: calc(var(--grid_spacing) * (var(--grid_columns) - 1));
+        --total_empty_gid_space: calc(var(--total_grid_gap) + var(--total_margin));
+        --used_grid_space: calc(100vw - var(--total_empty_gid_space));
+        --img_dim: calc(var(--used_grid_space) / var(--grid_columns));
+      }
+
 }
 
 @media (min-width: 745px) {
@@ -54,6 +65,13 @@
     --grid_columns: 6;
 }
 }
+
+/* @media screen and (min-width: 400px) {
+    :root {
+        --grid_columns: 1;
+    }
+} */
+
 
 
 @font-face {

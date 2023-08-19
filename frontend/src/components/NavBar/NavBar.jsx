@@ -1,23 +1,26 @@
 import "./NavBar.css"
 import logo from "../../assets/airbnb.svg"
-import sButton from "../../assets/s-button.png"
-import { activateSearchModal } from "../../store/uiReducer";
-import { useDispatch, useSelector} from "react-redux";
+// import sButton from "../../assets/s-button.png"
+// import { activateSearchModal } from "../../store/uiReducer";
+import {  useSelector} from "react-redux";
 import AccountMenu from "../AccountMenu/AccountMenu.jsx"
 import { getCurrentUser } from "../../store/sessionsReducer";
 import { useState } from "react";
 // import account
 import account from "../../assets/account.png"
+import SearchBar from "./Search/SearchBar";
 // import { AiOutlineSearch } from "react-icons/ai" // (search icon)
 // import { FaAirbnb } from "react-icons/fa"   // airbnb logo
 // import { AiOutlineMenu } from "react-icons/ai" // menu icon
 
-const NavBar = () => {
 
+const NavBar = () => {
+    function importAll(r) {
+        return r.keys().map(r);
+    }
+    const images = importAll(require.context('../../assets/tags', false, /\.jpeg$/));
     const [menuOpen, setMenuOpen] = useState(false)
-    const hideSearchBar = useSelector(state => state.ui.searchModal)
     const currentUser = useSelector(getCurrentUser)
-    const dispatch = useDispatch()
 
     const handleMenuClick = () => {
         if (menuOpen){
@@ -27,44 +30,19 @@ const NavBar = () => {
         }
     }
 
-    const search = () => {
-        if (hideSearchBar){
-            const sBar = document.querySelector(".bar")
-            sBar.classList.add("s-mode")
-            // const navbar = document.querySelector(".elevated")
-            // sBar.classList.add("s-mode")
-            return (<></>)
-        }else {
-            return (
-                <button onClick={() => dispatch(activateSearchModal())} className="search-bar">
-                        <div className="search-filters">
-                            <div className="bold"><p>Anywhere</p></div>
-                            <div className="bold"><p>Any week</p></div>
-                            <div id="guests"><p>Add guests</p></div>
-                        </div>
-                        <div className="s-button">
-                            <img src={sButton} alt="" />
-                        </div>
-                    </button>
-            )
-        }
-    }
-
-
     return (
+        
         <div className="bar">
             <div className="innerBar">
-                <div className="nav-item left">
+                
+                <div className="left-logo">
                     <img id="logo" src={logo} alt="fairbnb-logo" />
-                    {/* <div><img/></div> */}
-                    
                 </div>
-                <div className="nav-item middle">
-                    {search()}
+                <div className="middle-search">
+                    <SearchBar/>
+                    {/* {search()} */}
                 </div >
-
-
-                <div className='account-options-container'>
+                <div className='right-menu'>
                     <button onClick={handleMenuClick} className="account-button" id="account-button">
                         <div className="list">
                             <div></div>
@@ -72,7 +50,6 @@ const NavBar = () => {
                             <div></div>
                         </div>
                         <div className="profile">
-                            {/* <img src={account} alt="" /> */}
                             <img src={currentUser?.photoUrl ? currentUser.photoUrl : account} alt="" />
                         </div>
                     </button>
@@ -81,6 +58,11 @@ const NavBar = () => {
                 {menuOpen &&
                 < AccountMenu handleMenuClick = {handleMenuClick}/>
                 }
+
+                
+            </div>
+            <div className="tag-bar">
+                {/* {images} */}
 
             </div>
         </div>

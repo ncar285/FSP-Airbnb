@@ -19,6 +19,7 @@ const ListingItem = ({ listing, key }) => {
                         <div className="b1-loaded">
                             <div className="left-loaded">
                                 <div className="text-item">
+                                    {/* {listing.title} */}
                                     <p className="line-one">South Lake Tahoe, California</p>
                                 </div>
                                 <div className="text-item">
@@ -30,7 +31,7 @@ const ListingItem = ({ listing, key }) => {
                             </div>
                             <div className='text-item right-loaded'>
                                 <div className="rating">
-                                    <AiFillStar class="item-star"/>
+                                    <AiFillStar className="item-star"/>
                                     <p>5.0</p>
                                 </div>
                             </div>

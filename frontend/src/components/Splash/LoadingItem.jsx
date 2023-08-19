@@ -1,4 +1,4 @@
-import "./LoadingSplash.css"
+import './LoadingItem.css'
 
 const LoadingItem = (key) => {
     return (
@@ -27,15 +27,4 @@ const LoadingItem = (key) => {
     );
 }
 
-const LoadingPage = () => {
-
-    return (
-        <div className="loading-splash">
-        {Array.from({ length: 20}, (_, index) => (
-            LoadingItem(index)
-        ))}
-        </div>
-    );
-}
-  
-export default LoadingPage
+export default LoadingItem

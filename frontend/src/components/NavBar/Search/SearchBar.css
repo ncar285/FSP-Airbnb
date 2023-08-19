@@ -1,0 +1,64 @@
+.search-bar { /*! fix this!! */
+    background: none;
+    width: 350px;
+    height: 45px;
+    border: var(--light_grey) solid 1px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-filters{
+    height: 27.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-filters .bold {
+    border-right: #dddddd solid 1px;
+}
+
+.search-filters div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 17.5px;
+}
+
+.search-filters div p {
+    font-size: 14px;
+}
+
+.bold {
+    font-family: 'airbnb2', sans-serif;
+    font-weight: bold;
+}
+
+#guests {
+    padding-right: 0px;
+    font-family: 'airbnb4', sans-serif;
+}
+
+.s-button {
+    height: 30px;
+    width: 30px;
+    margin: 7.5px;
+    border-radius: 50%;
+    background-color: var(--brand-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.s-button img {
+    height: 40%;
+    width: 40%;
+}

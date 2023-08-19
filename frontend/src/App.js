@@ -1,3 +1,4 @@
+// import "./src/Scrollbar.css"
 import React from 'react';
 import Splash from "./components/Splash/Splash.jsx"
 import RegisterForm from './components/RegisterForm/RegisterForm.jsx';
@@ -8,14 +9,16 @@ import SearchForm from './components/SearchForm/SearchForm.jsx';
 function App() {
   return (
     <>
-      <NavBar/>
-      {/* <h1>Hello world!</h1> */}
-      <SearchForm/>
-      <RegisterForm/>
+      {/* <div className="scoll-bar"> */}
+        <NavBar/>
+        {/* <h1>Hello world!</h1> */}
+        <SearchForm/>
+        <RegisterForm/>
 
-      {/* <LoadingPage/> */}
-      
-      <Splash/>
+        {/* <LoadingPage/> */}
+        
+        <Splash/>
+      {/* </div> */}
     </>
   );
 }

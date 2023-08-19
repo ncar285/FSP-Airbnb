@@ -21,9 +21,9 @@
 #
 class Listing < ApplicationRecord
 
-    validates :owner_id, :title, :description, :address, :postcode, :latitude, :longitude, :price, :guests, :bedrooms, :beds, :baths, :pets, presence: true
+    validates :owner_id, :title, :description, :address, :postcode, :price, :guests, :bedrooms, :beds, :baths, :pets, presence: true
     
-    validates :latitude, uniqueness: { scope: :longitude }
+    # validates :latitude, uniqueness: { scope: :longitude }
 
     validates :address, uniqueness: true
 

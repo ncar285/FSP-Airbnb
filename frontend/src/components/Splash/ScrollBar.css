@@ -1,0 +1,6 @@
+.scoll-bar {
+    position: absolute;
+    right: 0px;
+    width: 10px;
+    background-color: aqua;
+}

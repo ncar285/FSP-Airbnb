@@ -1,4 +1,6 @@
 .account-options-container{
+    /* position: absolute;
+    right: var(--margin); */
     /* background-color: aqua; */
     height: 40px;
 }
@@ -52,7 +54,9 @@
 
 .account-options {
     position: absolute;
-    right: 0;
+    /* position: absolute; */
+    right: var(--margin);
+    /* right: 0; */
     top: 75px;
     /* height: 150px; */
     width: 230px;

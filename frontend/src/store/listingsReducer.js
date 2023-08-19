@@ -38,7 +38,7 @@ export const fetchListing = listingId => dispatch => (
 )
 
 // SELECTORS
-export const selectAllListings = state => state.listings
+export const selectAllListings = state => Object.values(state.listings)
 
 // REDUCER
 const listingsReducer = (state = {}, action) => {
