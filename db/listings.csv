@@ -1,6 +1,6 @@
-﻿blank,title,owner_id,description,price,address,postcode,guests,bedrooms,beds,baths,pets,lattitude,logitude
-,"Luxury stay in Beverly Hills, California, United States",2,"This ultra-modern abode is surrounded by nature in coveted Beverly Hills. High ceilings and an abundance of light create an airy atmosphere inside. Multiple crackling fireplaces add a soothing ambiance to the immaculately designed rooms. After a day of sightseeing, mix a drink at the bar before sprawling out with a favorite flick in the cinema room. Plenty of canyon hiking trails await nearby.",4000,1101 Brooklawn Dr,91110,2,2,3,2,TRUE,31.0000,-116.0000
-,Angler's Lakeside Tent Cabin Getaway,3,"Enjoy the lovely setting of this romantic spot in nature. Lakeside living meets Eastern Sierra mountain views in this Anglers' Tent Cabin Getaway. Opt to leave your tent at home to stay in this top-notch furnished tent cabin. Complete with solar power, BBQ grill, palapa umbrella, fire pit, and an outdoor picnic table you will enjoy an exceptional glamping experience.
+﻿id,title,owner_id,description,price,address,postcode,,guests,bedrooms,beds,baths,pets
+1,"Luxury stay in Beverly Hills, California, United States",13,"This ultra-modern abode is surrounded by nature in coveted Beverly Hills. High ceilings and an abundance of light create an airy atmosphere inside. Multiple crackling fireplaces add a soothing ambiance to the immaculately designed rooms. After a day of sightseeing, mix a drink at the bar before sprawling out with a favorite flick in the cinema room. Plenty of canyon hiking trails await nearby.",4000,542 Park Street,94107,SF,2,2,3,2,TRUE
+2,Angler's Lakeside Tent Cabin Getaway,20,"Enjoy the lovely setting of this romantic spot in nature. Lakeside living meets Eastern Sierra mountain views in this Anglers' Tent Cabin Getaway. Opt to leave your tent at home to stay in this top-notch furnished tent cabin. Complete with solar power, BBQ grill, palapa umbrella, fire pit, and an outdoor picnic table you will enjoy an exceptional glamping experience.
 The space
 What's included:
 
@@ -28,135 +28,635 @@ Are you visiting Yosemite National Park? Please see these highlights from the Yo
 1.Reservations will once again be required to enter Yosemite National Park from May 20th to September 30th, 2022 during the hours of 6am to 4pm. 2.Visitors entering the park outside of those peak hours are not required to have a reservation. (Park entry fees still apply).
 3.All YARTS bus riders have the park entry fee included in their fare so a reservation is not required. The YARTS bus leaves from Mammoth Lakes, June Lake, and Lee Vining daily from June 15th to October 15th, 2022, (pending Tioga Pass opening). YARTS tickets can be purchased same-day with the bus driver or reserved in advance at the YARTS website.
 4.Through traffic (east-west travelers who are not stopping or visiting the park but simply driving over Tioga Pass to another destination) will also need a reservation if entering during peak hour times. (Park entry fees still apply).
-5.Visitors can make reservations to enter Yosemite National Park for this summer at the Yosemite NP Website",55,"1 standard road, california",91110,2,2,3,2,TRUE,40.0000,-123.0000
-,CA Desert Glamp: Palomar Views & Wildlife,3,"Enjoy the lovely setting of this romantic spot in nature. Lakeside living meets Eastern Sierra mountain views in this Anglers' Tent Cabin Getaway. Opt to leave your tent at home to stay in this top-notch furnished tent cabin. Complete with solar power, BBQ grill, palapa umbrella, fire pit, and an outdoor picnic table you will enjoy an exceptional glamping experience.
+5.Visitors can make reservations to enter Yosemite National Park for this summer at the Yosemite NP Website",55,2877 Delaware Avenue,94112,SF,2,1,1,1,FALSE
+3,CA Desert Glamp: Palomar Views & Wildlife,2,"A sanctuary in a Californian desert, tucked in between rolling hills with majestic views of Mount Palomar & 360 degree views of natural surroundings. We are only thirty minutes away from beautiful Temecula Wine Country! Come and explore the land to see its natural treasures; wildlife, flora, boulders, cacti, white sage, oak trees, thousands of redshank trees, willows and manzanita. Rent a fully setup VIP Glamping tent with a memory foam bed for two people.
 The space
-What's included:
+Located between Redshank forest trails, boulders & majestic 360 degree views of Palomar Mountain State Park make this place Magic!
 
-Each tent cabin is complete with a queen-size bed, assorted furniture, a propane grill, an outdoor seating area with a palapa umbrella, and a firepit for ease of lakeside living. Enjoy renewable energy from solar panels for lights, charging phones, cameras, and laptops. (Our solar cannot support any appliances such as coffee pots, blenders, or hot water heaters). Tents also come with 2 pillows, a comforter, and clean sheets.
+Perfect for anybody who wishes to have a truly unique glamping experience!
 
-What to bring:
-
-Similar to other camping experiences, you must provide your own cooler for food storage, and any cooking and eating utensils.
+We are located only thirty minutes away from beautiful Temecula Wine Country where you can enjoy wine tasting or go on a winery tour.
+There is an array of activities that you can do in the area that include hot-air ballooning, hiking, horse-back riding, bicycling, and more! Old Town Temecula is definitely worth a visit where you can enjoy lunch, check out a local brewery, or spend the afternoon shopping.
+Our property is also located right next to Palomar Mountain State Park where you can enjoy the hiking trails and views of this unique landscape from our location.
+Elim Hot Springs is just a twenty minute drive away where you can relax and enjoy the various pools and medicinal waters.
 Guest access
-Bathrooms and Potable Water are located 75 feet away from the tent cabins.
-Hot showers are available for $4 each, and Laundry is available for $5 per load to wash and dry.
+This is Glampifi Tent #7. This is ideal for booking a more remote experience on the property. There are six identical glamping tents on the grounds varying in seclusion. If you would like more of a communal experience please book either Tent#3 or Tent#4. Tent#1 is the most secluded on the property. If you would like to inquire about one of the other tents please send us a message!
+Please check the map (the last photo on the listing) to see an overall view of the tent locations and guest amenities.
 
-Our Office & Store is open Monday through Saturday 6am - 6pm & Sunday 6am - 5pm. Fishing supplies, personal items, ice cream, non-perishable foods, firewood, ice, souvenirs, and more are available for purchase!
-
-Looking to fish and cruise around the lake? You're in luck! We have a fleet of excellent rentals ready for you and your friends to get out on the water. Paddle sports are $15 for 2 hours. Please message us for more information on motorboats.
+If bringing an additional guest we can provide an extra mattress for $20 per night.
 Other things to note
-About Us: Welcome to Bridgeport Reservoir Marina and Campground. Join us for the classic camping and fishing experience with unique views of the Sierra Nevada Mountain Range. Within the Toiyabe National Forest, Bridgeport Reservoir Marina and Campground is conveniently located near two distinct hot spring areas. A true angler's paradise, the Reservoir has excellent trout fishing from spring through fall and is close by to multiple rivers for incredible fly fishing. A short 30-minute drive to Tioga pass will bring you straight into the heart of Yosemite National Park. Off-road enthusiasts will have a heyday will the plethora of 4x4 trails in the area as well as the famous trail that brings you right to the Bodie Ghost Town.
+Our team lives to create magical experiences. We have a calendar of activities and special events which include: secret dinner shows, live music, cooking and art classes, sound baths and all sorts of wellness activities! We are both trained in holistic health and live it on a daily basis. We have focused on building a magical off-grid wilderness retreat in the Agua Tibia Wilderness that offers eco-conscious travelers a chance to experience a weekend of peace, connection, and grounding.
 
-Climate & Ecosystem: At 6,400 feet (1,950 meters), this high desert climate has little to moderate tree coverage and gets hot during the days and cool at night. The conditions are much like Joshua Tree National Park or Alabama Hills camping area. During your visit, you will notice many flying insects that resemble mosquitos. These Chironomidae are harmless and do not bite. On the contrary, the mosquito presence is very minimal.
+Enhance your stay with one of our immersive experiences, available as add-ons. If you are interested, please inquire!
 
-Lake Levels: Due to this devastating drought across California and the Western United States, reservoir levels are low. As of August 1st, 2022, Bridgeport Reservoir is approximately 10 feet below normal. Swimming is not advisable at this time, but fishing and boating activities are still up and running.
+We also have other fun activities on-site which include: giant jenga, badminton, cornhole, and duck duck goose.
 
-Are you visiting Yosemite National Park? Please see these highlights from the Yosemite NP Website:
+Don´t forget to bring an extra blanket when weather conditions are cold!
 
-1.Reservations will once again be required to enter Yosemite National Park from May 20th to September 30th, 2022 during the hours of 6am to 4pm. 2.Visitors entering the park outside of those peak hours are not required to have a reservation. (Park entry fees still apply).
-3.All YARTS bus riders have the park entry fee included in their fare so a reservation is not required. The YARTS bus leaves from Mammoth Lakes, June Lake, and Lee Vining daily from June 15th to October 15th, 2022, (pending Tioga Pass opening). YARTS tickets can be purchased same-day with the bus driver or reserved in advance at the YARTS website.
-4.Through traffic (east-west travelers who are not stopping or visiting the park but simply driving over Tioga Pass to another destination) will also need a reservation if entering during peak hour times. (Park entry fees still apply).
-5.Visitors can make reservations to enter Yosemite National Park for this summer at the Yosemite NP Website",,"2 standard road, california",91110,2,2,3,2,TRUE,39.0000,-124.0000
-,"Jenner, California, United States",13,"Enjoy the lovely setting of this romantic spot in nature. Lakeside living meets Eastern Sierra mountain views in this Anglers' Tent Cabin Getaway. Opt to leave your tent at home to stay in this top-notch furnished tent cabin. Complete with solar power, BBQ grill, palapa umbrella, fire pit, and an outdoor picnic table you will enjoy an exceptional glamping experience.
+Designated fire pits are for use setup in the social areas. There is also firewood onsite to use. Always keep fire contained and door or lid secured and closed.
+
+Bring your binoculars/camera for exotic wild animals that can be seen. As well as musical instruments and talent gear for communal circles.",144,1925 Park Street,94107,SF,2,1,2,1,FALSE
+4,"Jenner, California, United States",19,"Sonoma Coast is a Frank Lloyd Wright inspired modern California Ranch w/ subtle Prairie & International architectural design; perched on a promontory overlooking cove w/ jaw dropping ocean views and mesmerizing - audible crashing white water waves. Complete with spa, BBQ, dry/wet sauna, chefs kitchen, lux bedding and linens, Le Creuset crockery, Mauviel stainless steel cookware, Viking appliances, Wolf small kitchen appliances, Jura Espresso Machine with frother, WIFI, streaming Roku & Alexa .
 The space
-What's included:
-
-Each tent cabin is complete with a queen-size bed, assorted furniture, a propane grill, an outdoor seating area with a palapa umbrella, and a firepit for ease of lakeside living. Enjoy renewable energy from solar panels for lights, charging phones, cameras, and laptops. (Our solar cannot support any appliances such as coffee pots, blenders, or hot water heaters). Tents also come with 2 pillows, a comforter, and clean sheets.
-
-What to bring:
-
-Similar to other camping experiences, you must provide your own cooler for food storage, and any cooking and eating utensils.
+Featured in Coastal Living Fall Edition 2020
+TOT Certificate No. # 3773N.
+Sonoma Coast is a thoughtfully and forward thinking architectural home originally built for a prominent local wine family whom, spared no expense to maximize privacy, views and lighting. The house also has many outdoor areas to enjoy such as a 36"" gas BBQ grilling station with outdoor bar/island, dining table with overhead party lights, hammock, picnic tables with overhead party lights, conversation seating clusters and quiet spaces for personal meditation. Our kitchen has been extensively set up with professional grade appliances, gadgets and chef essentials from Sur La Table so any home chef can easily and properly plan elaborate menus. We've paid special attention to bedding and linens by supplying soft and fluffy high thread counts, choice of soft-medium-firm pillows and all beds are Room and Board's Hybrid Mattress' that sleep cool and offer modern technology for breathability and support. All rooms have been carefully and thoughtfully designed for functionality, comfort and of course, style.
+Perfect for digital detoxes, romantic getaways, wine tasting excursions, touring or a active outdoor life with hiking or biking. Each vignette inside the home has been thoughtfully and carefully designed to maximize comfort, style and utility while taking advantage of SWEEPING VIEWS from every room.
 Guest access
-Bathrooms and Potable Water are located 75 feet away from the tent cabins.
-Hot showers are available for $4 each, and Laundry is available for $5 per load to wash and dry.
-
-Our Office & Store is open Monday through Saturday 6am - 6pm & Sunday 6am - 5pm. Fishing supplies, personal items, ice cream, non-perishable foods, firewood, ice, souvenirs, and more are available for purchase!
-
-Looking to fish and cruise around the lake? You're in luck! We have a fleet of excellent rentals ready for you and your friends to get out on the water. Paddle sports are $15 for 2 hours. Please message us for more information on motorboats.
+Full access to entire home and grounds with self access / lockbox codes. Access info is given upon confirmation of final payment and included with your Vacation Rental Agreement and Property Disclosures. Additionally, our Property Manager will meet you and orientate you to the property and how to operate appliances, TVs, remotes and answer any questions.
+There is no beach access from the house but is close by at Salt Point State Park, Stillwater Cove Regional Park, Fort Ross or Timber Cove Boat Landing.
 Other things to note
-About Us: Welcome to Bridgeport Reservoir Marina and Campground. Join us for the classic camping and fishing experience with unique views of the Sierra Nevada Mountain Range. Within the Toiyabe National Forest, Bridgeport Reservoir Marina and Campground is conveniently located near two distinct hot spring areas. A true angler's paradise, the Reservoir has excellent trout fishing from spring through fall and is close by to multiple rivers for incredible fly fishing. A short 30-minute drive to Tioga pass will bring you straight into the heart of Yosemite National Park. Off-road enthusiasts will have a heyday will the plethora of 4x4 trails in the area as well as the famous trail that brings you right to the Bodie Ghost Town.
-
-Climate & Ecosystem: At 6,400 feet (1,950 meters), this high desert climate has little to moderate tree coverage and gets hot during the days and cool at night. The conditions are much like Joshua Tree National Park or Alabama Hills camping area. During your visit, you will notice many flying insects that resemble mosquitos. These Chironomidae are harmless and do not bite. On the contrary, the mosquito presence is very minimal.
-
-Lake Levels: Due to this devastating drought across California and the Western United States, reservoir levels are low. As of August 1st, 2022, Bridgeport Reservoir is approximately 10 feet below normal. Swimming is not advisable at this time, but fishing and boating activities are still up and running.
-
-Are you visiting Yosemite National Park? Please see these highlights from the Yosemite NP Website:
-
-1.Reservations will once again be required to enter Yosemite National Park from May 20th to September 30th, 2022 during the hours of 6am to 4pm. 2.Visitors entering the park outside of those peak hours are not required to have a reservation. (Park entry fees still apply).
-3.All YARTS bus riders have the park entry fee included in their fare so a reservation is not required. The YARTS bus leaves from Mammoth Lakes, June Lake, and Lee Vining daily from June 15th to October 15th, 2022, (pending Tioga Pass opening). YARTS tickets can be purchased same-day with the bus driver or reserved in advance at the YARTS website.
-4.Through traffic (east-west travelers who are not stopping or visiting the park but simply driving over Tioga Pass to another destination) will also need a reservation if entering during peak hour times. (Park entry fees still apply).
-5.Visitors can make reservations to enter Yosemite National Park for this summer at the Yosemite NP Website",,"3 standard road, california",91110,2,2,3,2,TRUE,36.0000,-126.0000
-,Mini-Mod #3 at The Sea Ranch.,3,"Enjoy the lovely setting of this romantic spot in nature. Lakeside living meets Eastern Sierra mountain views in this Anglers' Tent Cabin Getaway. Opt to leave your tent at home to stay in this top-notch furnished tent cabin. Complete with solar power, BBQ grill, palapa umbrella, fire pit, and an outdoor picnic table you will enjoy an exceptional glamping experience.
+We have staged Sonoma Coast as if we were living there full time and have added many of the smart home gadgets to make life easier. WIFI, Streaming Roku video options, Alexa towers and interior/exterior sound systems. Additionally, our home is oriented South /West making it a warm and sunny cove.
+*Sonoma County Taxes of 9% to be added to all stays under 30 days.
+*This property is not suitable for small children or young adventurers as we are located on a very high bluff without guards or railings.
+*Property is located within a wildlife and fire zones.
+*There is no beach access from the house but is close by at Salt Point State Park, Stillwater Cove Regional Park, Fort Ross or Timber Cove Boat Landing.
+* PAYMENT: An advanced payment of the rental rate, taxes, fees and a $500 refundable security deposit are due before arrival and paid through Airbnb.
+*TAXES: Included in rent. Rentals less than 30 days must pay 9% Sonoma County Rental Tax based on rents and fees.
+*DEPOSIT: The $1000.00 Security Deposit is refundable provided that the RENTAL RULES AND POLICIES provisions are met.
+*CHILDREN: Sonoma Coast house is not at all suitable for small children (the bluff top is not fenced, no pool alarms, no pool & spa fence, loft, open fireplace and wild critters)
+*2 NIGHT MINIMUM","1,499",3460 Meadow Lane,94103,SF,6,3,3,4.5,TRUE
+5,Mini-Mod #3 at The Sea Ranch.,11,"Despite accolades from esteemed international design and travel publications (which it has from Monocle, Dwell, Travel + Leisure and many more), this perfectly designed and laid out home isn’t about pomp; it’s about simplicity and reliance upon the natural environment that surrounds it. That was the point when it, and a handful of others, were built in the mid 1960’s to showcase Northern California’s famed Sea Ranch project —and the way humans might one day find a better way to live with nature.
 The space
-What's included:
+The house, dubbed MiniMod #3, was designed by acclaimed mid-century architect Joseph Esherick. It’s set privately in coastal forestlands beneath towering redwoods, with no adjacent neighbors in sight. Inside, 684 square feet are divided among three open floors, with original architectural features and mid-century furnishings orchestrated by award-winning preservation architects, Framestudio. The two bedrooms (one of which with a door for privacy), efficient yet well-appointed kitchen (with dishwasher), full bathroom (with a full tub and shower), and 110 mbps internet ensure the space can flex to accommodate a number of needs from work to relaxation. From every point in the structure, forest-filtered light seeps through picture windows, gently reminding you of the natural wonders outside — or the private hot tub, set under a canopy of redwoods.
 
-Each tent cabin is complete with a queen-size bed, assorted furniture, a propane grill, an outdoor seating area with a palapa umbrella, and a firepit for ease of lakeside living. Enjoy renewable energy from solar panels for lights, charging phones, cameras, and laptops. (Our solar cannot support any appliances such as coffee pots, blenders, or hot water heaters). Tents also come with 2 pillows, a comforter, and clean sheets.
+The space, perfect for a couple or two and small families of up to four, can’t answer for the chaos elsewhere in the world, but it can answer for your comfort and daily routine while you’re within its walls or exploring the towering redwoods or the craggy Pacific coast beyond.
 
-What to bring:
-
-Similar to other camping experiences, you must provide your own cooler for food storage, and any cooking and eating utensils.
-Guest access
-Bathrooms and Potable Water are located 75 feet away from the tent cabins.
-Hot showers are available for $4 each, and Laundry is available for $5 per load to wash and dry.
-
-Our Office & Store is open Monday through Saturday 6am - 6pm & Sunday 6am - 5pm. Fishing supplies, personal items, ice cream, non-perishable foods, firewood, ice, souvenirs, and more are available for purchase!
-
-Looking to fish and cruise around the lake? You're in luck! We have a fleet of excellent rentals ready for you and your friends to get out on the water. Paddle sports are $15 for 2 hours. Please message us for more information on motorboats.
+Come experience the MiniMod #3 and discover life as it should be: beautifully simplified.
 Other things to note
-About Us: Welcome to Bridgeport Reservoir Marina and Campground. Join us for the classic camping and fishing experience with unique views of the Sierra Nevada Mountain Range. Within the Toiyabe National Forest, Bridgeport Reservoir Marina and Campground is conveniently located near two distinct hot spring areas. A true angler's paradise, the Reservoir has excellent trout fishing from spring through fall and is close by to multiple rivers for incredible fly fishing. A short 30-minute drive to Tioga pass will bring you straight into the heart of Yosemite National Park. Off-road enthusiasts will have a heyday will the plethora of 4x4 trails in the area as well as the famous trail that brings you right to the Bodie Ghost Town.
-
-Climate & Ecosystem: At 6,400 feet (1,950 meters), this high desert climate has little to moderate tree coverage and gets hot during the days and cool at night. The conditions are much like Joshua Tree National Park or Alabama Hills camping area. During your visit, you will notice many flying insects that resemble mosquitos. These Chironomidae are harmless and do not bite. On the contrary, the mosquito presence is very minimal.
-
-Lake Levels: Due to this devastating drought across California and the Western United States, reservoir levels are low. As of August 1st, 2022, Bridgeport Reservoir is approximately 10 feet below normal. Swimming is not advisable at this time, but fishing and boating activities are still up and running.
-
-Are you visiting Yosemite National Park? Please see these highlights from the Yosemite NP Website:
-
-1.Reservations will once again be required to enter Yosemite National Park from May 20th to September 30th, 2022 during the hours of 6am to 4pm. 2.Visitors entering the park outside of those peak hours are not required to have a reservation. (Park entry fees still apply).
-3.All YARTS bus riders have the park entry fee included in their fare so a reservation is not required. The YARTS bus leaves from Mammoth Lakes, June Lake, and Lee Vining daily from June 15th to October 15th, 2022, (pending Tioga Pass opening). YARTS tickets can be purchased same-day with the bus driver or reserved in advance at the YARTS website.
-4.Through traffic (east-west travelers who are not stopping or visiting the park but simply driving over Tioga Pass to another destination) will also need a reservation if entering during peak hour times. (Park entry fees still apply).
-5.Visitors can make reservations to enter Yosemite National Park for this summer at the Yosemite NP Website",,"4 standard road, california",91110,2,2,3,2,TRUE,33.0000,-113.0000
-,BAY VIEW BUNGALOW ON WATERFRONT 15 MIN 2 GG BRIDGE,4,"Enjoy the lovely setting of this romantic spot in nature. Lakeside living meets Eastern Sierra mountain views in this Anglers' Tent Cabin Getaway. Opt to leave your tent at home to stay in this top-notch furnished tent cabin. Complete with solar power, BBQ grill, palapa umbrella, fire pit, and an outdoor picnic table you will enjoy an exceptional glamping experience.
+A few things to note:
+• The Mini-Mod is an architecturally significant tiny house, built in 1968 as one of the original demonstration (model) homes by the developer of the Sea Ranch. It is best suited for those who appreciate it's history and respect it's age and fragility.
+• Well-behaved children are welcome, however the original staircase is hazardous to small children.
+• Children who misbehave may be abducted by the local Sasquatch. The same has occasionally applied to adults.
+• There is a strict one dog limit.
+• Along with the romantic open fireplace, come the smells of woodsmoke. If you are sensitive to scents, please be advised. Firewood and starters are provided.
+• The redwood forest is home to all manner of creepy crawlies. Occasionally, they do get inside the cabin.
+• Because of the remoteness of the Sea Ranch, power outages can occur during all seasons.
+• We offer a 120V outlet for car charging.
+• No photo shoots or events without preauthorization.",429,647 Roos,94108,SF,4,2,3,1,FALSE
+6,BAY VIEW BUNGALOW ON WATERFRONT 15 MIN 2 GG BRIDGE,10,"FANTASTIC STUDIO BUNGALOW TUCKED ON A SECLUDED WATERFRONT ENCLAVE! ONE LARGE ROOM & SEPARATE BATH. SUPER COMFY ADJUSTABLE QUEEN BED. DECK WITH DIRECT ACCESS TO THE BAY. SPECTACULAR VIEWS!
+MAX. 2 GUESTS-MUST BE IDENTIFIED AT BOOKING. (NO KITCHEN-Kitchenette only, see details below).
+NO SMOKING (Entire property inside & exterior is non-smoking). No children under 12 yrs. NO PETS.
+50+ STEPS To Unit / There is NO DISABLED ACCESS.
+**MAXIMUM STAY IS 5 NIGHTS** (Sorry, but No Exceptions).
 The space
-What's included:
+The soothing sound of waves, spectacular view of the bay and gorgeously decorated Studio is the perfect getaway for a wonderful vacation! The scenery is amazing and the unit is spacious. It's located right on a private beach, (3 steps away!). THERE IS NO KITCHEN, SINK, STOVE/OVEN, COUNTER or cooking facilities, there is a Microwave, Mini-Fridge, Toaster & Coffee Maker (Mr. Coffee). Cooking, (hotplates, etc), are NOT allowed in this unit.
+**MAX. 2 GUESTS. Only the 1 Queen Bed may be used for sleeping, no sleeping on the furniture or floor.
+**GUESTS MUST have at least 1 REVIEW and be 23 yrs or older to submit a Reservation Request. Very sorry, but if under 23 with no reviews, we cannot accept your reservation request.
+**MAXIMUM STAY IS FIVE (5) NIGHTS**
 
-Each tent cabin is complete with a queen-size bed, assorted furniture, a propane grill, an outdoor seating area with a palapa umbrella, and a firepit for ease of lakeside living. Enjoy renewable energy from solar panels for lights, charging phones, cameras, and laptops. (Our solar cannot support any appliances such as coffee pots, blenders, or hot water heaters). Tents also come with 2 pillows, a comforter, and clean sheets.
+***PLEASE NOTE- IMPORTANT**
+Since the Unit is in close proximity to neighbors on both sides and homes directly above, we ask that guests please be aware of the noise level, especially if outside, after 10 pm on weeknights, 11 pm on weekends and early in the morning before 8am.
+The maximum amount of guests for this unit is TWO (2).
+NO VISITORS are allowed without prior written consent by owner. Only those guests identified at the time of booking are allowed at the property.
+While we want everyone to enjoy themselves, excessive drinking, loud noise/music or anything causing disturbance to neighbors or other guests, are not permitted. If guests are in violation of this property rule, they may be required to leave the premises, Airbnb will be notified and no refunds will be given. Should any situation become unruly or out of control, the police will be called to remove all guests from the property. NO EVENTS or GATHERINGS.
 
-What to bring:
+If you are looking for a “PARTY HOUSE"", unfortunately this property will not suit your needs. While we certainly encourage our guests to enjoy their stay...we must also insist that no one in the area is disturbed by excessive or loud noise, partying, drinking or any type of behavior that would prevent neighbors from a peaceful enjoyment of their homes before or after ""reasonable hours"".
 
-Similar to other camping experiences, you must provide your own cooler for food storage, and any cooking and eating utensils.
-Guest access
-Bathrooms and Potable Water are located 75 feet away from the tent cabins.
-Hot showers are available for $4 each, and Laundry is available for $5 per load to wash and dry.
+***THIS IS A NON-SMOKING PROPERTY*** Smoking NOT ALLOWED ANYWHERE, including patios, decks, walkways, stairs, beach area or any part of the property - smokers must go all the way up to the sidewalk away from the property to smoke.
 
-Our Office & Store is open Monday through Saturday 6am - 6pm & Sunday 6am - 5pm. Fishing supplies, personal items, ice cream, non-perishable foods, firewood, ice, souvenirs, and more are available for purchase!
+***There is no off-street parking space for this unit and no street parking right at the property. Parking spots are limited, however, there is more street parking further down the hill and on the cross street of Marine Dr. (less than 1 block away). Property Mgr will discuss parking in more detail after guest's reserve the unit and are contacted approx. 1-2 weeks prior to arrival.
 
-Looking to fish and cruise around the lake? You're in luck! We have a fleet of excellent rentals ready for you and your friends to get out on the water. Paddle sports are $15 for 2 hours. Please message us for more information on motorboats.
+**NO PETS ** If you have an ESA or Service Animal, please indicate if you require your service animal due to a disability and what work or task the service animal is trained to perform.
+Please note that the ESA or Service Animal must be with you at all times during your visit, (they cannot be left unattended or out of your control). Additionally, since we have other units on the property, your ESA or Service Animal cannot cause any disturbance or harm to other guests or neighbors.
+Because animals produce dander, hair, and the occasional accident, we may impose additional Cleaning Fees, only if needed, after your check-out and once the housekeeper has entered to clean and prepare the unit. Additional fees will only be charged if there is damage or excessive cleaning required and we will document this with photos and details to Airbnb.
+
+***NO BBQ's, GRILLS, FIRE PITS, etc. No outside Fires allowed at any time.***
+
+GARDENERS come on SATURDAYS and arrive anytime between 10am-5pm.
+ALSO, NO DRUGS OR WEAPONS OF ANY KIND ALLOWED. ALL PROPERTY RULES STRICTLY ENFORCED. Thank You.
 Other things to note
-About Us: Welcome to Bridgeport Reservoir Marina and Campground. Join us for the classic camping and fishing experience with unique views of the Sierra Nevada Mountain Range. Within the Toiyabe National Forest, Bridgeport Reservoir Marina and Campground is conveniently located near two distinct hot spring areas. A true angler's paradise, the Reservoir has excellent trout fishing from spring through fall and is close by to multiple rivers for incredible fly fishing. A short 30-minute drive to Tioga pass will bring you straight into the heart of Yosemite National Park. Off-road enthusiasts will have a heyday will the plethora of 4x4 trails in the area as well as the famous trail that brings you right to the Bodie Ghost Town.
+**Please be advised there are many steps from street level to the property and no form of disabled access is available. ** ENTIRE PROPERTY IS NON-SMOKING. NO PETS.
+There is no private or reserved parking for this unit Street parking only, (please do not block anyone's driveways or property). There is normally street parking within 1 short block of this unit. (Please park south of the property, not above the property).",173,349 Locust View Drive,94108,SF,2,1,1,1,FALSE
+7,Waterfront with extraordinary view,3,"One of the 10 most wishlisted homes on Airbnb ever as shown in Airbnb's article ""Where Everybody Wants to Stay: 10 of Our Most Wish Listed Homes"" https://press.airbnb.com/10-year-most-wishlisted-homes/
 
-Climate & Ecosystem: At 6,400 feet (1,950 meters), this high desert climate has little to moderate tree coverage and gets hot during the days and cool at night. The conditions are much like Joshua Tree National Park or Alabama Hills camping area. During your visit, you will notice many flying insects that resemble mosquitos. These Chironomidae are harmless and do not bite. On the contrary, the mosquito presence is very minimal.
+Right next to the Perast museum, our studio apartment has a spacious terrace with a magnificent view on the two most beautiful attractions of the Bay of Kotor: islands of Sv. Đorđe and Lady of the rocks.
+The space
+Right next to the Perast museum, our studio apartment has a spacious terrace with a magnificent view on the two most beautiful attractions of the Bay of Kotor: islands of Sv Đorđe and Lady of the rocks.
 
-Lake Levels: Due to this devastating drought across California and the Western United States, reservoir levels are low. As of August 1st, 2022, Bridgeport Reservoir is approximately 10 feet below normal. Swimming is not advisable at this time, but fishing and boating activities are still up and running.
+This charming, rustic studio apartment has a large private terrace with extraordinary view of the islands, equipped with outside dining table so you can enjoy your meals al fresco with a view. It is located right on the waterfront. There is one double bed and one sofa which is easily expandable to a double bed, so the apartment is perfect for couples or families with children. The bathroom is located downstairs, down a spiral staircase.
 
-Are you visiting Yosemite National Park? Please see these highlights from the Yosemite NP Website:
+The kitchen is fully equipped with all the kitchenware and dishwasher. Necessary amenities like washing machine, iron and ironing board, air conditioner etc. are provided. Baby crib can be available upon request.
 
-1.Reservations will once again be required to enter Yosemite National Park from May 20th to September 30th, 2022 during the hours of 6am to 4pm. 2.Visitors entering the park outside of those peak hours are not required to have a reservation. (Park entry fees still apply).
-3.All YARTS bus riders have the park entry fee included in their fare so a reservation is not required. The YARTS bus leaves from Mammoth Lakes, June Lake, and Lee Vining daily from June 15th to October 15th, 2022, (pending Tioga Pass opening). YARTS tickets can be purchased same-day with the bus driver or reserved in advance at the YARTS website.
-4.Through traffic (east-west travelers who are not stopping or visiting the park but simply driving over Tioga Pass to another destination) will also need a reservation if entering during peak hour times. (Park entry fees still apply).
-5.Visitors can make reservations to enter Yosemite National Park for this summer at the Yosemite NP Website",,"5 standard road, california",91110,2,2,3,2,TRUE,30.0000,-130.0000
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
-,,,,,,,,,,,,,
+The apartment was completely renovated in January 2020.
+Guest access
+Guests have access to all utilities in the apartment.
+Other things to note
+The visitors should register their stay on the premises of the Tourists Organization of Kotor no later than 24 hours from their entry into Montenegro if they visit is shorter than 30days, and pay tourist tax.",76,3655 Boring Lane,94108,SF,4,1,2,1,TRUE
+8,"Beautiful views, newly furnished! Minutes to SF! ",18,"Be ready to feel at home in this peaceful, Daly City retreat. Our home has been newly furnished with your comfort in mind and you'll find this is the perfect space for families, friends and working professionals alike. Enjoy one of our brand new mattresses in our queen master suite with attached bath and 50"" smart TV, queen guest room with 50"" smart TV or the twin room with work space. This centrally located getaway is just 15 mins to SFO, 10 mins to the beach/hiking and 20 mins to downtown SF.
+The space
+Enjoy our spacious 3 bedroom, 2 1/2 bath home with brand new furnishings, appliances and memory foam mattresses. Conveniently located just minutes off the freeway, in a densely populated community of both families and working professionals. In less than ten minutes you can be hiking to the beach or jumping on Bart and heading into the city. Numerous restaurants and popular shopping centers are just blocks away.
+
+You will be given two codes to use upon arrival. One is for the front door and one is for the keypad on the outside of the garage. We ask that you please park inside the garage and limit driveway parking to one vehicle. Inside the home connect to our high speed WiFi and get settled.
+
+The main floor of the home features a bright and spacious living room with wall to wall windows, a large wrap around sofa that comfortably seats four adults and a TV projector for movie nights! Get a book from the bookshelf and grab a seat at the bistro table outside on the deck. Get ready to relax and soak in the beautiful mountain views. Our kitchen comes fully equipped and offers just what you need for a family dinner night with a dining room that seats four. Enjoy our coffee station in the mornings complete with an array of teas, coffee pods, non-dairy creamer and sugar. The front nook space is set up as a semi private work space complete with a monitor and adapters for all your devices. This floor also has a half bath and extra closet space if needed.
+
+The second level has Three bedrooms and two bathrooms. All of our bedrooms have brand new mattresses and blackout curtains so rest assured you'll have a great nights sleep.
+
+The master bedroom has a queen size bed, 50"" smart TV, large mirrored closet and an in-room vanity. Attached to the vanity is your private bathroom with a large tub and shower. The bathroom will be stocked with plenty of hand towels, washcloths and bath towels. Shampoo, conditioner and body wash is provided.
+
+The first guest room is at the end of the hall and has a queen size mattress with a remote controlled adjustable frame, 50"" smart TV and mirrored closet.
+
+
+The twin room has an extra long mattress with a remote controlled adjustable frame, working desk space and clothing rack for your belongings.
+
+In the guest bathroom you'll find a blow dryer and first aid kit. The shower will be stocked with shampoo, body wash and conditioner. Under the sink you will find plenty of towels and washcloths.
+Guest access
+You'll have full access to the home, two car garage and outdoor deck.
+Other things to note
+The home itself shares walls with neighbors on either side so please be mindful.",198,941 Clifford Street,94621,CA,6,3,3,2.5,FALSE
+9,Walk to the Beach from this Ocean Front Home,5,"Your beachfront escape awaits you.
+
+Come immerse yourself in the serenity of this Pacific Ocean retreat gracefully set in a secluded beach just 25 mins south of San Francisco.
+
+This 2 bed / 2 bath home features breathtaking ocean views and direct beach access just a few steps down. The hot tub overlooking the ocean, fire pits and a putting green complete this idyllic space.
+
+Comfortably sleeps 4 adults on 2 king beds and 2 high quality airbeds are provided for total sleeping for 6.",1087,178 Meadowbrook Mall Road,90046,CA,6,2,2,2,FALSE
+10,Treehouse on the Water-Eagles Nest-20 ft high,17,"Soar 20 ft in the trees as you overlook the Strait of Juan de Fuca. Relax as you lounge in the giant window seat mesmerized by the ships sailing in the harbor & eagles flying across your window, as your children play in the playground below. Or spend time swaying in the canvas hammock hung from the tree growing through the house. Languish in the rope hammock in the loft. Every part of our treehouse is unique -you will find yourself wanting to unplug and enjoy every aspect of the house.
+The space
+So many spaces in this treehouse to relax, reconnect, recharge, enjoy the beauty of the surrounding, listen to music on the Bose system or records, or cook in the fully equipped kitchen or BBQ. The fire heated hot tub is a wonderful experience. If you want to venture down to the ground you can make a fire, soak in the fire-powered hot tub, or sit on the many sitting areas at the bluff.
+
+Additionally, there is a playground for children on the property.
+
+Please note that this unit is attached to a smaller unit that 2 people may be renting. They have their own entrance and you should not ever see them-your windows and porches are very private.
+Guest access
+You will be able to access the entire treehouse, as well as the shared property below. As mentioned, there is another unit attached to this one, and there is common outdoors area with firepits. The hot tub is yours and yours alone.
+Other things to note
+There is a house being built next door-you cannot see it from the treehouse and with a little music in the background (if they are making any noise) you will not even know its there.
+We do allow pets for a fee and if you abide by the rules",779,4598 Providence Lane,91706,CA,6,2,3,1,TRUE
+11,Luxe Forest Cabin 15 Mins From UC Berkeley,3,"Relax and unwind at this luxurious “cabin in the woods”. This unique property is situated in a wonderfully relaxing setting, yet you are a mere 6 miles to the world-famous UC Berkeley (“Cal”). Nature abounds here and you’ll feel a million miles away from the hustle and bustle of the Bay Area - even though you're only 15 minutes to Berkeley, 30 minutes to downtown SF, and less than an hour from Napa. An ideal place to decompress and recharge away from it all while also close to conveniences.
+The space
+New for 2023: 2 brand new off-road trail E-bikes! See Extras section below for details.
+
+Nestled under a towering redwood called The Sentinel and amongst 100-year-old oak trees you'll feel like you're living in your own private tree house. This architecturally designed mid century modern property features a greenbelt of woods and a seasonal burbling brook runs around the property.
+
+Being near the charming woodland creatures really allows one to unplug from modern stress: We have a family of raccoons, beautiful deer - bucks with large antlers and mothers with their babies come this way, little foxes were born and raised nearby. You will likely hear the occasional neigh of horses stabled up the knoll and the howl of coyotes and the hooting of owls at night. And let’s not forget the dragonflies, hummingbirds wild turkeys and their other winged friends.
+
+Note: The cabin is detached and private but it is one of three structures that makes up the compound. It sits directly above the main house and the guest cottage both of which can be seen from the cabin. Please see the photos to gain a better understanding of the layout of the property and the space.
+Guest access
+The cabin has exclusive access to the patios located on the levels above the main house. Enjoy a meal at the outdoor dining table with an integrated fire pit. Or just enjoy the ambiance and warmth at the coffee table fire pit, all available for your exclusive use (please note propane tanks are available for purchase. see below under “Extras”).
+
+Relax with an indoor or outdoor spa-quality massage; male and female therapists are available same-day (additional prices apply). After a hike on the local trails with amazing views of the Bay, soothe your muscles in the private sauna with optional meditative music.
+
+If doing work or streaming a video beckons, no problem! You’ll have highspeed wireless access to the 1Gb fiber line from anywhere on the property including the terraces and decks. If you’re concerned about cell phone coverage, enabling wifi calling on your phone ensures that you don’t miss a call (iphone: settings-->phone-->wificalling on).
+
+If you would like to do a little work we have a work station which we can bring and setup in your cabin. For guests staying three of more nights a private office separate from the cabin is available. Just let us know.
+Other things to note
+A refrigerator and microwave are available in your room. We also can provide an old fashioned picnic basket complete with plates, cutlery and wine glasses for you to use on a hike or picnic in Tilden park.
+
+The suite is both air conditioned and heated with heated bathroom floors.
+
+A dedicated, private, non-shared office detached and perched above your cabin is an ideal space to decompress or get some work done without distraction. The office has its own private entrance and looks out to the hills beyond. The space is generally used as a private massage studio but for guests staying 3 or more nights the space can be converted to a private office upon request. See host for further details.
+
+If you have any other specific wishes or questions, feel free to ask. I will do my best to accommodate any requests so that your stay is sublime!
+
+Promotions:
+
+Spa Promotion: Book 7 or more nights and receive a 20% discount on personalized, onsite massage therapy appointments.
+
+Mobility Advisory:
+
+The property is nestled into the side of a steep hill and the guest cabin is located at the top of the property. It is recommended that guests park on the street below the property. The driveway is long and steep. If you need help carrying luggage up please text or call me as I'm happy to help when available.
+
+The property is not suitable for small children or people with mobility issues as there are many steps, a seasonal creek and steep drop-offs around the grounds. There are no handrails for the steps.
+
+Available Extras To Enhance Your Stay:
+
+(Please inquire with host for availability during your stay)
+
+• Massages: $165 for 60 minutes. Includes taxes and tip
+• E-bike: $25/bike/4-hours (2 e-bikes available. Tilden Park and trails nearby)
+• Propane tanks for fire pits: $25/tank",210,220 Euclid Avenue,90017,CA,2,1,1,1,FALSE
+12,Tranquil Waterfront Retreat Haven,4,"Reverse pandemic blues at this retreat charged 4 bedroom haven with an authentic Finnish sauna, canal-front jacuzzi consciousness, paddleboards, a tandem kayak, replete comfy zones to lazily exchange conversation.
+The tranquility of the canal will replace all Debbie downer thoughts with a symphony of luminous relaxation, bound to bedazzle wary minds and hearts.
+The space
+Tastefully furnished on the inside, this villa features 4 bedrooms with king or queen size beds, 2.5 bathrooms, two tuned grand pianos for dueling it out, and within a few minute paddle to the bay. After a few hours here you’ll forget about any invisible enemy that has destroyed the basic hug! Great for team building and corporate or family retreats! No parties allowed. Long-term rental an option.
+
+Renter acknowledges the he/she may be liable for damage above the coverage amount should any of the following cause significant harm to the property:
+
+a. Damage is done to property or its contents, beyond normal wear and tear.
+b. Debris other than toilet paper is placed in the toilets.
+c. Debris, rubbish, recycle and discards are left in the house (must be placed in appropriate trash receptacles next to the small garage.)
+d. Smoking in the house or anywhere on the property will result in a $1,000 fine NOT payable by the Damage Deposit Waiver.
+e. Renter is evicted by the owner (or representative of the owner) or local law enforcement.
+f. Having more than the approved number of people on the property at any one time without prior approval.
+g. Adjusting any pool setting or equipment, water system (including sprinklers or well equipment, etc.), or any other property maintenance equipment.
+
+Renter acknowledges the he/she may be liable for damage above the coverage amount should any of the following cause significant harm to the property:
+
+a. Damage is done to property or its contents, beyond normal wear and tear.
+b. Debris other than toilet paper is placed in the toilets. The property is not connected to city sewer but has its own septic systems. Flushing feminine hygiene or other objects down the toilets can cause significant damage.
+c. Debris, rubbish, recycle and discards are left in the house (must be placed in appropriate trash receptacles next to the small garage.)
+d. Smoking in the house or anywhere on the property will result in a $1,000 fine NOT payable by the Damage Deposit Waiver.
+e. Renter is evicted by the owner (or representative of the owner) or local law enforcement.
+f. Having more than the approved number of people on the property at any one time without prior approval.
+g. Adjusting any pool setting or equipment, water system (including sprinklers or well equipment, etc.), or any other property maintenance equipment.
+
+Rate varies due to seasonality, holidays and demand.
+
+Please select your dates on our online booking calendar for an exact quote.
+Guest access
+The entire property , entire first floor, entire front courtyard, backyard with pool and spa and BBQ area, deck area where boat is docked. Paddleboards and Kayak accessible. Boat is not included in rental.
+Other things to note
+The host can arrange additional cleaning service for guests staying long-term (5 days or more).
+
+The 2.5 bathrooms included three showers and one soaking tub and half bath
+
+If rules are not honored, guests will be asked to leave and will not receive a refund from the host. It is significant to note that due to some bad apples in the past, we are enforcing rules with greater scrutiny, and ask for honesty and transparency in an effort to help honor and preserve the tranquility of the community, especially with homes across the canal that absorb amplified sound that travels across the canal. Thank you for respecting our community!
+
+PARKING : 2-4 parking spots available in driveway (depending on your advanced Tetris skills ). No more than 3
+cars can park on the street. There are 24 hour parking spots on the street if you can find parking or you may park over night in public parking in the adjacent park parking lot.
+No ragers allowed.
+Family gathering or smaller civilized gatherings are allowed pending a conversation and clarity on safety guidelines.",1395,1638 Sumner Street,90245,CA,12,4,6,2.5,FALSE
+13,Old Amesti Schoolhouse mid-bay amidst farmland,18,"This 100 year old school house surrounded by organic farms in the Pajaro Valley is a great starting point for your adventures in the Monterey Bay. From here you can reach Santa Cruz to the North or Monterey to the south in 30 minutes. When you are finished sightseeing come back to this comfortable home. A major renovation was recently completed to update the electrical, heating and plumbing yet preserving as much of the past as possible. Outside enjoy the pool, spa or game areas.",495,4930 Eagles Nest Drive,95667,CA,8,4,5,3,FALSE
+14,"Sonoma Vineyard Estate, Pool, Spa, Bikes",10,"Stay on a working vineyard in the heart of Sonoma with a breathtaking infinity pool and five acres of privacy. Featured in San Francisco's ""7x7"" Magazine, Barboshi Farms produces award winning Primitivo wine. Live your wine country dream walking the south vineyard rows or swimming in the infinity pool above the north vineyard. Only eight minutes from Sonoma Square this newly built, multi-building modern estate is situated in one of Sonoma's most exclusive areas and popular bike riding loops.
+The space
+The spaces can accommodate eight adult guests plus children. With four bedrooms (including the pool house) and four bathrooms there is plenty of comfort for a good size group. All bedrooms have ensuite baths except the kids room which shares the hall bath.
+
+You’ll enjoy absolute privacy at a completely remodeled home with exacting and thoughtful touches and views of the hills bordering Napa. It's an easy drive or bike ride to the center of town where you’ll find some of the best restaurants and shopping in the county.
+
+The grand, seventeen foot sliding bay door in the living room opens the house up to stunning indoor/outdoor living with a wrap around porch. A dining table on the deck, with radiant heaters and string lights, seats 12 directly above the north vineyard for joyous breakfasts and breathtaking sunset dinners.
+
+Single level living means you can see almost the entire property from the kitchen and living room to keep an eye on pool use and comings and goings. Great for elderly guests as there are fewer than five steps to access anywhere on the main living level of the property.
+
+The pool and hot tub have a couple really cool features including a ""Baha deck,"" lol which is a six inch deep portion where infants can crawl around and enjoy the water (with adult supervision of course) or you can place one of the lounge chairs there to cool off on hot days. There is also a sitting shelf that runs the entire length of the pool so you can sit in the pool and enjoy a glass of wine while staring out over the infinity edge and Napa hills. The pool cover has a motorized open and close to ensure safety if kids and toddlers are around. You can heat the hot tub to your hearts content for free. The pool is solar heated and can be made even warmer, especially in the winter, with gas heat for an additional charge.
+
+The kitchen is built for cooks with a four burner plus indoor grill Thermador range with a 20,000 BTU high burner and extra low simmer function. And don't forget TWO dishwashers for easy cleanup. On the kitchen deck there is a four burner, 72,000 BTU grill with a ceramic side sear burner. There is also a temperature set Pit Boss wood pellet grill for smoked grilling or low and slow hot smokes. Kitchen also has a high-end blender, sous vide immersion cooker, mixer, food processor, etc. Several Michelin star cooks have prepared meals in this kitchen.
+
+The 2,000 sq ft lawn is lush and fun. Large enough for a soccer game or big dog run. Poolside couches and chairs have six inch cushions and umbrellas for shade. There are five mesh lounge chairs for sunning and napping.
+
+You'll find little nooks of fun throughout the property whether it's huddling around the firepit by the pool house, playing a game of bocce above the north vineyard, reclining in one of the adirondack chairs on the wrap around porch or enjoying one of two outdoor showers.
+
+The property is solar powered with Tesla battery and generator backups so is minimally impacted by PG&E blackouts. We have two 50 AMP EV chargers on the property for both Tesla fast charging and NEMA 14-50 charging.
+
+The Starlink internet is blazing fast for the country at 150-200 mbps down and 15-20 mbps up. Very low latency for solid zoom calls. Cell service is spotty, but wifi calling works great and there is a landline telephone for backup .
+Guest access
+Gated driveway and combo operated locks make this your personal private retreat. Depending on when you come you can also participate in the vineyard care and winemaking process. Most of the property has double fencing to keep critters out and kids and dogs in.
+Other things to note
+Please note: This is a WORKING VINEYARD and five acre property that needs constant care and upkeep. There will most likely be workers in the fields and on the outside of the property during your stay. No one will work inside during your stay. If you are not comfortable with field and yard workers outside during your stay, this is not the right property for you. If you have a problem with the lawn being mowed for 20 minutes during your stay, this is not the property for you. The estate needs to be maintained and we do not reschedule care services.
+
+Property is solar powered with Tesla battery and generator backups so is minimally impacted by PG&E blackouts. Because of this elaborate self-power setup we do not refund for regional blackouts. The internet may go down in a blackout but usually it stays up fine. We have two 50 AMP EV chargers on the property for both Tesla fast charging and NEMA 14-50 charging.
+
+Please do not request blocked dates and please note we do not negotiate prices or fees.
+
+Please carefully review the house rules, policies and indemnity. By booking this rental property you are agreeing to the terms and indemnity outlined in the House Rules. Also note there are outdoor security cameras on the premises that follow the AirBNB security camera use policies.",995,3981 Marietta Street,94107,SF,8,4,6,4,TRUE
+15,The Kellogg Doolittle House,3,"This is the famous Kellogg Doolittle estate in Joshua Tree California. It is one of the most exclusive homes in the world, and available for the first time as an Airbnb Luxe exclusive.
+
+Created over 25 meticulous years, Kellogg Doolittle in Joshua Tree National Park is a marvel of the organic architecture movement. A residence that is so “one-of-a-kind,” nearly every element, inside and out, is handcrafted by architect Ken Kellogg and Master Craftsman John Vugrin. The masterpiece of organic architecture sits along the breathtaking landscape of Joshua Tree National Park, the location that lent itself as the ambitious vision and inspiration behind the design. 
+
+Kellogg, a former protege of Frank Lloyd Wright, has taken organic architecture to new levels with this outstanding house. The Kellogg-Doolittle House contains no straight lines or rectangular spaces. Instead, the house forms around 26-winged piers composed of organic material built quietly into the natural landscape: the kitchen and living room stretch softly around an unmoved, million-year-old rock formation, while the glass panels peek into a sprawl of sunrise and sunset views. 
+
+Located on a quiet edge of Joshua Tree National Park, you have your private path into an un-trafficked section of the park, just steps from the front door. Take an easy drive to the main park entrance, start your exploration with a stroll through the Cholla Cactus Gardens, snap a few photos at Skull Rock, and hike the Hidden Valley Nature Trail; or stay at home, shut the world out, sit around the fire pit and wait for a chance to see the Milky Way in your exclusive dark sky view. If you're in the mood for city life, Palm Springs is an easy hour’s drive. 
+
+The Kellogg Doolittle home offers unparalleled privacy, quiet, park access, and remote property bouldering. Step away from the rest of the world in this one-of-a-kind home. 
+
+Copyright © Luxury Retreats. All rights reserved.
+
+
+BEDROOM & BATHROOM
+• Bedroom 1 - Primary: European king size Hastens bed, Ensuite bathroom with stand-alone shower & bathtub, Dual vanity, Walk-in closet, Night Sky View
+• Bedroom 2: Fourteen Foot Round Custom Hastens bed, National Park and Mountain view 
+• Bedroom 3: Queen size Hastens bed, Ensuite bathroom with stand-alone rain shower
+
+
+FEATURES & AMENITIES
+• Decorative fireplace
+
+OUTDOOR FEATURES
+• National Park View
+
+STAFF & SERVICES
+
+Extra Cost (advance notice may be required):
+• Activities and excursions
+Registration number
+CESTRP-2021-01387",6500,1063 Lindale Avenue,94539,CA,6,3,3,3,FALSE
+16,Unique and Secluded AirShip with Breathtaking Highland Views,11,"Retreat to the deck of this sustainable getaway and gaze at the twinkling constellations under a cosy tartan blanket. AirShip 2 is an iconic, insulated aluminum pod designed by Roderick James with views of the Sound of Mull from dragonfly windows. Airship002 is comfortable, quirky and cool. It does not pretend to be a five star hotel. The reviews tell the story. If booked for the dates you want check out our new listing The Pilot House, Drimnin which is on the same 4 acra site.
+
+The kitchen has a toaster, electric kettle, tefal halogen hob, combination oven/microwave. All pots and pans, plates, glasses ,cutlery provided. All you will need to bring is your food. worth stocking up on your way in as Lochaline is the nearest place to shop which is 8 miles away.
+
+The AirShip is situated in a beautiful, secluded position on a four-acre site. Stunning views reach across the Sound of Mull towards Tobermory on the Isle of Mull and out to sea toward Ardnamurchan Point.
+The space
+The kitchen has a toaster, electric kettle, tefal halogen hob, combination oven/microwave. All pots and pans, plates, glasses ,cutlery provided. All you will need to bring is your food. worth stocking up on your way in as Lochaline is the nearest place to shop which is 8 miles away.",217,796 Center Street,93721,CA,2,1,1,1,FALSE
+17,EAGLE'S WATCH MALIBU- Architectural w/ Ocean View,5,"Eagle's Watch is one of Malibu's most famous houses, impossible to miss while driving the Pacific Coast Highway and designed by legendary architect Harry Gesner. Perched above the Pacific Ocean, Eagle’s Watch has the best unobstructed panoramic view in Malibu. Perfect for entertaining with dramatic outdoor and indoor spaces, the views from every location are simply stunning. Stay in ultimate luxury in this one of a kind serene modern marvel.
+The space
+——Ask about our new hot tub——
+
+Eagle's Watch is one of Malibu's most famous houses, impossible to miss while driving the Pacific Coast Highway and designed by legendary architect Harry Gesner. Perched above the Pacific Ocean, Eagle’s Watch has the best unobstructed panoramic view in Malibu. Perfect for entertaining with dramatic outdoor and indoor spaces, the views from every location are simply stunning. Stay in ultimate luxury in this one of a kind serene modern marvel.
+
+This spectacular 3 bedroom 3 1/2 bath home is quiet and secluded, but there are many activities near by. A short walk or drive to the beach for surfing, stand up paddle boarding, kayaking, beach volley ball, or just lounging around. There are also local hiking trails with amazing views of the Malibu coastline. Malibu boasts numerous great restaurants and the popular Malibu Colony for shopping and your entertainment.
+Guest access
+Street, and incline elevator access. Not handicap acceptable, there are stairs.
+Other things to note
+We have many local insider tips to the best beaches, the best hikes, the best places to eat. We can give you tips to where to go for the best drink, or the most romantic dinner. We live near the home so if any issues come up we will be close by to help you as well.",1084,3254 Highland View Drive,95928,CA,8,3,3,3.5,FALSE
+18,Norman Lykes House,7,"Designed by Frank Lloyd Wright, this oasis in Phoenix has been designed to effortlessly blend with the desert landscape. City lights and rocky Palm Canyon stun beyond curved windows as each spacious room flows into the next. Philippine mahogany, Italian rose marble, and handpicked Indian slate floors are just some of the home’s elevated details. Jump into the crescent pool for an instant refresh.
+
+Copyright © Luxury Retreats. All rights reserved.
+
+
+BEDROOM & BATHROOM
+• Bedroom 1 - Primary: Queen size bed, Ensuite bathroom
+• Bedroom 2: King size bed, Ensuite bathroom
+• Bedroom 3: Queen size bed
+
+
+FEATURES & AMENITIES
+• City Lights
+• More under “What this place offers” below
+
+STAFF & SERVICES
+
+Extra Cost (advance notice may be required):
+• Activities and excursions
+• More under “Add-on services” below",1121,3380 Gateway Avenue,93301,CA,6,3,3,3,TRUE
+19,"Whiskey Hollow, A Cozy Cabin in the Redwoods",9,"Romantic retreat! Wake up to bird song through the skylights, lounge on the deck under the redwoods with a cup of coffee, luxuriate in the oversized bathtub with candles, and cozy up in front of the wood fireplace. Whiskey Hollow is a true get-away! Nestled in the woods, you would never guess that you're only 2 miles from downtown Felton, 1.5 miles from Henry Cowell State Park, 15 minutes from downtown Santa Cruz, and 20 minutes to the beach. Super cozy and--did we mention? Romantic!!!
+The space
+Charming, cozy, peaceful, this A-Frame cabin in the woods is the perfect place for a romantic get-away. Snuggle up in the comfy queen bed in the loft, and morning will greet you with a stunning view of the redwoods without even having to leave the bed. (Did we mention it's romantic??)
+
+When you do muster the energy to start your day, a fully equipped kitchen awaits and provides the opportunity to cook a big breakfast, lunch or dinner. Felton offers two nearby markets: Wild Roots and Safeway. If you decide you'd like to barbecue, there is a charcoal grill on the lower deck for your use. Take a seat in one of the Adirondack chairs or at the picnic table while you wait for dinner to finish and enjoy the view--you will see lots of birds and squirrels, and may see deer or our local flock of wild turkeys!
+
+The main level of the home consists of a sweet bedroom (full bed), a dining/work area, a living room with a sofa, a loveseat and a large ottoman, a wood-burning stove, television and an entire wall of windows that look out onto sun-dappled forest. Additionally, you'll find the fully-equipped kitchen and the bathroom with a generous two-person tub you may never want to leave.
+
+The upstairs loft has a mini office (with a lovely view!) at the top of the stairs. At the far end of the loft is the cozy queen bed, two luggage racks and an area to hang clothes.
+
+In case you need an iron and ironing board, you will find them on the lowest level.
+
+Consider Whiskey Hollow your home away from home. During your visit, please feel free to enjoy the television, board games, books, popcorn, coffee and tea. And remember: the kitchen is fully equipped, so if you'd rather whip something up than get takeout, you're all set.
+
+During the summer, we have a window air conditioning unit. Combined with the ceiling fans and the fan setting on the thermostat, this keeps the cabin nice and cool.
+
+Note to families: Both sets of stairs are fairly steep, and there is a stairway off the deck. There is no baby/toddler/child-proofing in the house, so please proceed with caution if you elect to bring the little ones. If you are bringing the little ones, let us know--we will set out the bins of Legos and trains!
+
+Felton is in a forested area, and fire is a very real hazard in the dry months.
+Please leave coals and ash in the fireplace or the barbecue so that we may dispose of them safely. Also: Absolutely no smoking or vaping inside or outside the home. Thank you for protecting our home and our neighborhood.
+
+We do live here part-time, so while the cabin will be clean and uncluttered, you will see some personal items (i.e. clothes, shoes, books) tucked away.
+
+We have a sweet dog too and, though the house will be clean for your arrival, if you are allergic to dogs, this may not be a good fit for you.
+
+*Important Note: Our community - Felton - was one of those threatened by the CZU Lightening Complex wildfire, which included forced evacuation on 8/20/20. On 8/29/20 we were cleared to re-enter our home which experienced NO damage (blessings counted...whew!!!!). While Felton was completely untouched by the fires, several communities and state parks to the north experienced damage. Santa Cruz (including beaches) and the portion of Henry Cowell State Park within Felton proper were not damaged. If you choose to stay at Whiskey Hollow, it's possible that you may not even be aware that it was in the path of the wildfires, particularly if your activities take you to the coast or south. That said, if you would like more information before you book, please don't hesitate to message us. We look forward to hosting you!
+Guest access
+Guests will have access to the entire house minus one bedroom on the first floor, a storage room in the basement and a detached shed, all locked and unoccupied.
+Other things to note
+We would just like to say: we LOVE hosting! We are not on-site, but we do love creating a space that surprises and delights! Whiskey Hollow has been on Airbnb for over 3 1/2 years, and while we were initially nervous about sharing our home with folks we had never met, the experience has been surprisingly rewarding. We have hosted guests on their honeymoons, babymoons, anniversaries, birthdays, girls' weekends, and more. And our favorite thing? Hosting repeat guests. We find Whiskey Hollow to be a really special place, and when guests decide to return, we believe it is because this little cabin in the woods is special to them, too.
+
+Okay. On to the details.
+
+Please be sure to read through the House Manual upon check-in. It will help you make the most of your stay, as well as remind you of a few requests we make to keep you and our home in good shape. Also, if you have any suggestions for how we can make this amazing place even better, we'd love to hear from you. Please leave us a note at the house or private message us. And of course, if you run into any issues during the course of your stay, do not hesitate to contact us.
+
+Finally, if you have your heart set on escaping to Whiskey Hollow, we recommend booking sooner rather than later. We tend to fill up, especially around holidays and other events.",349,171 Par Drive,93101,CA,4,2,2,1,FALSE
+20,"Unbelievable Views of Lake Tahoe in Marla Bay,",14,"Presented & Managed by Tahoe All Seasons Properties
+
+When one thinks the views of Lake Tahoe could not get any better, this fantastic home takes the win. The stunning home is in desirable Marla Bay in Zephyr Cove, Nevada, with panoramic views from the back deck, living room, and living room. The multiple shades of blue water and the mountain snowy white cap reflection will take your breath away. It is easy to picture yourself here, lounging on the back deck, absorbing the California sun and
+The space
+Enter the private community of Marla Bay, and drive through the quiet streets to the end of a road. There you will find a fenced entrance to a home with the most spectacular views in Lake Tahoe. The design is a mix of classic Tahoe nostalgia and modern amenities. Enter the home through the gated fence and naturally landscaped front yard to the right of the house. Open the door to wood cathedral ceilings and large windows facing unbelievable views of Lake Tahoe.
+
+
+
+Relax in the living room observing the lake, cozying up to the wood-burning fireplace, or catching up on your favorite cable or subscription app shows. Prepare a gourmet meal or cocktails in the utensil-stocked updated kitchen featuring granite counters, stainless steel appliances, and five burners electric stove. Or bring the meal outdoors and grill up some favorite meals on the BBQ. Enjoy your meal and drinks on the deck or at the eight-person dining room table while never taking an eye off the majestic lake. Off the back deck, stairs lead to the private boat dock created by boulders and natural landscaping, which curves around, creating a little cove for swimming. There are no other homes in Marla Bay like this.
+
+
+
+The floor plan is perfect for privacy, with two bedrooms on each floor and a bathroom between the rooms. The four bedrooms have comfortable bedding, linens, and closet space for luggage. The two bathrooms have walk-in showers, tiled floors and walls, and natural lighting. There is a washer and dryer in one of the bedrooms downstairs, which leads to the hot tub on the side deck.
+
+
+
+Not only is the house amazing but the location is prime for venturing out. Travel to Heavenly Ski resort, hike several mountains or through beautiful meadows, walk the nearby beach or Nevada Beach, go golfing at Edgewood Golf Course, do some shopping at Heavenly Village, and so much more within a 15 min drive.
+
+
+
+Enjoy the life of luxury and endless views of Lake Tahoe on your next vacation in this home.
+
+***PLEASE NOTE: NEW HOME BEING BUILT NEXT DOOR WHICH MIGHT CAUSE SOME NOISE***",1026,1331 Freedom Lane,95202,CA,8,4,4,2,TRUE
+21,Beautiful big house sitting in Silver Terrace,2,"Our family has been living here for about 20 years. 2beds/2baths. This is a very convenience location and the house is spacious. Our kids have grown up in this house. We have a wall was painted by our kids and we hope our customers won't mind we keep the wall untouched. Spacious bedrooms, bathrooms, laundry is on site and free. Security garage parking. You have a host on site in case you have any questions however, the check in and stay are contactless.
+Co-hosted by a Superhost!
+The space
+Potential noise from the main Street's traffics, but a very convenient location.
+
+This house needs to climb up stairs.
+Guest access
+We access the courtyard on every Sunday and Monday or Tuesday to roll our trash cans in and out. Garage parking and yard have security camera for security purpose.
+
+Garage parking: Garage parking one spot for customer and the other one is for owner's car.
+Other things to note
+Exterior cameras in the garage, side gate, backyard and front entrance.
+No cameras or surveillance devices inside the guest space.
+
+We need to access the back yard to roll out trash cans and roll back on certain days
+
+If you decide to drive during your trip, be aware that parking anywhere in San Francisco is extremely DIFFICULT. Pay special attention to street signs. We highly recommend to consider use car service like Lyft and Uber to get around. It saves me time and headache of finding a parking spot once you arrive at my destination.
+
+In the City of San Francisco, loud noise is prohibited inside all residential properties between 10:00 p.m. and 7:00 a.m. S.F., CAL., POLICE CODE § 2909.",205,1024 Maxwell Farm Road,95926,CA,4,2,2,2,FALSE
+22,MICA - Panoramic view close to Quebec City,8,"The ""MICA"", high-end micro-hosting located in the heart of the boreal forest. Live the immersive experience of nature just 25 minutes from Old Quebec. Enjoy panoramic views of Laurentian Park and breathtaking sunsets at the highest peak of Beauport Lake.
+The space
+With its minimalist design, clean lines and maximum windows, this tiny house erases into its surroundings, giving way to nature's sight. Taking its name from the mineral with blonde hues and silver reflections that make up the characteristic rocky outcrops of Mont Tourbillon, MICA clings to the mountain and fits perfectly into its environment.
+Other things to note
+WINTER ACCESS: From November 1 to April 15, an all-wheel drive (awd) or 4x4 car is required to access the chalet.
+
+Movements between the 2 floors are made by a ladder located inside the micro-house or by the staircase located outside.",295,723 Jim Rosa Lane,94110,CA,4,2,4,1,FALSE
+23,Villa Harrah,8,"Lakefront resort-like estate near Zephyr Cove
+The space
+With walls of windows that soar above the lake, this light-filled villa looks like it's floating on water. Wander from the full cinema, wet bar, and pool table to a deluxe spa with a sauna, hot tub, salt room, and even a nail and hair salon. A large terrace lead to a pool, sandy beach and private pier, and the balconies seem endless. You're just minutes from Zephyr Cove Beach and Edgewood Tahoe Golf Course.
+
+Copyright © Luxury Retreats. All rights reserved.
+
+
+BEDROOM & BATHROOM
+• Bedroom 1 - Primary: King size bed, Ensuite bathroom with stand-alone steam shower and oversized bathtub, Dual vanity, Bidet, Walk-in closet, Television, Sofa, Lounge area, Air conditioning, Private balcony, View of Lake Tahoe
+• Bedroom 2: King size bed, Ensuite with stand-alone shower and oversized bathtub, Dual vanity, Bidet, Walk-in closet, Television, Air conditioning, Direct access to terrace, View of Lake Tahoe
+• Bedroom 3: King size bed, Ensuite bathroom shared with stand-alone shower and bathtub, Air conditioning
+• Bedroom 4: Queen size bed, Ensuite bathroom with stand-alone shower, Air conditioning, Private balcony, View of Lake Tahoe
+• Bedroom 5: King size bed, Ensuite bathroom with stand-alone shower and bathtub, Walk-in closet, Television, Lounge area, Sofa, Fireplace, Air conditioning, Direct access to terrace, View of Lake Tahoe
+• Bedroom 6: 3 Queen size bunk beds, Ensuite bathroom with stand-alone shower, Walk-in closet, Direct access to terrace, View of Lake Tahoe
+
+Additional Bedding
+• Spare Room: Murphy bed, Ensuite bathroom with stand-alone shower
+
+
+FEATURES & AMENITIES
+• Home theatre
+• Nail and hair salon
+
+
+OUTDOOR FEATURES
+• Private pier
+• Terrace
+
+STAFF & SERVICES
+
+Included:
+• Caretaker (lives onsite)
+
+Extra cost (advance notice may be required):
+• Activities and excursions
+• Laundry service
+• More under “Add-on services” below",20000,3668 Reynolds Alley,92801,CA,10,7,12,7.5,FALSE
+24,Historic Baker House available for the first time,10,"As seen in Dwell, Turnbull's Baker House is a Sea Ranch classic Binker Barn resting on 2 acres of redwoods. While it was built in 1968, it's been updated to make sure you have everything you need for a private and relaxing stay: the separate office has monitors and 300+ Mbps internet, the kitchen is fully-equipped, and the garage has a level 2 EV charger and a Peloton. Enjoy the outdoors year-round from the hot tub or the Galanter & Jones heated furniture that overlooks the forest and ocean.
+The space
+As our family's retreat home, Baker House has everything you need to take care of young children. We're happy to share our high chair, nursery, and stroller with families looking for a quiet nature stay.
+
+The kitchen is complete with Viking and Miele appliances and just about anything you'd need to cook or bake, including a standing mixer, food processor, Shun knives, and a pasta maker. If we're missing something, please just let us know so we can stock it!
+
+Our home features contemporary artists of the Pacific Northwest.
+
+During your stay, you may use our passes to Sea Ranch's facilities so that you can park anywhere, use the tennis courts, and swim in the pools.
+Guest access
+There is plenty of parking on site. You can walk to nearby trails or LyndonDesign Gallery. Everything else is a short drive away.
+Other things to note
+The house has many updates, but it is still a cabin barn built in the 1960s. I.e., it might blow a fuse when you use two appliances at once. Some air might creep in through the top floor window. (We hope not, but you might need to plunge a toilet.)
+
+The studio bedroom is separate from the bathrooms and requires a short walk outside.
+
+The house is in the Sea Ranch forest, which means sometimes critters and creatures (such as mice or insects) like to come inside. We take standard remediation initiatives, but every once in a while, a mouse might sneak in.",762,2233 Doctors Drive,92614,CA,6,4,3,2,FALSE
+25,The Pine Mountain Lakehouse near Yosemite,6,"The Lakehouse is an idyllic 4-BR, 3-bath cabin nestled on the shores of Pine Mountain Lake. It is only 26 miles from Yosemite, 2.2 miles from a grocery store, 2.5 miles from downtown Groveland, and is suitable for up to 8 adults (10 if two pairs don't mind sharing double beds). We love sharing our space with travelers who want a taste of home while exploring the mountains! Please read to the end of the description before booking to ensure that our space is a good fit for you.
+The space
+If you are looking for a serene, tranquil place of relaxation with family and friends, then this is the place for you! We have zero tolerance for excessive noise, undisclosed guests, and parties; we respect our neighbors and our peaceful community. Please ensure our space is suitable for your needs before booking.
+
+This is our family cabin and has been beautifully furnished to be our blissful, comfortable mountain escape. It is tucked away in a safe, quiet gated community. You'll have access to the whole house and modern comforts like a smart lock that makes self-check-in a breeze, a Nest thermostat, speedy Wi-Fi, and an Amazon Alexa speaker equipped with Amazon Music.
+
+GATED COMMUNITY INFO
+The house is located in the gated community of Pine Mountain Lake. It has its own community standards and guidelines which must be respected while you enjoy all it has to offer! You must enter through the main PML gate in order to reach the house, at which point you will be asked for $44 (as of 2023 - subject to change on a yearly basis) per vehicle for a guest access permit which you must keep in your car for the duration of your stay. This pass gives you access to the community and its amenities, including an equestrian center, golf course, and marina! Quiet hours in the community are 10PM-7AM and must be observed.
+
+ROOMS
+Bedroom 1 (en-suite bathroom) - 1 King Bed (Sleeps 2)
+Bedroom 2 - 1 Queen Bed (Sleeps 2)
+Bedroom 3 - 1 Queen Bed (Sleeps 2)
+Bedroom 4 - 2 Double Beds (Sleeps 4 children or 2 adults comfortably)
+
+LAKE
+The east-facing wraparound upper deck offers stunning views of the lake. The property has its own dock, lakeside pergola, propane fire table, and shore access. Life vests, kayaks, and paddleboards are provided for your enjoyment! Please note that the lake can be quite cold in the winter and spring due to snow in the sierras.
+
+KITCHEN
+Cook something delightful in the fully-stocked kitchen. It has top-of-the-line stainless steel appliances, gas stove, microwave, toaster, dishwasher, all tied together with gorgeous granite countertops and an island for social cooking. A coffeemaker and coffee is always available in the kitchen.
+
+LIVING ROOM
+The spacious, open living area is connected to the kitchen, WiFi, 75” 4k Smart HDTV, Amazon Alexa connected to Amazon Music, and a comfortable motorized reclining leather sofa.
+
+DINING AREAS
+Gorgeous indoor dining area surrounded by windows can seat 8 and is adjacent to the kitchen. For warm nights you can use the deck dining table, also seats 8, which has stunning lake views.
+
+LAUNDRY
+High-efficiency washer and dryer for your group to use in the downstairs master bathroom.
+
+PARKING
+The house has a 2-car garage and room for up to 3 cars in the driveway. There is no street parking; the maximum number of vehicles the house can accommodate is 5.
+
+YOSEMITE NATIONAL PARK
+The Yosemite gate is 26 miles from the house and is typically a 40-minute drive. The valley itself is another 24 miles beyond, however, this leg has gorgeous views of mountain vistas, pine forests, crystal clear rivers, and initial views of Half Dome and the valley that will take your breath away. The drive from the house all the way to the valley floor is ~75 minutes.
+
+GROCERY SHOPPING
+We are 2.2 miles from our local Mar-Val grocery store. It has a good selection, but if you desire something more specialized you may want to bring it up with you! You'll have plenty of space for storage in the kitchen cupboards and fridge.
+
+DINING
+Pine Mountain Lake has a grill in the community which offers sweeping views of the mountains and golf course. Downtown Groveland also has several delicious restaurants and unique shops. A list of our recommendations will be available to you in the guest handbook.
+Guest access
+Keyless entry into the home means that we do not have to be present for you to arrive! It’s the ultimate gadget for flexibility. We’ll simply tell you your personalized code for your stay and you can let yourself in and out as you please. You will receive detailed check-in instructions 48 hours before your arrival.
+Other things to note
+FAQs
+
+Q: Do you offer discounts?
+A: Yes! We offer weekly and monthly discounts for longer stays.
+
+Q: Can I bring my own boat/kayak/paddleboard/water craft?
+A: Unfortunately no, PML only allows homeowners to launch their boats on the lake. All other smaller water crafts must be registered and permitted with the marina before entering the lake. We provide kayaks and paddle boards that are already permitted, so feel free to use these during your stay!
+
+Q: Why are prices different depending on which days I select?
+A: We use automated pricing software that sets nightly prices based on demand and comparable properties. Rates change based on a variety of factors and we typically just let the software do its thing.
+
+Q: Can I have an early check-in or late check-out?
+A: We do our best to accommodate these requests whenever possible! We usually cannot commit to an answer until approximately a week in advance of your reservation, so send us your request as your reservation approaches and we'll see what we can do for you.
+
+Q: Do we have to do chores at check-out?
+A: Upon check-out, we ask that guests do their dishes and take out the trash so there isn't anything that attracts unwanted critters between your departure and our cleaning crew's arrival. Thank you for your understanding and support!
+
+A NOTE ON LIMITED MOBILITY & ALLERGIES
+The property is on a slope and has many stairs both inside and out, so it may be difficult to navigate for those with limited mobility. Also, please know that we must accept service animals by law; while we do our very best to keep everything as clean as possible, the cabin is not suitable for those with allergies.",677,4928 Freed Drive,95370,CA,10,4,5,3,FALSE
+26,Lovely Bay View in walking distance to attractions,2,"Great location, just a few blocks from shopping and restaurants along Union street. Two bedroom One bath cozy and spacious apartment with one car parking. We have amazing view, lots of light and in walking distance from many San Francisco attractions, Golden Gate Bridge, Marina, Presidio, Lion stairs, Palace of Fine Arts, Fisherman's Wharf, museums and more. Walking distance from the vibrant retail shops and boutiques on Fillmore and Union Streets with robust restaurants and trendy bars.
+The space
+Our spacious full apartment is full light and view. Includes two bedrooms, One bath and one free parking. Queen bed in each room. Kitchen is ready for light cooking (stove, microwave, garbage disposal but no dishwasher). Living room with 65"" TV and Sonos speakers. Full bathroom with tub/shower. Laundry room is available in the building. We are in Pacific Heights which is an upscale neighborhood where you feel safe.
+Guest access
+Our apartment is in the steep part of this beautiful bay city (like you see in the movies), which grants us picturesque views and healthy exercise.
+We are located on the second floor. No elevator in the building.
+Our space feels very private.
+Other things to note
+We hope you will give us the opportunity to make your stay as wonderful as can be and hope you will love San Francisco as we do. Please ask us any question you might have.",349,4657 Locust View Driv,94108,CA,3,2,2,1,FALSE
+27,Stunning Home on Liberty St w Views-Business Ready,8,"A beautiful, fully remodeled 2-story Edwardian home in San Francisco's historic Liberty Hill. Large decks with panoramic downtown views. Ideally located on Liberty Street, steps away from MUNI and walking distance from Dolores Park, the Mission, Noe Valley, and the Castro. Perfect for a couple or small family.
+
+Parties or events not allowed.
+The space
+San Francisco Short-Term Rental Registration Number: STR-006773
+
+Parties or events not allowed.
+
+Downstairs:
+- Large foyer with coat closet
+- Gourmet kitchen with eat-in breakfast nook, overlooking downtown San Francisco.
+- Formal dining room (seats 8), also with downtown views.
+- Living room with built-in bar and working gas fireplace
+- Huge split-level deck with panoramic downtown views
+
+Upstairs
+- Master suite with downtown views from bed and private deck. Large master bath with two sinks and two shower heads
+- Guest bedroom with queen size bed.
+- Guest bath with refurbished clawfoot tub
+- Library/third bedroom with queen foldout
+
+Basement
+- The basement (which includes the washer and dryer) is a shared space. All social distancing rules are being followed.
+Guest access
+Library, WiFi, AppleTV (Flatscreen TVs in Library & Master), Stereo (music throughout the house)
+Other things to note
+SF Planning STR registration number: STR-0005216",567,1165 Roosevelt Wilson Lane,90802,CA,5,3,3,2.5,FALSE
+28,Awesome View San Francisco !,17,"Quiet neighborhood, easy , safe street parking .The house has a great view of the city and it is on a quiet cul-de-sac with staircases that go down to the bus lines and is a short walk to the Bart . There are also garden staircases that go up to the top of Bernal Hill that offer a 360' view of the Bay area .
+The house was built in the early 1900s and has 10 ft . ceilings and is open and comfortable .
+The space
+The house has three bedrooms with queen beds in each room . There are two bedrooms upstairs and one on the main floor . The owner lives on premises in a separate area with a separate entrance on the lower floor . There are three floors in the house .
+Guest access
+Street parking is good and safe , the place has close access to all the major freeways . There is ground transportation a close walk away . There are also many restaurants in the vicinity and Precita park is an easy walk away . As the house is on a hill there are nice staircases going down to get to everything",395,1886 Park Street,94124,CA,6,3,3,1,FALSE
+29,Luxury Designer Urban Oasis w/ Spa near Moscone!,5,"Escape to a stylish, newly remodeled spa-home! Our goal is to pamper you with the most luxurious mattress, linens, carefully chosen ergonomic furniture, steam sauna bathroom and a state of the art, new therapeutic private rooftop spa. Tucked on a quiet alley yet with immediate highway access and a private garage.
+
+Walking distance to Michelin star restaurants, quality eateries & designer shopping. Enjoy a fully stocked gourmet kitchen & soak in the San Francisco skyline from your private spa!
+The space
+You'll sashay into this urban sanctuary via the private garage / entry suitable for a Compact or Intermediate car) off the quiet Langton alley. From the entry, you'll continue upstairs to the newly remodeled first floor master bed and bath.
+
+The brand new bath has a huge Mr. Steam shower for shaking off that chill from Karl the Fog, Toto bidet, designer towel warmer, and luxurious fixtures throughout (you will L O V E this bathroom...). The bedroom has wood floors, floor-to-ceiling windows, room-darkening shades and a blackout full-wall curtain for sleeping in.
+
+Continuing to the third floor, you'll be greeted by a heart-warming gas fireplace, luxurious furnishings, Sonos sound system and an absolutely stunning remodeled gourmet kitchen. Show off your culinary skills with the fully-outfitted amenities and stainless gas stove, or prepare your absolute best cup of coffee (Nespresso, French Press or Aeropress).
+
+When you're ready to relax, continue to the fourth floor mezzanine/loft level where your jaw will drop over the picture-window view of the San Francisco skyline. When you're ready to look around you'll find a 60"" flat screen TV, Sonos sound system and glamorous shag rug. This space also has a generous designer office setup (Samsung 27"" curved monitor), and can be quickly converted into the 2nd bedroom via the Blu Dot queen-sized sleeper sofa (this is NOT your mother's sleeper...it's amazingly comfortable.
+
+To get a little sun and fresh air, continue to the 5th floor private roof desk. Here you'll find an abundant rooftop garden (lemon trees!!), designer outdoor furniture and the piece-de-resistance a Hotsprings 3-person luxury hot tub! Enjoy your soak, shake off the chill and when you're ready, head to the outdoor shower for that perfect hot-and-cold therapy session.
+
+This is an amazing, luxurious urban oasis that you won't want to leave...a perfect sanctuary regardless of whether you're in town for business, a conference or vacation!
+Guest access
+Enter from the quiet, secluded Langton alley to your private entry and garage on the first floor.
+Other things to note
+Other things to note:
+- Sonos stereo system throughout living areas
+- Central heat
+- Wood floors throughout
+- Double paned, large windows
+- Light-filled space throughout
+- Blackout shades and curtain in master bedroom
+- Room darkening shade and curtains in Mezzanine office/bedroom
+- Smart TV with access to Netflix, YouTube TV and Amazon Prime included",388,2915 Heritage Road,93721,CA,4,2,2,1.5,TRUE
+30,North Beach Telegraph Hill 3BED-2BA with Bay views,4,"Enjoy your stay at the top of Telegraph Hill with stunning views of the Bay Bridge, Treasure Island, the Ferry Building, and the Embarcadero. Spacious home with lots of natural light on the prime residential block of Montgomery Street. Just blocks from bustling North Beach restaurants, cafes, and close distance to Marina, Fisherman's Wharf, Chinatown, and Financial District. The ideal location to explore the city.
+The space
+This spacious apartment offers three bedrooms, one with an en-suite bathroom. A charming and modern open floor living/kitchen area with a dining table for six, a kitchen bar, and a comfortable sofa. A fully-equipped kitchen, stainless steel appliances, marble countertops, flat screen LCD TV, and lots of natural light. Family-friendly with a Piano, arts and crafts items, board games, and books in English, German, and Swedish.
+
+Xfinity stream and high-speed Wi-Fi are included.
+
+The property has heating but no air conditioning, extra heather and cooler are available
+
+There is only street parking available to guests. A few convenient car garages are within walking distance nearby.
+(SpotAngels App is a mobile app to find parking options around San Francisco).
+Guest access
+Full-size washing and drying machines inside the apartment, including Iron.
+Appliances: gas stove, oven, microwave, toaster, coffee maker, blender, dishwasher, cutlery, pans and pots, utensils, etc.
+Other things to note
+Walking distance to the City’s top attractions:
+Fisherman’s Wharf, Ghirardelli Square, Pier 39, the Ferry Building, Lombard Street, North Beach, Chinatown, Coit Tower, Financial District, Union Square, Moscone Center, and the Presidio to mention a few, plus great restaurants, nightlife, shops, and all kind of fun attractions.
+
+There is only street parking available to guests (2 hours limit between 8 am and 9 pm from Monday till Saturday)
+There is one stoop from the main gate to the home's front door.
+There is no Air Conditioner (A/C)",690,2265 Fairway Drive,95543,CA,5,3,3,2,FALSE

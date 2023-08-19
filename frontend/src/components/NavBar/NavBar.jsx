@@ -40,7 +40,6 @@ const NavBar = () => {
                 </div>
                 <div className="middle-search">
                     <SearchBar/>
-                    {/* {search()} */}
                 </div >
                 <div className='right-menu'>
                     <button onClick={handleMenuClick} className="account-button" id="account-button">
