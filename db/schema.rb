@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_18_224309) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_19_204222) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_18_224309) do
     t.text "description", null: false
     t.string "address", null: false
     t.string "postcode", null: false
-    t.decimal "price", null: false
+    t.integer "price", null: false
     t.integer "guests", null: false
     t.integer "bedrooms", null: false
     t.integer "beds", null: false
@@ -56,6 +56,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_18_224309) do
     t.boolean "pets", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "state"
+    t.string "city"
+    t.string "tag_line"
     t.index ["address"], name: "index_listings_on_address", unique: true
     t.index ["guests"], name: "index_listings_on_guests"
     t.index ["owner_id"], name: "index_listings_on_owner_id"

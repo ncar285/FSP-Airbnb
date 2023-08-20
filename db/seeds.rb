@@ -122,8 +122,8 @@ require 'csv'
 # pets: true
 # )
 
-num_listings = 30
 
+num_listings = 30;
 puts "deleting listings..."
 Listing.destroy_all
 
@@ -141,6 +141,8 @@ csv.each do |row|
   listing.title = row['title']
   listing.description = row['description']
   listing.price = row['price'].to_i
+  listing.state = row['state']
+  listing.city = row['city']
   listing.address = row['address']
   listing.postcode = row['postcode']
   listing.guests = row['guests'].to_i
@@ -148,7 +150,7 @@ csv.each do |row|
   listing.beds = row['beds'].to_i
   listing.baths = row['baths'].to_i
   listing.pets = row['pets'] == 'true'
-  # print listing.pets
+  listing.tag_line = row['tag_line']
   listing.save!
   puts "listing ##{n} saved!"
   n += 1
