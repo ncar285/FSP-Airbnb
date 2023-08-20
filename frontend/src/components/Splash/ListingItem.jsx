@@ -10,6 +10,11 @@ const ListingItem = ({ listing, key }) => {
 
     const photoCount = listing.photoUrls.length
 
+    const renderShow = () => {
+        return window.open(`/listing/${listing.id}`, '_blank');
+    }
+    
+
     const photoEles = () => {
         const photoEles = [];
         for(let i=0; i < photoCount; i++) {
@@ -18,13 +23,12 @@ const ListingItem = ({ listing, key }) => {
                     <img className="slide" src={listing.photoUrls[i]} alt="" />
                 </div>
             )
-        }
-        
+        } 
         return photoEles;
     }
     return (
         <li>
-            <div key={key} className="item">
+            <div onClick={renderShow} key={key} className="item">
                 <div className="inner-item">
                     <div className="slideshow-container">
                         <div className="left-arrow">

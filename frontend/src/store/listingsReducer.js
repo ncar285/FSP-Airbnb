@@ -38,14 +38,16 @@ export const fetchListing = listingId => dispatch => (
 )
 
 // SELECTORS
-export const selectAllListings = state => Object.values(state.listings)
+export const selectAllListings = state => Object.values(state.listings);
+
+export const selectListing = listingId => state => state.listings[listingId] || null;
 
 // REDUCER
 const listingsReducer = (state = {}, action) => {
   const nextState = { ...state }
   switch (action.type) {
     case RECEIVE_LISTING:
-      nextState[action.payload.listing.id] = action.payload.listing
+      nextState[action.payload.id] = action.payload.listing
       return nextState
     case RECEIVE_LISTINGS:
       return Object.assign(nextState, action.payload)

@@ -11,6 +11,8 @@
     --light_grey: #dddddd;
     --dark_grey: #222222;
     --grid_spacing: 20px;
+    --button_hit: cubic-bezier(0.2,0,0,1)
+    
 }
 
 @media (min-width: 1px) {
