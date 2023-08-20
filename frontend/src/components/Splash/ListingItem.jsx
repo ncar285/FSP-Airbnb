@@ -1,19 +1,39 @@
-// import { useDispatch, useSelector } from 'react-redux'
-// import { fetchListing, fetchListing } from '../../store/listingsReducer'
-// import { useState } from 'react'
-// import './ListingItem.css'
 import { AiFillStar } from "react-icons/ai"
 import {MdOutlineKeyboardArrowLeft as LeftArrow} from "react-icons/md"
 import {MdOutlineKeyboardArrowRight as RightArrow} from "react-icons/md"
+import { useRef } from "react"
 
 const ListingItem = ({ listing, key }) => {
-
     const photoCount = listing.photoUrls.length
-
-    const renderShow = () => {
-        return window.open(`/listing/${listing.id}`, '_blank');
-    }
+    const listingImagesRef = useRef(null);
     
+    const renderShow = e => {
+        if (e.target.classList.contains('clickable')){
+            return null;
+        }else {
+            return window.open(`/listing/${listing.id}`, '_blank');
+        }
+    }
+
+    const handleLeftClick = e => {
+        e.stopPropagation()
+        if (listingImagesRef.current.scrollLeft > 0) {
+                listingImagesRef.current.scrollBy({
+                left: -listingImagesRef.current.clientWidth,
+                behavior: 'smooth',
+            });
+        }
+    };
+    
+    const handleRightClick = e => {
+        e.stopPropagation()
+        if (listingImagesRef.current.scrollLeft < (listingImagesRef.current.scrollWidth - listingImagesRef.current.clientWidth)) {
+            listingImagesRef.current.scrollBy({
+            left: listingImagesRef.current.clientWidth,
+            behavior: 'smooth',
+        });
+    }
+    };
 
     const photoEles = () => {
         const photoEles = [];
@@ -31,14 +51,14 @@ const ListingItem = ({ listing, key }) => {
             <div onClick={renderShow} key={key} className="item">
                 <div className="inner-item">
                     <div className="slideshow-container">
-                        <div className="left-arrow">
-                            <LeftArrow/>
+                        <div className="left-arrow clickable" onClick={handleLeftClick}>
+                            <LeftArrow className="arrow-icon"/>
                         </div>
-                        <div className="listing-images">
+                        <div className="listing-images" ref={listingImagesRef}>
                             {photoEles()}
                         </div>
-                        <div className="right-arrow">
-                            <RightArrow/>
+                        <div className="right-arrow clickable" onClick={handleRightClick}>
+                            <RightArrow className="arrow-icon"/>
                         </div>
                         {/* <div>
                             <a className="prev" onclick="plusSlides(-1)">&#10094;</a>

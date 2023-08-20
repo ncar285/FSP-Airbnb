@@ -47,7 +47,7 @@ const listingsReducer = (state = {}, action) => {
   const nextState = { ...state }
   switch (action.type) {
     case RECEIVE_LISTING:
-      nextState[action.payload.id] = action.payload.listing
+      nextState[action.payload.id] = action.payload
       return nextState
     case RECEIVE_LISTINGS:
       return Object.assign(nextState, action.payload)

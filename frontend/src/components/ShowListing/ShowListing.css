@@ -1,0 +1,23 @@
+
+
+.show-container {
+    margin-left: var(--show_margin);
+    margin-right: var(--show_margin);
+    display: flex;
+    justify-content: center;
+
+    background-color: bisque;
+}
+
+.show-content{
+    width: var(--show_width);
+
+    background-color: aquamarine;
+}
+
+.photo-album {
+    width: 100%;
+    height: 400px;
+    background-color: rgb(200,200,200);
+    border-radius: 20px;
+}

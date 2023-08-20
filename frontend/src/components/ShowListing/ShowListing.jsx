@@ -1,3 +1,4 @@
+import './ShowListing.css'
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect } from "react"
@@ -16,17 +17,21 @@ const ShowListing = () => {
 
     if (!listing) {
         return <div>Loading...</div>;
+    }else {
+        return (
+            <div className="show-container">
+                <div className="show-content">
+
+                    <h1>{listing.title}</h1>
+                    <p>stars, reviews, city, state / country </p>
+                    <div className="photo-album">
+
+                    </div>
+                </div>
+            </div>
+        )
     }
 
-    return (
-        <>
-           
-            {/* (!listing) */}
-            <h1>hello world</h1>
-            <h1>{listing.title}</h1>
-        </>
-
-    )
 }
 
 export default ShowListing

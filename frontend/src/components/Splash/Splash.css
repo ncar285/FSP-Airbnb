@@ -30,7 +30,8 @@
     align-items: center;
 }
 
-.left-arrow, .right-arrow{
+.left-arrow, .right-arrow,
+.left-arrow:active, .right-arrow:active{
     opacity: 0;
     cursor: pointer;
     border: 0;
@@ -38,32 +39,41 @@
     border-width: 1px;
     padding: 0;
     margin: 0;
-    background-clip: padding-box;
+     background-clip: padding-box;
     border-color: rgba(0,0,0,0.08);
     box-shadow: 0 0 0 1px transparent,0 0 0 4px transparent,0 2px 4px rgba(0,0,0,0.18); 
-    transition: transform 0.25s cubic-bezier(0.2,0,0,1);
-    font-size: 25px;
-    font-weight: 200;
-    transition: scale 0.25s ease; 
+    /* transition: transform 0.25s cubic-bezier(0.2,0,0,1); */
+    /* font-size: 25px; */
+    font-weight: 200; 
     position: absolute;
     height: 32px;
     width: 32px;
     border-radius: 50%;
     background-color: rgba(255,255,255,0.9);
+    
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--dark_grey);
+    /* color: black; */
+    z-index: 16;
+}
+
+.arrow-icon {
+    /*! WHY DOES THIS CAUSE MOVEMENT? */
+    font-size: larger;
+}
+
+.left-arrow:active, .right-arrow:active{
+    transition: scale 0.25s ease; 
+    scale: 0.952381;
 }
 
 .left-arrow:hover, .right-arrow:hover {
-    touch-action: manipulation;
-    display: inline-flex;
-    /* color: var(--dark_grey); */
     scale: 1.05;
     background-color: white;
     color: black;
-    /* --webkit-transition: --webkit-transform 0.25s cubic-bezier(0.2,0,0,1); */
+    transition: scale 0.25s ease; 
 }
 
 .item:hover .left-arrow,
@@ -77,6 +87,10 @@
 
 .right-arrow{
     right: 10px;
+}
+
+.left-arrow.hidden, .right-arrow.hidden {
+    display: none;
 }
 
 .listing-images {
@@ -98,7 +112,9 @@
 }
 
 .slide {
-    height:  100%;
+    width: var(--img_dim);
+    height: var(--img_dim);
+    /* height:  100%; */
     object-fit: cover; 
     --dls-liteimage-object-fit: cover;
 }
