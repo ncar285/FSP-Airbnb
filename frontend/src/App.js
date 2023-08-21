@@ -12,14 +12,19 @@ function App() {
   return (
     <Router>
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <Switch>
         <Route path="/" exact>
+            <NavBar tagsOn={false} searchType={"full"}/>
             <SearchForm />
             <RegisterForm />
             <Splash />
         </Route>
-        <Route path="/listing/:listingId" component={ShowListing} />
+        <Route path="/listing/:listingId">
+            <NavBar tagsOn={false} searchType={"full"}/>
+            <ShowListing/> 
+        </Route>
+       
       </Switch>
     </>
   </Router>

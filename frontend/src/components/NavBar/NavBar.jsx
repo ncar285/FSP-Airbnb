@@ -1,6 +1,5 @@
 import "./NavBar.css"
 import logo from "../../assets/airbnb.svg"
-
 import {  useSelector} from "react-redux";
 import AccountMenu from "../AccountMenu/AccountMenu.jsx"
 import { getCurrentUser } from "../../store/sessionsReducer";
@@ -9,13 +8,12 @@ import SearchBar from "./Search/SearchBar";
 // import { AiOutlineSearch } from "react-icons/ai" // (search icon)
 // import { FaAirbnb } from "react-icons/fa"   // airbnb logo
 import MenuButton from "./MenuButton/MenuButton";
+import TagBar from "./TagBar/TagBar";
 
+const NavBar = ({ tagsOn, search}) => {
 
-const NavBar = () => {
-    function importAll(r) {
-        return r.keys().map(r);
-    }
-    const images = importAll(require.context('../../assets/tags', false, /\.jpeg$/));
+   
+    
     const [menuOpen, setMenuOpen] = useState(false)
     const currentUser = useSelector(getCurrentUser)
 
@@ -45,13 +43,11 @@ const NavBar = () => {
                 {menuOpen &&
                 < AccountMenu handleMenuClick = {handleMenuClick}/>
                 }
-
                 
             </div>
-            <div className="tag-bar">
-                {/* {images} */}
 
-            </div>
+            { tagsOn && <TagBar/>}
+
         </div>
     )
 
