@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from "react-redux"
 import { activateSearchModal } from "../../../store/uiReducer"
 import sButton from "../../../assets/s-button.png"
 
-const SearchBar = ({ type }) => {
+const SearchBar = ({ searchType }) => {
     const hideSearchBar = useSelector(state => state.ui.searchModal)
     const dispatch = useDispatch()
     if (hideSearchBar){
-        const sBar = document.querySelector(".bar")
+        const sBar = document.querySelector(".nav-bar")
         sBar.classList.add("s-mode")
         return (<></>)
-    }else if ( type === "full"){
+    }else if ( searchType === "full"){
         return (
             <button onClick={() => dispatch(activateSearchModal())} className="search-bar">
                 <div className="search-filters">
@@ -23,7 +23,7 @@ const SearchBar = ({ type }) => {
                 </div>
             </button>
         )
-    }else if ( type === "simple"){
+    }else if ( searchType === "simple"){
         return (
             <button onClick={() => dispatch(activateSearchModal())} className="search-bar">
                 <div className="search-prompt">

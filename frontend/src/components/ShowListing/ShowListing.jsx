@@ -3,17 +3,23 @@ import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect } from "react"
 import { selectListing, fetchListing } from "../../store/listingsReducer"
+import PhotoAlbum from './PhotoAlbum/PhotoAlbum'
+import ListingInfo from './ListingInfo/ListingInfo'
+import ReserveBlock from './ReserveBlock/ReserveBlock'
 const ShowListing = () => {
+
+   
 
     const { listingId } = useParams();
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchListing(listingId));
-      }, [dispatch, listingId]);
+    }, [dispatch, listingId]);
 
     const listing = useSelector(selectListing(listingId))
 
+    // console.log("OWNER IS:", listing.owner)
 
     if (!listing) {
         return <div>Loading...</div>;
@@ -23,32 +29,22 @@ const ShowListing = () => {
                 <div className="show-content">
                     <h1>{listing.title}</h1>
                     <div className='show-subheading'>
-                        <p>stars, reviews, city, state / country </p>
+                        <p>4.5 stars, 21 reviews, {listing.city}, {listing.state} </p>
                     </div>
-                    <div className="photo-album">
-                        <div className='LHS-show'>
-                            <img className='main-show-image' src={listing.photoUrls[0]}  alt="" />
+                    <PhotoAlbum listing={listing}/>
+                    
+                    <div className='show-page-contents'>
+
+                        <div className='listing-left-column'>
+                            <ListingInfo listing={listing}/>
                         </div>
-                        <div className='RHS-show'>
-                            <div className='RHS-upper'>
-                                <div className='album-1 RHS-img'>
-                                    <img className='RHS-image-1' src={listing.photoUrls[1]} alt="" />
-                                </div>
-                                <div className='album-2 RHS-img'> 
-                                    <img src={listing.photoUrls[2]}  alt="" />
-                                </div>
-                            </div>
-                            <div className='RHS-lower'>
-                                <div className='album-3 RHS-img'> 
-                                    <img src={listing.photoUrls[3]}  alt="" />
-                                </div>
-                                <div className='album-4 RHS-img'>
-                                    <img src={listing.photoUrls[4]}  alt="" />
-                                </div>
-                            </div>
+                    
+                        <div className='listing-right-column'>
+                            <ReserveBlock/>
                         </div>
 
                     </div>
+
                 </div>
             </div>
         )

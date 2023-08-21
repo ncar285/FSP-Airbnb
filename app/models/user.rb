@@ -28,8 +28,17 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
 
   
-    has_many :listings
-        # dependent: :destroy
+    has_many :listings,
+        foreign_key: :owner_id
+
+
+
+
+
+
+
+    has_one_attached :photo
+    # dependent: :destroy
 
     # has_many :bookings,
     #     dependent: :destroy
@@ -40,7 +49,6 @@ class User < ApplicationRecord
     # has_many :wishlists,
     #     dependent: :destroy
 
-    has_one_attached :photo
     # has_many_attatched :photos
 
 

@@ -1,0 +1,69 @@
+.listing-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.listing-info > div {
+    padding: 30px 0;
+    width: 100%;
+    border-bottom: 1px solid var(--light_grey);
+}
+
+#basic-listing-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0px;
+}
+
+.listing-under-heading {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hosted-by {
+    font-size: 25px;
+}
+
+.key-listing-info {
+    display: flex;
+    align-items: center;
+}
+
+.stats-dot {
+    font-size: 2.5px;
+    margin: 0px 5px;
+}
+
+
+.owners-profile-pic {
+    height: 60px;
+    width: 60px;
+}
+
+.owners-profile-pic img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover; 
+}
+
+.listing-description p {
+    height: 100px;
+    overflow: hidden;
+}
+
+#listing-calendar {
+    border: none;
+}
+
+.listing-info-calendar{
+    border-radius: 20px;
+    height: 400px;
+    background-color: var(--light_grey);
+}
+
+

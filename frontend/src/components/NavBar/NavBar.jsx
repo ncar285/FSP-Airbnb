@@ -1,21 +1,15 @@
 import "./NavBar.css"
 import logo from "../../assets/airbnb.svg"
-import {  useSelector} from "react-redux";
 import AccountMenu from "../AccountMenu/AccountMenu.jsx"
-import { getCurrentUser } from "../../store/sessionsReducer";
 import { useState } from "react";
 import SearchBar from "./Search/SearchBar";
-// import { AiOutlineSearch } from "react-icons/ai" // (search icon)
-// import { FaAirbnb } from "react-icons/fa"   // airbnb logo
 import MenuButton from "./MenuButton/MenuButton";
 import TagBar from "./TagBar/TagBar";
+// import { AiOutlineSearch } from "react-icons/ai" // (search icon)
+// import { FaAirbnb } from "react-icons/fa"   // airbnb logo
 
-const NavBar = ({ tagsOn, search}) => {
-
-   
-    
+const NavBar = ({ tagsOn, searchType, barType}) => {
     const [menuOpen, setMenuOpen] = useState(false)
-    const currentUser = useSelector(getCurrentUser)
 
     const handleMenuClick = () => {
         if (menuOpen){
@@ -25,29 +19,46 @@ const NavBar = ({ tagsOn, search}) => {
         }
     }
 
+    const dynamicStyle = () => {
+        if (barType === "home"){
+            return {
+                margin: "var(--margin)",
+                position: "sticky"
+            }
+        }else if (barType === "show") {
+            return {
+                margin: "var(--show_margin)",
+                position: "static"
+            }
+        }
+    }
+
+    const handleGoHome = () => {
+        window.location.href = '/';
+    }
+
     return (
         
-        <div className="bar">
-            <div className="innerBar">
-                
-                <div className="left-logo">
+        <div className="nav-bar" style={{ position: dynamicStyle().position }}>
+            <div className="upper-nav-bar">
+                <div onClick={handleGoHome}
+                className="left-logo" style={{ left: dynamicStyle().margin}}>
                     <img id="logo" src={logo} alt="fairbnb-logo" />
                 </div>
                 <div className="middle-search">
-                    <SearchBar type = {"simple"}/>
+                    <SearchBar searchType = {searchType}/>
                 </div >
-                <div className='right-menu'>
+                <div className='right-menu' style={{ right: dynamicStyle().margin}}>
                     <MenuButton handleMenuClick={handleMenuClick}/>
                 </div>
-
-                {menuOpen &&
+                {
+                menuOpen &&
                 < AccountMenu handleMenuClick = {handleMenuClick}/>
                 }
-                
             </div>
-
-            { tagsOn && <TagBar/>}
-
+            <div className="lower-nav-bar">
+                { tagsOn && <TagBar/>}
+            </div>
         </div>
     )
 

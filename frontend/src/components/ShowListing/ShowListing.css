@@ -3,82 +3,27 @@
     margin-right: var(--show_margin);
     display: flex;
     justify-content: center;
-    background-color: bisque;
 }
 
 .show-content{
-    width: var(--show_width);
-    background-color: aquamarine;
+    width: 100%;
 }
 
-.photo-album {
-    width: 100%;
-    height: calc(var(--show_width)/2);
-    /* height: 500px; */
-    background-color: rgb(200,200,200);
-    border-radius: 20px;
+.show-page-contents{
     display: flex;
-    overflow: hidden;
+    justify-content: space-between;
+    padding: 50px 0;
+    border-bottom: 1px solid var(--light_grey);
 }
 
-.LHS-show, 
-.RHS-show { 
-    height: 100%;
-    width: calc(var(--show_width)/2 - 5px);
+.listing-left-column {
+    width: 650px;
 }
 
-.LHS-show {
-    margin-right: 10px;
-    background-color: orange;
-    z-index: 100;
-}
-
-.RHS-show {
-    background-color: yellow;
-}
-
-.RHS-upper, .RHS-lower {
-    width: 100%;
-    height: calc(50% - 5px);
-    display: flex;
-}
-
-.RHS-upper {
-    margin-bottom: 10px;
-    background-color: aqua;
-}
-
-.RHS-img {
-    height: 100%;
-    width: calc(50% - 5px);
-}
-
-.album-3, .album-1 {
-    margin-right: 10px;
-    /* background-color: yellowgreen; */
-}
-
-.album-1 {
-    background-color: rgb(207, 227, 169);
-}
-
-.album-2 {
-    background-color: beige;
-}
-.album-3 {
-    background-color: rgb(168, 168, 116);
+.listing-right-column{
+    width: 370px;
+    /* overflow: hidden;
+    position: relative; */
 }
 
 
-.album-4 {
-    background-color: rgb(146, 146, 45);
-}
-
-.show-subheading{
-    padding-bottom: 20px;
-}
-
-.photo-album img {
-    height: 100%;
-    width: 100%;
-}

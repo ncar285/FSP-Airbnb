@@ -1,20 +1,19 @@
-.bar {
+.nav-bar {
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
     border-bottom: var(--light_light_grey) solid 1px;
     background-color: white;
+    z-index: 15;
 }
 
-.bar.s-mode {
+.nav-bar.s-mode {
     border: none;
 }
 
-.innerBar {
+.upper-nav-bar{
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -23,11 +22,9 @@
 
 .left-logo {
     position: absolute;
-    left: var(--margin);
     display: flex;
     justify-content: left;
     align-items: center;
-    z-index: 15;
 }
 
 .left-logo:hover {
@@ -47,7 +44,7 @@
 
 .right-menu {
     position: absolute;
-    right: var(--margin);
+    /* right: var(--margin); */
 }
 
 .tag-bar {

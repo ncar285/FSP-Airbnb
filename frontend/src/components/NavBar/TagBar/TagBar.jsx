@@ -1,3 +1,4 @@
+import './TagBar.css'
 
 const TagBar =  () => {
     
@@ -5,9 +6,22 @@ const TagBar =  () => {
         return r.keys().map(r);
     }
     const images = importAll(require.context('../../../assets/tags', false, /\.jpeg$/));
-    <div className="tag-bar">
-        {images}
-    </div>
+    const makeTagElements = () => {
+        return images.map((imageUrl, i) => (
+            <div className='tag-container'>
+                <img src={imageUrl} alt="" />
+            </div>
+        ));
+    }
+
+    return (
+        <div className="tag-bar">
+            <div className='inner-tag-bar'>
+
+                {makeTagElements()}
+            </div>
+        </div>
+    )
 }
 
 export default TagBar

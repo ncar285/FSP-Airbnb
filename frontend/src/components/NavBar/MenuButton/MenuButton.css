@@ -13,7 +13,6 @@
     border-radius: 20px;
     display: flex;
     align-items: center;
-    /* padding: 5px; */
 }
 
 .list, .profile-icon {
@@ -21,33 +20,18 @@
     width: 50%;
     display: flex;
     align-items: center;
-    /* border-radius: 50%; */
     overflow: hidden;
 }
 
-.list {
-    /* background-color: antiquewhite; */
-}
-.profile-icon {
-    /* background-color: azure; */
-}
 
-.profile-icon img { 
-    object-fit: contain;
-    border-radius: 50%;
-    height: 100%;
-}
-
-#default-profile{
-    /* object-fit: contain; */
+#default-profile, .profile-icon img {
     color: var(--dark_grey);
     font-size: 60px;
     height: 30px;
-
+    border-radius: 50%;
 }
 
 .menu-list{
-    /* height: 20px; */
     font-size: 18px;
     color: var(--dark_grey);
 }

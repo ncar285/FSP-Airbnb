@@ -1,0 +1,53 @@
+.photo-album {
+    width: 100%;
+    height: calc(var(--show_width)/2);
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+}
+
+.LHS-show, 
+.RHS-show { 
+    height: 100%;
+    width: calc(var(--show_width)/2 - 5px);
+}
+
+.LHS-show {
+    margin-right: 10px;
+}
+
+
+.RHS-upper, .RHS-lower {
+    width: 100%;
+    height: calc(50% - 5px);
+    display: flex;
+}
+
+.RHS-upper {
+    margin-bottom: 10px;
+}
+
+.RHS-img {
+    height: 100%;
+    width: calc(50% - 5px);
+}
+
+.album-3, .album-1 {
+    margin-right: 10px;
+}
+
+.show-subheading{
+    padding-bottom: 20px;
+}
+
+.photo-album img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+}
+
+.LHS-show, .RHS-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

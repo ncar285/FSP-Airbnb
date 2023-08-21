@@ -1,0 +1,10 @@
+.reserve-block{
+    /* position: sticky; */
+    /* top: 0;  */
+    height: 450px;
+    border: 1px solid var(--light_grey);
+    background-color: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
