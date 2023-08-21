@@ -1,5 +1,4 @@
 import './AccountMenu.css'
-import account from "../../assets/account.png"
 import { useState } from "react";
 import RegisterForm from '../RegisterForm/RegisterForm';
 import { activateRegisterModal } from '../../store/uiReducer';
@@ -17,7 +16,6 @@ const AccountMenu = ({ handleMenuClick }) => {
     const seeAccount = async e => {
         e.preventDefault()
     }
-  
     
     const handleSignOut = async e => {
         e.preventDefault()
@@ -34,18 +32,11 @@ const AccountMenu = ({ handleMenuClick }) => {
         if (sessionUser)  {
             return  (
                 <>
-                    {/* <div id="account-options">  */}
-                        {/* <div className="account-options" id="account-options">
-                            <button onClick={seeAccount}>Account</button>
-                        </div> */}
-                    {/* </div>
-                    <div> */}
-                        <div className="account-options" id="account-options">
-                            <button onClick={seeAccount}>Account</button>
-                            <div class="account-menu-spacer"></div>
-                            <button onClick={handleSignOut}>Logout</button>
-                        </div>
-                    {/* </div> */}
+                    <div className="account-options" id="account-options">
+                        <button onClick={seeAccount}>Account</button>
+                        <div class="account-menu-spacer"></div>
+                        <button onClick={handleSignOut}>Logout</button>
+                    </div>
                 </>
             )
         }else {

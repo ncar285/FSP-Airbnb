@@ -13,7 +13,7 @@
     --grid_spacing: 20px;
     --button_hit: cubic-bezier(0.2,0,0,1);
     --show_margin: 0px;
-    --show_width: 100%;
+    --show_width: calc(100vw - 2*(var(--show_margin)));
 }
 
 @media (min-width: 1px) {

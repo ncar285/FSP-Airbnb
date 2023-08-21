@@ -1,17 +1,14 @@
 import "./NavBar.css"
 import logo from "../../assets/airbnb.svg"
-// import sButton from "../../assets/s-button.png"
-// import { activateSearchModal } from "../../store/uiReducer";
+
 import {  useSelector} from "react-redux";
 import AccountMenu from "../AccountMenu/AccountMenu.jsx"
 import { getCurrentUser } from "../../store/sessionsReducer";
 import { useState } from "react";
-// import account
-import account from "../../assets/account.png"
 import SearchBar from "./Search/SearchBar";
 // import { AiOutlineSearch } from "react-icons/ai" // (search icon)
 // import { FaAirbnb } from "react-icons/fa"   // airbnb logo
-// import { AiOutlineMenu } from "react-icons/ai" // menu icon
+import MenuButton from "./MenuButton/MenuButton";
 
 
 const NavBar = () => {
@@ -39,19 +36,10 @@ const NavBar = () => {
                     <img id="logo" src={logo} alt="fairbnb-logo" />
                 </div>
                 <div className="middle-search">
-                    <SearchBar/>
+                    <SearchBar type = {"simple"}/>
                 </div >
                 <div className='right-menu'>
-                    <button onClick={handleMenuClick} className="account-button" id="account-button">
-                        <div className="list">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div className="profile">
-                            <img src={currentUser?.photoUrl ? currentUser.photoUrl : account} alt="" />
-                        </div>
-                    </button>
+                    <MenuButton handleMenuClick={handleMenuClick}/>
                 </div>
 
                 {menuOpen &&

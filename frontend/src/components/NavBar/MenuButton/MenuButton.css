@@ -1,0 +1,54 @@
+.account-button:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+#account-button {
+    padding: 0 3px;
+}
+.account-button {
+    height: 40px;
+    width: 75px;
+    border: var(--light_grey) solid 1px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    /* padding: 5px; */
+}
+
+.list, .profile-icon {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    /* border-radius: 50%; */
+    overflow: hidden;
+}
+
+.list {
+    /* background-color: antiquewhite; */
+}
+.profile-icon {
+    /* background-color: azure; */
+}
+
+.profile-icon img { 
+    object-fit: contain;
+    border-radius: 50%;
+    height: 100%;
+}
+
+#default-profile{
+    /* object-fit: contain; */
+    color: var(--dark_grey);
+    font-size: 60px;
+    height: 30px;
+
+}
+
+.menu-list{
+    /* height: 20px; */
+    font-size: 18px;
+    color: var(--dark_grey);
+}
+

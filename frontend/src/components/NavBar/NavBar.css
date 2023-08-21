@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 160px;
+    height: 80px;
     display: flex;
     flex-direction: column;
     border-bottom: var(--light_light_grey) solid 1px;
@@ -48,14 +48,6 @@
 .right-menu {
     position: absolute;
     right: var(--margin);
-}
-
-.profile {
-    border-radius: 50%;
-}
-.profile img { 
-    object-fit: contain;
-    border-radius: 50%;
 }
 
 .tag-bar {
