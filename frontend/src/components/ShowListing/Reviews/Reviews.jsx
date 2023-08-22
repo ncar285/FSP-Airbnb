@@ -1,5 +1,11 @@
 import './Reviews.css'
 import { AiFillStar } from "react-icons/ai"
+// import { useEffect } from 'react'
+// import { getCurrentUser } from '../../store/sessionsReducer'
+// import { useState } from 'react'
+// import { useSelector } from 'react-redux'
+// import { selectListing } from '../../../store/listingsReducer'
+
 
 const reviewItem = (review) => {
     const author = review.authorFirstname;
@@ -33,6 +39,7 @@ const findAverageScore = (reviews, category) => {
 
 
 const Reviews = ({ reviews }) => {
+
 
     const count = reviews.length;
     let rating = findAverageScore(reviews, "rating")

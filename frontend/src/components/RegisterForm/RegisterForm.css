@@ -16,7 +16,7 @@
     top: 100px;
     left: calc(50vw - 275px);
     background-color: white;
-    z-index: 11;
+    z-index: 20;
     border-radius: 20px;
 }
 

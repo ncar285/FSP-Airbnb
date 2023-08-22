@@ -4,12 +4,14 @@ import uiReducer from './uiReducer';
 import sessionsReducer from './sessionsReducer';
 import logger from 'redux-logger';
 import listingsReducer from './listingsReducer';
+import reviewsReducer from './reviewsReducer';
 
 
 export const rootReducer = combineReducers({ 
     ui: uiReducer,
     session: sessionsReducer,
-    listings: listingsReducer
+    listings: listingsReducer,
+    reviews: reviewsReducer
 })
 
 export default function configureStore(preloadedState={}){
