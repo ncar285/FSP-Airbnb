@@ -12,8 +12,9 @@
 .show-page-contents{
     display: flex;
     justify-content: space-between;
-    padding: 50px 0;
+    padding: 40px 0;
     border-bottom: 1px solid var(--light_grey);
+    margin-bottom: 70px;
 }
 
 .listing-left-column {
@@ -26,4 +27,8 @@
     position: relative; */
 }
 
+.reviews-block {
+    /* height: 400px; */
+    /* background-color: yellow; */
+}
 

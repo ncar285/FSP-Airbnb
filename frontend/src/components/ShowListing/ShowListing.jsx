@@ -6,9 +6,8 @@ import { selectListing, fetchListing } from "../../store/listingsReducer"
 import PhotoAlbum from './PhotoAlbum/PhotoAlbum'
 import ListingInfo from './ListingInfo/ListingInfo'
 import ReserveBlock from './ReserveBlock/ReserveBlock'
+import Reviews from './Reviews/Reviews'
 const ShowListing = () => {
-
-   
 
     const { listingId } = useParams();
     const dispatch = useDispatch()
@@ -18,8 +17,6 @@ const ShowListing = () => {
     }, [dispatch, listingId]);
 
     const listing = useSelector(selectListing(listingId))
-
-    // console.log("OWNER IS:", listing.owner)
 
     if (!listing) {
         return <div>Loading...</div>;
@@ -43,6 +40,10 @@ const ShowListing = () => {
                             <ReserveBlock/>
                         </div>
 
+                    </div>
+
+                    <div className='reviews-block'>
+                        <Reviews reviews = {listing.reviews}/>
                     </div>
 
                 </div>
