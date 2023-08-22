@@ -1,0 +1,368 @@
+﻿review id,author_id,listing_id,body,cleanliness,communication,checkin,accuracy,location,value,,
+1,78,7,This place is incredible. The views are amazing. The pictures can't even do it justice. The concierge is incredibly responsive and helpful. Well worth it!!,5,4,5,4,4,3,,
+2,30,19,Absolutely loved our stay at this place. The view from the balcony was breathtaking and the interior was cozy and inviting. The host was friendly and accommodating. Highly recommend!,5,3,5,5,5,4,,
+3,76,16,Absolutely stunning! The views from here are breathtaking. The cozy interior and comfortable furnishings made for a perfect stay. Can't wait to come back!,5,3,4,4,3,5,,
+4,39,19,Absolutely stunning views from this incredible place. The pictures don't do it justice. The concierge was super helpful and responsive. Would definitely stay again!,5,4,3,5,3,5,,
+5,29,17,"Wow, what a breathtaking view! This place exceeded all of my expectations. The concierge was extremely attentive and helpful. I can't wait to come back and stay here again.",4,3,4,3,4,5,,
+6,57,30,"Absolutely loved our stay here! The scenery was breathtaking, and the cozy and charming atmosphere made it even better. The attention to detail in the decor was impressive. Couldn't have asked for a better experience. Would highly recommend!",5,5,5,4,3,4,,
+7,79,19,The place was absolutely incredible. The scenery was breathtaking and the views were beyond amazing. The host was extremely helpful and responsive. It was worth every penny and I would definitely stay there again.,5,4,4,5,3,5,,
+8,70,9,"The stay was absolutely incredible. The views were breathtaking, even better than the pictures. The service provided by the concierge was outstanding, always responsive and helpful. It was definitely worth it and I would love to stay here again.",4,5,4,5,4,5,,
+9,78,19,"Stunning views, incredible concierge, worth every penny!",4,5,4,4,5,5,,
+10,73,29,Absolutely loved our stay at this amazing place. The views were breathtaking and the staff was incredibly friendly and helpful. Highly recommend!,4,5,5,5,5,5,,
+11,17,19,Quaint cottage with a breathtaking view. Peaceful and cozy. Loved every moment!,5,5,5,4,5,4,,
+12,24,15,This place is incredible. The views are amazing. The pictures can't even do it justice. The concierge is incredibly responsive and helpful. Well worth it!!,3,5,4,4,4,5,,
+13,90,20,"This place exceeded our expectations. The breathtaking views, cozy atmosphere, and friendly staff made our stay unforgettable. Highly recommend!",5,4,5,4,4,4,,
+14,9,15,Absolutely loved my stay at this incredible place. The views are breathtaking and the pictures don't do it justice. The concierge was extremely helpful and responsive. I would definitely stay here again without hesitation.,4,4,5,5,4,5,,
+15,64,19,"The place is absolutely stunning. The views are breathtaking and the atmosphere is peaceful and relaxing. The interior is cozy and charming, making it feel like a home away from home. The host was attentive and accommodating, ensuring that our stay was comfortable and enjoyable. We would definitely return to this incredible place.",4,4,4,3,5,5,,
+16,58,12,Absolutely loved the cozy cabin and peaceful atmosphere. The fireplace was a wonderful touch. Can't wait to come back!,4,4,4,4,5,5,,
+17,96,30,"The perfect getaway! Amazing views, cozy atmosphere, and a helpful host. Can't wait to come back!",4,5,4,5,5,5,,
+18,41,16,Absolutely loved our stay at this place. The view from the balcony was breathtaking and the interior was cozy and inviting. The host was friendly and accommodating. Highly recommend!,5,4,4,5,4,4,,
+19,32,9,"Our stay was absolutely amazing! The cozy and beautifully decorated space instantly made us feel at home. The location was perfect, with stunning views and easy access to all the attractions. The host was incredibly friendly and made sure we had everything we needed for a comfortable stay. We can't wait to come back and experience this wonderful hideaway again!",5,5,5,5,4,4,,
+20,70,26,"Our stay was absolutely perfect! The space was stylish, clean, and had everything we needed. The location was ideal for exploring the city and the host was incredibly helpful and responsive. Can't wait to come back!",5,5,5,4,4,4,,
+21,13,12,"My stay was absolutely fantastic! The accommodations were clean, cozy, and beautifully decorated. The host was incredibly friendly and went above and beyond to ensure my comfort. The location was perfect, with easy access to everything I needed. I had a memorable experience and would definitely stay again in the future!",3,3,4,4,5,5,,
+22,41,30,"My stay was fantastic! The accommodations were clean and comfortable, and the host went above and beyond to ensure I had a great experience. The location was perfect and I loved the unique touches in the decor. Highly recommended!",5,5,4,4,4,5,,
+23,24,30,Our stay was absolutely charming! The space was exquisitely decorated and the attention to detail was remarkable. The host made us feel right at home and provided outstanding recommendations for local attractions. The cozy atmosphere and comfortable amenities ensured a truly delightful experience.,5,5,4,5,4,5,,
+24,74,21,"My stay was absolutely wonderful! The space was immaculate, beautifully decorated, and had all the amenities I needed. The host was incredibly welcoming and provided helpful recommendations for local attractions. The location was perfect - within walking distance to fantastic dining and shopping options. I truly had a memorable experience and would highly recommend it to anyone in need of a comfortable and enjoyable stay.",5,5,4,4,5,4,,
+25,50,30,"I had a fantastic time staying at this cozy hideaway. The space was beautifully decorated and had such a warm and inviting atmosphere. The host was incredibly friendly and provided great recommendations for local attractions. The location was perfect, making it easy to explore the surrounding area. I thoroughly enjoyed my stay and would highly recommend this lovely retreat to others!",5,5,5,5,4,4,,
+26,93,29,My recent stay exceeded expectations! The cozy and well-decorated space instantly made me feel at home. The host went above and beyond to make my stay comfortable and provided excellent recommendations for local attractions. I thoroughly enjoyed the peaceful neighborhood and convenient location. Will definitely be back!,5,5,5,4,4,5,,
+27,2,21,"My stay exceeded expectations. The space was beautifully designed, cozy, and spotlessly clean. The host was incredibly accommodating and provided thoughtful touches throughout my stay. I would highly recommend this experience.",4,5,4,3,4,4,,
+28,70,11,"My stay was absolutely delightful! The space was charming, cozy, and filled with thoughtful touches. The host was incredibly hospitable, ensuring a seamless experience from start to finish. The location was ideal, allowing us to explore the vibrant neighborhood with ease. I thoroughly enjoyed my stay and would highly recommend it to anyone looking for a memorable getaway.",4,5,4,5,4,3,,
+29,73,30,"My stay was absolutely delightful! The space was charming, cozy, and filled with thoughtful touches. The host was incredibly hospitable, ensuring a seamless experience from start to finish. The location was ideal, allowing us to explore the vibrant neighborhood with ease. I thoroughly enjoyed my stay and would highly recommend it to anyone looking for a memorable getaway.",5,5,4,4,5,5,,
+30,14,8,"My stay was absolutely fantastic! The space was cozy and comfortable, with all the amenities I needed. The host went above and beyond, providing helpful recommendations for local attractions and making sure I felt right at home. The location was perfect, close to everything I wanted to explore. I couldn't have asked for a better experience. Thank you!",5,5,5,5,5,4,,
+31,85,17,"My stay was absolutely delightful! The space was charming, cozy, and filled with thoughtful touches. The host was incredibly hospitable, ensuring a seamless experience from start to finish. The location was ideal, allowing us to explore the vibrant neighborhood with ease. I thoroughly enjoyed my stay and would highly recommend it to anyone looking for a memorable getaway.",4,4,4,4,5,4,,
+32,31,4,"I recently stayed at a place that exceeded all my expectations. The host was incredibly accommodating and friendly, making sure I had everything I needed for a comfortable stay. The space itself was beautifully decorated and cozy, providing a perfect retreat after a long day of exploring. It felt like a home away from home, and I couldn't have asked for a better experience. Highly recommended!",4,5,4,5,4,5,,
+33,56,11,"Our stay was absolutely wonderful! The space was cozy, clean, and had everything we needed. The host was incredibly friendly and responsive, making our experience even better. The location was perfect, with amazing views and easy access to restaurants and attractions. Would definitely stay here again!",5,4,4,5,4,5,,
+34,96,19,"I had an amazing experience at this place! The accommodations were cozy and clean, with stunning views and a peaceful atmosphere. The host was attentive and made sure I had everything I needed for a comfortable stay. I truly felt at home while exploring the surrounding area. Highly recommend!",4,4,5,4,4,4,,
+35,24,10,"My stay was absolutely incredible! The cozy and beautifully decorated space provided all the comfort I needed. The host was incredibly welcoming and attentive, ensuring a seamless and enjoyable experience. I was captivated by the picturesque views from the windows, creating a serene and relaxing atmosphere. Will definitely come back for another unforgettable stay!",5,4,5,4,4,4,,
+36,28,27,"My stay was absolutely delightful! The space was charming, cozy, and filled with thoughtful touches. The host was incredibly hospitable, ensuring a seamless experience from start to finish. The location was ideal, allowing us to explore the vibrant neighborhood with ease. I thoroughly enjoyed my stay and would highly recommend it to anyone looking for a memorable getaway.",5,5,5,5,5,4,,
+37,75,12,"Our experience at this lovely place was absolutely amazing! The space was clean, cozy, and beautifully decorated. The host was extremely attentive and made us feel right at home. We enjoyed the peaceful atmosphere and convenient location. Highly recommended!",5,5,5,4,4,4,,
+38,26,1,Our stay was absolutely incredible! The view of the mountains and the lake was simply breathtaking. The glamping experience made it even more special. We had the best time and would definitely come back again.,4,4,4,4,5,5,,
+39,32,2,We had an amazing experience glamping in the desert with an incredible view of Mount Palomar. The tent cabins were top-notch and exceeded all our expectations.,4,4,5,5,3,5,,
+40,42,3,Our stay was absolutely amazing! The glamping experience was unique and the ocean views were breathtaking. We had a wonderful time.,5,5,5,4,5,5,,
+41,74,4,Our stay was absolutely incredible! The coastal views were breathtaking and the architecture of the tiny house blew us away. Such a luxurious retreat.,5,4,4,5,5,4,,
+42,39,5,"My stay at this waterfront bungalow was a breath of fresh air. Surrounded by stunning nature in Northern California, it offered the perfect balance of simplicity and relaxation. Highly recommended.",4,5,5,4,4,4,,
+43,98,6,"We had a wonderful time at the waterfront bungalow. The views from the terrace were absolutely breathtaking, especially the islands in the Bay of Kotor. Highly recommend!",4,4,4,5,4,5,,
+44,100,7,"I absolutely loved my stay at this charming waterfront studio. The views were absolutely stunning, especially the mountain views. It was the perfect getaway and I couldn't have asked for a better stay.",5,5,5,4,5,5,,
+45,33,8,We had a wonderful time at the peaceful retreat near SF. The direct beach access was a great bonus. The cozy atmosphere and tranquil surroundings made our stay truly relaxing. Would highly recommend!,4,4,4,4,5,4,,
+46,69,9,"We absolutely loved our stay at this hidden gem by the beach. The stunning ocean views were a treat for the eyes, and the hot tub with its incredible views was the perfect way to unwind. Can't wait to go back!",4,5,5,5,4,5,,
+47,63,10,Our stay at the secluded treehouse retreat was absolutely incredible! The views were absolutely stunning and the location was perfect for visiting UC Berkeley and downtown SF. We had such a peaceful and memorable stay. Thank you!,5,5,5,4,5,5,,
+48,55,11,"Our stay at the luxurious cabin in the tranquil woodland was simply idyllic. The picturesque surroundings and cozy atmosphere provided the perfect getaway. The canal-front location was a dream, allowing for peaceful relaxation and stunning views. Highly recommend this fantastic stay!",4,4,5,5,4,4,,
+49,14,12,"Our stay at this luxurious retreat exceeded all expectations. The charming 100-year-old school house provided a unique and cozy atmosphere. The highlight was the Finnish sauna, which added an extra level of relaxation to our stay. We thoroughly enjoyed every moment and would highly recommend it to anyone seeking a memorable retreat.",4,4,4,4,5,5,,
+50,61,13,"Our stay at the charming historic schoolhouse near Monterey Bay was absolutely delightful. The private vineyard added an extra touch of luxury to our experience. The ambiance was incredible, and we felt like we were living in a fairytale. Truly a magical stay!",4,4,5,5,4,4,,
+51,50,14,Our stay at this luxurious vineyard retreat was absolutely incredible. The infinity pool and exclusive estate made for a truly extraordinary experience.,5,5,5,4,4,4,,
+52,11,15,Our stay at this sustainable getaway in Joshua Tree was absolutely incredible. The views from the property were breathtaking and the organic architecture made us feel truly immersed in nature. It was such a peaceful and relaxing experience. We loved every minute of our stay!,5,5,5,4,5,4,,
+53,29,16,"Our stay at Eagle's Watch was absolutely incredible. The stunning ocean views took our breath away, and the quirky, sustainable design added a unique charm to the whole experience. We couldn't have asked for a better getaway.",4,4,5,5,5,4,,
+54,19,17,"The luxury modern marvel was absolutely breathtaking with its stunning views. The retreat, designed by Frank Lloyd Wright, was a true masterpiece.",5,5,5,5,5,4,,
+55,91,18,Our stay at this desert oasis was absolutely incredible. The stunning architecture by Frank Lloyd Wright combined with the peaceful desert surroundings created a truly luxurious experience. We couldn't have asked for a better getaway.,5,4,5,5,4,4,,
+56,48,19,We had an absolutely enchanting getaway surrounded by nature at this cabin. The breathtaking views of Lake Tahoe made our stay truly memorable and romantic.,5,4,5,5,5,4,,
+57,77,20,"My stay at this place was absolutely incredible. The mesmerizing views of Lake Tahoe left me speechless. The accommodation itself felt like pure luxury, with every detail carefully thought out. Not to mention the added bonus of having secure garage parking. I couldn't have asked for a better experience.",4,4,4,5,4,4,,
+58,16,21,We had a wonderful stay at this convenient and spacious place. It was perfect for our family and we loved being able to immerse ourselves in nature at MICA.,5,4,4,5,4,4,,
+59,10,22,Our stay at this lakefront estate in Quebec was absolutely incredible. The surrounding nature was breathtaking and we truly felt immersed in the beauty of the area. The house itself was comfortable and had everything we needed for a relaxing and enjoyable stay. We highly recommend this experience to anyone looking for a tranquil getaway.,5,4,4,4,5,5,,
+60,57,23,"We had an amazing time at this luxurious lakefront resort. The location was secluded, which made it the perfect retreat. The amenities were top-notch and the spa was a wonderful addition. We loved having easy access to the lake. Overall, it was a fantastic stay.",5,5,5,5,4,4,,
+61,78,24,"I absolutely loved my stay at this secluded lakeside cabin. The location was perfect for a peaceful retreat surrounded by nature. The cabin itself was cozy and well-appointed, with everything I needed for a comfortable stay. The highlight was definitely the beautiful view of the lake, which I enjoyed from the deck each morning. I would highly recommend this place to anyone looking for a serene getaway.",5,5,4,3,5,4,,
+62,3,25,"We had a wonderful time at the cabin! The location was absolutely stunning, with breathtaking views of the lake. The cabin itself was cozy and had everything we needed for a comfortable stay. It was the perfect getaway for relaxation and enjoying nature. We can't wait to come back!",4,4,4,5,5,5,,
+63,42,26,"We had a wonderful time staying at this cozy, spacious apartment. The views from the windows were absolutely breathtaking, especially the downtown views. We couldn't have asked for a better place to stay during our trip. Thank you!",5,5,5,4,4,5,,
+64,95,27,Our stay was absolutely amazing! The remodeled Edwardian home offered stunning city views that made our experience unforgettable.,4,5,4,4,4,5,,
+65,53,28,"This house was incredibly tranquil and cozy, with stunning views of the city. The private rooftop spa added an extra level of relaxation to our stay.",5,5,5,5,4,4,,
+66,56,29,"Our stay at this luxurious urban oasis was absolutely amazing! The private spa was the perfect place to relax and unwind after a long day. The location was also very convenient, as it was close to all of the attractions we wanted to visit. We had a wonderful time and would definitely recommend this place to others!",5,5,4,5,4,4,,
+67,65,1,"We had the most phenomenal stay at this amazing location! From the moment we arrived, we were blown away by the breathtaking view of the mountains and the serene beauty of the lake. It was like stepping into a postcard.
+
+And the glamping experience was a true highlight! The blend of luxury and nature was perfect. Our cozy tent was beautifully decorated and had all the modern amenities we could ask for. It felt like staying in a five-star hotel, but with the added charm of being surrounded by nature.
+
+The hosts were incredibly warm and welcoming. They went above and beyond to ensure we had everything we needed for a memorable stay. They even provided us with insider tips on the best hiking trails and local attractions, which made exploring the area even more exciting.
+
+We truly had the best time and didn't want our vacation to end. This place has everything you could ever dream of for a relaxing and unforgettable getaway. We are already planning our next visit and cannot wait to come back!",4,5,4,4,5,4,,
+68,53,2,"Our glamping experience in the desert with a breathtaking view of Mount Palomar was truly unforgettable. The tent cabins provided were absolutely top-notch, surpassing all our expectations. From the moment we arrived, we were blown away by the attention to detail and the level of comfort provided.
+
+The tent cabins were spacious, impeccably clean, and well-equipped with all the amenities one could possibly need. The beds were comfortable, ensuring a good night's sleep after a day of exploring the beautiful surroundings. The interior decor was on point, combining rustic charm with modern luxuries. We were particularly impressed by the private bathroom facilities, which were clean, well-maintained, and stocked with high-quality toiletries.
+
+One of the highlights of our stay was, without a doubt, the incredible view of Mount Palomar. It was mesmerizing to wake up to a panoramic sight of the majestic mountain every morning. We couldn't help but spend hours gazing at the breathtaking sunset and stargazing at night, feeling completely immersed in the beauty of nature.
+
+The staff at the glamping site were friendly, accommodating, and went above and beyond to ensure our comfort throughout our stay. They provided excellent recommendations for nearby hiking trails, giving us the opportunity to explore the stunning desert landscape.
+
+Overall, our glamping experience in the desert with a view of Mount Palomar exceeded all expectations. The tent cabins were nothing short of perfection, combining comfort and luxury in a unique setting. We would highly recommend this experience to anyone looking for an unforgettable getaway immersed in nature.",4,4,5,5,5,4,,
+69,59,3,"We were completely blown away by our stay at this incredible glamping site. The uniqueness of the experience combined with the breathtaking ocean views made for an absolutely amazing vacation. From the moment we arrived, we were greeted with warm and friendly staff who made sure every detail was taken care of. 
+
+The accommodations were not only comfortable but also beautifully designed. It was incredible to have the opportunity to stay in such a unique and stylish place. The glamping tents were spacious and clean, providing all the necessary amenities for a comfortable stay. 
+
+But what truly set this place apart was the stunning ocean views. Waking up every morning to the sight of the waves crashing against the shore was truly a mesmerizing experience. We spent our days lounging on the private deck, soaking in the sun and taking in the breathtaking scenery. 
+
+Not only were the surroundings beautiful, but the overall atmosphere of the site was peaceful and serene. It truly felt like a getaway from the hustle and bustle of everyday life. The sounds of nature and the fresh ocean breeze created a sense of calm and relaxation that we had been craving.
+
+The location was also ideal, as it offered a perfect balance of tranquility and convenience. We were able to easily explore the nearby attractions and restaurants, yet come back to our peaceful oasis at the end of the day.
+
+Overall, our stay was nothing short of wonderful. The combination of unique glamping experience, breathtaking ocean views, and impeccable service made for an unforgettable vacation. We highly recommend this place to anyone looking for a truly special getaway.",5,5,5,5,4,4,,
+70,64,4,"We had the most amazing time during our stay at this incredible listing! From the moment we arrived, we were in awe of the breathtaking coastal views that welcomed us. It was like a dream come true to wake up to the sound of the waves crashing against the shore.
+
+But it wasn't just the location that had us hooked. The architecture of the tiny house was simply impeccable. Every detail was thoughtfully designed, and we couldn't help but admire the craftsmanship that went into creating such a luxurious retreat. The layout was smart and efficient, making the most out of the space without compromising on comfort.
+
+Inside, we were greeted with a beautifully decorated living area that was both cozy and stylish. The furniture was comfortable, and we loved snuggling up on the couch after a long day of exploring. The kitchen had everything we needed to whip up a delicious meal, and we appreciated the modern appliances and ample counter space.
+
+The bedroom was a true haven of relaxation. The bed was incredibly comfortable, and we slept like babies every night. The ensuite bathroom was equally impressive, with a spacious shower and high-quality amenities that made us feel pampered.
+
+One of the highlights of our stay was the outdoor space. The listing had a lovely patio area where we could sit and enjoy the panoramic views of the coast. Whether it was sipping our morning coffee or stargazing at night, it was the perfect spot to unwind and soak in the beauty of our surroundings.
+
+Lastly, we can't forget to mention the exceptional hospitality of the host. They were warm, welcoming, and made sure we had everything we needed for a memorable stay. Their attention to detail and willingness to go the extra mile truly enhanced our experience.
+
+Overall, our stay at this listing was nothing short of incredible. It exceeded our expectations in every way possible and left us with unforgettable memories. If you're looking for a luxurious retreat with breathtaking views, this is the place to be. We can't recommend it enough!",5,5,5,4,5,4,,
+71,100,5,"I had the most refreshing and rejuvenating stay at this waterfront bungalow. Located amidst the breathtaking beauty of Northern California, this place provided me with the perfect escape from reality. The simplicity and tranquility of this bungalow is unmatched and truly allowed me to unwind and recharge.
+
+The surrounding nature was absolutely mesmerizing. Waking up to the panoramic views of the sparkling water and lush greenery was nothing short of magical. I spent hours just sitting on the porch, savoring the peaceful ambiance and immersing myself in the serenity.
+
+The bungalow itself was a haven of comfort and simplicity. It had everything I needed for a comfortable stay. The decor was tasteful, exuding a cozy and homey vibe. The bed was incredibly comfortable, ensuring a restful night's sleep. The kitchen was well-equipped with all the necessary amenities, allowing me to whip up some delicious meals.
+
+What I loved most about this place was the balance it offered. It provided the perfect escape from the hustle and bustle of daily life, allowing me to disconnect and embrace nature. Yet, it also offered all the necessary comforts and conveniences, ensuring a stress-free and enjoyable stay.
+
+I cannot recommend this waterfront bungalow enough. Whether you're seeking a weekend getaway or a longer retreat, this place will undoubtedly exceed your expectations. So, if you're looking for a breath of fresh air and a dose of relaxation, this is the place to be.",4,4,4,5,4,5,,
+72,95,6,"Our stay at the waterfront bungalow was everything we could have ever hoped for. From the moment we stepped foot onto the terrace, we were immediately captivated by the stunning views that greeted us. The sight of the islands in the Bay of Kotor was simply breathtaking.
+
+The bungalow itself was well-appointed and had everything we needed for a comfortable stay. The interior was tastefully decorated and had a cozy, welcoming atmosphere. It truly felt like a home away from home.
+
+But it was the terrace that stole the show. We spent countless hours out there, savoring every moment of the panoramic views. Whether it was enjoying a cup of coffee in the morning or sipping a glass of wine in the evening, there was no better place to be than on that terrace.
+
+The location of the bungalow was also ideal. It was close to various amenities, including restaurants, shops, and attractions. We took full advantage of this and explored the charming town at our leisure. And whenever we wanted to escape the hustle and bustle, we simply retreated to the serenity of our bungalow.
+
+I cannot recommend the waterfront bungalow enough. It provided us with a truly memorable and enjoyable stay. If you're looking for a place that offers both comfort and spectacular views, then this is the place for you. Trust me, you won't be disappointed.",4,3,5,5,4,4,,
+73,26,7,"I recently had the pleasure of staying at this charming waterfront studio and I can't say enough about how amazing it was. From the moment I walked in, I was blown away by the breathtaking views. The mountain views were particularly mesmerizing and I found myself constantly gazing out the window, taking in the beauty of nature.
+
+The studio itself was cozy and welcoming. It had everything I needed for a perfect getaway. The bed was incredibly comfortable and I slept like a baby every night. The kitchenette was well-equipped, allowing me to prepare some simple meals. The seating area was perfect for enjoying meals or just relaxing with a book.
+
+One of the highlights of my stay was exploring the surrounding area. The waterfront location provided easy access to various water activities. I had a blast kayaking and paddleboarding, and even managed to catch a stunning sunset while out on the water. It truly felt like a dream come true.
+
+Another aspect that made my stay memorable was the hospitality of the host. They were extremely friendly and attentive, ensuring that I had everything I needed for a comfortable stay. They provided useful recommendations for local attractions and restaurants, which enhanced my overall experience.
+
+Overall, I couldn't have asked for a better stay. This charming waterfront studio exceeded all my expectations and provided the perfect escape from the hustle and bustle of everyday life. I would highly recommend it to anyone looking for a peaceful and picturesque getaway. I can't wait to return in the future!",4,5,5,5,5,5,,
+74,68,8,"Our experience at the peaceful retreat near SF was absolutely amazing. The highlight for us was definitely the direct beach access, which added so much excitement and convenience to our stay. The cozy atmosphere and tranquil surroundings further enhanced the entire experience, making it truly relaxing and rejuvenating. We cannot recommend this place enough. Whether you're looking for a peaceful getaway or a fun-filled beach vacation, this retreat has it all. Don't miss out on this hidden gem!",5,4,5,3,5,5,,
+75,8,9,"We had the most amazing time staying at this hidden gem by the beach. From the moment we arrived, we were blown away by the stunning ocean views that greeted us. Every morning, we woke up to the sound of crashing waves and a breathtaking vista that felt like a dream.
+
+But it wasn't just the views that made our stay unforgettable. The hot tub, nestled perfectly on the property, provided an unparalleled relaxation experience. Not only did it offer a soothing soak after a long day of exploring, but it also gave us the opportunity to take in the incredible scenery. As we lounged in the warm bubbles while overlooking the vastness of the ocean, we felt a sense of tranquility wash over us.
+
+The entire property was meticulously maintained and thoughtfully designed. The attention to detail was evident in every aspect, from the stylish decor to the comfortable furnishings. We felt like we were in our own private paradise, far away from the hustle and bustle of everyday life.
+
+We can't wait to return to this little piece of heaven. The memories we created during our stay will last a lifetime, and we are already counting down the days until we can go back. Anyone looking for a peaceful getaway with breathtaking views, this is the place to be. Trust us, you won't be disappointed.",5,4,4,4,4,5,,
+76,35,10,"The secluded treehouse retreat exceeded all of our expectations and provided us with an absolutely incredible stay. The moment we arrived, we were immediately captivated by the stunning views surrounding the property. It was truly a haven of tranquility, tucked away from the bustling city life.
+
+The location was perfect for our needs, as we were able to easily visit UC Berkeley and explore the vibrant downtown of San Francisco. Being able to escape to the treehouse retreat after a long day of sightseeing was an added bonus. The peaceful atmosphere and serene surroundings made it feel like we were miles away from civilization.
+
+The treehouse itself was a work of art, beautifully constructed with attention to every detail. The interior was cozy and inviting, with all the amenities one could need for a comfortable stay. Waking up to the sound of birds chirping and the soft rustling of leaves was a true delight.
+
+We were also incredibly grateful for the excellent hospitality provided by our hosts. They were attentive, friendly, and made sure that we had everything we needed throughout our stay. Their warmth and genuine care made the experience even more memorable.
+
+Overall, our time at the secluded treehouse retreat was nothing short of magical. It offered the perfect blend of relaxation, natural beauty, and convenience. We left feeling refreshed and rejuvenated, with memories that will last a lifetime. A heartfelt thank you to our hosts for providing such a wonderful experience. We can't wait to return!",4,5,5,5,4,4,,
+77,37,11,"We had such a fabulous time at the luxurious cabin in the tranquil woodland. It truly felt like a dream getaway. The surroundings were absolutely picturesque, and the cozy atmosphere added to the overall charm of the place. One of the best parts was the canal-front location. It was incredible to be able to relax and unwind while enjoying the stunning views. I cannot recommend this stay enough. It was truly fantastic and exceeded all of our expectations.",4,4,4,5,4,5,,
+78,71,12,"We recently had the pleasure of staying at this luxurious retreat and we were blown away by the entire experience. From the moment we walked into the charming 100-year-old school house, we knew we were in for a special treat. The atmosphere was cozy and inviting, with thoughtful touches that truly made us feel at home.
+
+But the real highlight of our stay was the Finnish sauna. We had heard great things about it, but nothing could have prepared us for just how amazing it was. The heat and steam provided a level of relaxation that we had never experienced before. It was the perfect way to unwind after a long day of exploring the nearby hiking trails.
+
+Speaking of which, the location of this retreat is simply unparalleled. Nestled in the midst of nature, it offered breathtaking views and a serene ambiance that made it hard to leave. We found ourselves spending hours just sitting on the porch, taking in the beauty all around us.
+
+Every moment of our stay was thoroughly enjoyable. The staff was exceptionally friendly and helpful, making sure we had everything we needed. The attention to detail in every aspect of the retreat was remarkable.
+
+If you're looking for a truly unforgettable retreat, we cannot recommend this place highly enough. Whether you're seeking relaxation, adventure, or simply a getaway from the hustle and bustle of everyday life, this retreat has it all. Don't miss out on the opportunity to create lasting memories in this little slice of heaven.",5,5,5,4,4,5,,
+79,94,13,"We had a truly magical stay at the charming historic schoolhouse near Monterey Bay. From the moment we stepped foot onto the private vineyard surrounding the property, we knew we were in for a luxurious experience. The ambiance of the schoolhouse was incredible, with its rich history and charming architecture. It felt like we were living in a fairytale.
+
+The attention to detail in this listing was exceptional. Every corner of the schoolhouse was filled with character and charm, from the vintage furniture to the beautiful artwork hanging on the walls. We were blown away by how well-preserved the historic nature of the property was. It truly felt like stepping back in time.
+
+The location of this listing was also ideal. Not only were we able to explore the nearby attractions of Monterey Bay, but we also had the opportunity to relax and unwind in the tranquility of the private vineyard. We spent our evenings sipping wine and enjoying the breathtaking views of the surrounding countryside.
+
+The hosts were incredibly accommodating and helpful throughout our stay. They provided us with all the necessary information and recommendations to make the most of our time in the area. Their passion for the schoolhouse and its history was evident, and it added an extra layer of charm to our stay.
+
+Overall, our experience at the historic schoolhouse near Monterey Bay was absolutely delightful. It was a perfect blend of luxury, charm, and tranquility. We couldn't have asked for a better getaway and would highly recommend this listing to anyone looking for a truly magical stay.",4,4,5,4,5,4,,
+80,42,14,"Our stay at this luxurious vineyard retreat was simply awe-inspiring. The infinity pool, with its breathtaking views, coupled with the exclusivity of the estate, truly elevated our experience to extraordinary heights.
+
+From the moment we arrived, we were overwhelmed by the sheer beauty and elegance of the property. Nestled within the picturesque vineyards, the retreat encompassed a sense of tranquility and serenity that was unmatched. The well-maintained gardens and lush greenery surrounding the estate added to its overall charm.
+
+The highlight of our stay was undoubtedly the infinity pool. Its seamless blend with the surrounding landscape created an illusion of swimming into the enchanting horizon. We spent hours submerged in its crystal-clear waters, marveling at the majestic views that stretched out before us. It was an experience that will forever be etched in our memories.
+
+Moreover, the exclusivity of the estate enhanced our overall stay. The sense of privacy and seclusion allowed us to truly unwind and disconnect from the outside world. The attentive staff members catered to our every need, ensuring that our stay was nothing short of perfection. Their warm hospitality and attention to detail truly added to the overall luxuriousness of our experience.
+
+In addition to the remarkable amenities, the vineyard retreat also boasted a magnificent wine selection. We had the opportunity to indulge in some of the finest wines the region had to offer. The knowledgeable sommelier guided us through a delightful tasting journey, enlightening us with the rich history and flavors of each sip.
+
+Overall, our stay at this luxurious vineyard retreat was beyond compare. The combination of the incredible infinity pool, exclusive estate, and impeccable service left us utterly captivated. If you are in search of a unique and extraordinary experience, look no further. We cannot recommend this retreat enough for a truly unforgettable getaway.",3,5,5,4,5,3,,
+81,42,15,"We had an absolutely incredible stay at this sustainable getaway in Joshua Tree. The views from the property were absolutely breathtaking, with stunning vistas of the surrounding natural beauty. The organic architecture of the accommodation really provided a unique experience that made us feel truly immersed in nature. It was such a peaceful and tranquil setting, allowing us to truly relax and unwind. We loved every minute of our stay and would highly recommend this special place to anyone seeking a peaceful and rejuvenating getaway.",5,5,4,4,5,4,,
+82,70,16,"We had the most memorable stay at Eagle's Watch. The moment we walked into our room and saw the breathtaking ocean views, our jaws dropped. It was like stepping into a dream. The design of the entire property was simply exquisite, with a perfect blend of modern and sustainable elements. We loved how the owners paid attention to every detail, from the eco-friendly materials used to the quirky and charming decor. It added such a unique and whimsical touch to our whole experience.
+
+Not only was the design impressive, but the overall ambiance of Eagle's Watch was incredibly welcoming and relaxing. The staff went above and beyond to ensure that we had everything we needed and were always available to answer any questions or provide recommendations. Their warmth and genuine hospitality truly made us feel at home.
+
+One of the highlights of our stay was waking up to the sound of crashing waves and enjoying our morning coffee on the balcony while soaking in the panoramic ocean views. It was a truly awe-inspiring sight that we can still picture in our minds, even long after our stay.
+
+The location of Eagle's Watch was also perfect for exploring the surrounding area. We took advantage of the nearby hiking trails and spent our afternoons discovering hidden coves and pristine beaches. It felt like our own little paradise away from the hustle and bustle of everyday life.
+
+Overall, our time at Eagle's Watch exceeded all expectations. The stunning ocean views, the eco-friendly design, and the warm hospitality made it an unforgettable experience. We couldn't have asked for a better getaway and we are already planning our next visit. We highly recommend Eagle's Watch to anyone seeking a truly remarkable and rejuvenating escape.",4,5,4,5,5,4,,
+83,5,17,"I recently had the pleasure of staying at the luxury modern marvel and I must say, it was absolutely breathtaking! The moment I walked in, I was captivated by its stunning views. The retreat, designed by none other than the renowned architect Frank Lloyd Wright, was a true masterpiece.
+
+Every detail of the property exuded elegance and sophistication. From the sleek and minimalist design to the high-end finishes, it was clear that no expense was spared in creating this architectural gem. The interior spaces were thoughtfully laid out, allowing for a seamless flow between rooms and making the most of the surrounding natural beauty.
+
+But it was the views that truly stole the show. The expansive windows and balconies provided panoramic vistas of the surrounding landscape, and I found myself constantly in awe of the beauty that lay before me. Whether it was the majestic mountains in the distance or the serene waterfront, every view was a work of art.
+
+The level of comfort and luxury provided by this retreat was exemplary. The bedrooms were spacious and beautifully appointed, with plush beds and high-quality linens that made for a restful night's sleep. The bathrooms were equally impressive, featuring modern fixtures and luxurious amenities.
+
+I also appreciated the attention to detail and personalized touches throughout my stay. From the welcoming gift upon arrival to the well-stocked kitchen and thoughtful concierge service, every aspect of my experience was tailored to perfection.
+
+Overall, my stay at this luxury modern marvel was an unforgettable experience. It truly was a masterpiece in every sense of the word, and I cannot recommend it highly enough. If you're looking for a truly exceptional retreat, this is the place to be.",4,5,5,4,5,5,,
+84,87,18,"I cannot express enough how amazing our stay at this desert oasis was. From the moment we arrived, we were enchanted by the breathtaking architecture designed by the legendary Frank Lloyd Wright. Every corner of this place oozed with elegance and sophistication.
+
+But it wasn't just the stunning architecture that made this experience unforgettable. The peaceful desert surroundings added an element of tranquility that completed the luxurious atmosphere. It felt like we were in our own little paradise, far away from the hustle and bustle of the city.
+
+The attention to detail in every aspect of this oasis was unparalleled. From the perfectly manicured gardens to the meticulously designed interior, everything was simply exquisite. We felt like royalty as we lounged by the pool, surrounded by the serenity of the desert.
+
+The staff were incredibly warm and attentive, making sure that our every need was taken care of. They went above and beyond to ensure that we had the most enjoyable stay possible. Their exceptional service truly added to the overall experience and made us feel valued and pampered.
+
+Overall, our getaway at this desert oasis was beyond anything we could have ever imagined. It was a haven of luxury and relaxation, and we left feeling rejuvenated and utterly spoiled. If you're looking for a truly extraordinary experience, this is the place to be. Trust me, you won't be disappointed.",4,4,4,5,5,4,,
+85,20,19,"Our stay at this cabin was nothing short of enchanting. From the moment we arrived, we were completely surrounded by the beauty of nature. The cabin itself was cozy and inviting, and the breathtaking views of Lake Tahoe took our breath away.
+
+Waking up each morning to the gorgeous sight of the lake shimmering in the sunlight was a dream come true. We spent our days exploring the nearby hiking trails, immersing ourselves in the tranquility of the surrounding forest. There was something magical about being able to disconnect from the outside world and be fully present in the natural beauty that surrounded us.
+
+The cabin itself was well-appointed and had everything we needed for a comfortable stay. The attention to detail was evident in every aspect, from the comfortable bed to the cozy fireplace. We loved coming back to the cabin after a day of adventures to relax and unwind, all while enjoying the stunning views from our private deck.
+
+One of the highlights of our stay was the romantic atmosphere that the cabin created. Whether we were cuddling up by the fire or sipping wine on the deck, the cabin provided the perfect setting for a romantic getaway. The peacefulness of the surroundings allowed us to reconnect and create lifelong memories together.
+
+The location of the cabin was also ideal. We were just a short drive away from the charming town of Tahoe City, where we enjoyed exploring local shops and dining at delicious restaurants. Additionally, being so close to Lake Tahoe meant that we could easily take advantage of water activities such as kayaking and paddleboarding.
+
+Overall, our stay at this cabin was truly memorable. The combination of the breathtaking views of Lake Tahoe, the cozy and well-appointed cabin, and the enchanting atmosphere made it a perfect getaway. We can't wait to return and experience the magic all over again.",4,5,5,5,4,4,,
+86,17,20,"I had the most incredible stay at this place. The views of Lake Tahoe were absolutely mesmerizing and I was left speechless every time I looked out the window. The accommodation itself felt like pure luxury. Every detail was carefully thought out, from the comfortable beds to the stylish and modern furniture. The added bonus of having secure garage parking was such a relief. I didn't have to worry about finding a parking spot or my car's safety. It was such a peace of mind. Overall, I couldn't have asked for a better experience. The stay was perfect and I would highly recommend this place to anyone looking for a luxurious and unforgettable stay in Lake Tahoe.",5,4,5,5,5,4,,
+87,87,21,"We just returned from a fantastic stay at this remarkable property. Our experience was nothing short of perfect from start to finish. The location was incredibly convenient, and the spaciousness of the place was a pleasant surprise.
+
+As a family, we truly appreciated the attention to detail that was evident throughout the property. It was evident that the hosts had put a lot of thought into ensuring the comfort and convenience of their guests. We were able to relax and unwind in a clean and well-maintained space, which immediately made us feel at home.
+
+One of the highlights of our stay was the opportunity to immerse ourselves in nature at MICA. The property's close proximity to this stunning natural reserve allowed us to easily enjoy all that it had to offer. We spent hours exploring the beautiful trails, taking in the breathtaking scenery, and simply reconnecting with nature.
+
+The hosts were also incredibly accommodating and friendly. They were always available to answer any questions we had and provide helpful recommendations for local attractions and dining options. Their hospitality truly exceeded our expectations and made our stay even more enjoyable.
+
+Overall, we couldn't be happier with our experience at this wonderful property. It provided the perfect combination of convenience, comfort, and immersion in nature. We highly recommend it to anyone looking for a memorable getaway. We can't wait to return.",5,5,5,4,4,4,,
+88,34,22,"We had an unforgettable experience during our stay at this lakefront estate in Quebec. The moment we arrived, we were captivated by the mesmerizing beauty of the surrounding nature. The breathtaking views of the lake and mountains were beyond compare and provided a serene backdrop for our entire stay.
+
+The house itself was nothing short of perfection. From the charming exterior to the cozy and inviting interior, every detail was carefully thought out and designed to provide the utmost comfort and relaxation. We were pleasantly surprised by the spacious rooms and luxurious amenities that this estate had to offer. It truly felt like our own private oasis.
+
+Furthermore, the house was equipped with everything we could possibly need during our stay. The fully stocked kitchen made it easy for us to prepare delicious meals and enjoy them while taking in the stunning views from the dining area. The living room was incredibly cozy, perfect for curling up with a book or simply unwinding after a day of exploring.
+
+One of the highlights of our stay was the outdoor space. The expansive patio offered the perfect setting for enjoying a morning coffee while listening to the sounds of nature or savoring a glass of wine as the sun set over the lake. The well-maintained garden was a delightful surprise, providing a serene space to stroll and admire the vibrant colors of the flowers.
+
+The location of this estate was also ideal for those seeking tranquility and relaxation. We felt completely secluded from the hustle and bustle of everyday life and were able to fully immerse ourselves in the beauty and serenity of the area. Whether we were hiking in the nearby mountains or simply lounging by the lake, each moment was filled with a sense of peace and contentment.
+
+In summary, our stay at this lakefront estate in Quebec exceeded all expectations. The breathtaking nature, comfortable accommodations, and overall tranquility made it an unforgettable experience. We highly recommend this getaway to anyone in need of a peaceful retreat.",5,4,5,5,4,5,,
+89,48,23,"My stay at this luxurious lakefront resort was absolutely amazing. The location was secluded, providing the perfect retreat from the hustle and bustle of daily life. The moment I arrived, I was blown away by the top-notch amenities and the elegant ambiance of the resort.
+
+One of the highlights of my stay was the spa. The treatments were incredibly relaxing and rejuvenating, leaving me feeling pampered and refreshed. It was a true sanctuary of tranquility, allowing me to unwind and escape from the stresses of the outside world.
+
+Being able to have easy access to the lake was another incredible feature of this resort. Whether it was taking a leisurely stroll along the waterfront or indulging in various water activities, I thoroughly enjoyed every moment spent by the lake. The serene views and the calming sounds of the water added an extra layer of relaxation to my experience.
+
+Overall, I cannot rave enough about my time at this lakefront resort. The combination of the secluded location, top-notch amenities, and the serene ambiance made it a truly fantastic stay. I would highly recommend this resort to anyone looking for a luxurious and rejuvenating getaway.",4,4,4,4,5,4,,
+90,2,24,"I cannot express how much I adored my time at this hidden gem of a lakeside cabin. From the moment I arrived, I knew I was in for a truly serene retreat. The location was simply perfect, tucked away in nature's embrace, offering peace and tranquility like no other.
+
+The cabin itself was an absolute dream. It exuded coziness and warmth, instantly making me feel at home. Every detail was thoughtfully designed, making the space not only aesthetically pleasing but also functional. I was pleasantly surprised to find that it was well-appointed with all the amenities one could possibly need for a comfortable stay.
+
+However, the star of the show was undeniably the breathtaking view of the lake. Oh, how I looked forward to waking up each morning and stepping onto the deck to witness the sheer beauty that laid before me. The sight of the crystal-clear water glistening under the gentle sunlight was nothing short of magical. It was a scene straight out of a painting, and I couldn't help but feel a sense of deep peace and contentment every time I took it in.
+
+If you are searching for a place to unwind and reconnect with nature, I wholeheartedly recommend this lakeside cabin. Its serenity and seclusion create the perfect setting for a truly rejuvenating getaway. Whether you're looking to escape the hustle and bustle of everyday life or simply yearning for a peaceful retreat, this cabin will surely exceed your expectations. Don't hesitate to book your stay here; it will be an experience you won't soon forget.",4,5,5,5,5,4,,
+91,64,25,"Our stay at the cabin was absolutely incredible! The location was truly a dream come true. We were mesmerized by the stunning views of the lake, it was like something out of a postcard. Being surrounded by such natural beauty was truly humbling and made our stay even more special. 
+
+The cabin itself was so cozy and charming. It had a rustic feel to it that instantly made us feel at home. Not to mention, it was equipped with all the necessities for a comfortable stay. The kitchen had everything we needed to cook our meals, and the living area was the perfect spot to relax after a long day of exploring.
+
+What we loved most about this cabin was its ability to help us disconnect from the outside world and truly embrace and enjoy nature. The peaceful atmosphere allowed us to unwind and forget about our everyday stresses. We spent our days hiking through the surrounding trails, fishing in the lake, and simply enjoying the tranquility that surrounded us.
+
+We are already counting down the days until our next visit to this amazing cabin. It was the perfect getaway, and we couldn't have asked for a better experience. Thank you to the owners for providing such a wonderful place for us to escape to. We can't wait to come back and create even more unforgettable memories.",5,5,4,5,5,4,,
+92,95,26,"Our experience at this cozy, spacious apartment was absolutely fantastic. The breathtaking views from the windows, especially the mesmerizing downtown views, made our stay even more remarkable. We were in awe of the gorgeous sights every time we looked out. The apartment provided all the amenities and comforts we needed, making it a perfect place to stay during our trip. We couldn't have asked for a better accommodation. Thank you for providing such a wonderful experience.",5,5,4,5,4,4,,
+93,39,27,"We had the most incredible time during our stay at this beautiful Edwardian home. The recent remodel was evident in every corner, and we were blown away by its elegant and modern design. But the real highlight was the stunning city views that this place offered.
+
+From the moment we stepped onto the balcony, we were treated to breathtaking panoramic views of the city skyline. It was like having our own personal observation deck right at our fingertips. Whether it was enjoying our morning cup of coffee or savoring a glass of wine in the evenings, we were constantly in awe of the mesmerizing vistas.
+
+The best part was that we didn't even need to leave the comfort of the home to enjoy these remarkable views. The floor-to-ceiling windows throughout the property allowed us to admire the city from almost every room. It truly added an extra layer of luxury and gave us the feeling of being immersed in the vibrant energy of the city.
+
+Not only were the views sensational, but the overall experience was unforgettable. The house was immaculate, with every detail taken care of to ensure our comfort. The furnishings were stylish and comfortable, and the kitchen was well-equipped with top-notch appliances. We truly felt like we were staying in a five-star hotel.
+
+Additionally, the host was fantastic. They were incredibly friendly and accommodating, making sure that we had everything we needed for a perfect stay. From providing helpful recommendations for restaurants to ensuring the house was stocked with all the essentials, they went above and beyond to make us feel welcome.
+
+Overall, our stay in this remodeled Edwardian home was absolutely amazing! The stunning city views enhanced our experience and made it truly unforgettable. We cannot recommend this place enough and cannot wait to come back for another memorable stay.",5,4,5,5,5,5,,
+94,8,28,"We absolutely adored our stay at this tranquil and cozy house! The stunning views of the city were mesmerizing and added a touch of magic to our experience. But what truly blew us away was the private rooftop spa. Talk about luxury and relaxation at its finest! Every evening, we found ourselves soaking in the bubbling warm water, gazing at the twinkling lights of the city below. It was the perfect way to unwind after a long day of exploring. The attention to detail in this house was exceptional, with every corner exuding a sense of comfort and warmth. We truly felt at home. Whether we were curled up on the plush couches, sipping our morning coffee while overlooking the cityscape, or enjoying a delicious dinner in the well-equipped kitchen, this house provided the perfect backdrop for unforgettable moments. The owner was also incredibly accommodating and responsive, ensuring that our every need was met. We can't recommend this place enough for anyone looking for a peaceful getaway with a touch of luxury. Trust us, you won't be disappointed!",5,4,4,5,5,4,,
+95,38,29,"Our experience at this luxurious urban oasis was nothing short of amazing! From the moment we arrived, we were blown away by the elegance and comfort this place had to offer. The private spa was a highlight of our stay, providing a serene atmosphere where we could fully unwind and rejuvenate ourselves. 
+
+The location of this oasis was also a huge plus. It was conveniently situated near all the attractions we had on our itinerary. This made exploring the city a breeze, as we didn't have to spend much time commuting. It truly added an extra layer of convenience and saved us valuable time that we got to spend enjoying the sights and sounds of the city.
+
+Overall, our time here was absolutely spectacular. The attention to detail and the level of service provided by the staff were exceptional. We felt pampered and well taken care of throughout our stay. We couldn't have asked for a better experience.
+
+If you're looking for a top-notch accommodation that ticks all the boxes, this place is it. We would wholeheartedly recommend it to anyone looking for a luxurious and relaxing urban getaway. Don't miss out on this gem!",5,4,5,5,4,4,,
+96,85,1,"This place is an absolute dream! The view is breathtaking, the glamping experience is luxurious, and the hosts are incredibly helpful and friendly. Can't wait to go back!",5,5,4,4,4,5,,
+97,95,2,"Our glamping experience in the desert with a view of Mount Palomar was simply breathtaking, surpassing all expectations with its top-notch tent cabins and attention to detail.",5,4,5,3,5,5,,
+98,71,3,"Our stay at this incredible glamping site exceeded all expectations, with stunning ocean views and impeccable service making for an unforgettable vacation.",4,4,4,4,5,4,,
+99,36,4,"This listing was an absolute dream come true - from the stunning coastal views to the impeccable architecture and cozy living space, every detail was perfection, and the exceptional hospitality of the host truly made our stay unforgettable.",4,5,5,4,5,5,,
+100,3,5,Escape to this waterfront bungalow and immerse yourself in the mesmerizing beauty of Northern California - the perfect blend of nature's tranquility and modern comfort.,5,5,5,4,4,5,,
+101,59,6,"The waterfront bungalow exceeded our expectations with its breathtaking views and cozy interior, making it the perfect home away from home.",4,4,4,5,5,4,,
+102,72,7,"This charming waterfront studio exceeded all my expectations and provided the perfect escape from the hustle and bustle of everyday life, I can't wait to return in the future!",5,4,4,5,5,4,,
+103,16,8,"This hidden gem near SF offers a truly rejuvenating and exciting experience with direct beach access, perfect for either a peaceful getaway or a fun-filled beach vacation.",5,5,5,4,4,4,,
+104,23,9,"This hidden paradise by the beach offers breathtaking ocean views and a tranquil hot tub experience, creating the perfect peaceful getaway.",4,4,4,4,4,4,,
+105,28,10,"The secluded treehouse retreat surpassed all expectations and provided an enchanting getaway with breathtaking views, making it a tranquil oasis away from the hustle and bustle of the city.",5,4,4,5,4,5,,
+106,90,11,"This cabin surpassed our wildest dreams with its serene woodland setting, adding a touch of magic to our getaway.",5,4,5,4,4,5,,
+107,65,12,"This luxurious retreat exceeded all of our expectations, from the cozy atmosphere to the breathtaking views, it truly was a slice of heaven that will create lasting memories.",4,4,5,5,4,4,,
+108,54,13,"Our stay at the historic schoolhouse near Monterey Bay was like stepping into a enchanting fairytale, filled with charm, character, and tranquility.",5,5,5,5,4,4,,
+109,39,14,"Our stay at this opulent vineyard hideaway left us completely mesmerized, with its stunning infinity pool and secluded atmosphere providing an exceptional and unforgettable escape.",5,5,4,5,5,5,,
+110,80,15,"This sustainable getaway in Joshua Tree offers breathtaking views and an immersive natural experience, perfect for a peaceful and rejuvenating escape.",5,4,5,5,4,5,,
+111,30,16,"Eagle's Watch is an unforgettable and rejuvenating escape with stunning ocean views, eco-friendly design, and warm hospitality - a perfect getaway.",4,3,4,4,4,4,,
+112,25,17,"This luxury modern marvel is an absolute masterpiece, with breathtaking views and a level of comfort and luxury that is second to none.",4,4,4,5,4,5,,
+113,35,18,"This desert oasis is an absolute paradise of elegance and tranquility, where every detail is meticulously crafted to create a luxurious experience that will leave you feeling rejuvenated and utterly spoiled.",5,5,4,3,5,5,,
+114,20,20,"This place offers an unforgettable and luxurious stay with mesmerizing views of Lake Tahoe, providing peace of mind with secure garage parking.",2,4,5,5,4,4,,
+115,11,21,"Our stay at this extraordinary property was absolutely perfect, from the convenient location to the surprising spaciousness. The attention to detail and thoughtfulness of the hosts made us feel instantly at home, creating a relaxing and enjoyable experience. Plus, the proximity to the stunning natural reserve allowed us to fully immerse ourselves in nature. The hosts' accommodating and friendly nature only added to our overall happiness with this exceptional property. Highly recommended for a memorable getaway.",5,4,4,4,5,4,,
+116,17,22,"We were transported to a serene and tranquil oasis during our stay at this lakefront estate in Quebec, where the stunning views, cozy interior, and well-maintained garden provided the perfect backdrop for a peaceful retreat.",4,5,4,5,5,4,,
+117,60,23,"My stay at this luxurious lakefront resort was absolutely amazing, with secluded surroundings, top-notch amenities, and an elegant ambiance making it the perfect retreat from the daily grind.",5,5,4,5,4,4,,
+118,55,24,"This lakeside cabin is a hidden gem that offers a cozy and warm retreat, with breathtaking views of the lake that will leave you feeling peaceful and content.",4,5,4,5,4,5,,
+119,61,25,"The cabin was a cozy and charming retreat, surrounded by stunning views of the lake and equipped with all the necessities for a comfortable stay, allowing us to disconnect from the outside world and truly embrace and enjoy nature.",4,4,5,4,5,5,,
+120,32,26,"This cozy, spacious apartment offers breathtaking downtown views and all the amenities needed for a perfect stay, providing a remarkable and awe-inspiring experience.",5,4,5,5,5,5,,
+121,100,27,We were absolutely blown away by the mesmerizing city views and luxurious amenities of this remodeled Edwardian home - it truly made our stay unforgettable!,5,4,5,5,5,5,,
+122,5,28,"This place is an absolute gem - the breathtaking city views, private rooftop spa, and attention to detail create a luxurious and cozy experience that will leave you feeling like royalty.",4,4,5,4,5,5,,
+123,39,29,"This luxurious urban oasis exceeded our expectations and offered a perfect combination of elegance, comfort, and convenience. From the private spa to the ideal location, it truly had it all.",4,4,5,5,4,5,,
+124,100,1,"A heavenly escape with breathtaking scenery, luxurious glamping, and warm and welcoming hosts - I can't wait to return!",5,4,5,4,5,3,,
+125,37,2,"Prepare to be with your breath taken away as you immerse yourself in this desert glamping experience overlooking Mount Palomar, where every detail has been thoughtfully created for your ultimate pleasure.",5,4,5,5,5,4,,
+126,84,3,"Wow! This glamping site is a little slice of paradise, with jaw-dropping ocean views and exceptional service.",5,4,4,5,5,4,,
+127,13,4,"This listing offers an unforgettable experience with stunning coastal views, remarkable architecture, and delightful hospitality that surpass expectations.",4,5,5,4,4,4,,
+128,93,5,"Escape to the captivating beauty of Northern California at this exquisite waterfront bungalow, where modern luxury harmonizes with nature's enchantment.",5,4,5,5,5,4,,
+129,17,6,"This waterfront bungalow offered the perfect blend of serenity and coziness, making it our personal haven.",5,5,4,4,5,4,,
+130,31,7,This listing exceeded all expectations and is a must-visit destination for a perfect retreat.,3,4,4,4,5,5,,
+131,26,8,"This hidden gem near San Francisco offers a refreshing and exciting getaway, perfect for a peaceful escape or an adventurous beach vacation.",4,5,5,4,4,4,,
+132,95,9,"Indulge in pure bliss at this hidden coastal paradise offering breathtaking ocean views and a peaceful hot tub, making it the perfect escape for your ultimate rejuvenation.",4,4,5,5,4,5,,
+133,82,10,"Experience a whimsical and tranquil hideaway amidst nature's embrace, where modern comfort seamlessly blends with ethereal enchantment.",4,5,4,5,4,4,,
+134,99,11,Prepare to be transported to a serene haven nestled in the forest - this enchanting cabin guarantees an unforgettable vacation.,5,5,4,5,5,4,,
+135,10,12,"This enchanting oasis is a dream come true, radiating warmth and offering breathtaking views that will leave a lasting impression.",4,5,4,5,4,5,,
+136,56,13,The stay at the historic schoolhouse near Monterey Bay was like stepping into a magical oasis of tranquility and enchantment.,5,5,4,4,4,5,,
+137,74,14,"Indulge in pure opulence at this secluded vineyard hideaway, where the infinity pool and intimate atmosphere create an unforgettable escape.",5,5,5,5,3,5,,
+138,69,15,"Experience pure tranquility at this environmentally conscious oasis in Joshua Tree, offering breathtaking vistas and a soothing connection to the natural world.",4,5,5,5,5,4,,
+139,71,16,"Eagle's Watch is a hidden gem with stunning ocean views, eco-friendly design, and a warm and inviting atmosphere - a perfect sanctuary.",5,4,5,5,4,5,,
+140,72,17,Indulge in absolute opulence and tranquility as you soak up the breathtaking vistas from this exceptional architectural gem.,5,4,5,4,5,4,,
+141,94,18,Escape to this flawlessly executed desert retreat for the ultimate pampering experience that will leave you feeling refreshed and indulged.,4,5,4,4,5,4,,
+142,46,20,Experience ultimate luxury and unobstructed views of Lake Tahoe while enjoying the ease of secure parking.,5,5,4,4,5,5,,
+143,19,21,"A hidden gem with meticulous hosts and a breathtaking nature reserve just steps away, making for an unforgettable escape.",5,4,5,3,5,4,,
+144,2,22,"A slice of paradise with serene lakefront views, an enchanting interior, and a stunningly manicured garden.",5,5,5,5,3,5,,
+145,59,23,"Immerse yourself in luxurious tranquility at this lakeside resort, where stunning natural beauty, upscale amenities, and an elegant ambiance combine to deliver a truly unforgettable retreat.",5,4,5,4,4,4,,
+146,61,24,Experience pure serenity and breathtaking lakefront vistas at this enchanting cabin retreat.,5,4,4,4,5,4,,
+147,88,25,Escape the hustle and bustle and indulge in serene lakeside living surrounded by breathtaking natural beauty.,5,4,5,4,5,4,,
+148,24,26,Experience a breathtaking and unforgettable stay in this stunning apartment with panoramic city views and all the essential amenities.,5,4,4,5,5,3,,
+149,60,27,This renovated Edwardian home offered us an unforgettable experience with its stunning city views and luxurious amenities.,4,5,5,5,4,4,,
+150,16,28,"Experience the epitome of opulence and tranquility with breathtaking cityscape vistas, a secluded rooftop spa, and immaculate craftsmanship that guarantees an indulgent and captivating escape.",4,5,5,4,5,5,,
+151,62,29,"This glamorous city oasis exceeded every expectation, seamlessly blending luxury, coziness, and convenience with the added bonus of a secluded spa and an enviable location.",4,5,4,5,4,5,,
+152,12,1,"This listing is a slice of paradise with picturesque views, lavish glamping accommodations, and gracious hosts who made me feel right at home - I'm counting down the days until my next visit!",5,4,4,4,4,4,,
+153,52,2,"Indulge in the ultimate desert glamping experience with breathtaking views of Mount Palomar, where every detail is meticulously designed for your utmost delight.",4,5,5,5,4,5,,
+154,18,3,This glamping site exceeded all expectations with its stunning ocean panoramas and top-notch hospitality.,5,5,3,4,4,4,,
+155,91,4,"This listing guarantees an unparalleled experience with breathtaking ocean vistas, extraordinary design, and exceptional service that goes above and beyond.",5,5,5,5,5,5,,
+156,46,5,Immerse yourself in the perfect blend of luxurious modernity and Mother Nature's spellbinding charm at this stunning waterfront bungalow in Northern California.,5,5,5,4,5,5,,
+157,1,6,Escape to this tranquil waterfront sanctuary boasting a harmonious fusion of serenity and charm.,4,4,5,5,4,5,,
+158,32,7,"This listing is a hidden gem that will surpass your wildest expectations, offering an idyllic haven for an unforgettable getaway.",5,4,4,4,5,4,,
+159,53,8,Escape to this hidden gem near San Francisco for an exhilarating and rejuvenating beach vacation that will leave you feeling refreshed and full of adventure.,4,4,4,5,4,5,,
+160,5,9,Escape to this hidden coastal retreat with stunning ocean views and a serene hot tub for the ultimate in relaxation and renewal.,5,5,5,4,5,5,,
+161,29,10,Escape to a magical oasis where nature meets contemporary luxury in perfect harmony.,5,5,5,5,5,5,,
+162,6,11,Escape to a tranquil woodland retreat and create memories that will last a lifetime in this charming cabin.,5,4,5,4,4,5,,
+163,100,12,"Indulge in the magical surroundings of this irresistible oasis, where your senses will be captivated by its cozy ambiance and awe-inspiring vistas.",5,4,5,5,4,5,,
+164,31,13,This enchanting stay at the historic schoolhouse near Monterey Bay was a tranquil oasis that felt truly magical.,5,5,5,5,4,4,,
+165,36,14,"Experience a luxuriously secluded retreat amidst picturesque vineyards, where the infinity pool and cozy ambiance immerse you in an unforgettable getaway.",4,4,4,5,5,5,,
+166,38,15,Escape to this eco-friendly haven in Joshua Tree for a serene getaway surrounded by stunning views and a harmonious link to nature.,4,5,4,4,4,5,,
+167,36,16,"Eagle's Watch is a little piece of paradise with mesmerizing ocean views, sustainable features, and a cozy ambiance - an idyllic sanctuary.",3,5,4,5,5,4,,
+168,15,17,Experience pure luxury and serenity while immersing yourself in the awe-inspiring views of this extraordinary masterpiece.,4,5,4,4,5,4,,
+169,14,18,Indulge in the ultimate pampering experience at this flawlessly executed desert retreat that will leave you refreshed and revitalized.,5,5,5,5,4,4,,
+170,28,20,"Indulge in the epitome of opulence with breathtaking Lake Tahoe vistas, and the convenience of secure parking.",5,4,4,4,5,5,,
+171,92,21,A secluded paradise where attentive hosts cater to your every need while you immerse yourself in stunning natural beauty.,4,4,5,4,5,4,,
+172,14,22,"A tranquil sanctuary boasting breathtaking lake views, a captivating decor, and impeccably maintained grounds.",4,4,5,4,4,4,,
+173,51,23,"Experience the epitome of serenity at this lakeside retreat, where opulent amenities and a refined atmosphere create an indelible escape.",5,5,5,4,5,4,,
+174,37,24,Escape into a haven of tranquility with mesmerizing lake views at this captivating cabin hideaway.,4,5,5,5,5,4,,
+175,24,25,"Experience tranquil lakeside living in a stunning natural setting, providing a getaway from the chaotic city life.",4,5,3,4,5,5,,
+176,28,26,Indulge in a mesmerizing city escape where every moment in this exquisite apartment is filled with awe and comfort.,4,5,5,5,4,5,,
+177,45,27,This renovated Edwardian home provided us with an exceptional stay featuring breathtaking city vistas and high-end amenities.,4,5,4,4,4,4,,
+178,12,28,"Indulge in a captivating and opulent escape, surrounded by breathtaking city vistas and enhanced by a tranquil rooftop spa - a true sanctuary of craftsmanship and luxury.",5,4,4,4,5,5,,
+179,30,29,"This listing is a tranquil paradise that went above and beyond, combining opulence, comfort, and accessibility, all complemented by a private spa and an unparalleled spot.",4,4,5,5,5,5,,

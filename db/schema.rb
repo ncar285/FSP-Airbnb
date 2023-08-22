@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_19_204222) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_21_233624) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,6 +66,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_19_204222) do
     t.index ["title"], name: "index_listings_on_title"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "listing_id", null: false
+    t.integer "author_id", null: false
+    t.string "body", null: false
+    t.integer "cleanliness", null: false
+    t.integer "communication", null: false
+    t.integer "check_in", null: false
+    t.integer "accuracy", null: false
+    t.integer "location", null: false
+    t.integer "value", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "rating"
+    t.index ["listing_id", "author_id"], name: "index_reviews_on_listing_id_and_author_id", unique: true
+    t.index ["listing_id"], name: "index_reviews_on_listing_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "firstname", null: false
     t.string "lastname", null: false
@@ -81,4 +98,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_19_204222) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "listings", "users", column: "owner_id"
+  add_foreign_key "reviews", "listings"
+  add_foreign_key "reviews", "users", column: "author_id"
 end

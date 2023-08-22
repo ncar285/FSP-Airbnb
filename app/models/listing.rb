@@ -8,9 +8,7 @@
 #  description :text             not null
 #  address     :string           not null
 #  postcode    :string           not null
-#  latitude    :decimal(9, 6)    not null
-#  longitude   :decimal(9, 6)    not null
-#  price       :decimal(, )      not null
+#  price       :integer          not null
 #  guests      :integer          not null
 #  bedrooms    :integer          not null
 #  beds        :integer          not null
@@ -18,6 +16,9 @@
 #  pets        :boolean          default(FALSE), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  state       :string
+#  city        :string
+#  tag_line    :string
 #
 class Listing < ApplicationRecord
 
@@ -38,6 +39,6 @@ class Listing < ApplicationRecord
 
     # has_many :bookings
     
-    # has_many :reviews
+    has_many :reviews
 
 end
