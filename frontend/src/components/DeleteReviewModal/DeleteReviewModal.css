@@ -1,0 +1,80 @@
+.DRM-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0 0 0 / 25%);
+    z-index: 11;
+}
+
+.DRM-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgb(0 0 0 / 25%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.DRM{
+    padding: 20px;
+    position: absolute;
+    background-color: white;
+    z-index: 20;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.DRM-header {
+    font-size: 28px;
+    font-family: 'airbnb2';
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+}
+
+.DRM-close {
+    font-size: 32px;
+    font-weight: 400;
+    position: absolute;
+    left: 25px;
+}
+
+
+.DRM-title-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.DRM-options {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 0px;
+}
+
+.DRM-options button {
+    width: 200px;
+    height: 47.5px;
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+    background-color: white;
+    border: var(--dark_grey) 1px solid;
+    border-radius: 10px;
+    color: var(--dark_grey);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+.DRM-options button:hover{
+    cursor: pointer;
+    background-color: var(--light_grey);
+}

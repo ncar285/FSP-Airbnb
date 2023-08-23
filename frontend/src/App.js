@@ -5,6 +5,8 @@ import RegisterForm from './components/RegisterForm/RegisterForm.jsx';
 import NavBar from './components/NavBar/NavBar.jsx';
 import SearchForm from './components/SearchForm/SearchForm.jsx';
 import ShowListing from './components/ShowListing/ShowListing.jsx';
+import DeleteReviewModal from './components/DeleteReviewModal/DeleteReviewModal.jsx';
+import EditReviewModal from './components/EditReviewModal/EditReviewModal.jsx';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/listing/:listingId">
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
             <ShowListing/> 
+            <DeleteReviewModal/>
+            <EditReviewModal/>
         </Route>
        
       </Switch>

@@ -1,0 +1,96 @@
+.form-container{
+    padding: 20px;
+    border: 1px solid var(--light_grey);
+    box-shadow: var(--shadow);
+    width: 525px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    line-height: 1.5;
+}
+
+.review-form-header {
+    font-size: 24px;
+    padding: 10px;
+}
+
+.score-inputs {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left-review-categories {
+    padding: 20px;
+}
+
+.right-review-categories {
+    padding: 20px;
+}
+
+
+.category {
+    align-items: center;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.score-inputs .input input[type="radio"] {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--brand-color);
+    border-radius: 50%;
+    outline: none;
+    transition: 0.2s;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.score-inputs .input input[type="radio"]:checked {
+    background-color: var(--brand-color);
+    border: 2px solid transparent;
+}
+
+.score-inputs .input input[type="radio"]:checked::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: var(--brand-color);
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+form textarea {
+    border: var(--dark_grey) 1px solid;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+form button{
+    width: 200px;
+    height: 47.5px;
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+    background-color: white;
+    border: var(--dark_grey) 1px solid;
+    border-radius: 10px;
+    color: var(--dark_grey);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+form button:hover{
+    cursor: pointer;
+    background-color: var(--light_grey);
+}
+
+

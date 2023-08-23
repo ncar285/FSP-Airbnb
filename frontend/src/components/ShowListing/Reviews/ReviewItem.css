@@ -62,9 +62,8 @@
 }
 
 .my-review {
-    /* background-color: var(--light_light_grey); */
     padding: 20px;
     border-radius: 20px;
     box-shadow: var(--shadow);
-    border: 1px solid var(--light_light_grey)
+    border: 1px solid var(--light_light_grey);
 }

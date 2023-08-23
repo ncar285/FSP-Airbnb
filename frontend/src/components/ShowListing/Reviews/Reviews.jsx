@@ -8,6 +8,8 @@ import { AiFillStar } from "react-icons/ai"
 import { getListingRevews } from '../../../store/reviewsReducer';
 import ReviewItem from './ReviewItem';
 import { useSelector } from 'react-redux';
+import { getUserReview } from '../../../store/reviewsReducer';
+import MyReviewItem from './MyReviewItem';
 
 
 const findAverageScore = (reviews, category) => {
@@ -20,6 +22,7 @@ const findAverageScore = (reviews, category) => {
 const Reviews = () => {
     const reviews = useSelector(getListingRevews)
 
+    const userReview = useSelector(getUserReview)
 
     const count = reviews.length;
     let rating = findAverageScore(reviews, "rating")
@@ -36,6 +39,16 @@ const Reviews = () => {
     location = Number(location.toFixed(1))
     let value = findAverageScore(reviews, "value")
     value = Number(value.toFixed(1))
+
+    const allOtherReviews = () => {
+        if (userReview){
+            const otherReviews = reviews.filter(review => review.author !== userReview?.authorId);
+            return otherReviews.map((review) => <ReviewItem key={review.id} review={review} />)
+        }else {
+            return reviews.map((review) => <ReviewItem key={review.id} review={review} />)
+        }
+    }
+
     return (
     <>
         <div className='review-stats-block'>
@@ -109,8 +122,9 @@ const Reviews = () => {
                 </div>
             </div>
         </div>
-       
-        {reviews.map((review) => <ReviewItem key={review.id} review={review} />)}
+
+        {userReview && <ReviewItem key={userReview.id} review={userReview} />}
+        {allOtherReviews()}
 
     </>
     )
