@@ -42,6 +42,8 @@ export const selectAllListings = state => Object.values(state.listings);
 
 export const selectListing = listingId => state => state.listings[listingId] || null;
 
+// export const getListingRevews = listingId => state.rev
+
 // REDUCER
 const listingsReducer = (state = {}, action) => {
   const nextState = { ...state }

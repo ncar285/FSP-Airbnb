@@ -27,15 +27,16 @@ export const setCurrentReviews = (reviews) => {
 // }
 
 // SELECTORS 
-export const getUserReview = userId => state => {
-    if (state.reviews){
-        state.reviews.forEach(review => {
-            if(review.author_id === userId){
-                return review
-            }
-        })
+export const getUserReview = state => {
+    const userId = state.session.user ? state.session.user.id : null
+    if (userId && state.reviews){
+        return Object.values(state.reviews).find(review => review.authorId === userId) || null;
+    } else {
+        return null;
     }
 }
+
+export const getListingRevews = state => state.reviews? Object.values(state.reviews) : null
 
 
 
@@ -56,7 +57,7 @@ const reviewsReducer = (state = initialState, action) => {
     return { ...state, review: action.payload };
     
         case SET_CURRENT_REVIEWS:
-    return { ...state, reviews: action.payload };
+    return { ...state, ...action.payload };
     //     case REMOVE_CURRENT_REVIEW:
     // return { ...state, review: null };
     default:

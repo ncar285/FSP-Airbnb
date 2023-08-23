@@ -6,11 +6,8 @@ import { getCurrentUser } from '../../store/sessionsReducer'
 import { useSelector } from 'react-redux'
 
 const ReviewForm = ({listingId}) => {
-
     const dispatch = useDispatch()
-
     const loggedInUser = useSelector(getCurrentUser)
-
     const [displayLoginMessage, setDisplayLoginMessage] = useState(false)
 
     useEffect(()=>{
@@ -22,7 +19,7 @@ const ReviewForm = ({listingId}) => {
     const loginMessage =() => {
         return (
             <>
-            <div>Please Log in first!</div>
+                <div>Please Log in first!</div>
             </>
         )
     }
@@ -43,6 +40,7 @@ const ReviewForm = ({listingId}) => {
             }
             console.log(review)
             dispatch(createReview(review))
+            window.location.reload();
         } else {
             setDisplayLoginMessage(true)
         }

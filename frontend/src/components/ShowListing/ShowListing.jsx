@@ -8,43 +8,25 @@ import ListingInfo from './ListingInfo/ListingInfo'
 import ReserveBlock from './ReserveBlock/ReserveBlock'
 import Reviews from './Reviews/Reviews'
 import ReviewForm from '../ReviewForm/ReviewForm'
-// import { getCurrentUser } from '../../store/sessionsReducer'
 import { setCurrentReviews } from '../../store/reviewsReducer'
+import { getUserReview } from '../../store/reviewsReducer'
 
 
 const ShowListing = () => {
-
     const { listingId } = useParams();
     const dispatch = useDispatch()
+    const listing = useSelector(selectListing(listingId))
+    const userReview = useSelector(getUserReview)
 
     useEffect(() => {
         dispatch(fetchListing(listingId));
     }, [dispatch, listingId]);
 
-
-    const listing = useSelector(selectListing(listingId))
-
-    // useEffect(() => {
-    //     dispatch(setCurrentReviews(listing.reviews))
-    // }, [dispatch, listingId]);
-
-    // const currentUser = useSelector(getCurrentUser)
-    // const [ownReview, setOwnReview] = useState(false)
-    // useEffect(()=>{
-    //     if (!listing){
-    //         return
-    //     } else if (currentUser ){
-        // const userReview = listing.reviews.filter(review=>review.author_id === currentUser.id)
-    //     setOwnReview(userReview);
-    //     console.log(`user's review is: ${userReview}`)
-        // console.log(`this is the user's review: ${userReview}`)
-    //     }else{
-    //         console.log("not logged in!")
-    //     }
-    // },[listing.reviews, currentUser])
-    
-
-
+    useEffect(() => {
+        if (listing && listing.reviews) {
+            dispatch(setCurrentReviews(listing.reviews));
+        }
+    }, [listing]);
 
     if (!listing) {
         return <div>Loading...</div>;
@@ -71,11 +53,11 @@ const ShowListing = () => {
                     </div>
 
                     <div className='reviews-block'>
-                        <Reviews reviews = {listing.reviews} listingId={listing.id}/>
+                        <Reviews/>
                     </div>
 
                     <div className='create-review'>
-                        <ReviewForm listingId={listing.id}/>
+                        {userReview ? null : <ReviewForm listingId={listing.id}/>}
                     </div>
 
                 </div>

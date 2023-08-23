@@ -7,7 +7,7 @@ import { getCurrentUser } from '../../store/sessionsReducer';
 import { logoutUser } from '../../store/sessionsReducer';
 
 
-const AccountMenu = ({ handleMenuClick }) => {
+const AccountMenu = ({ handleMenuClick, margin }) => {
 
     const [showRegister] = useState(false)
     const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const AccountMenu = ({ handleMenuClick }) => {
         if (sessionUser)  {
             return  (
                 <>
-                    <div className="account-options" id="account-options">
+                    <div style={{ right: margin}} className="account-options" id="account-options">
                         <button onClick={seeAccount}>Account</button>
                         <div class="account-menu-spacer"></div>
                         <button onClick={handleSignOut}>Logout</button>
@@ -41,7 +41,7 @@ const AccountMenu = ({ handleMenuClick }) => {
             )
         }else {
             return (
-                <div className="account-options" id="account-options">
+                <div style={{ right: margin}} className="account-options" id="account-options">
                     <button onClick={handleRegister}>Login</button>
                     <button onClick={handleRegister}>Sign up</button>
                 </div>

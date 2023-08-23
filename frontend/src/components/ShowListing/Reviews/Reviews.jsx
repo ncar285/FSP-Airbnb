@@ -5,31 +5,10 @@ import { AiFillStar } from "react-icons/ai"
 // import { useState } from 'react'
 // import { useSelector } from 'react-redux'
 // import { selectListing } from '../../../store/listingsReducer'
+import { getListingRevews } from '../../../store/reviewsReducer';
+import ReviewItem from './ReviewItem';
+import { useSelector } from 'react-redux';
 
-
-const reviewItem = (review) => {
-    const author = review.authorFirstname;
-    const dateObject = new Date(review.createdAt);
-    const date = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(dateObject);
-    const imgUrl = review.authorPhotoUrl
-
-    // const avgCleanliness
-    return (
-        <>
-            <div className='review-item'>
-
-                <div className='review-header'>
-                    <img className="author-profile" src={imgUrl} alt="" />
-                    <div className='name-date'>
-                        <div className='reviewer-name'>{author}</div>
-                        <div className='review-date'>{date}</div>
-                    </div>
-                </div>
-                <div className='review-content'>{review.body}</div>
-            </div>
-        </>
-    )
-}
 
 const findAverageScore = (reviews, category) => {
     const array = reviews.map((review) => review[category])
@@ -38,7 +17,8 @@ const findAverageScore = (reviews, category) => {
 }
 
 
-const Reviews = ({ reviews }) => {
+const Reviews = () => {
+    const reviews = useSelector(getListingRevews)
 
 
     const count = reviews.length;
@@ -129,7 +109,9 @@ const Reviews = ({ reviews }) => {
                 </div>
             </div>
         </div>
-        {reviews.map((review) => reviewItem(review))}
+       
+        {reviews.map((review) => <ReviewItem key={review.id} review={review} />)}
+
     </>
     )
 }

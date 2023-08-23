@@ -33,6 +33,11 @@ const NavBar = ({ tagsOn, searchType, barType}) => {
         }
     }
 
+    
+
+
+
+
     const handleGoHome = () => {
         window.location.href = '/';
     }
@@ -53,7 +58,7 @@ const NavBar = ({ tagsOn, searchType, barType}) => {
                 </div>
                 {
                 menuOpen &&
-                < AccountMenu handleMenuClick = {handleMenuClick}/>
+                < AccountMenu margin = {dynamicStyle().margin} handleMenuClick = {handleMenuClick}/>
                 }
             </div>
             <div className="lower-nav-bar">
