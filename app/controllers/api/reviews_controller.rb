@@ -3,7 +3,7 @@ class Api::ReviewsController < ApplicationController
     def create 
         @review = Review.new(review_params)
         debugger
-        if @review.save!
+        if @review.save
             render :show
         else 
             render json: @review.errors.full_messages, status: 422
@@ -26,7 +26,6 @@ class Api::ReviewsController < ApplicationController
         else
             render @review.errors.full_messages
         end
-
     end
 
 

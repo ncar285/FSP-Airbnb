@@ -105,39 +105,95 @@ require 'csv'
 
 
 #! SEED 180 REVIEWS
+# puts "deleting reviews..."
+# Review.destroy_all
+
+# puts "Resetting primary keys..."
+# ApplicationRecord.connection.reset_pk_sequence!('reviews')
+
+# puts "importing listings.csv..."
+# csv_text = File.read(Rails.root.join('db', 'reviews.csv'))
+# csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
+# n = 1
+# num_reviews = 179
+# csv.each do |row|
+#   puts "filling data for review ##{n}"
+#   review = Review.new
+#   review.author_id = row['author_id'].to_i
+#   review.listing_id = row['listing_id'].to_i
+#   review.body = row['body']
+#   review.cleanliness = row['cleanliness'].to_i
+#   review.communication = row['cleanliness'].to_i
+#   review.check_in = row['check_in'].to_i
+#   review.accuracy = row['accuracy'].to_i
+#   review.location = row['location'].to_i
+#   review.value = row['value'].to_i
+
+#   review.save!
+#   puts "review ##{n} saved!"
+#   n += 1
+#   break if n==num_reviews+1
+# end
+# puts "Done!"
 
 
-puts "deleting reviews..."
-Review.destroy_all
+##! SEED SOME BOOKINGS FOR DEMIS
+
+puts "deleting bookings..."
+Booking.destroy_all
 
 puts "Resetting primary keys..."
-ApplicationRecord.connection.reset_pk_sequence!('reviews')
+ApplicationRecord.connection.reset_pk_sequence!('bookings')
 
-puts "importing listings.csv..."
-csv_text = File.read(Rails.root.join('db', 'reviews.csv'))
-csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
-n = 1
-num_reviews = 179
-csv.each do |row|
-  puts "filling data for review ##{n}"
-  review = Review.new
-  review.author_id = row['author_id'].to_i
-  review.listing_id = row['listing_id'].to_i
-  review.body = row['body']
-  review.cleanliness = row['cleanliness'].to_i
-  review.communication = row['cleanliness'].to_i
-  review.check_in = row['check_in'].to_i
-  review.accuracy = row['accuracy'].to_i
-  review.location = row['location'].to_i
-  review.value = row['value'].to_i
+# 1
+booking = Booking.new
+booking.user_id = 1
+booking.listing_id = 4
+booking.start_date = Date.parse('2023-08-23')
+booking.end_date = Date.parse('2023-08-30')
+booking.guests = 1
+booking.save!
+puts "booking 1 done!"
 
-  review.save!
-  puts "review ##{n} saved!"
-  n += 1
-  break if n==num_reviews+1
-end
-puts "Done!"
+# 2
+booking = Booking.new
+booking.user_id = 1
+booking.listing_id = 5
+booking.start_date = Date.parse('2024-01-24')
+booking.end_date = Date.parse('2024-01-30')
+booking.guests = 1
+booking.save!
+puts "booking 2 done!"
 
+# 3
+booking = Booking.new
+booking.user_id = 1
+booking.listing_id = 2
+booking.start_date = Date.parse('2023-09-01')
+booking.end_date = Date.parse('2023-09-10')
+booking.guests = 2
+booking.save!
+puts "booking 3 done!"
+
+# 4
+booking = Booking.new
+booking.user_id = 1
+booking.listing_id = 27
+booking.start_date = Date.parse('2023-10-23')
+booking.end_date = Date.parse('2023-10-30')
+booking.guests = 1
+booking.save!
+puts "booking 4 done!"
+
+# 5
+booking = Booking.new
+booking.user_id = 1
+booking.listing_id = 19
+booking.start_date = Date.parse('2023-09-24')
+booking.end_date = Date.parse('2023-09-30')
+booking.guests = 1
+booking.save!
+puts "booking 5 done!"
 
 
 

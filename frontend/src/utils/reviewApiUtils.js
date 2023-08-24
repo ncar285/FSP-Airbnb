@@ -2,22 +2,22 @@ import csrfFetch from "../store/csrf"
 
 // create a review
 export const postReview = async review => {
-    debugger
 
-    const newReview = {
+    const test = {
         listing_id: review.listing_id,
-        author_id: review.listing_id,
-        body: review.listing_id,
-        cleanliness: review.listing_id,
-        communication: review.listing_id,
-        check_in: review.listing_id,
-        accuracy: review.listing_id,
-        location: review.listing_id,
-        value: review.listing_id
+        author_id: review.author_id,
+        body: review.body,
+        cleanliness: review.cleanliness,
+        communication: review.communication,
+        check_in: review.checkIn,
+        accuracy: review.accuracy,
+        location: review.accuracy,
+        value: review.accuracy
     }
+
     const res = await csrfFetch('/api/reviews', {
         method: 'POST',
-        body: JSON.stringify(review)
+        body: JSON.stringify(test)
     })
     const newReview = await res.json()
     return newReview

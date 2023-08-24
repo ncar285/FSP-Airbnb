@@ -2,6 +2,15 @@ class Api::UsersController < ApplicationController
 
     wrap_parameters include: User.attribute_names + ['password']
     
+    def show 
+        @user = User.find_by(id: params[:id])
+        if @user 
+            render :show
+        else
+            render json: { user: nil }
+        end
+    end
+
 
     # ! JUST FOR DEVELOPEMENT - REMOVE THIS
     def index

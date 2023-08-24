@@ -1,6 +1,19 @@
 // import { csrfFetch } from "./authUtils";
 import csrfFetch from "../store/csrf";
 
+
+
+export const fetchUserData = async userId => {
+    const res = await fetch(`/api/users/${userId}`)
+    if (res.ok) {
+        const data = await res.json()
+        return data
+    } else {
+        // error handling
+    }
+}
+
+
 //signup
 export const postUser = async userData => {
     // debugger

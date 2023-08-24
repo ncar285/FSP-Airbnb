@@ -13,66 +13,53 @@
 #
 class Booking < ApplicationRecord
 
+    validates :user_id, :listing_id, :start_date, :end_date, :guests, presence: true
+
+    validate :valid_booking_dates
+
+    validate :valid_guests
+
+    validates :price, numericality: {greater_than: 0}, allow_nil: true
+
+    before_save :generate_price
+    
+
     belongs_to :renter, 
-        class_name: :User
+        class_name: :User,
+        foreign_key: :user_id
 
     belongs_to :listing 
 
-    validates [:start_date, :end_date], :valid_booking_dates
-
 
     def valid_booking_dates 
-        listing = Listing.find_by(id: self.listing_id)
-        bookings = listing.bookings 
-        
-        next_six_months = [Time.now.utc, Time.now.utc+6]
-
-        # bookings = [
-        #     {id: 1, user_id: 5, listing_id: 3, 
-        #         start_date: 2023-08-22, end_date: 2023-08-29 :guests 4},
-        # ]
-      
-        booking_dates = bookings.map {|booking|,[booking.start_date, booking.end_date]}
-
-        end_dates = booking_dates.map(|pair| pair[1])   # [d,d,d,d]
-        start_dates = booking_dates.map(|pair| pair[0]) # [d,d,d,d]
-        # booking_dates = [[s,e], [s,e], [s,e]]
-
-        proposed_start = self.start_date;
-        proposed_end = self.end_date;
-
-        invalid = false
-
-        start_dates.each_with_index do |date, i|
-            if (date > proposed_end)
-                if (end_dates[i] > proposed_start)
-                    invalid = true
-                end
+        bookings = listing.bookings.where.not(id: self.id)
+        proposed_start = self.start_date
+        proposed_end = self.end_date
+        bookings.each do |booking|
+            if (proposed_start < booking.end_date) && (proposed_end > booking.start_date)
+              errors.add(:base, "The booking dates overlap with an existing booking")
             end
-            # i.e. for nearest start date behind to the proposed start:
-            # Require proposed start and end to both be later than this booking
         end
-
-        start_dates.each_with_index do |date, i|
-            next_booking_start = start_dates[i+1]
-            if (next_booking_start > proposed_start)
-                if (next_booking_start < proposed_end)
-                    invalid = true
-                end
-            end
-            # i.e. for nearest start date in front to the proposed start:
-            # Require proposed start and end to both be earlier than this booking
+        # end
+        if (proposed_start > proposed_end)
+            errors.add(:base, "The end date is before the start date")
         end
-
-
-        
-
-
-
-
+        if (proposed_start < Date.today)
+            errors.add(:base, "The booking is in the past")
+        end
     end
 
+    def generate_price 
+        stay_length = (self.end_date - self.start_date).to_i
+        per_day = self.listing.price
+        self.price = stay_length * per_day
+    end
 
+    def valid_guests 
+        if (self.guests > self.listing.guests )
+            errors.add(:base, "The bookng has too many guests")
+        end
+    end
 
 
 

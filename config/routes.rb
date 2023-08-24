@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   namespace :api, defaults: {format: :json} do 
-    resources :users, only: [:create, :index] do
+    resources :users, only: [:show, :create, :index] do
       collection do
         get 'checkEmail'
       end
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resource :session, only: [:show, :create, :destroy]
     resources :listings, only: [:show, :index]
     resources :reviews, only: [:show, :create, :update, :destroy]
+    resources :bookings, only: [:show, :create, :update, :destroy]
   end
 
   post 'api/test', to: 'application#test'

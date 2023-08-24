@@ -7,6 +7,7 @@ import SearchForm from './components/SearchForm/SearchForm.jsx';
 import ShowListing from './components/ShowListing/ShowListing.jsx';
 import DeleteReviewModal from './components/DeleteReviewModal/DeleteReviewModal.jsx';
 import EditReviewModal from './components/EditReviewModal/EditReviewModal.jsx';
+import AccountPage from './components/AccountPage/AccountPage.jsx';
 
 function App() {
   return (
@@ -23,6 +24,13 @@ function App() {
             <ShowListing/> 
             <DeleteReviewModal/>
             <EditReviewModal/>
+        </Route>
+        <Route path="/account/">
+            <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
+            {/* <ShowListing/>  */}
+            {/* <DeleteReviewModal/> */}
+            {/* <EditReviewModal/> */}
+            <AccountPage/>
         </Route>
        
       </Switch>

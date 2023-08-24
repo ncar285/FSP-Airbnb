@@ -1,0 +1,14 @@
+.bookings-container {
+    display: flex;
+    width: 100%;
+}
+
+.booking-item{
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.booking-image {
+    height: 100px;
+    width: 100px;
+}
