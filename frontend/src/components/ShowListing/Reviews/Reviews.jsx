@@ -9,45 +9,59 @@ import { getListingRevews } from '../../../store/reviewsReducer';
 import ReviewItem from './ReviewItem';
 import { useSelector } from 'react-redux';
 import { getUserReview } from '../../../store/reviewsReducer';
-import MyReviewItem from './MyReviewItem';
+import { selectListing } from '../../../store/listingsReducer';
+import { getCurrentUser } from '../../../store/sessionsReducer';
+import { useState } from 'react';
+// import MyReviewItem from './MyReviewItem';
 
 
 const findAverageScore = (reviews, category) => {
     const array = reviews.map((review) => review[category])
     const sum = array.reduce((total, current) => total + current, 0);
-    return sum/(reviews.length)
+    return (category === "rating") ? Number((sum/(reviews.length)).toFixed(2)) : Number((sum/(reviews.length)).toFixed(1))
 }
+
 
 
 const Reviews = () => {
     const reviews = useSelector(getListingRevews)
-
+    // const listingId = useSelector(selectListing).id
+    // const currentUserId = useSelector(getCurrentUser).id
     const userReview = useSelector(getUserReview)
 
-    const count = reviews.length;
+    // console.log(listingId)
+
+    const count = Object.values(reviews).length;
     let rating = findAverageScore(reviews, "rating")
-    rating = Number(rating.toFixed(2))
     let cleanliness = findAverageScore(reviews, "cleanliness")
-    cleanliness = Number(rating.toFixed(1))
     let communication = findAverageScore(reviews, "communication")
-    communication = Number(communication.toFixed(1))
     let checkIn = findAverageScore(reviews, "checkIn")
-    checkIn = Number(checkIn.toFixed(1))
     let accuracy = findAverageScore(reviews, "accuracy")
-    accuracy = Number(accuracy.toFixed(1))
     let location = findAverageScore(reviews, "location")
-    location = Number(location.toFixed(1))
     let value = findAverageScore(reviews, "value")
-    value = Number(value.toFixed(1))
 
     const allOtherReviews = () => {
         if (userReview){
-            const otherReviews = reviews.filter(review => review.author !== userReview?.authorId);
+            const otherReviews = reviews.filter(review => review.authorId !== userReview?.authorId);
             return otherReviews.map((review) => <ReviewItem key={review.id} review={review} />)
         }else {
             return reviews.map((review) => <ReviewItem key={review.id} review={review} />)
         }
     }
+
+    // const newReview = {
+    //     listing_id: currentUserId,
+    //     author_id: listingId,
+    //     body: null,
+    //     cleanliness: null,
+    //     communication: null,
+    //     check_in: null,
+    //     accuracy: null,
+    //     location: null,
+    //     value: null
+    // }
+
+    // const [review, setReview] = useState(newReview)
 
     return (
     <>
@@ -122,7 +136,7 @@ const Reviews = () => {
                 </div>
             </div>
         </div>
-
+ 
         {userReview && <ReviewItem key={userReview.id} review={userReview} />}
         {allOtherReviews()}
 

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:show, :create, :destroy]
     resources :listings, only: [:show, :index]
-    resources :reviews, only: [:show, :create]
+    resources :reviews, only: [:show, :create, :update, :destroy]
   end
 
   post 'api/test', to: 'application#test'

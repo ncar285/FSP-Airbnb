@@ -1,4 +1,6 @@
 import { postReview } from "../utils/reviewApiUtils";
+import { patchReview } from "../utils/reviewApiUtils";
+import { deleteReview } from "../utils/reviewApiUtils";
 
 //CONSTANTS
 export const SET_CURRENT_REVIEW = 'SET_CURRENT_REVIEW'
@@ -20,11 +22,12 @@ export const setCurrentReviews = (reviews) => {
     };
 };
 
-// const removeCurrentReview = () => {
-//     return {
-//         type: REMOVE_CURRENT_REVIEW
-//     };
-// }
+const removeCurrentReview = (reviewId) => {
+    return {
+        type: REMOVE_CURRENT_REVIEW,
+        payload: reviewId
+    };
+}
 
 // SELECTORS 
 export const getUserReview = state => {
@@ -44,22 +47,42 @@ export const getListingRevews = state => state.reviews? Object.values(state.revi
 
 export const createReview = reviewData => async (dispatch) => {
     const review = await postReview(reviewData);
-    sessionStorage.setItem("review", JSON.stringify(review))
+    sessionStorage.setItem("myReview", JSON.stringify(review))
     dispatch(setCurrentReview(review));
 };
+
+
+export const updateReview = reviewData => async (dispatch) => {
+    const review = await patchReview(reviewData);
+    sessionStorage.setItem("myReview", JSON.stringify(review))
+    dispatch(setCurrentReview(review));
+};
+
+export const deleteUserReview = reviewId => async (dispatch) => {
+    await deleteReview(reviewId);
+    sessionStorage.setItem("myReview", null)
+    dispatch(removeCurrentReview(reviewId));
+};
+
+
+
+
+
 
 
 // REDUCER
 const initialState = {};
 const reviewsReducer = (state = initialState, action) => {
+    const newState = {...state}
     switch (action.type) {
         case SET_CURRENT_REVIEW:
-    return { ...state, review: action.payload };
+    return { ...state, [action.payload.id]: action.payload };
     
         case SET_CURRENT_REVIEWS:
     return { ...state, ...action.payload };
-    //     case REMOVE_CURRENT_REVIEW:
-    // return { ...state, review: null };
+        case REMOVE_CURRENT_REVIEW:
+        delete newState[action.payload]
+        return newState;
     default:
         return state;
     }

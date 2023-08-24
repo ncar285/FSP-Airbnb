@@ -8,12 +8,14 @@ import { activateDRM } from '../../../store/uiReducer';
 import { useDispatch } from 'react-redux';
 
 const ReviewItem = ({ review, editMode = true }) => {
+    // console.log(review)
     const author = review.authorFirstname;
     const dateObject = new Date(review.createdAt);
     const date = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(dateObject);
     const imgUrl = review.authorPhotoUrl
     const user = useSelector(getCurrentUser)
     const dispatch = useDispatch()
+    // const currentUserPhoto = user.photoUrl
 
     const myReview = () => {
         return (user && user.id === review.authorId) ? true : false
@@ -33,9 +35,9 @@ const ReviewItem = ({ review, editMode = true }) => {
             <div className='review-item my-review'>
                 <div className='user-review-options'>
                     <div className='review-header'>
-                        <img className="author-profile" src={imgUrl} alt="" />
+                        <img className="author-profile" src={user.photoUrl} alt="" />
                         <div className='name-date'>
-                            <div className='reviewer-name'>{author}</div>
+                            <div className='reviewer-name'>{user.firstname}</div>
                             <div className='review-date'>{date}</div>
                         </div>
                     </div>
