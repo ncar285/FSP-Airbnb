@@ -1,10 +1,125 @@
-.reserve-block{
-    /* position: sticky; */
-    /* top: 0;  */
+.booking-block{
     height: 450px;
+    border: 1px solid black;
     border: 1px solid var(--light_grey);
     background-color: white;
     border-radius: 20px;
     padding: 24px;
     box-shadow: var(--shadow);
+    color: var(--dark_grey);
+    font-family: 'airbnb2';
+    /* background-color: yellow; */
+    position: sticky;
+    top: 20px;
+}
+
+.pricing-header {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.booking-subheading {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#price-val {
+    font-size: 18px;
+    font-family: 'airbnb5';
+    margin-right: 5px;
+}
+
+.booking-block{
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-inputs{
+    padding: 10px;
+    width: 200px;
+    border: 1.5px solid #b0b0b0;
+    border-radius: 10px;
+}
+
+.guests-input label,
+ #start_date,
+ #end_date {
+    /* font */
+    /* border: none; */
+    color: var(--dark_grey);
+    font-size: 14px;
+}
+
+#start_date *,
+ #end_date * {
+    color: var(--dark_grey);
+}
+.guests-input {
+    display: flex;
+    /* padding: 10px; */
+    /* width: 200px; */
+    width: 100%;
+    /* border: 1.5px solid #b0b0b0;
+    border-radius: 10px; */
+}
+
+
+.number-input {
+    appearance: none;
+    padding: 10px; /* Add some padding */
+    font-size: 18px;
+    text-align: center; /* Center the text */
+    display: flex;
+    width: 100%;
+    /* width: 90px; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.number-input button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #b0b0b0;
+    color: #b0b0b0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    padding: none;
+    /* margin: 0px 20px; */
+}
+
+
+.increment-button:hover {
+    border: 1px solid var(--dark_grey);
+    color: var(--dark_grey);
+    cursor: pointer;
+}
+.decrement-button:hover {
+    border: 1px solid var(--dark_grey);
+    color: var(--dark_grey);
+    cursor: pointer;
+}
+
+#guests-quantity {
+    color: var(--dark_grey);
+    /* width: 100%; */
+    border: none;
+}
+
+.book-button {
+    width: 200px;
+    height: 47.5px;
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+    background-color: var(--brand-color);
+    border: var(--dark_grey) 1px solid;
+    border-radius: 10px;
+    color: var(--dark_grey);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
 }

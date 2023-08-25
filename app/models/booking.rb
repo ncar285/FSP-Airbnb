@@ -32,12 +32,19 @@ class Booking < ApplicationRecord
 
 
     def valid_booking_dates 
-        bookings = listing.bookings.where.not(id: self.id)
+        listing = Listing.find_by(id: listing_id)
+        # debugger
+        bookings = listing.bookings
         proposed_start = self.start_date
         proposed_end = self.end_date
         bookings.each do |booking|
-            if (proposed_start < booking.end_date) && (proposed_end > booking.start_date)
+            if (proposed_start < booking.end_date) && (proposed_end > booking.end_date)
               errors.add(:base, "The booking dates overlap with an existing booking")
+              return
+            end
+            if (proposed_start < booking.end_date) && (proposed_end > booking.start_date)
+                errors.add(:base, "The booking dates overlap with an existing booking")
+                return
             end
         end
         # end

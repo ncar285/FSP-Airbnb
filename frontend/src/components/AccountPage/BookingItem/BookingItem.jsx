@@ -1,5 +1,24 @@
 import './BookingItem.css'
+import {BsTrash3} from "react-icons/bs"
+import {FaEdit} from "react-icons/fa"
+import { useDispatch } from 'react-redux'
+// import { deleteBooking } from '../../../utils/bookingApiUtils'
+import { deleteBooking } from '../../../store/bookingsReducer'
+
 const BookingItem = ({ booking }) => {
+
+    const dispatch = useDispatch();
+
+    const  handleTrashCanClick = async () => {
+        // return
+        // debugger
+        // dispatch(createBooking
+        dispatch(deleteBooking(booking.id))
+    }
+
+    const  handleEditClick = () => {
+        return
+    }
 
     console.log(booking)
     return (
@@ -11,6 +30,10 @@ const BookingItem = ({ booking }) => {
                 <div>guests: {booking.guests}</div>
                 <div>price: {booking.price}</div>
                 <img src={booking.photoUrl} alt="" className='booking-image'/>
+                <div className='review-crud-buttons'>
+                    <BsTrash3 onClick = {handleTrashCanClick}/>
+                    <FaEdit onClick = {handleEditClick}/>
+                </div>
             </div>
         {/* </div> */}
         </>

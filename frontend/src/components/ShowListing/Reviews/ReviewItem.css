@@ -67,3 +67,7 @@
     box-shadow: var(--shadow);
     border: 1px solid var(--light_light_grey);
 }
+
+.my-review:hover {
+    transform: scale(1.05);
+}

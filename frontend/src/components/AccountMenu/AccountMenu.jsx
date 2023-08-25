@@ -13,10 +13,9 @@ const AccountMenu = ({ handleMenuClick, margin }) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(getCurrentUser);
 
-    const seeAccount = async e => {
-        e.preventDefault()
-    }
-    
+
+    const renderAccountPage = () => window.location.href = '/account';
+
     const handleSignOut = async e => {
         e.preventDefault()
         dispatch(logoutUser());
@@ -28,12 +27,13 @@ const AccountMenu = ({ handleMenuClick, margin }) => {
         dispatch(activateRegisterModal())
     }
 
+
     const menuButtons = () => {
         if (sessionUser)  {
             return  (
                 <>
                     <div style={{ right: margin}} className="account-options" id="account-options">
-                        <button onClick={seeAccount}>Account</button>
+                        <button onClick={renderAccountPage}>Account</button>
                         <div class="account-menu-spacer"></div>
                         <button onClick={handleSignOut}>Logout</button>
                     </div>

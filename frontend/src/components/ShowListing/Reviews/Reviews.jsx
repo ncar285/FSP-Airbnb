@@ -9,30 +9,17 @@ import { getListingRevews } from '../../../store/reviewsReducer';
 import ReviewItem from './ReviewItem';
 import { useSelector } from 'react-redux';
 import { getUserReview } from '../../../store/reviewsReducer';
-import { selectListing } from '../../../store/listingsReducer';
-import { getCurrentUser } from '../../../store/sessionsReducer';
-import { useState } from 'react';
+// import { selectListing } from '../../../store/listingsReducer';
+// import { getCurrentUser } from '../../../store/sessionsReducer';
+// import { useState } from 'react';
 // import MyReviewItem from './MyReviewItem';
 
 
-const findAverageScore = (reviews, category) => {
-    const array = reviews.map((review) => review[category])
-    const sum = array.reduce((total, current) => total + current, 0);
-    return (category === "rating") ? Number((sum/(reviews.length)).toFixed(2)) : Number((sum/(reviews.length)).toFixed(1))
-}
 
-
-
-const Reviews = () => {
-    const reviews = useSelector(getListingRevews)
-    // const listingId = useSelector(selectListing).id
-    // const currentUserId = useSelector(getCurrentUser).id
+const Reviews = (  {count, rating, findAverageScore} ) => {
     const userReview = useSelector(getUserReview)
-
-    // console.log(listingId)
-
-    const count = Object.values(reviews).length;
-    let rating = findAverageScore(reviews, "rating")
+    const reviews = useSelector(getListingRevews)
+    
     let cleanliness = findAverageScore(reviews, "cleanliness")
     let communication = findAverageScore(reviews, "communication")
     let checkIn = findAverageScore(reviews, "checkIn")
@@ -48,20 +35,6 @@ const Reviews = () => {
             return reviews.map((review) => <ReviewItem key={review.id} review={review} />)
         }
     }
-
-    // const newReview = {
-    //     listing_id: currentUserId,
-    //     author_id: listingId,
-    //     body: null,
-    //     cleanliness: null,
-    //     communication: null,
-    //     check_in: null,
-    //     accuracy: null,
-    //     location: null,
-    //     value: null
-    // }
-
-    // const [review, setReview] = useState(newReview)
 
     return (
     <>

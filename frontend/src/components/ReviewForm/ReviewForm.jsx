@@ -50,19 +50,6 @@ const ReviewForm = ({editMode = false, review, setReview}) => {
     const handleSubmitReview = async e => {
         e.preventDefault();
         if (loggedInUser){
-            // const newReview = {
-            //     listing_id: listingId,
-            //     author_id: loggedInUser.id,
-            //     body,
-            //     cleanliness,
-            //     communication,
-            //     check_in: checkIn,
-            //     accuracy,
-            //     location,
-            //     value
-            // }
-
-            // const newRev = {...review,}
             dispatch(createReview(review))
         } else {
             setDisplayLoginMessage(true)

@@ -25,4 +25,16 @@ const Splash = () => {
   )
 }
 
+// //above normalise
+// "moment": "^2.29.4",
+
+// // under react
+// "react-dates": "^21.8.0",
+
+
+// // under react scripts
+// "react-with-direction": "^1.4.0",
+
+
+
 export default Splash

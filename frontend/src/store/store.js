@@ -6,6 +6,8 @@ import logger from 'redux-logger';
 import listingsReducer from './listingsReducer';
 import reviewsReducer from './reviewsReducer';
 import usersReducer from './usersReducer';
+import bookingsReducer from './bookingsReducer';
+import { errorsReducer } from './errorsReducer';
 
 
 export const rootReducer = combineReducers({ 
@@ -13,7 +15,9 @@ export const rootReducer = combineReducers({
     session: sessionsReducer,
     listings: listingsReducer,
     reviews: reviewsReducer,
-    userData: usersReducer
+    userData: usersReducer,
+    bookings: bookingsReducer,
+    errors: errorsReducer
 })
 
 export default function configureStore(preloadedState={}){

@@ -1,4 +1,5 @@
 import { fetchAllListings, fetchOneListing} from "../utils/listingApiUtils.js"
+// import { receiveBooking } from "./bookingsReducer.js";
 
 // CONSTANTS
 export const RECEIVE_LISTING = 'RECEIVE_LISTING'

@@ -33,10 +33,6 @@ const NavBar = ({ tagsOn, searchType, barType}) => {
         }
     }
 
-    
-
-
-
 
     const handleGoHome = () => {
         window.location.href = '/';

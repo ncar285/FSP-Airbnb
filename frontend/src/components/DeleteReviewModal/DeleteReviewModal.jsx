@@ -43,7 +43,7 @@ const DeleteReviewModal = () => {
                 <div className="DRM-options">
                     {/* <div>{review.id}</div> */}
                     <button onClick={handleDelete}>Yes</button>
-                    <button>No</button>
+                    <button onClick={handleExit}>No</button>
                 </div>
                 <ReviewItem key={review.id} review={review} editMode={false}/> 
             </div>

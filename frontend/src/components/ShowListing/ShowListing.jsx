@@ -12,6 +12,7 @@ import { setCurrentReviews } from '../../store/reviewsReducer'
 import { getUserReview } from '../../store/reviewsReducer'
 // import { selectListing } from '../../store/listingsReducer'
 import { getCurrentUser } from '../../store/sessionsReducer'
+import { getListingRevews } from '../../store/reviewsReducer'
 
 
 const ShowListing = () => {
@@ -56,6 +57,17 @@ const ShowListing = () => {
         // }
     }, [review])
 
+    const findAverageScore = (reviews, category) => {
+        const array = reviews.map((review) => review[category])
+        const sum = array.reduce((total, current) => total + current, 0);
+        return (category === "rating") ? Number((sum/(reviews.length)).toFixed(2)) : Number((sum/(reviews.length)).toFixed(1))
+    }
+
+    const reviews = useSelector(getListingRevews)
+    const count = Object.values(reviews).length;
+    const rating = findAverageScore(reviews, "rating")
+
+
 
     if (!listing) {
         return <div>Loading...</div>;
@@ -68,6 +80,8 @@ const ShowListing = () => {
                         <p>4.5 stars, 21 reviews, {listing.city}, {listing.state} </p>
                     </div>
                     <PhotoAlbum listing={listing}/>
+
+                    
                     
                     <div className='show-page-contents'>
 
@@ -76,13 +90,13 @@ const ShowListing = () => {
                         </div>
                     
                         <div className='listing-right-column'>
-                            <ReserveBlock/>
+                            <ReserveBlock  listing={listing} count={count} rating={rating}/>
                         </div>
 
                     </div>
 
                     <div className='reviews-block'>
-                        <Reviews/>
+                        <Reviews count={count} rating={rating} findAverageScore={findAverageScore}/>
                     </div>
 
                     <div className='create-review'>

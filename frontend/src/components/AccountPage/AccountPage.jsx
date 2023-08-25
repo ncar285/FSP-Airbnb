@@ -9,15 +9,14 @@ const AccountPage = () => {
     const user = useSelector(getCurrentUser)
     const dispatch = useDispatch()
     const data = useSelector(selectUserData)
+
+    const bookings  = useSelector(state => Object.values(state?.bookings))
     useEffect(() => {
         dispatch(fetchUserShow(user.id));
     }, [dispatch]);
 
-    const bookings = data.bookings
+    // const bookings = data.bookings || null
 
-    console.log(Object.values(bookings).map((booking)=>booking.price))
-
-    
     return (
         <>
             <div>Welcome, {data.firstname}</div>
@@ -28,7 +27,9 @@ const AccountPage = () => {
                     <div>Here are your upcoming bookings:</div>
                 </div>
                 <div className='bookings-container'>
+                    {bookings &&
                     <div>{Object.values(bookings).map((booking)=><BookingItem booking={booking} /> )}</div>
+                    }
                 </div>
             </div>
             
