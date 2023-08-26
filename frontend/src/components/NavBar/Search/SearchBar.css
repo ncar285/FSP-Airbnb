@@ -1,5 +1,5 @@
-.search-bar { /*! fix this!! */
-    background: none;
+.search-bar {
+    background: white;
     width: 350px;
     height: 45px;
     border: var(--light_grey) solid 1px;
@@ -61,4 +61,9 @@
 .s-button img {
     height: 40%;
     width: 40%;
+}
+
+.search-prompt input{
+    border: none;
+    margin-left: 20px;
 }

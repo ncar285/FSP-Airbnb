@@ -31,6 +31,7 @@
 .key-listing-info {
     display: flex;
     align-items: center;
+    font-family: 'airbnb2';
 }
 
 .stats-dot {
@@ -52,8 +53,11 @@
 }
 
 .listing-description p {
-    height: 100px;
+    height: 200px;
     overflow: hidden;
+    line-height: 1.5;
+    font-family: 'airbnb4';
+
 }
 
 #listing-calendar {

@@ -10,9 +10,6 @@ const BookingItem = ({ booking }) => {
     const dispatch = useDispatch();
 
     const  handleTrashCanClick = async () => {
-        // return
-        // debugger
-        // dispatch(createBooking
         dispatch(deleteBooking(booking.id))
     }
 
@@ -20,7 +17,7 @@ const BookingItem = ({ booking }) => {
         return
     }
 
-    console.log(booking)
+    // console.log(booking)
     return (
         <>
         {/* <div className='bookings-container'> */}

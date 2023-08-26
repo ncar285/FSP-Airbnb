@@ -13,7 +13,7 @@ import { getUserReview } from '../../store/reviewsReducer'
 // import { selectListing } from '../../store/listingsReducer'
 import { getCurrentUser } from '../../store/sessionsReducer'
 import { getListingRevews } from '../../store/reviewsReducer'
-
+import { AiFillStar } from "react-icons/ai"
 
 const ShowListing = () => {
     // const listingId = useSelector(selectListing).id
@@ -77,8 +77,16 @@ const ShowListing = () => {
                 <div className="show-content">
                     <h1>{listing.title}</h1>
                     <div className='show-subheading'>
-                        <p>4.5 stars, 21 reviews, {listing.city}, {listing.state} </p>
+                        <div className='booking-star'><AiFillStar/></div>
+                        <p className='show-rating-subheading'>{rating}</p>
+                        <p className='stats-dot'>{'\u2B24' } </p>
+                        <p>{count} reviews</p>
+                        <p className='stats-dot'>{'\u2B24' } </p>
+    
+                        <p className='listing-city'> {listing.city}, </p>
+                        <p> {listing.state} </p>
                     </div>
+
                     <PhotoAlbum listing={listing}/>
 
                     
@@ -105,6 +113,7 @@ const ShowListing = () => {
 
                 </div>
             </div>
+     
         )
     }
 

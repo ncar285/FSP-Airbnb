@@ -20,6 +20,7 @@ export const removeBooking = bookingId => ({
 
 
 // SELECTORS 
+export const getBookings = state => state.bookings
 
 
 // THUNK ACTION CREATORS

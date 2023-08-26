@@ -5,6 +5,19 @@
     justify-content: center;
 }
 
+.show-subheading {
+    display: flex;
+    align-items: center;
+    font-family: 'airbnb2';
+}
+
+.listing-city {
+    margin-right: 5px;
+}
+.show-rating-subheading {
+    margin: 0px 3px;
+}
+
 .show-content{
     width: 100%;
 }

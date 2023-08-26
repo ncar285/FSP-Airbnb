@@ -1,0 +1,43 @@
+.account-show-page{
+    margin: 0px var(--show_margin);
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+}
+
+.account-left {
+    width: 40%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+
+}
+
+.account-right {
+    width: 60%;
+    border: 1px solid black;
+}
+
+
+
+.profile-block {
+    width: 350px;
+    height: 200px;
+    /* margin: 20px; */
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+
+}
+
+.trips-header {
+    font-size: 30px;
+}
+
+.booking-upcoming{
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}

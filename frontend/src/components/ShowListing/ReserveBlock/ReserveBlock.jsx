@@ -27,18 +27,24 @@ const ReserveBlock = ( { listing, count, rating } ) => {
 
     const errors = useSelector(getBookingErrors)
     
+    const timestamp = new Date('09/10/2023');
+    const timestamp2 = new Date('09/15/2023'); 
+    const momentTimestamp = moment(timestamp);
+    const momentTimestamp2 = moment(timestamp2);
+
     const newBooking = {
         userId: user.id,
         listingId: parseInt(listing.id, 10),
-        startDate: null,
-        endDate: null,
+        startDate: momentTimestamp,
+        endDate: momentTimestamp2,
         guests: 1
     }
+
+    // console.log()
     
     
     const [booking, setBooking] = useState(newBooking)
     const [focusedInput, setFocusedInput] = useState(null)
-    // console.log(booking)
     
     const handleSubmitBooking = async e  => {
         e.preventDefault();
@@ -57,6 +63,23 @@ const ReserveBlock = ( { listing, count, rating } ) => {
             dispatch(activateRegisterModal)
         }
     }
+
+    // let duration = useState(5);
+    let duration
+
+    useEffect((()=>{
+        // let start = booking.startDate.format('YYYY/MM/DD');
+        // let end = booking.endDate.format('YYYY/MM/DD');
+        // let start = new Date(booking.startDate);
+        // let end = new Date(booking.endDate);
+
+        var difference = moment.duration(booking.endDate.diff(booking.startDate));
+        // var hours = duration.hours();
+        // duration = end - start;
+        duration = difference.days()[0];
+    }),[booking])
+    
+    // console.log(duration)
 
     const [maxGuests, setMaxGuest] = useState(false)
     const [minGuests, setMinGuest] = useState(true)
@@ -83,17 +106,23 @@ const ReserveBlock = ( { listing, count, rating } ) => {
     const decrementGuests = () => (booking.guests === 1) ? null : setBooking({ ...booking, guests: booking.guests - 1 })
 
     return (
-        <div className='booking-block'>
+        
+        <div id='booking-block'>
+
             <div className='pricing-header'>
-                <div id="price-val">${listing.price}</div>
-                <div>night</div>
+                <div className="price-val">
+                    <div id="price-val">${listing.price}</div>
+                    <div className="night">night</div>
+                </div>
+                <div className="right-side">
+                    <div className='booking-star'><AiFillStar/></div>
+                    <div className="right-rating">{rating}</div>
+                    <p className='stats-dot'>{'\u2B24' } </p>
+                    
+                    <div className="right-reviews">{count} reviews</div>
+                </div>
             </div>
-            <div className='booking-subheading'>
-                <div className='booking-star'><AiFillStar/></div>
-                <div>{rating}</div>
-                <div>(dot)</div>
-                <a href="">{count} reviews</a>
-            </div>
+
             <div className='booking-inputs'>
                 <div className='calendar-container'>
                     <DateRangePicker
@@ -109,16 +138,17 @@ const ReserveBlock = ( { listing, count, rating } ) => {
                         }} // PropTypes.func.isRequired,
                         focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
                         onFocusChange={focusedInput => setFocusedInput(focusedInput)} // PropTypes.func.isRequired,
-                        numberOfMonths={1}
+                        numberOfMonths={2}
                         // isDayBlocked = {momentDate => momentDate.format('d') === 0 }
                         />
                 </div>
+
                 <div className='guests-input'>
-                    <label>Guests
+                    <label className="guests-title">Guests
                         <div class="number-input">
-                            <button className="decrement-button" onClick={decrementGuests}><BiMinus/></button>
+                            <button id="guest-decrement-button" onClick={decrementGuests}><BiMinus id="decrement-button"/></button>
                             <div id="guests-quantity" >{booking.guests}</div>
-                            <button className="increment-button" onClick={incrementGuests}><AiOutlinePlus/></button>
+                            <button id="guest-increment-button" onClick={incrementGuests}><AiOutlinePlus id="increment-button"/></button>
                             {maxGuests &&
                             <div>max guests!</div>}
                         </div>
@@ -126,15 +156,30 @@ const ReserveBlock = ( { listing, count, rating } ) => {
                 </div>
             </div>
             <button className="book-button" onClick={handleSubmitBooking}>
-                Check Availability
+                Reserve
             </button>
+            <div className="wont-be-charged">
+                <p>You won't be charged yet</p>
+            </div>
+            <div className="price-calcs">
+                <div>
+                    <p>${listing.price} x {duration} nights</p>
 
+
+                </div>
+                <div className="divider-line"/>
+                <div>
+
+                </div>
+
+            </div>
             <div className='booking-errors'>
                 {errors &&
                 <div>{errors}</div>}
-
             </div>
+
         </div>
+ 
     )
 
 }

@@ -1,6 +1,13 @@
 import './ListingInfo.css'
+import placeOffers from '../../../assets/place-offers.png'
+import lisingInfo from '../../../assets/bellow-subheader.png'
 
 const ListingInfo = ({ listing }) => {
+
+    let style = "height: 200px";
+    const revealDescription = () => {
+        style = "";
+    }
 
     return (
         <div className='listing-info'>
@@ -22,17 +29,20 @@ const ListingInfo = ({ listing }) => {
                 </div>
             </div>
             <div className='listing-features-list'>
-                <p>dedicated workspace</p>
+                {/* <p>dedicated workspace</p>
                 <p>{listing.owner.firstname} is a Superhost</p>
-                <p>Free cancellation before Sep 7</p>
+                <p>Free cancellation before Sep 7</p> */}
+                <img src={lisingInfo} alt="" />
             </div>
             <div className='listing-description'>
-                <p>{listing.description}</p>
+                <p style={{style}}>{listing.description}</p>
+                {/* <div onClick={revealDescription}>Show More</div> */}
                 <a href="">Show More </a>
 
             </div>
             <div className='listing-amenities'>
-                <h2>What this place offers</h2>
+                <img src={placeOffers} alt="" />
+                {/* <h2>What this place offers</h2>
                 <ul>
                     <li>Mountain View</li>
                     <li>Valley view</li>
@@ -40,12 +50,12 @@ const ListingInfo = ({ listing }) => {
                     <li>Wifi</li>
                     <li>Dedicated workspace</li>
                 </ul>
-                <button>Show all 43 amenities</button>
+                <button>Show all 43 amenities</button> */}
             </div>
             <div className='listing-calendar' id="listing-calendar">
-                <div className='listing-info-calendar'>
+                {/* <div className='listing-info-calendar'>
                     <p>[calendar goes here]</p>
-                </div>
+                </div> */}
 
             </div>
         </div>
