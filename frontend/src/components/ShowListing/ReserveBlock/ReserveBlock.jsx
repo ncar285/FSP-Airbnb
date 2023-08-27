@@ -15,7 +15,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { AiOutlinePlus } from "react-icons/ai"
 import { BiMinus } from "react-icons/bi"
 import { AiFillStar } from "react-icons/ai"
-import moment from 'moment'
+// import moment from 'moment'
 import { getBookingErrors } from '../../../store/errorsReducer';
 
 // import ReactDatesCalendar from './ReactDatesCalendar'
@@ -66,12 +66,12 @@ const ReserveBlock = ( { listing, count, rating } ) => {
 
     const [duration, setDuration] = useState(0);
 
-    useEffect(() => {
-        if (booking.endDate && booking.startDate){
-            let difference = moment.duration(booking.endDate.diff(booking.startDate));
-            setDuration(Math.floor(difference.asDays()));
-        }
-    }, [booking]);
+    // useEffect(() => {
+    //     if (booking.endDate && booking.startDate){
+    //         let difference = moment.duration(booking.endDate.diff(booking.startDate));
+    //         setDuration(Math.floor(difference.asDays()));
+    //     }
+    // }, [booking]);
 
     const [maxGuests, setMaxGuest] = useState(false)
     const [minGuests, setMinGuest] = useState(true)
@@ -137,7 +137,8 @@ const ReserveBlock = ( { listing, count, rating } ) => {
             </div>
             <div className="price-calcs">
                 <div>
-                    <p>${listing.price} x {duration} nights</p>
+                    {/* <p>${listing.price} x {duration} nights</p> */}
+                    <p>${listing.price} x 5 nights</p>
 
 
                 </div>
