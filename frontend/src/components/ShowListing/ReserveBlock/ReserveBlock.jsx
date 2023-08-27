@@ -32,8 +32,9 @@ const ReserveBlock = ( { listing, count, rating } ) => {
     const momentTimestamp = moment(timestamp);
     const momentTimestamp2 = moment(timestamp2);
 
+
     const newBooking = {
-        userId: user.id,
+        userId: user ? user.id : null,
         listingId: parseInt(listing.id, 10),
         startDate: momentTimestamp,
         endDate: momentTimestamp2,
@@ -49,37 +50,26 @@ const ReserveBlock = ( { listing, count, rating } ) => {
     const handleSubmitBooking = async e  => {
         e.preventDefault();
         if (user){
-            // debugger
             let start = booking.startDate.format('YYYY/MM/DD');
             let end = booking.endDate.format('YYYY/MM/DD')
             start = new Date(start);
             end = new Date(end);
             const data = await dispatch(createBooking({userId: user.id, listingId: parseInt(listing.id, 10), startDate: start, endDate: end, guests: booking.guests  }))
             console.log(data,"hello")
-            // if (data.){
-            //     debugger
-            // }
         } else {
             dispatch(activateRegisterModal)
         }
     }
 
-    // let duration = useState(5);
-    let duration
 
-    useEffect((()=>{
-        // let start = booking.startDate.format('YYYY/MM/DD');
-        // let end = booking.endDate.format('YYYY/MM/DD');
-        // let start = new Date(booking.startDate);
-        // let end = new Date(booking.endDate);
+    const [duration, setDuration] = useState(0);
 
-        var difference = moment.duration(booking.endDate.diff(booking.startDate));
-        // var hours = duration.hours();
-        // duration = end - start;
-        duration = difference.days()[0];
-    }),[booking])
-    
-    // console.log(duration)
+    useEffect(() => {
+        if (booking.endDate && booking.startDate){
+            let difference = moment.duration(booking.endDate.diff(booking.startDate));
+            setDuration(Math.floor(difference.asDays()));
+        }
+    }, [booking]);
 
     const [maxGuests, setMaxGuest] = useState(false)
     const [minGuests, setMinGuest] = useState(true)
