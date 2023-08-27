@@ -25,6 +25,7 @@
         --total_empty_gid_space: calc(var(--total_grid_gap) + var(--total_margin));
         --used_grid_space: calc(100vw - var(--total_empty_gid_space));
         --img_dim: calc(var(--used_grid_space) / var(--grid_columns));
+        /* --img_height: var(--img_dim) * 43 / 45; */
       }
 
 }

@@ -41,6 +41,15 @@ export const getUserReview = state => {
 
 export const getListingRevews = state => state.reviews? Object.values(state.reviews) : null
 
+// export const getListingScore = state => {
+
+
+//     return state.reviews? Object.values(state.reviews) : null
+// }
+
+
+
+
 
 
 // THUNK ACTION CREATORS

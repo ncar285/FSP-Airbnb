@@ -2,7 +2,7 @@ import './ShowListing.css'
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect, useState} from "react"
-import { selectListing, fetchListing } from "../../store/listingsReducer"
+import { selectListing, fetchListing, fetchListingScore } from "../../store/listingsReducer"
 import PhotoAlbum from './PhotoAlbum/PhotoAlbum'
 import ListingInfo from './ListingInfo/ListingInfo'
 import ReserveBlock from './ReserveBlock/ReserveBlock'
@@ -43,6 +43,9 @@ const ShowListing = () => {
     useEffect(() => {
         dispatch(fetchListing(listingId));
     }, [dispatch, listingId]);
+
+
+
     
     useEffect(() => {
         if (listing && listing.reviews) {
@@ -52,9 +55,7 @@ const ShowListing = () => {
 
 
     useEffect(()=>{
-        // if (myReview){
-            setReview(review)
-        // }
+        setReview(review)
     }, [review])
 
     const findAverageScore = (reviews, category) => {
@@ -66,6 +67,7 @@ const ShowListing = () => {
     const reviews = useSelector(getListingRevews)
     const count = Object.values(reviews).length;
     const rating = findAverageScore(reviews, "rating")
+
 
 
 
@@ -88,8 +90,6 @@ const ShowListing = () => {
                     </div>
 
                     <PhotoAlbum listing={listing}/>
-
-                    
                     
                     <div className='show-page-contents'>
 

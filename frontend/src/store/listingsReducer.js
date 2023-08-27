@@ -38,6 +38,19 @@ export const fetchListing = listingId => dispatch => (
   )
 )
 
+export const fetchListingScore = listingId => dispatch => {
+  fetchOneListing(listingId)
+    .then(data => {
+      console.log(data)
+      // const array = data.reviews.map(review=>review.rating)
+      // const sum = array.reduce((total, current) => total + current, 0);
+      // const rating =  Number((sum/(reviews.length)).toFixed(2))
+    }
+  )
+  
+
+}
+
 // SELECTORS
 export const selectAllListings = state => Object.values(state.listings);
 

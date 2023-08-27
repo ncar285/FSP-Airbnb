@@ -84,7 +84,7 @@ require 'csv'
 #   break if n==num_listings+1
 # end
 # puts "uploading listing's..."
-# photo_counts = [10, 6, 4, 8, 8, 7, 7, 6, 11, 
+# photo_counts = [10, 6, 5, 8, 8, 7, 7, 6, 11, 
 #   11, 8, 9, 11, 7, 14, 11, 14, 12, 10, 15, 
 #   9, 13, 10, 9, 12, 9, 10, 13, 9, 12, 7]
 # puts "phhoto array lengths matches listing count: #{(num_listings == photo_counts)}"
