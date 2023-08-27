@@ -29,17 +29,17 @@ const ReserveBlock = ( { listing, count, rating } ) => {
 
     const errors = useSelector(getBookingErrors)
     
-    const timestamp = new Date('09/10/2023');
-    const timestamp2 = new Date('09/15/2023'); 
-    const momentTimestamp = moment(timestamp);
-    const momentTimestamp2 = moment(timestamp2);
+    // const timestamp = new Date('09/10/2023');
+    // const timestamp2 = new Date('09/15/2023'); 
+    // const momentTimestamp = moment(timestamp);
+    // const momentTimestamp2 = moment(timestamp2);
 
 
     const newBooking = {
         userId: user ? user.id : null,
         listingId: parseInt(listing.id, 10),
-        startDate: momentTimestamp,
-        endDate: momentTimestamp2,
+        startDate: null,
+        endDate: null,
         guests: 1
     }
 
