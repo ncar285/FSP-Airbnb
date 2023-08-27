@@ -1,8 +1,8 @@
-import './ReactDatesStyles.css'
+// import './ReactDatesStyles.css'
 import './ReserveBlock.css'
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
-import { DateRangePicker } from 'react-dates';
+// import 'react-dates/initialize';
+// import 'react-dates/lib/css/_datepicker.css';
+// import { DateRangePicker } from 'react-dates';
 
 import { useDispatch, useSelector } from 'react-redux'
 import { getCurrentUser } from '../../../store/sessionsReducer'
@@ -17,6 +17,8 @@ import { BiMinus } from "react-icons/bi"
 import { AiFillStar } from "react-icons/ai"
 import moment from 'moment'
 import { getBookingErrors } from '../../../store/errorsReducer';
+
+// import ReactDatesCalendar from './ReactDatesCalendar'
 
 
 
@@ -114,25 +116,7 @@ const ReserveBlock = ( { listing, count, rating } ) => {
             </div>
 
             <div className='booking-inputs'>
-                <div className='calendar-container'>
-                    <DateRangePicker
-                        startDate={booking.startDate} // momentPropTypes.momentObj or null,
-                        startDateId="start_date" // PropTypes.string.isRequired,
-                        endDate={booking.endDate} // momentPropTypes.momentObj or null,
-                        endDateId="end_date" // PropTypes.string.isRequired,
-                        onDatesChange={({ startDate, endDate }) => {
-                            let newBookingState = {...booking}
-                            newBookingState.startDate = startDate;
-                            newBookingState.endDate = endDate;
-                            setBooking(newBookingState)
-                        }} // PropTypes.func.isRequired,
-                        focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                        onFocusChange={focusedInput => setFocusedInput(focusedInput)} // PropTypes.func.isRequired,
-                        numberOfMonths={2}
-                        // isDayBlocked = {momentDate => momentDate.format('d') === 0 }
-                        />
-                </div>
-
+                {/* <ReactDatesCalendar/> */}
                 <div className='guests-input'>
                     <label className="guests-title">Guests
                         <div class="number-input">
