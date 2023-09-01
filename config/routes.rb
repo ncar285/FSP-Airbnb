@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+
   namespace :api, defaults: {format: :json} do 
     resources :users, only: [:show, :create, :index] do
       collection do
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
     lambda {|req| !req.xhr? && req.format.html? }
 
   root to: 'static_pages#frontend'
+
 
 end
 

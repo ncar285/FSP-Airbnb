@@ -41,7 +41,6 @@ gem "faker"
 gem "bcrypt"
 gem "jbuilder"
 
-gem 'faker'
 
 
 group :development, :test do
