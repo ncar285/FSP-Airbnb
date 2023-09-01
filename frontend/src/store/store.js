@@ -21,5 +21,5 @@ export const rootReducer = combineReducers({
 })
 
 export default function configureStore(preloadedState={}){
-    return createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger))
+    return createStore(rootReducer, preloadedState, applyMiddleware(thunk))
 }
