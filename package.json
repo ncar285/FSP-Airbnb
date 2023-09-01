@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elliotchang126/Clonebnb.git"
+    "url": "git+https://github.com/ncar285/Fairbnb.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/elliotchang126/Clonebnb/issues"
+    "url": "https://github.com/ncar285/Fairbnb/issues"
   },
-  "homepage": "https://github.com/elliotchang126/Clonebnb#readme",
+  "homepage": "https://github.com/ncar285/Fairbnb/wiki",
   "engines": {
     "node": "16.20.0"
   },
