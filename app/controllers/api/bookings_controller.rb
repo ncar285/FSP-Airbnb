@@ -13,7 +13,6 @@ class Api::BookingsController < ApplicationController
 
     def create 
         @booking = Booking.new(booking_params)
-        # debugger
         if @booking.save
             render :show
         else 
@@ -33,7 +32,6 @@ class Api::BookingsController < ApplicationController
 
     def destroy
         @booking = Booking.find_by(id: params[:id])
-        # debugger
         if @booking 
             @booking.destroy 
             head :no_content

@@ -39,10 +39,8 @@ export const createBooking = bookingData => async (dispatch) => {
         // return errors
 
     }
-    // debugger
     // if (res.ok){
     // } else {
-        // debugger
         // return errors
     // }
 };
@@ -54,7 +52,7 @@ export const updateBooking = bookingData => async (dispatch) => {
 };
 
 export const deleteBooking = bookingId => async (dispatch) => {
-    debugger
+   
     await destroyBooking(bookingId);
     dispatch(removeBooking(bookingId));
 };

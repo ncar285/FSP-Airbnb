@@ -22,7 +22,6 @@ const DeleteReviewModal = () => {
     const handleDelete = async e => {
         // e.preventDefault();
         e.stopPropagation()
-        // debugger
         dispatch(deleteUserReview(review.id))
         dispatch(deactivateDRM())
     }

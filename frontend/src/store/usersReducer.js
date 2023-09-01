@@ -17,7 +17,6 @@ export const receiveUser = data => ({
 export const fetchUserShow = userId => dispatch => (
     fetchUserData(userId)
         .then(data => (
-            // debugger
             dispatch(receiveUser(data))
         )
     )
@@ -30,7 +29,6 @@ export const selectUserData = state => state.userData ? state.userData : null
 const usersReducer = (state = {}, action) => {
     switch(action.type) {
         case RECEIVE_USER:
-            // debugger
             const newState = action.payload
             return newState 
         // case REMOVE_USER:

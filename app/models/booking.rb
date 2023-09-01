@@ -33,7 +33,6 @@ class Booking < ApplicationRecord
 
     def valid_booking_dates 
         listing = Listing.find_by(id: listing_id)
-        # debugger
         bookings = listing.bookings
         proposed_start = self.start_date
         proposed_end = self.end_date

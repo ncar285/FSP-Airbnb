@@ -16,7 +16,6 @@ export const fetchUserData = async userId => {
 
 //signup
 export const postUser = async userData => {
-    // debugger
     const res = await csrfFetch('/api/users', {
         method: 'POST',
         body: JSON.stringify(userData)

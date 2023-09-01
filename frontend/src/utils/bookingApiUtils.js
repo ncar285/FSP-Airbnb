@@ -2,7 +2,6 @@ import csrfFetch from "../store/csrf"
 
 // create a booking
 export const postBooking = async booking => {
-    debugger
     const res = await csrfFetch('/api/bookings', {
         method: 'POST',
         body: JSON.stringify({booking})
@@ -25,7 +24,6 @@ export const patchBooking = async bookingBata => {
 
 // delete booking
 export const destroyBooking = async bookingId => {
-    debugger
     await csrfFetch(`/api/bookings/${bookingId}`, {
         method: 'DELETE',
     })

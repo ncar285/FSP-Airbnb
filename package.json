@@ -2,7 +2,6 @@
   "name": "fairbnb",
   "version": "1.0.0",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
-  "main": "sample-state.js",
   "directories": {
     "lib": "lib"
   },
@@ -21,11 +20,12 @@
   },
   "homepage": "https://github.com/elliotchang126/Clonebnb#readme",
   "engines": {
-    "node": "16.x"
+    "node": "16.20.0"
   },
   "dependencies": {
     "@googlemaps/react-wrapper": "^1.1.35",
     "moment": "^2.29.4",
     "react-icons": "^4.10.1"
-  }
+  },
+  "devDependencies": {}
 }
