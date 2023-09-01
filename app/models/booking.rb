@@ -23,7 +23,6 @@ class Booking < ApplicationRecord
 
     before_save :generate_price
     
-
     belongs_to :renter, 
         class_name: :User,
         foreign_key: :user_id

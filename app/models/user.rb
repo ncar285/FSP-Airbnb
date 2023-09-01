@@ -24,22 +24,19 @@ class User < ApplicationRecord
     # validates :username, format: { without: URI::MailTo::EMAIL_REGEXP, message: "can't be an email" }
     validates :password, length: { in: 6..255 }, allow_nil: true
 
-
     before_validation :ensure_session_token
-
   
     has_many :listings,
-        foreign_key: :owner_id
-
-
+        foreign_key: :owner_id,
+        dependent: :destroy
 
     has_one_attached :photo
-    # dependent: :destroy
 
     has_many :bookings,
         dependent: :destroy
 
     has_many :reviews,
+        foreign_key: :author_id,
         dependent: :destroy
 
     # has_many :wishlists,
