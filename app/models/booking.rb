@@ -15,7 +15,7 @@ class Booking < ApplicationRecord
 
     validates :user_id, :listing_id, :start_date, :end_date, :guests, presence: true
 
-    validate :valid_booking_dates
+    # validate :valid_booking_dates
 
     validate :valid_guests
 

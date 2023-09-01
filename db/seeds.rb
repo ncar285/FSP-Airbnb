@@ -5,29 +5,22 @@ require 'aws-sdk-s3'
 require 'csv'
 
 #! RESETTING THINGS
+
 puts "Destroying booking..."
 Booking.destroy_all
-
 puts "Destroying reviews..."
 Review.destroy_all
-
 puts "Destroying listings..."
 Listing.destroy_all
-
 puts "Destroying users..."
 User.destroy_all
 
-
-
-
 puts "Resetting primary keys..."
 ApplicationRecord.connection.reset_pk_sequence!('listings')
-
 ApplicationRecord.connection.reset_pk_sequence!('users')
-
 ApplicationRecord.connection.reset_pk_sequence!('reviews')
-
 ApplicationRecord.connection.reset_pk_sequence!('bookings')
+
 
 
 #! CREATE THE DEMO USER
@@ -63,15 +56,9 @@ end
 puts "Done!"
 
 
-
 #! SEED 30 LISTINGS
 
 num_listings = 30;
-puts "deleting listings..."
-Listing.destroy_all
-
-puts "Resetting primary keys..."
-ApplicationRecord.connection.reset_pk_sequence!('listings')
 
 puts "importing listings.csv..."
 csv_text = File.read(Rails.root.join('db', 'listings.csv'))
@@ -121,11 +108,6 @@ end
 
 
 # ! SEED 180 REVIEWS
-puts "deleting reviews..."
-Review.destroy_all
-
-puts "Resetting primary keys..."
-ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
 puts "importing listings.csv..."
 csv_text = File.read(Rails.root.join('db', 'reviews.csv'))
@@ -154,12 +136,6 @@ puts "Done!"
 
 
 #! SEED SOME BOOKINGS FOR DEMIS
-
-puts "deleting bookings..."
-Booking.destroy_all
-
-puts "Resetting primary keys..."
-ApplicationRecord.connection.reset_pk_sequence!('bookings')
 
 # 1
 booking = Booking.new
@@ -210,6 +186,3 @@ booking.end_date = Date.parse('2023-09-30')
 booking.guests = 1
 booking.save!
 puts "booking 5 done!"
-
-
-
