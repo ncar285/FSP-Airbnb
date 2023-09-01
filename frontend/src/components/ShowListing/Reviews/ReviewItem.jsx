@@ -8,7 +8,6 @@ import { activateDRM } from '../../../store/uiReducer';
 import { useDispatch } from 'react-redux';
 
 const ReviewItem = ({ review, editMode = true }) => {
-    // console.log(review)
     const author = review.authorFirstname;
     const dateObject = new Date(review.createdAt);
     const date = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(dateObject);

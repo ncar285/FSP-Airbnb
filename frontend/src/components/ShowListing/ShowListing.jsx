@@ -36,7 +36,6 @@ const ShowListing = () => {
         // const imgUrl = review.authorPhotoUrl
     }
 
-    // console.log("THIS IS THE NEW REVIEW",newReview)
     
     const [review, setReview] = useState(newReview)
     

@@ -15,7 +15,6 @@ const ListingItem = ({ listing, key }) => {
 
     // const images = Array.from(listingImagesRef.current.querySelectorAll('.slide'));
 
-    // console.log(currentPhoto)
 
     useEffect(()=>{
         if (currentPhoto === 1){

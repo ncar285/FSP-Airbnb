@@ -18,7 +18,6 @@ export const fetchUserShow = userId => dispatch => (
     fetchUserData(userId)
         .then(data => (
             // debugger
-            // console.log(data)
             dispatch(receiveUser(data))
         )
     )

@@ -43,8 +43,7 @@ const InitialForm = ( {userEmail, setUserEmail, deactivateRegisterModal}) => {
         if (res){
             dispatch(deactivateRegisterModal());
         } else {
-            console.log(user)
-            console.log('ERROR LOGGING IN => CREDENTIALS')
+            // return ['ERROR LOGGING IN => CREDENTIALS']
         }
     }
 

@@ -33,9 +33,8 @@ const SignupForm = ({userEmail, setUserEmail, deactivateRegisterModal}) => {
     // const [photo, setPhoto] = useState(null)
 
     // const handleFile = e => {
-    //     console.log("handling file")
+
     //     const file = e.currentTarget.files[0]
-    //     console.log(file)
     //     setPhoto(file)
     // }
 

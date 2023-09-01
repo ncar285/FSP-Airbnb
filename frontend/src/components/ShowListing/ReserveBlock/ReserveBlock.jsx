@@ -43,7 +43,6 @@ const ReserveBlock = ( { listing, count, rating } ) => {
         guests: 1
     }
 
-    // console.log()
     
     
     const [booking, setBooking] = useState(newBooking)
@@ -57,7 +56,6 @@ const ReserveBlock = ( { listing, count, rating } ) => {
             start = new Date(start);
             end = new Date(end);
             const data = await dispatch(createBooking({userId: user.id, listingId: parseInt(listing.id, 10), startDate: start, endDate: end, guests: booking.guests  }))
-            console.log(data,"hello")
         } else {
             dispatch(activateRegisterModal)
         }

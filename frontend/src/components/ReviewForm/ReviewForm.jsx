@@ -11,11 +11,10 @@ import { FaStar } from 'react-icons/fa';
 
 const ReviewForm = ({editMode = false, review, setReview}) => {
     const dispatch = useDispatch()
-    // console.log(review)
+  
     const loggedInUser = useSelector(getCurrentUser)
     const [displayLoginMessage, setDisplayLoginMessage] = useState(false)
 
-    // console.log("THIS IS THE NEW REVIEW",review)
 
     // const oldReview = useSelector(getUserReview)
     // const oldBody = oldReview?.body ? oldReview.body : null
@@ -63,7 +62,6 @@ const ReviewForm = ({editMode = false, review, setReview}) => {
         }else{
             val = parseInt(e.target.value, 10)
         }
-        // console.log(review)
         setReview({ ...review, [key]: val });
     }
     

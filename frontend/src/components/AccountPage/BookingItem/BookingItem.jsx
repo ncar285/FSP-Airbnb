@@ -17,7 +17,6 @@ const BookingItem = ({ booking }) => {
         return
     }
 
-    // console.log(booking)
     return (
         <>
         {/* <div className='bookings-container'> */}

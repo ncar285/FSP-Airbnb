@@ -41,6 +41,6 @@ export const deleteSession = async () => {
         method: 'DELETE'
     })
     if (res.ok) {
-        console.log('logout successful')
+        // some message about logout successfull
     }
 }

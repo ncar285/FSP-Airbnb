@@ -24,8 +24,7 @@ const EditReviewModal = () => {
 
     if (!active) return null
     
-    // console.log(review)
-    // console.log(myReview)
+
 
     
 

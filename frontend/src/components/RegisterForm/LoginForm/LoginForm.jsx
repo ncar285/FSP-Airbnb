@@ -23,8 +23,7 @@ const LoginForm = ( {userEmail}) => {
         if (res){
             dispatch(deactivateRegisterModal());
         } else {
-            console.log(user)
-            console.log('ERROR LOGGING IN => CREDENTIALS')
+            // do some error stuff
         }
     }
 
