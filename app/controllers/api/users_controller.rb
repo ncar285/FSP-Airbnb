@@ -32,7 +32,11 @@ class Api::UsersController < ApplicationController
         email = params[:email]
         user = User.find_by(email: email)
         exists = user.present?
-        render json: { exists: exists }
+        if exists
+            render json: { exists: exists, name: user["firstname"] }
+          else
+            render json: { exists: exists }
+        end
     end
 
     private 

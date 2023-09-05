@@ -82,30 +82,6 @@ const InitialForm = ( {userEmail, setUserEmail, deactivateRegisterModal}) => {
                         </div>
                         <div className="main">Continue with Demo</div>
                     </button>
-                    {/* <button>
-                        <div className="button-icon">
-                            <AiFillFacebook className="icon" id="facebook"/>
-                        </div>
-                        <div className="main">Continue with Facebook</div>
-                    </button>
-                    <button>
-                        <div className="button-icon">
-                            <FcGoogle className="icon" id="google"/>
-                        </div>
-                        <div className="main">Continue with Google</div>
-                    </button>
-                    <button>
-                        <div className="button-icon">
-                            <AiFillApple className="icon" id="apple"/>
-                        </div>
-                        <div className="main">Continue with Apple</div>
-                    </button>
-                    <button className="email">
-                        <div className="button-icon">
-                            <AiOutlineMail className="icon" id="mail"/>
-                        </div>
-                        <div className="main">Continue with email</div>
-                    </button> */}
                 </form>
             </div>
 

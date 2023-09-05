@@ -106,3 +106,18 @@
 .modal-conainter button:hover{
     cursor: pointer;
 }
+
+#navigate-register-button {
+    border: none;
+    margin-left: 32px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+#navigate-register-button:hover {
+    background-color: rgba(0,0,0,0.1);
+}
