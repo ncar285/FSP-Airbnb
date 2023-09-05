@@ -17,15 +17,18 @@ const AccountMenu = ({ handleMenuClick, margin, setMenuOpen }) => {
     const renderAccountPage = () => window.location.href = '/account';
 
     const handleSignOut = async e => {
-        e.preventDefault()
+        e.preventDefault();
         dispatch(logoutUser());
         window.location.reload(); 
     }
 
-    const handleRegister = async () => {
-        handleMenuClick()
-        dispatch(activateRegisterModal())
-    }
+    const handleRegister = () => {
+        handleMenuClick();
+        dispatch(activateRegisterModal());
+        requestAnimationFrame(() => {
+          document.querySelector('.register-modal').classList.add('show');
+        });
+      }
 
 
     const menuButtons = () => {

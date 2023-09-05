@@ -46,6 +46,21 @@ const RegisterForm = () => {
     }
 
 
+    const handleLogin = async e => {
+        e.preventDefault();
+        const user = {
+            email: userEmail,
+            password
+        }
+        const res = dispatch(login(user))
+        if (res){
+            dispatch(deactivateRegisterModal());
+        } else {
+            // do some error stuff
+        }
+    }
+
+
     const handleBackgroundClick = e => {
         e.stopPropagation()
         dispatch(deactivateRegisterModal())
@@ -55,12 +70,6 @@ const RegisterForm = () => {
         e.stopPropagation()
         dispatch(deactivateRegisterModal())
     }
-
-    const handleSubmit = e => {
-        e.preventDefault()
-        dispatch(deactivateRegisterModal())
-    }
-
 
     const handleSignup = async e => {
         e.preventDefault();
@@ -82,13 +91,11 @@ const RegisterForm = () => {
 
 
     const loginOrSignup = async (userEmail) => {
-        // debugger
         if (isValidEmail(userEmail)){
             const response = await fetch(`/api/users/checkEmail?email=${userEmail}`);
             const data = await response.json();
 
             if (data.exists){
-                // debugger
                 setFirstname(data.name)
                 return 'login'
             } else {
@@ -101,7 +108,6 @@ const RegisterForm = () => {
     };
 
     const handleEmailEnter = async (e) => {
-        // debugger
         e.preventDefault()
         const newFormState = await loginOrSignup(userEmail)
         setFormState(newFormState)
@@ -109,7 +115,7 @@ const RegisterForm = () => {
     
 
     return (
-        <div className="modal-conainter">
+        <div className="modal-container">
             <div className="register-background" 
                 onClick={handleBackgroundClick}>
             </div>
@@ -192,7 +198,7 @@ const RegisterForm = () => {
                             <div className="user-email">{userEmail}</div>
                         </div>
                     
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleLogin}>
                             <input 
                                 type="password" 
                                 onChange={e => setPassword(e.target.value)}
@@ -237,8 +243,9 @@ const RegisterForm = () => {
                             <input 
                                 className="email-input" 
                                 type="text" 
+                                placeholder="Email"
                                 onChange={e => setUserEmail(e.target.value)}
-                                placeholder={userEmail}
+                                value={userEmail}
                             />    
                             
                             <input 

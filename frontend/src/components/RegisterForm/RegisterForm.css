@@ -11,13 +11,20 @@
 }
 
 .register-modal {
-    position: absolute;
+    position: fixed;
     width: 550px;
-    top: 100px;
+    bottom: 0;
+    opacity: 0;
+    transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
     left: calc(50vw - 275px);
     background-color: white;
     z-index: 20;
     border-radius: 20px;
+}
+  
+.register-modal.show {
+    bottom: 30vh;
+    opacity: 1;
 }
 
 .modal-header {
@@ -66,7 +73,7 @@
     padding: 25px;
 }
 
-.modal-conainter button {
+.modal-container button {
     width: 500px;
     height: 47.5px;
     display: flex;
@@ -81,9 +88,10 @@
     justify-content: center;
 }
 
-.modal-conainter input {
-
-    width: 500px;
+.modal-container input {
+    padding: 0px;
+    padding-left: 16px;
+    width: calc(100% - 18px);
     height: 47.5px;
     display: flex;
     align-items: center;
@@ -95,6 +103,10 @@
     font-size: 14px;
     display: flex;
     justify-content: center;
+}
+
+.modal-container input:focus {
+    outline: none;
 }
 
 .title-box {
@@ -103,7 +115,7 @@
     justify-content: center;
 }
 
-.modal-conainter button:hover{
+.modal-container button:hover{
     cursor: pointer;
 }
 

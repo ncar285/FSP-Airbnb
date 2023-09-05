@@ -32,8 +32,10 @@
 
 
 .email-input {
+
+    /* margin-left: 32px; */
     width: 500px;
-    left: 25px;
+    /* left: 25px; */
     height: 70px;
     display: flex;
     align-items: center;
