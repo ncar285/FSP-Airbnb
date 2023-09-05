@@ -15,18 +15,20 @@ function App() {
       <Switch>
         <Route path="/" exact>
             <NavBar tagsOn={false} searchType={"simple"} barType={"home"}/>
-            <SearchForm />
+            {/* <SearchForm /> */}
             <RegisterForm />
             <Splash />
         </Route>
         <Route path="/listing/:listingId">
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
+            <RegisterForm />
             <ShowListing/> 
             <DeleteReviewModal/>
             <EditReviewModal/>
         </Route>
         <Route path="/account/">
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
+            <RegisterForm />
             {/* <ShowListing/>  */}
             {/* <DeleteReviewModal/> */}
             {/* <EditReviewModal/> */}

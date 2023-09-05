@@ -7,7 +7,7 @@ import { getCurrentUser } from '../../store/sessionsReducer';
 import { logoutUser } from '../../store/sessionsReducer';
 
 
-const AccountMenu = ({ handleMenuClick, margin }) => {
+const AccountMenu = ({ handleMenuClick, margin, setMenuOpen }) => {
 
     const [showRegister] = useState(false)
     const dispatch = useDispatch();
@@ -53,6 +53,9 @@ const AccountMenu = ({ handleMenuClick, margin }) => {
     return (
         <>
 
+            <div className='background-overlay'
+            onClick={handleMenuClick}
+            ></div>
                 
             {menuButtons()}
 

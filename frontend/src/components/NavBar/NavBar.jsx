@@ -54,7 +54,9 @@ const NavBar = ({ tagsOn, searchType, barType}) => {
                 </div>
                 {
                 menuOpen &&
-                < AccountMenu margin = {dynamicStyle().margin} handleMenuClick = {handleMenuClick}/>
+                < AccountMenu margin = {dynamicStyle().margin} 
+                handleMenuClick = {handleMenuClick}
+                setMenuOpen = {setMenuOpen}/>
                 }
             </div>
             <div className="lower-nav-bar">

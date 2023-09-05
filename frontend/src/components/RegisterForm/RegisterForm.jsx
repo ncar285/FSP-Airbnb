@@ -20,6 +20,9 @@ const RegisterForm = () => {
     const dispatch = useDispatch()
     const display = useSelector(state => state.ui.registerModal)
 
+    // console.log(display)
+
+
 
     //! For now, always set the modal to on! Remove later
     // dispatch(activateRegisterModal())
