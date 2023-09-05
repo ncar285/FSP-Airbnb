@@ -19,15 +19,15 @@ const AccountPage = () => {
     // const bookings = data.bookings || null
 
 
-    // !hide while being built for CV
-    const notBuilt = true
-    if (notBuilt){
-        return (
-            <div>
-                Sorry, this page is under construction!
-            </div>
-        )
-    }
+    // // !hide while being built for CV
+    // const notBuilt = true
+    // if (notBuilt){
+    //     return (
+    //         <div>
+    //             Sorry, this page is under construction!
+    //         </div>
+    //     )
+    // }
 
 
     return (
