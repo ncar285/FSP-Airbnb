@@ -9,9 +9,12 @@ import { logoutUser } from '../../store/sessionsReducer';
 
 const AccountMenu = ({ handleMenuClick, margin, setMenuOpen }) => {
 
+
+
     const [showRegister] = useState(false)
     const dispatch = useDispatch();
     const sessionUser = useSelector(getCurrentUser);
+
 
 
     const renderAccountPage = () => window.location.href = '/account';
