@@ -123,7 +123,7 @@ const RegisterForm = () => {
 
                 <div className="modal-header">
                     <button id="navigate-register-button">
-                        {formState === 'signup' ? 
+                        {(formState === 'signup' || formState === 'login') ? 
                             <IoIosArrowBack onClick={()=>setFormState('initial')}/> : 
                             <RxCross2 onClick={handleCrossClick} />
                         }
@@ -142,7 +142,7 @@ const RegisterForm = () => {
 
                 <div className="body">
                     <h1 className="initial-form">
-                        Welcome to Airbnb
+                        Welcome to Fairbnb
                     </h1>
 
                     <form>
