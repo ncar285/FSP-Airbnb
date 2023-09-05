@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" exact>
-            <NavBar tagsOn={false} searchType={"full"} barType={"home"}/>
+            <NavBar tagsOn={false} searchType={"simple"} barType={"home"}/>
             <SearchForm />
             <RegisterForm />
             <Splash />

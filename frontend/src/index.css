@@ -44,7 +44,7 @@
         --show_margin: 40px;
     }
 }
-
+/* try using rem or % */
 @media (min-width: 950px) {
     :root {
       --grid_columns: 3;
