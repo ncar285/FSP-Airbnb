@@ -87,9 +87,13 @@ csv.each do |row|
   break if n==num_listings+1
 end
 puts "uploading listing's..."
-photo_counts = [10, 6, 5, 8, 8, 7, 7, 6, 11, 
-  11, 8, 9, 11, 7, 14, 11, 14, 12, 10, 15, 
-  9, 13, 10, 9, 12, 9, 10, 13, 9, 12, 7]
+# photo_counts = [10, 6, 5, 8, 8, 7, 7, 6, 11, 
+#   11, 8, 9, 11, 7, 14, 11, 14, 12, 10, 15, 
+#   9, 13, 10, 9, 12, 9, 10, 13, 9, 12, 7]
+
+photo_counts = [5, 5, 5, 5, 5, 5, 5, 5, 5, 
+    5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+    5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
 puts "phhoto array lengths matches listing count: #{(num_listings == photo_counts)}"
 listings = Listing.order(:id)
 listings.each do |listing|
@@ -110,7 +114,10 @@ end
 # ! SEED 180 REVIEWS
 
 puts "importing listings.csv..."
+puts Rails.root.join('db', 'reviews.csv')
 csv_text = File.read(Rails.root.join('db', 'reviews.csv'))
+# puts csv_text
+
 csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
 n = 1
 num_reviews = 179
