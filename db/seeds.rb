@@ -58,7 +58,8 @@ puts "Done!"
 
 #! SEED 30 LISTINGS
 
-num_listings = 30;
+# num_listings = 30;
+num_listings = 29;
 
 puts "importing listings.csv..."
 csv_text = File.read(Rails.root.join('db', 'listings.csv'))
@@ -93,7 +94,7 @@ puts "uploading listing's..."
 
 photo_counts = [5, 5, 5, 5, 5, 5, 5, 5, 5, 
     5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
-    5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+    5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
 puts "phhoto array lengths matches listing count: #{(num_listings == photo_counts)}"
 listings = Listing.order(:id)
 listings.each do |listing|
