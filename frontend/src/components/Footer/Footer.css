@@ -1,0 +1,72 @@
+/* .large-footer-parent{
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 74vh;
+    background-color: var(--light_light_light_grey);
+    margin-top: 80px;
+} */
+
+.footer-parent{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: var(--light_light_light_grey);
+    border-top: #cccc solid;
+}
+
+.inner-footer{
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copywright{
+    display: flex;
+    font-family: 'airbnb4';
+    font-size: 14px;
+    width: 400px;
+}
+
+.copywright div {
+    margin-right: 5px;
+}
+
+.currency{
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'airbnb5';
+    font-size: 14px;
+    width: 400px;
+}
+
+.currency div {
+    margin-left: 5px;
+}
+
+.currency-label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+} 
+
+.my-links{
+    display: flex;
+    font-size: 32px;
+}
+
+.my-links div {
+    margin: 0 10px;
+}
+
+.my-links div a {
+    color: var(--dark_grey);
+}
+
+.my-links div:hover {
+    cursor: pointer;
+}

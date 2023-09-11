@@ -8,6 +8,7 @@ import ShowListing from './components/ShowListing/ShowListing.jsx';
 import DeleteReviewModal from './components/DeleteReviewModal/DeleteReviewModal.jsx';
 import EditReviewModal from './components/EditReviewModal/EditReviewModal.jsx';
 import AccountPage from './components/AccountPage/AccountPage.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             {/* <SearchForm /> */}
             <RegisterForm />
             <Splash />
+            <Footer/>
         </Route>
         <Route path="/listing/:listingId">
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
@@ -25,6 +27,7 @@ function App() {
             <ShowListing/> 
             <DeleteReviewModal/>
             <EditReviewModal/>
+            <Footer type="large"/>
         </Route>
         <Route path="/account/">
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
@@ -33,6 +36,7 @@ function App() {
             {/* <DeleteReviewModal/> */}
             {/* <EditReviewModal/> */}
             <AccountPage/>
+            <Footer type="large"/>
         </Route>
        
       </Switch>
