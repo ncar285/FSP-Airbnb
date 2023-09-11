@@ -4,10 +4,10 @@ import { FaLinkedin } from 'react-icons/fa'
 import { BsCurrencyDollar } from 'react-icons/bs'
 import './Footer.css'
 
-const Footer = () => {
+const Footer = ({ alwaysthere }) => {
     return (
-        <div className='footer-parent'>
-            <div className='inner-footer'>
+        <div className={`footer-parent ${alwaysthere ? 'fixed' : ''}`}>
+            <div className={`inner-footer ${alwaysthere ? 'fixed' : ''}`}>
                 <div className='copywright'>
                     <div><AiOutlineCopyrightCircle/></div>
                     <div>{`${new Date().getFullYear()} Fairbnb, Inc.`}</div>

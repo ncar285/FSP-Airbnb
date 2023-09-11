@@ -19,7 +19,7 @@ function App() {
             {/* <SearchForm /> */}
             <RegisterForm />
             <Splash />
-            <Footer/>
+            <Footer alwaysthere={true}/>
         </Route>
         <Route path="/listing/:listingId">
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
@@ -27,7 +27,7 @@ function App() {
             <ShowListing/> 
             <DeleteReviewModal/>
             <EditReviewModal/>
-            <Footer type="large"/>
+            <Footer/>
         </Route>
         <Route path="/account/">
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
@@ -36,7 +36,7 @@ function App() {
             {/* <DeleteReviewModal/> */}
             {/* <EditReviewModal/> */}
             <AccountPage/>
-            <Footer type="large"/>
+            <Footer/>
         </Route>
        
       </Switch>

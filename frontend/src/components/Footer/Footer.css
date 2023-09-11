@@ -8,13 +8,16 @@
 } */
 
 .footer-parent{
-    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     height: 50px;
     background-color: var(--light_light_light_grey);
     border-top: #cccc solid;
+}
+
+.footer-parent.fixed {
+    position: fixed;
 }
 
 .inner-footer{
@@ -24,6 +27,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.inner-footer.fixed{
+    margin-left: var(--show_margin);
+    margin-right: var(--show_margin);
 }
 
 .copywright{
