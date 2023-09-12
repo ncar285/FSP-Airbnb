@@ -18,6 +18,9 @@ import { AiFillStar } from "react-icons/ai"
 // import moment from 'moment'
 import { getBookingErrors } from '../../../store/errorsReducer';
 
+// import Calendar from '../../Calendar/Calendar'
+import CalendarComp from '../../Calendar/Calendar'
+
 // import ReactDatesCalendar from './ReactDatesCalendar'
 
 
@@ -115,6 +118,7 @@ const ReserveBlock = ( { listing, count, rating } ) => {
 
             <div className='booking-inputs'>
                 {/* <ReactDatesCalendar/> */}
+                <CalendarComp/>
                 <div className='guests-input'>
                     <label className="guests-title">Guests
                         <div class="number-input">
