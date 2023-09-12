@@ -47,11 +47,22 @@ const ListingItem = ({ listing, key }) => {
         setCurrentPhoto(newCurrentPhoto);
     };
       
+    // useEffect(() => {
+    //     listingImagesRef.current.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //         listingImagesRef.current.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
+
     useEffect(() => {
-        listingImagesRef.current.addEventListener('scroll', handleScroll);
-        return () => {
-            listingImagesRef.current.removeEventListener('scroll', handleScroll);
-        };
+        if (listingImagesRef.current) {
+          listingImagesRef.current.addEventListener('scroll', handleScroll);
+          return () => {
+            if (listingImagesRef.current) {
+              listingImagesRef.current.removeEventListener('scroll', handleScroll);
+            }
+          };
+        }
     }, []);
     
     const renderShow = e => {

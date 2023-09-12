@@ -3,25 +3,22 @@ import { useDispatch, useSelector } from "react-redux"
 // import { activateSearchModal } from "../../../store/uiReducer"
 import sButton from "../../../assets/s-button.png"
 import { useContext, useState } from 'react'
-import { SearchContext } from '../../../App'
+// import { SearchContext } from '../../../App'
 import { getListings } from '../../../store/listingsReducer'
 
 const SearchBar = ({ searchType }) => {
-
-    // const [searchString, setSearchString] = useState("")
-    // const [searchParams, setSearchParams] = useState{}
-
     // const hideSearchBar = useSelector(state => state.ui.searchModal)
     const dispatch = useDispatch()
-
-    const { searchParams, setSearchParams }  = useContext(SearchContext)
-
     const [searchString, setSearchString] = useState("")
 
+    const updateSearch = e => {
+        if (e.target.value){
+            setSearchString(e.target.value)
+        }
+    }
 
     const handleSearch = () => {
-        // debugger
-        setSearchParams({ search: searchString });
+        // setSearchParams({ search: searchString });
         dispatch(getListings({ search: searchString }));
     };
 

@@ -9,6 +9,7 @@ import { SearchContext } from '../../App'
 
 const Splash = () => {
 
+
   const listings = useSelector(selectListings)
   const dispatch = useDispatch();
 

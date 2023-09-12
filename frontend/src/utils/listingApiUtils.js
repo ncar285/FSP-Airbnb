@@ -22,7 +22,7 @@ export const fetchListings = params => {
       });
     }
   }
-  debugger
+  // debugger
   return fetch(baseUrl)
     .then(res => {
       if(res.ok) {
