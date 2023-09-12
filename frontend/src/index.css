@@ -14,7 +14,8 @@
     --button_hit: cubic-bezier(0.2,0,0,1);
     --show_margin: 0px;
     --show_width: calc(100vw - 2*(var(--show_margin)));
-    --shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;;
+    --shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    --strong_shadow: rgba(0, 0, 0, 0.22) 0px 6px 16px;
 }
 
 /* ! GRID DIMENSION */

@@ -18,6 +18,8 @@ import { AiFillStar } from "react-icons/ai"
 // import moment from 'moment'
 import { getBookingErrors } from '../../store/errorsReducer';
 import CalendarComp from '../Calendar/CalendarComp'
+import DateRangeComp from '../Calendar/DateRangeComp'
+import DateRangeReserve from '../Calendar/DateRangeReserve'
 
 // import Calendar from '../../Calendar/Calendar'
 // import CalendarComp from '../Calendar/Calendar'
@@ -32,7 +34,14 @@ const ReserveBlock = ( { listing, count, rating } ) => {
     const user = useSelector(getCurrentUser)
 
     const errors = useSelector(getBookingErrors)
+
+    const [bookingStartDate, setBookingStartDate] = useState('');
+    const [bookingEndDate, setBookingEndDate] = useState('');
     
+
+
+
+
     // const timestamp = new Date('09/10/2023');
     // const timestamp2 = new Date('09/15/2023'); 
     // const momentTimestamp = moment(timestamp);
@@ -103,35 +112,28 @@ const ReserveBlock = ( { listing, count, rating } ) => {
         
         <div id='booking-block'>
 
-            <div className='pricing-header'>
-                <div className="price-val">
-                    <div id="price-val">${listing.price}</div>
-                    <div className="night">night</div>
+            <div className='select-dates-focus'>
+
+
+                <div className='pricing-header'>
+                    <div className="price-val">
+                        <div id="price-val">${listing.price}</div>
+                        <div className="night">night</div>
+                    </div>
+                    <div className="right-side">
+                        <div className='booking-star'><AiFillStar/></div>
+                        <div className="right-rating">{rating}</div>
+                        <p className='stats-dot'>{'\u2B24' } </p>
+                        
+                        <div className="right-reviews">{count} reviews</div>
+                    </div>
                 </div>
-                <div className="right-side">
-                    <div className='booking-star'><AiFillStar/></div>
-                    <div className="right-rating">{rating}</div>
-                    <p className='stats-dot'>{'\u2B24' } </p>
-                    
-                    <div className="right-reviews">{count} reviews</div>
-                </div>
+
+                <DateRangeReserve/>
+
             </div>
 
-            <div className='booking-inputs'>
-                {/* <ReactDatesCalendar/> */}
-                <CalendarComp/>
-                <div className='guests-input'>
-                    <label className="guests-title">Guests
-                        <div class="number-input">
-                            <button id="guest-decrement-button" onClick={decrementGuests}><BiMinus id="decrement-button"/></button>
-                            <div id="guests-quantity" >{booking.guests}</div>
-                            <button id="guest-increment-button" onClick={incrementGuests}><AiOutlinePlus id="increment-button"/></button>
-                            {maxGuests &&
-                            <div>max guests!</div>}
-                        </div>
-                    </label>
-                </div>
-            </div>
+
             <button className="book-button" onClick={handleSubmitBooking}>
                 Reserve
             </button>

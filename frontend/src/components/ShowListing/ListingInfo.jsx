@@ -1,11 +1,13 @@
 import './ListingInfo.css'
 import placeOffers from '../../assets/place-offers.png'
 import lisingInfo from '../../assets/bellow-subheader.png'
-import DateRange from '../Calendar/DateRangeComp';
+// import DateRange from '../Calendar/DateRangeComp';
 import { Calendar } from 'react-date-range';
-import DateRangePicker from '../Calendar/DateRangePickerComp';
+// import DateRangePicker from '../Calendar/DateRangePickerComp';
 import CalendarComp from '../Calendar/CalendarComp';
 import DateRangeComp from '../Calendar/DateRangeComp';
+import DateRangePickerComp from '../Calendar/DateRangeComp';
+import DateRangeReserve from '../Calendar/DateRangeReserve';
 
 const ListingInfo = ({ listing }) => {
 
@@ -74,11 +76,16 @@ const ListingInfo = ({ listing }) => {
 
             <div>Date Range Picker:</div>
 
-            <DateRangePicker/>
+            <DateRangePickerComp/>
 
             <div>Calendar Component</div>
 
             <CalendarComp/>
+            
+            <div>
+                Date Range reservation attempt:
+                <DateRangeReserve/>
+            </div>
 
         </div>
     )

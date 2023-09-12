@@ -1,0 +1,85 @@
+/* ! styles for settings div */
+
+.calendarWrap {
+    border: 1.5px solid #b0b0b0;
+    border-radius: 10px;
+}
+.checkin-checkout{
+    border-bottom: 1.5px solid #b0b0b0;
+    display: flex;
+}
+.checkout-input {
+    border-left: 1.5px solid #b0b0b0;
+}
+.checkin-input{
+    padding: 10px;
+    width: 50%;
+    /* border: 1px solid black; */
+}
+.checkout-input{
+    padding: 10px;
+    width: 50%;
+    /* border: 1px solid black; */
+}
+.guests-input-new{
+    padding: 12.5px;
+    /* border: 1px solid black; */
+}
+/* ! inside each square */
+.checkin-input div,
+.checkout-input div,
+.guests-input-header{
+    font-size: 10px;
+    font-family: 'airbnb1';
+}
+.checkin-input input,
+.checkout-input input,
+.guests-input-val {
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 2.5px;
+}
+.checkin-checkout input:focus{
+    outline: none;
+}
+
+/* ! css for the DateRangeReserve */
+
+.static-container{
+    position: static;
+}
+
+.select-dates-focus.focus{
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    right: -20px;
+    box-shadow: var(--strong_shadow);
+    border-radius: 20px;
+
+}
+
+.select-dates-focus.focus .checkin-checkout{
+    width: 300px;
+    align-items: flex-end;
+}
+
+
+.rdrDateDisplayWrapper{
+    display: none;
+}
+
+/* ! the header in the focused modal: */
+
+.select-date-header {
+    display: flex;
+}
+
+.select-date-header .calendar-modal-title {
+    display: none;
+}
+
+.select-date-header.focus .calendar-modal-title {
+    display: all;
+}
