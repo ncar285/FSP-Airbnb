@@ -1,51 +1,41 @@
 #! SEED SOME BOOKINGS FOR DEMIS
 
-# 1
-booking = Booking.new
-booking.user_id = 1
-booking.listing_id = 4
-booking.start_date = Date.parse('2023-08-23')
-booking.end_date = Date.parse('2023-08-30')
-booking.guests = 1
-booking.save!
-puts "booking 1 done!"
+current_date = Date.today
+user_id = 1
 
-# 2
-booking = Booking.new
-booking.user_id = 1
-booking.listing_id = 5
-booking.start_date = Date.parse('2024-01-24')
-booking.end_date = Date.parse('2024-01-30')
-booking.guests = 1
-booking.save!
-puts "booking 2 done!"
+# Initialize the start_date to a few weeks before today
+start_date = current_date - 3.weeks
 
-# 3
-booking = Booking.new
-booking.user_id = 1
-booking.listing_id = 2
-booking.start_date = Date.parse('2023-09-01')
-booking.end_date = Date.parse('2023-09-10')
-booking.guests = 2
-booking.save!
-puts "booking 3 done!"
+# Array of listing IDs for bookings
+listing_ids = [4, 5, 2, 27, 19]
 
-# 4
-booking = Booking.new
-booking.user_id = 1
-booking.listing_id = 27
-booking.start_date = Date.parse('2023-10-23')
-booking.end_date = Date.parse('2023-10-30')
-booking.guests = 1
-booking.save!
-puts "booking 4 done!"
+listing_ids.each_with_index do |listing_id, index|
+  # Generate random number of days for each booking (between 3 and 7 days)
+  duration = rand(3..7)
 
-# 5
-booking = Booking.new
-booking.user_id = 1
-booking.listing_id = 19
-booking.start_date = Date.parse('2023-09-24')
-booking.end_date = Date.parse('2023-09-30')
-booking.guests = 1
-booking.save!
-puts "booking 5 done!"
+  # Calculate the end date based on the start date and duration
+  end_date = start_date + duration.days
+
+  # Create booking
+  Booking.create!(
+    user_id: user_id,
+    listing_id: listing_id,
+    start_date: start_date,
+    end_date: end_date,
+    guests: rand(1..2) # Randomly set 1 or 2 guests
+  )
+  puts "booking #{index + 1} done!"
+
+  # Update the start_date for the next booking, ensure no overlaps
+  start_date = end_date + rand(1..3).days
+end
+
+# Set one booking as current
+current_booking = Booking.create!(
+  user_id: user_id,
+  listing_id: 17,
+  start_date: current_date,
+  end_date: current_date + 5.days,
+  guests: 1
+)
+puts "current booking done!"
