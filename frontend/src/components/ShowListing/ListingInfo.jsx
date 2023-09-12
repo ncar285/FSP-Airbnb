@@ -1,6 +1,6 @@
 import './ListingInfo.css'
-import placeOffers from '../../../assets/place-offers.png'
-import lisingInfo from '../../../assets/bellow-subheader.png'
+import placeOffers from '../../assets/place-offers.png'
+import lisingInfo from '../../assets/bellow-subheader.png'
 
 const ListingInfo = ({ listing }) => {
 

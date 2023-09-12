@@ -5,21 +5,21 @@ import './ReserveBlock.css'
 // import { DateRangePicker } from 'react-dates';
 
 import { useDispatch, useSelector } from 'react-redux'
-import { getCurrentUser } from '../../../store/sessionsReducer'
-import { selectListing } from '../../../store/listingsReducer'
+import { getCurrentUser } from '../../store/sessionsReducer'
+import { selectListing } from '../../store/listingsReducer'
 import { useEffect, useState } from 'react'
-import { createBooking } from '../../../store/bookingsReducer'
-import { activateRegisterModal } from '../../../store/uiReducer'
+import { createBooking } from '../../store/bookingsReducer'
+import { activateRegisterModal } from '../../store/uiReducer'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 import { AiOutlinePlus } from "react-icons/ai"
 import { BiMinus } from "react-icons/bi"
 import { AiFillStar } from "react-icons/ai"
 // import moment from 'moment'
-import { getBookingErrors } from '../../../store/errorsReducer';
+import { getBookingErrors } from '../../store/errorsReducer';
 
 // import Calendar from '../../Calendar/Calendar'
-import CalendarComp from '../../Calendar/Calendar'
+import CalendarComp from '../Calendar/Calendar'
 
 // import ReactDatesCalendar from './ReactDatesCalendar'
 

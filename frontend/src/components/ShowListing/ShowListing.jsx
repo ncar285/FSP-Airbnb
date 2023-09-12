@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect, useState} from "react"
 import { selectListing, fetchListing, fetchListingScore } from "../../store/listingsReducer"
-import PhotoAlbum from './PhotoAlbum/PhotoAlbum'
-import ListingInfo from './ListingInfo/ListingInfo'
-import ReserveBlock from './ReserveBlock/ReserveBlock'
-import Reviews from './Reviews/Reviews'
+import PhotoAlbum from '../PhotoAlbum/PhotoAlbum'
+import ListingInfo from './ListingInfo'
+import ReserveBlock from '../ReserveBlock/ReserveBlock'
+import Reviews from '../Reviews/Reviews'
 import ReviewForm from '../ReviewForm/ReviewForm'
 import { setCurrentReviews } from '../../store/reviewsReducer'
 import { getUserReview } from '../../store/reviewsReducer'

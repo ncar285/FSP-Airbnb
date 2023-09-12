@@ -6,7 +6,7 @@ import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import { useEffect, useRef, useState } from 'react'
 
-const CalendarComp = () => {
+const DateRange = () => {
 
     const [calendar, setCalendar] = useState('')
     const [open, setOpen] = useState(false)
@@ -54,10 +54,10 @@ const CalendarComp = () => {
                     />
                 }
             </div>
-            Calendar!
+            DateRange!
         </div>
     )
 
 }
 
-export default CalendarComp
+export default DateRange

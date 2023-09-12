@@ -1,7 +1,7 @@
 import "./DeleteReviewModal.css"
 import { deactivateDRM } from "../../store/uiReducer";
 import { useDispatch, useSelector } from "react-redux"
-import ReviewItem from "../ShowListing/Reviews/ReviewItem";
+import ReviewItem from "../Reviews/ReviewItem";
 import { getUserReview } from "../../store/reviewsReducer";
 import { getDRMState } from "../../store/uiReducer";
 import { deleteUserReview } from "../../store/reviewsReducer";

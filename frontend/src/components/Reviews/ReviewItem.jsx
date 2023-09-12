@@ -1,10 +1,10 @@
 import './ReviewItem.css'
-import { getCurrentUser } from "../../../store/sessionsReducer";
+import { getCurrentUser } from "../../store/sessionsReducer";
 import { useSelector } from "react-redux";
 import { BsTrash3 } from "react-icons/bs"
 import { FaEdit } from "react-icons/fa"
-import { activateERM } from '../../../store/uiReducer';
-import { activateDRM } from '../../../store/uiReducer';
+import { activateERM } from '../../store/uiReducer';
+import { activateDRM } from '../../store/uiReducer';
 import { useDispatch } from 'react-redux';
 
 const ReviewItem = ({ review, editMode = true }) => {

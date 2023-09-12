@@ -5,10 +5,10 @@ import { AiFillStar } from "react-icons/ai"
 // import { useState } from 'react'
 // import { useSelector } from 'react-redux'
 // import { selectListing } from '../../../store/listingsReducer'
-import { getListingRevews } from '../../../store/reviewsReducer';
+import { getListingRevews } from '../../store/reviewsReducer';
 import ReviewItem from './ReviewItem';
 import { useSelector } from 'react-redux';
-import { getUserReview } from '../../../store/reviewsReducer';
+import { getUserReview } from '../../store/reviewsReducer';
 // import { selectListing } from '../../../store/listingsReducer';
 // import { getCurrentUser } from '../../../store/sessionsReducer';
 // import { useState } from 'react';
