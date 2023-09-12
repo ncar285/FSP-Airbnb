@@ -6,6 +6,21 @@ class Api::ListingsController < ApplicationController
 
     def index
         @listings = Listing.all
+
+        # debugger
+
+        # debugger
+
+        if params[:search]
+            query = "%#{params[:search]}%"
+            @listings = @listings.where(
+              "tag_line ILIKE ? OR city ILIKE ? OR state ILIKE ?",
+              query, query, query
+            )
+        end
+        # if params[:search]
+        #     @listings = @listings.where("title ILIKE '%#{params[:search]}'")
+        # end
         render :index
     end
 

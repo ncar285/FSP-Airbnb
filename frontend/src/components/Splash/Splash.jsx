@@ -1,18 +1,20 @@
 import './Splash.css'
 import LoadingItem from './LoadingItem'
 import { useDispatch, useSelector } from "react-redux"
-import { fetchListings, selectAllListings } from "../../store/listingsReducer"
+import { getListings, selectListings } from "../../store/listingsReducer"
 import ListingItem from "./ListingItem.jsx"
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
+import { SearchContext } from '../../App'
+// import { fetchListings } from '../../utils/listingApiUtils'
 
 const Splash = () => {
 
-  const listings = useSelector(selectAllListings)
+  const listings = useSelector(selectListings)
   const dispatch = useDispatch();
 
   useEffect(() => {
-      dispatch(fetchListings())
-  },[dispatch])
+    dispatch(getListings())
+  },[])
 
   return (
     <>
@@ -24,17 +26,6 @@ const Splash = () => {
     </>
   )
 }
-
-// //above normalise
-// "moment": "^2.29.4",
-
-// // under react
-// "react-dates": "^21.8.0",
-
-
-// // under react scripts
-// "react-with-direction": "^1.4.0",
-
 
 
 export default Splash

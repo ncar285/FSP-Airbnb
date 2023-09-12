@@ -1,9 +1,10 @@
-import { fetchAllListings, fetchOneListing} from "../utils/listingApiUtils.js"
+import { fetchListings, fetchOneListing} from "../utils/listingApiUtils.js"
 // import { receiveBooking } from "./bookingsReducer.js";
 
 // CONSTANTS
 export const RECEIVE_LISTING = 'RECEIVE_LISTING'
 export const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS';
+export const REPLACE_LISTINGS = 'REPLACE_LISTINGS';
 export const REMOVE_LISTING  = 'REMOVE_LISTING'
 
 // ACTION CREATORS
@@ -12,9 +13,13 @@ export const receiveListing = listing => ({
   payload: listing
 })
 
-// be careful - teas parameter could be an array or object
 export const receiveListings = listings => ({
   type: RECEIVE_LISTINGS,
+  payload: listings
+})
+
+export const replaceListings = listings => ({
+  type: REPLACE_LISTINGS,
   payload: listings
 })
 
@@ -25,10 +30,12 @@ export const removeListing = listingId => ({
 
 
 // THUNK ACTION CREATORS
-export const fetchListings = () => async dispatch => {
-  const listings = await fetchAllListings()
-  return dispatch(receiveListings(listings))
+export const getListings = params => async dispatch => {
+  // debugger
+  const listings = await fetchListings(params)
+  return dispatch(replaceListings(listings))
 }
+
   
 export const fetchListing = listingId => dispatch => (
   fetchOneListing(listingId)
@@ -51,7 +58,7 @@ export const fetchListingScore = listingId => dispatch => {
 }
 
 // SELECTORS
-export const selectAllListings = state => Object.values(state.listings);
+export const selectListings = state => Object.values(state.listings);
 
 export const selectListing = listingId => state => state.listings[listingId] || null;
 
@@ -66,6 +73,8 @@ const listingsReducer = (state = {}, action) => {
       return nextState
     case RECEIVE_LISTINGS:
       return Object.assign(nextState, action.payload)
+    case REPLACE_LISTINGS:
+      return Object.assign(action.payload)
     case REMOVE_LISTING:
       delete nextState[action.payload]
       return nextState

@@ -2,24 +2,28 @@ import './SearchBar.css'
 import { useDispatch, useSelector } from "react-redux"
 // import { activateSearchModal } from "../../../store/uiReducer"
 import sButton from "../../../assets/s-button.png"
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { SearchContext } from '../../../App'
+import { getListings } from '../../../store/listingsReducer'
 
 const SearchBar = ({ searchType }) => {
 
-    const [searchString, setSearchString] = useState("")
+    // const [searchString, setSearchString] = useState("")
+    // const [searchParams, setSearchParams] = useState{}
 
     // const hideSearchBar = useSelector(state => state.ui.searchModal)
     const dispatch = useDispatch()
 
+    const { searchParams, setSearchParams }  = useContext(SearchContext)
 
-    const updateSearch = e => {
-        const newSearchVal = e.target.value;
-        setSearchString(newSearchVal);
-        if (e.target.value){
-            // change the show page listings
-        }
+    const [searchString, setSearchString] = useState("")
 
-    }
+
+    const handleSearch = () => {
+        // debugger
+        setSearchParams({ search: searchString });
+        dispatch(getListings({ search: searchString }));
+    };
 
     // if (hideSearchBar){
     //     const sBar = document.querySelector(".nav-bar")
@@ -54,7 +58,7 @@ const SearchBar = ({ searchType }) => {
                     placeholder='Start your search' 
                     value = {searchString}/>
                 </div>
-                <div className="s-button">
+                <div className="s-button" onClick={handleSearch}>
                     <img src={sButton} alt="" />
                 </div>
             </div>

@@ -21,8 +21,8 @@
 }
 
 .inner-footer{
-    margin-left: var(--margin);
-    margin-right: var(--margin);
+    margin-left: var(--show_margin);
+    margin-right: var(--show_margin);
     height: 50px;
     display: flex;
     align-items: center;
@@ -30,8 +30,8 @@
 }
 
 .inner-footer.fixed{
-    margin-left: var(--show_margin);
-    margin-right: var(--show_margin);
+    margin-left: var(--margin);
+    margin-right: var(--margin);
 }
 
 .copywright{
