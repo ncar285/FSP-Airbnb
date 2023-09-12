@@ -9,12 +9,18 @@ import { SearchContext } from '../../App'
 
 const Splash = () => {
 
-
   const listings = useSelector(selectListings)
   const dispatch = useDispatch();
+  const { searchParams, setSearchParams }  = useContext(SearchContext);
+  
+
 
   useEffect(() => {
-    dispatch(getListings())
+    if (searchParams.search){
+      dispatch(getListings({ search: searchParams.search }));
+    } else {
+      dispatch(getListings())
+    }
   },[])
 
   return (

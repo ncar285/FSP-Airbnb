@@ -15,16 +15,17 @@ export const SearchContext = React.createContext();
 function App() {
   const [searchParams, setSearchParams] = useState({})
   return (
+    <SearchContext.Provider value={{ searchParams, setSearchParams }}>
     <Router>
       <Switch>
         <Route path="/" exact>
-          <SearchContext.Provider value={{ searchParams, setSearchParams }}>
+          {/* <SearchContext.Provider value={{ searchParams, setSearchParams }}> */}
             <NavBar tagsOn={false} searchType={"simple"} barType={"home"}/>
             {/* <SearchForm /> */}
             <RegisterForm />
             <Splash />
             <Footer alwaysthere={true}/>
-          </SearchContext.Provider>
+          
         </Route>
         <Route path="/listing/:listingId">
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
@@ -46,6 +47,7 @@ function App() {
        
       </Switch>
   </Router>
+  </SearchContext.Provider>
   );
 }
 

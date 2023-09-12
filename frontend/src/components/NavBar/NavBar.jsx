@@ -1,15 +1,22 @@
 import "./NavBar.css"
 import logo from "../../assets/airbnb.svg"
 import AccountMenu from "../AccountMenu/AccountMenu.jsx"
-import { useState } from "react";
+import { useContext, useState } from "react";
 import SearchBar from "./Search/SearchBar";
 import MenuButton from "./MenuButton/MenuButton";
 import TagBar from "./TagBar/TagBar";
+import { SearchContext } from "../../App";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 // import { AiOutlineSearch } from "react-icons/ai" // (search icon)
 // import { FaAirbnb } from "react-icons/fa"   // airbnb logo
 
 const NavBar = ({ tagsOn, searchType, barType}) => {
     const [menuOpen, setMenuOpen] = useState(false)
+    
+    // debugger
+    // console.log(useContext(SearchContext))
+    const { searchParams, setSearchParams }  = useContext(SearchContext)
+    const history = useHistory();
 
     const handleMenuClick = () => {
         if (menuOpen){
@@ -36,6 +43,8 @@ const NavBar = ({ tagsOn, searchType, barType}) => {
 
     const handleGoHome = () => {
         window.location.href = '/';
+        history.push('/');
+        setSearchParams({});
     }
 
     return (
@@ -47,7 +56,7 @@ const NavBar = ({ tagsOn, searchType, barType}) => {
                     <img id="logo" src={logo} alt="fairbnb-logo" />
                 </div>
                 <div className="middle-search">
-                    <SearchBar searchType = {searchType}/>
+                    <SearchBar searchType = {searchType} setSearchParams={setSearchParams}/>
                 </div >
                 <div className='right-menu' style={{ right: dynamicStyle().margin}}>
                     <MenuButton handleMenuClick={handleMenuClick}/>
