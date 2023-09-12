@@ -1,23 +1,29 @@
 // import './Calendar.css'
-import { Calendar } from 'react-date-range'
+import { DateRangePicker } from 'react-date-range'
 import format from 'date-fns/format'
+
+import { addDays } from 'date-fns'
 
 import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import { useEffect, useRef, useState } from 'react'
 
-const DateRange = () => {
+const DateRangePickerComp = () => {
 
-    const [calendar, setCalendar] = useState('')
+    const [range, setRange] = useState([
+        {
+            startDate: new Date(), 
+            endDate: addDays(new Date(), 7),
+            key: 'selection'
+        }
+    ])
     const [open, setOpen] = useState(false)
     const refOne = useRef(null)
 
-    const handleSelect = (date) => {
-        setCalendar(format( date, 'MM/dd/yyyy'))
-    }
+
 
     useEffect(()=>{
-        setCalendar(format(new Date(), 'MM/dd/yyyy'))
+        
         document.addEventListener("keydown", hideOnEscape, true)
         document.addEventListener("click", hideOnClickOutside, true)
     },[])
@@ -39,7 +45,7 @@ const DateRange = () => {
     return (
         <div className='calendarWrap'>
             <input 
-                value = { calendar }
+                value = { ` ${format(range[0].startDate, 'MM/dd/yyy') } to ${format(range[0].endDate, 'MM/dd/yyy')} ` }
                 readOnly
                 className='inputBox'
                 onClick = { () => setOpen(open => !open)}
@@ -47,17 +53,21 @@ const DateRange = () => {
 
             <div ref={refOne}>
                 {open &&
-                    <Calendar
-                        date = { new Date() }
-                        onChange = { handleSelect }
+                    <DateRangePicker
+                        onChange = { item => setRange([item.selection]) }
+                        editableDateInputs = {true}
+                        moveRangeOnFirstSelection = {false}
+                        ranges={range}
+                        months={2}
+                        direction="horizontal"
                         className = "calendarElement"
                     />
                 }
             </div>
-            DateRange!
+            DateRangePickerComp!
         </div>
     )
 
 }
 
-export default DateRange
+export default DateRangePickerComp

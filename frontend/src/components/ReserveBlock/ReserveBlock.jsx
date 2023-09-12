@@ -17,9 +17,10 @@ import { BiMinus } from "react-icons/bi"
 import { AiFillStar } from "react-icons/ai"
 // import moment from 'moment'
 import { getBookingErrors } from '../../store/errorsReducer';
+import CalendarComp from '../Calendar/CalendarComp'
 
 // import Calendar from '../../Calendar/Calendar'
-import CalendarComp from '../Calendar/Calendar'
+// import CalendarComp from '../Calendar/Calendar'
 
 // import ReactDatesCalendar from './ReactDatesCalendar'
 
