@@ -1,52 +1,18 @@
-// import './ReactDatesStyles.css'
 import './ReserveBlock.css'
-// import 'react-dates/initialize';
-// import 'react-dates/lib/css/_datepicker.css';
-// import { DateRangePicker } from 'react-dates';
-
 import { useDispatch, useSelector } from 'react-redux'
 import { getCurrentUser } from '../../store/sessionsReducer'
-import { selectListing } from '../../store/listingsReducer'
 import { useEffect, useState } from 'react'
 import { createBooking } from '../../store/bookingsReducer'
 import { activateRegisterModal } from '../../store/uiReducer'
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-
-import { AiOutlinePlus } from "react-icons/ai"
-import { BiMinus } from "react-icons/bi"
 import { AiFillStar } from "react-icons/ai"
-// import moment from 'moment'
 import { getBookingErrors } from '../../store/errorsReducer';
-import CalendarComp from '../Calendar/CalendarComp'
-import DateRangeComp from '../Calendar/DateRangeComp'
 import DateRangeReserve from '../Calendar/DateRangeReserve'
-
-// import Calendar from '../../Calendar/Calendar'
-// import CalendarComp from '../Calendar/Calendar'
-
-// import ReactDatesCalendar from './ReactDatesCalendar'
-
-
 
 const ReserveBlock = ( { listing, count, rating } ) => {
 
     const dispatch = useDispatch()
     const user = useSelector(getCurrentUser)
-
     const errors = useSelector(getBookingErrors)
-
-    const [bookingStartDate, setBookingStartDate] = useState('');
-    const [bookingEndDate, setBookingEndDate] = useState('');
-    
-
-
-
-
-    // const timestamp = new Date('09/10/2023');
-    // const timestamp2 = new Date('09/15/2023'); 
-    // const momentTimestamp = moment(timestamp);
-    // const momentTimestamp2 = moment(timestamp2);
-
 
     const newBooking = {
         userId: user ? user.id : null,
@@ -55,11 +21,8 @@ const ReserveBlock = ( { listing, count, rating } ) => {
         endDate: null,
         guests: 1
     }
-
-    
     
     const [booking, setBooking] = useState(newBooking)
-    const [focusedInput, setFocusedInput] = useState(null)
     
     const handleSubmitBooking = async e  => {
         e.preventDefault();
@@ -74,15 +37,18 @@ const ReserveBlock = ( { listing, count, rating } ) => {
         }
     }
 
+    const [duration, setDuration] = useState(null);
 
-    const [duration, setDuration] = useState(0);
 
-    // useEffect(() => {
-    //     if (booking.endDate && booking.startDate){
-    //         let difference = moment.duration(booking.endDate.diff(booking.startDate));
-    //         setDuration(Math.floor(difference.asDays()));
-    //     }
-    // }, [booking]);
+    useEffect(() => {
+        if (booking.endDate && booking.startDate){
+            const startDate = new Date(booking.startDate);
+            const endDate = new Date(booking.endDate);
+            const diffTime = endDate - startDate;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            setDuration(diffDays)
+        }
+    }, [booking]);
 
     const [maxGuests, setMaxGuest] = useState(false)
     const [minGuests, setMinGuest] = useState(true)
@@ -105,8 +71,12 @@ const ReserveBlock = ( { listing, count, rating } ) => {
     // }
     // momentDate => momentDate.format('d') === '0' && ['6','7'].includes(momentDate.format('M'))
 
-    const incrementGuests = () => (booking.guests === listing.guests) ? null : setBooking({ ...booking, guests: booking.guests + 1 })
-    const decrementGuests = () => (booking.guests === 1) ? null : setBooking({ ...booking, guests: booking.guests - 1 })
+    const durationCost = (listing.price*duration);
+    const cleaningFee = Math.floor(listing.price * duration * 0.05 
+    * (Math.random() * 0.2 + 0.9));
+    const fairbnbServiceFee = Math.floor(listing.price * duration * 0.05 
+    * (Math.random() * 0.2 + 0.9));
+    const totalBeforeTax = Math.floor(durationCost + cleaningFee + fairbnbServiceFee);
 
     return (
         
@@ -117,7 +87,7 @@ const ReserveBlock = ( { listing, count, rating } ) => {
 
                 <div className='pricing-header'>
                     <div className="price-val">
-                        <div id="price-val">${listing.price}</div>
+                        <div id="price-val">${listing.price.toLocaleString()}</div>
                         <div className="night">night</div>
                     </div>
                     <div className="right-side">
@@ -129,7 +99,14 @@ const ReserveBlock = ( { listing, count, rating } ) => {
                     </div>
                 </div>
 
-                <DateRangeReserve/>
+                <DateRangeReserve
+                    booking = {booking}
+                    setBooking = {setBooking}
+                    listing = {listing}
+                    duration = {duration}
+                />
+
+                <div>This place has a maximum of {listing.guests} guests</div>
 
             </div>
 
@@ -137,22 +114,36 @@ const ReserveBlock = ( { listing, count, rating } ) => {
             <button className="book-button" onClick={handleSubmitBooking}>
                 Reserve
             </button>
+
             <div className="wont-be-charged">
                 <p>You won't be charged yet</p>
             </div>
+
             <div className="price-calcs">
                 <div>
-                    {/* <p>${listing.price} x {duration} nights</p> */}
-                    <p>${listing.price} x 5 nights</p>
-
-
+                    <p>{`${listing.price.toLocaleString()} x ${duration} 
+                    night${duration===1 ? '' : 's'}` }</p>
+                    <p>Cleaning fee</p>
+                    <p>Fairbnb service fee</p>
                 </div>
-                <div className="divider-line"/>
-                <div>
-
+                <div className='pc-values'>
+                    <p>${durationCost.toLocaleString()}</p>
+                    <p>${cleaningFee.toLocaleString()}</p>
+                    <p>${fairbnbServiceFee.toLocaleString()}</p>
                 </div>
-
             </div>
+
+            <div className="divider-line"/>
+
+            <div className="price-calcs">
+                <div>
+                    <p>Total before taxes</p>
+                </div>
+                <div className='pc-values'>
+                    <p>${totalBeforeTax.toLocaleString()}</p>
+                </div>
+            </div>
+
             <div className='booking-errors'>
                 {errors &&
                 <div>{errors}</div>}

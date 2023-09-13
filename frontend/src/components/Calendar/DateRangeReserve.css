@@ -1,23 +1,65 @@
 /* ! styles for settings div */
 
 .calendarWrap {
-    border: 1.5px solid #b0b0b0;
+    border: 1px solid #b0b0b0;
     border-radius: 10px;
+    margin: 15px 0;
+}
+.calendarWrap:hover {
+    cursor: pointer;
 }
 .checkin-checkout{
-    border-bottom: 1.5px solid #b0b0b0;
+    border-bottom: 1px solid #b0b0b0;
     display: flex;
 }
 .checkout-input {
-    border-left: 1.5px solid #b0b0b0;
+    border-left: 1px solid #b0b0b0;
 }
+.select-dates-focus.focus .checkout-input{
+    border: none;
+}
+
+.guests-input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* INCREMENT DECREMENT BUTTONS */
+
+.number-input{
+    margin-right: 20px;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    width: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#guest-decrement-button,
+#guest-increment-button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #b0b0b0;
+    color: #b0b0b0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    padding: none;
+}
+
+/* SETTINGS BLOCK INPUTS */
+
 .checkin-input{
-    padding: 10px;
+    padding: 12.5px;
     width: 50%;
     /* border: 1px solid black; */
 }
 .checkout-input{
-    padding: 10px;
+    padding: 12.5px;
     width: 50%;
     /* border: 1px solid black; */
 }
@@ -43,6 +85,16 @@
 .checkin-checkout input:focus{
     outline: none;
 }
+
+.checkin-input input:hover,
+.checkout-input input:hover {
+    cursor: pointer;
+}
+
+/* .select-dates-focus.focus .checkin-input input:hover,
+.select-dates-focus.focus .checkout-input input:hover {
+    cursor: auto;
+} */
 
 /* ! css for the DateRangeReserve */
 
@@ -74,12 +126,50 @@
 
 .select-date-header {
     display: flex;
+    justify-content: space-between;
+    /* margin: 0 20px 0 40px; */
 }
+.select-dates{
+    font-size: 25px;
+    font-family: 'airbnb5';
+    margin-bottom: 10px;
+}
+
 
 .select-date-header .calendar-modal-title {
     display: none;
 }
 
 .select-date-header.focus .calendar-modal-title {
-    display: all;
+    display: block;
+    /* display: flex; */
+    justify-content: space-between;
+}
+
+.select-date-header.focus {
+    padding: 0 40px 0 20px;
+}
+
+/* ! new colours */
+button.rdrDay .rdrInRange,
+span.rdrStartEdge
+span.rdrEndEdge{ 
+    color: var(--brand-color) !important;
+}
+
+.close-calendar {
+    background-color: black;
+    border: none;
+    color: white;
+    height: 20px;
+    padding: 18px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: 'airbnb5';
+}
+.close-calendar:hover {
+    cursor: pointer;
 }

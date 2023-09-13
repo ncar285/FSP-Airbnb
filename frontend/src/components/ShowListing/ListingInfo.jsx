@@ -4,10 +4,10 @@ import lisingInfo from '../../assets/bellow-subheader.png'
 // import DateRange from '../Calendar/DateRangeComp';
 import { Calendar } from 'react-date-range';
 // import DateRangePicker from '../Calendar/DateRangePickerComp';
-import CalendarComp from '../Calendar/CalendarComp';
-import DateRangeComp from '../Calendar/DateRangeComp';
-import DateRangePickerComp from '../Calendar/DateRangeComp';
-import DateRangeReserve from '../Calendar/DateRangeReserve';
+// import CalendarComp from '../Calendar/CalendarComp';
+// import DateRangeComp from '../Calendar/DateRangeComp';
+// import DateRangePickerComp from '../Calendar/DateRangeComp';
+// import DateRangeReserve from '../Calendar/DateRangeReserve';
 
 const ListingInfo = ({ listing }) => {
 
@@ -60,31 +60,10 @@ const ListingInfo = ({ listing }) => {
                 <button>Show all 43 amenities</button> */}
             </div>
             <div className='listing-calendar' id="listing-calendar">
-                {/* <div className='listing-info-calendar'>
-                    <p>[calendar goes here]</p>
-                </div> */}
-
-            </div>
-
-            <div>Date Range:</div>
-
-            <DateRangeComp/>
-
-            <div>Calendar:</div>
-
-            <Calendar/>
-
-            <div>Date Range Picker:</div>
-
-            <DateRangePickerComp/>
-
-            <div>Calendar Component</div>
-
-            <CalendarComp/>
-            
-            <div>
-                Date Range reservation attempt:
-                <DateRangeReserve/>
+                <div className='listing-info-calendar'>
+                    
+                    <Calendar/>
+                </div>
             </div>
 
         </div>

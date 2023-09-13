@@ -1,16 +1,14 @@
-// import './Calendar.css'
-import { DateRange } from 'react-date-range'
 import format from 'date-fns/format'
-
+import { DateRange } from 'react-date-range'
 import { addDays } from 'date-fns'
-
+import { useEffect, useRef, useState } from 'react'
+import { AiOutlinePlus } from "react-icons/ai"
+import { BiMinus } from "react-icons/bi"
 import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
-import { useEffect, useRef, useState } from 'react'
-
 import './DateRangeReserve.css'
 
-const DateRangeReserve = () => {
+const DateRangeReserve = ({ booking, setBooking, listing, duration}) => {
 
     const [range, setRange] = useState([
         {
@@ -19,31 +17,51 @@ const DateRangeReserve = () => {
             key: 'selection'
         }
     ])
+
     const [open, setOpen] = useState(false)
     const refOne = useRef(null)
 
-    const [bookingStartDate, setBookingStartDate] = useState('');
-    const [bookingEndDate, setBookingEndDate] = useState('');
-
-
-
     useEffect(()=>{
-        
         document.addEventListener("keydown", hideOnEscape, true)
         document.addEventListener("click", hideOnClickOutside, true)
     },[])
 
+    useEffect(()=>{
+        const start = format(range[0].startDate, 'MM/dd/yyy')
+        const end = format(range[0].endDate, 'MM/dd/yyy')
+        setBooking({ ...booking, startDate: start, endDate: end})
+    }, [range[0]])
+
     const hideOnEscape = (e) => {
-        console.log(e.key)
         if (e.key === "Escape"){
             setOpen(false)
         }
     }
 
     const hideOnClickOutside = (e) => {
-        console.log(refOne.current)
         if (refOne.current && !refOne.current.contains(e.target)){
             setOpen(false)
+        }
+    }
+
+    const updateStartDate = () => {
+        const date = format(range[0].startDate, 'MM/dd/yyy')
+        setBooking({ ...booking, startDate: date})
+    }
+    const updateEndDate = () => {
+        const date = format(range[0].endDate, 'MM/dd/yyy')
+        setBooking({ ...booking, endDate: date})
+    }
+
+    const incrementGuests = () => {
+        if (booking && booking.guests){
+            return booking.guest === listing.guests ? null : setBooking({ ...booking, guests: booking.guests + 1 })
+        }
+    }
+
+    const decrementGuests = () => {
+        if (booking && booking.guests){
+            return (booking.guests === 1) ? null : setBooking({ ...booking, guests: booking.guests - 1 })
         }
     }
 
@@ -61,35 +79,40 @@ const DateRangeReserve = () => {
                     <div
                         className={`select-date-header ${open ? 'focus' : ''}`}>
              
+                        <div className='calendar-modal-title'>
+                            <div className='select-dates'>{ duration ? `${duration} night${duration===1 ? '' : 's'}` : "Select dates"}</div>
+                            <div>{ duration ? `${booking.startDate} - ${booking.endDate}` 
+                            : "Add your travel dates for exact pricing"}</div>
+                        </div>
+
+
+
                         <div className='checkin-checkout'>
-                            <div className='checkin-input'>
+                            <div className='checkin-input'
+                                onClick = { () => setOpen(true)}>
+
                                 <div>CHECK-IN</div>
                                 <input type="text" 
                                     value={ ` ${format(range[0].startDate, 'MM/dd/yyy') }`}
+                                    // readOnly={open ? false : true}
+                                    onChange={updateStartDate}
                                     readOnly
                                     className='inputBox'
-                                    // onClick = { () => setOpen(open => !open)}
-                                    onClick = { () => setOpen(true)}
                                 />
                             </div>
-                            <div className='checkout-input'>
+                            <div className='checkout-input'
+                                onClick = { () => setOpen(true)}>
+                        
                                 <div>CHECK-OUT</div>
                                 <input type="text" 
                                     value={ ` ${format(range[0].endDate, 'MM/dd/yyy') }`}
+                                    // readOnly={open ? false : true}
+                                    onChange={updateEndDate}
                                     readOnly
                                     className='inputBox'
-                                    // onClick = { () => setOpen(open => !open)}
-                                    onClick = { () => setOpen(true)}
                                 />
                             </div>
                         </div>
-
-                        <div className='calendar-modal-title'>
-                            <div>Hi!</div>
-
-                        </div>
-
-
 
                     </div>
 
@@ -108,6 +131,17 @@ const DateRangeReserve = () => {
                         }
                     </div>
 
+
+                    { open &&
+                        <button 
+                        onClick = { () => setOpen(false)}
+                        className='close-calendar'>
+                            Close
+                        </button>
+                    }
+               
+                    
+
                 </div>
 
             </div>
@@ -116,9 +150,19 @@ const DateRangeReserve = () => {
                 <div className='guests-input-new'>
                     <div className='guests-input-header'>GUESTS</div>
                     <div className='guests-input-val'>
-                        7 guests, 3 infants, 1 pet
+                        {`${booking ? booking.guests : '1'} guest${booking ? (booking.guests > 1 ? 's' : '') : ''}`}
+                        {/* 7 guests, 3 infants, 1 pet */}
                     </div>
                 </div>
+
+                <div class="number-input">
+                        <button id="guest-decrement-button" onClick={decrementGuests}><BiMinus id="decrement-button"/></button>
+                        {/* <div id="guests-quantity" >{booking.guests}</div> */}
+                        <button id="guest-increment-button" onClick={incrementGuests}><AiOutlinePlus id="increment-button"/></button>
+                            {/* {maxGuests &&
+                            <div>max guests!</div>} */}
+                </div>
+    
             </div>
 
             

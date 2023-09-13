@@ -1,5 +1,5 @@
 #booking-block{
-    height: 450px;
+    /* height: 450px; */
     border: 1px solid black;
     border: 1px solid var(--light_grey);
     background-color: white;
@@ -11,7 +11,8 @@
     /* background-color: yellow; */
     position: sticky;
     top: 20px;
-    width: 320px;
+    width: 100%;
+    /* width: 320px; */
 }
 
 #booking-block .pricing-header {
@@ -99,32 +100,7 @@
 }
 
 
-.number-input{
-    appearance: none;
-    padding: 10px; /* Add some padding */
-    font-size: 18px;
-    text-align: center; /* Center the text */
-    display: flex;
-    width: 100%;
-    /* width: 90px; */
-    justify-content: space-between;
-    align-items: center;
-}
 
-#booking-block #guest-decrement-button,
-#booking-block #guest-increment-button {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: white;
-    border: 1px solid #b0b0b0;
-    color: #b0b0b0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    padding: none;
-}
 
 #booking-block .book-button {
     width: 100%;
@@ -161,13 +137,25 @@
     cursor: pointer;
 }
 
-/* #booking-block .price-calcs {
-} */
+
+.price-calcs {
+    /* margin-top: 20px; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-calcs p {
+    margin: 20px 0;
+}
+
+.pc-values {
+    text-align: end;
+}
 
 #booking-block .divider-line {
-    height: 2px;
+    height: 1px;
     background-color: var(--light_grey);
-    margin: 20px 0px; 
+    margin: 10px 0px; 
 }
 
 #guests-quantity {
