@@ -173,3 +173,9 @@ span.rdrEndEdge{
 .close-calendar:hover {
     cursor: pointer;
 }
+
+
+.calendar-sub-buttons{
+    display: flex;
+    justify-content: flex-end;
+}

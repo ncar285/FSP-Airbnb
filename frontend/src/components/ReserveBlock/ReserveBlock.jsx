@@ -8,21 +8,22 @@ import { AiFillStar } from "react-icons/ai"
 import { getBookingErrors } from '../../store/errorsReducer';
 import DateRangeReserve from '../Calendar/DateRangeReserve'
 
-const ReserveBlock = ( { listing, count, rating } ) => {
+const ReserveBlock = ( { listing, count, rating, booking, setBooking } ) => {
 
     const dispatch = useDispatch()
     const user = useSelector(getCurrentUser)
     const errors = useSelector(getBookingErrors)
+    const [open, setOpen] = useState(false)
 
-    const newBooking = {
-        userId: user ? user.id : null,
-        listingId: parseInt(listing.id, 10),
-        startDate: null,
-        endDate: null,
-        guests: 1
-    }
+    // const newBooking = {
+    //     userId: user ? user.id : null,
+    //     listingId: parseInt(listing.id, 10),
+    //     startDate: null,
+    //     endDate: null,
+    //     guests: 1
+    // }
     
-    const [booking, setBooking] = useState(newBooking)
+    // const [booking, setBooking] = useState(newBooking)
     
     const handleSubmitBooking = async e  => {
         e.preventDefault();
@@ -104,50 +105,61 @@ const ReserveBlock = ( { listing, count, rating } ) => {
                     setBooking = {setBooking}
                     listing = {listing}
                     duration = {duration}
+                    open = {open}
+                    setOpen = {setOpen}
                 />
 
                 <div>This place has a maximum of {listing.guests} guests</div>
 
             </div>
 
+            {
+                duration ?
 
-            <button className="book-button" onClick={handleSubmitBooking}>
-                Reserve
-            </button>
+                <>
+                    <button className="book-button" onClick={handleSubmitBooking}>
+                        Reserve
+                    </button>
 
-            <div className="wont-be-charged">
-                <p>You won't be charged yet</p>
-            </div>
+                    <div className="wont-be-charged">
+                        <p>You won't be charged yet</p>
+                    </div>
 
-            <div className="price-calcs">
-                <div>
-                    <p>{`${listing.price.toLocaleString()} x ${duration} 
-                    night${duration===1 ? '' : 's'}` }</p>
-                    <p>Cleaning fee</p>
-                    <p>Fairbnb service fee</p>
-                </div>
-                <div className='pc-values'>
-                    <p>${durationCost.toLocaleString()}</p>
-                    <p>${cleaningFee.toLocaleString()}</p>
-                    <p>${fairbnbServiceFee.toLocaleString()}</p>
-                </div>
-            </div>
+                    <div className="price-calcs">
+                        <div>
+                            <p>{`${listing.price.toLocaleString()} x ${duration} 
+                            night${duration===1 ? '' : 's'}` }</p>
+                            <p>Cleaning fee</p>
+                            <p>Fairbnb service fee</p>
+                        </div>
+                        <div className='pc-values'>
+                            <p>${durationCost.toLocaleString()}</p>
+                            <p>${cleaningFee.toLocaleString()}</p>
+                            <p>${fairbnbServiceFee.toLocaleString()}</p>
+                        </div>
+                    </div>
 
-            <div className="divider-line"/>
+                    <div className="divider-line"/>
 
-            <div className="price-calcs">
-                <div>
-                    <p>Total before taxes</p>
-                </div>
-                <div className='pc-values'>
-                    <p>${totalBeforeTax.toLocaleString()}</p>
-                </div>
-            </div>
+                    <div className="price-calcs">
+                        <div>
+                            <p>Total before taxes</p>
+                        </div>
+                        <div className='pc-values'>
+                            <p>${totalBeforeTax.toLocaleString()}</p>
+                        </div>
+                    </div>
 
-            <div className='booking-errors'>
-                {errors &&
-                <div>{errors}</div>}
-            </div>
+                    <div className='booking-errors'>
+                        {errors &&
+                        <div>{errors}</div>}
+                    </div>
+                </>
+                : 
+                <button className="book-button" onClick={()=>setOpen(true)}>
+                    Check Availability
+                </button>
+            }
 
         </div>
  

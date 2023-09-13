@@ -11,7 +11,7 @@
     /* background-color: yellow; */
     position: sticky;
     top: 20px;
-    width: 100%;
+    /* width: 100%; */
     /* width: 320px; */
 }
 
@@ -121,6 +121,10 @@
     font-family: 'airbnb5';
     color: white;
 
+}
+
+.book-button:hover {
+    cursor: pointer;
 }
 
 #booking-block .wont-be-charged {

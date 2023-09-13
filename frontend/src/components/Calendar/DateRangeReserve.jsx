@@ -8,7 +8,7 @@ import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import './DateRangeReserve.css'
 
-const DateRangeReserve = ({ booking, setBooking, listing, duration}) => {
+const DateRangeReserve = ({ booking, setBooking, listing, duration, open, setOpen}) => {
 
     const [range, setRange] = useState([
         {
@@ -18,7 +18,7 @@ const DateRangeReserve = ({ booking, setBooking, listing, duration}) => {
         }
     ])
 
-    const [open, setOpen] = useState(false)
+    // const [open, setOpen] = useState(false)
     const refOne = useRef(null)
 
     useEffect(()=>{
@@ -55,7 +55,7 @@ const DateRangeReserve = ({ booking, setBooking, listing, duration}) => {
 
     const incrementGuests = () => {
         if (booking && booking.guests){
-            return booking.guest === listing.guests ? null : setBooking({ ...booking, guests: booking.guests + 1 })
+            return booking.guests === listing.guests ? null : setBooking({ ...booking, guests: booking.guests + 1 })
         }
     }
 
@@ -133,11 +133,13 @@ const DateRangeReserve = ({ booking, setBooking, listing, duration}) => {
 
 
                     { open &&
-                        <button 
-                        onClick = { () => setOpen(false)}
-                        className='close-calendar'>
-                            Close
-                        </button>
+                        <div className='calendar-sub-buttons'>
+                            <button 
+                            onClick = { () => setOpen(false)}
+                            className='close-calendar'>
+                                Close
+                            </button>
+                        </div>
                     }
                
                     

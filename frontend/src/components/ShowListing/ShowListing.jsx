@@ -22,6 +22,7 @@ const ShowListing = () => {
     const dispatch = useDispatch()
     const listing = useSelector(selectListing(listingId))
     const userReview = useSelector(getUserReview)
+    // const user = useSelector(getCurrentUser)
 
     const newReview = {
         listing_id: parseInt(listingId, 10),
@@ -35,6 +36,16 @@ const ShowListing = () => {
         value: null
         // const imgUrl = review.authorPhotoUrl
     }
+
+    const newBooking = {
+        userId: currentUserId,
+        listingId: parseInt(listingId, 10),
+        startDate: null,
+        endDate: null,
+        guests: 1
+    }
+    
+    const [booking, setBooking] = useState(newBooking)
 
     
     const [review, setReview] = useState(newReview)
@@ -93,11 +104,13 @@ const ShowListing = () => {
                     <div className='show-page-contents'>
 
                         <div className='listing-left-column'>
-                            <ListingInfo listing={listing}/>
+                            <ListingInfo listing={listing}
+                            booking = {booking} setBooking = {setBooking}/>
                         </div>
                     
                         <div className='listing-right-column'>
-                            <ReserveBlock  listing={listing} count={count} rating={rating}/>
+                            <ReserveBlock  listing={listing} count={count} rating={rating}
+                            booking = {booking} setBooking = {setBooking}/>
                         </div>
 
                     </div>
