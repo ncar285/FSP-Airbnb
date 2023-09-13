@@ -14,6 +14,7 @@ import { getUserReview } from '../../store/reviewsReducer'
 import { getCurrentUser } from '../../store/sessionsReducer'
 import { getListingRevews } from '../../store/reviewsReducer'
 import { AiFillStar } from "react-icons/ai"
+import { addDays } from 'date-fns'
 
 const ShowListing = () => {
     // const listingId = useSelector(selectListing).id
@@ -22,7 +23,16 @@ const ShowListing = () => {
     const dispatch = useDispatch()
     const listing = useSelector(selectListing(listingId))
     const userReview = useSelector(getUserReview)
+    const [duration, setDuration] = useState(null);
     // const user = useSelector(getCurrentUser)
+
+    const [range, setRange] = useState([
+        {
+            startDate: new Date(), 
+            endDate: addDays(new Date(), 7),
+            key: 'selection'
+        }
+    ])
 
     const newReview = {
         listing_id: parseInt(listingId, 10),
@@ -53,6 +63,17 @@ const ShowListing = () => {
     useEffect(() => {
         dispatch(fetchListing(listingId));
     }, [dispatch, listingId]);
+
+
+    useEffect(() => {
+        if (booking.endDate && booking.startDate){
+            const startDate = new Date(booking.startDate);
+            const endDate = new Date(booking.endDate);
+            const diffTime = endDate - startDate;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            setDuration(diffDays)
+        }
+    }, [booking]);
 
 
 
@@ -105,11 +126,16 @@ const ShowListing = () => {
 
                         <div className='listing-left-column'>
                             <ListingInfo listing={listing}
+                            range = {range} setRange = {setRange}
+                            duration = {duration} setDuration = {setDuration}
                             booking = {booking} setBooking = {setBooking}/>
                         </div>
                     
                         <div className='listing-right-column'>
-                            <ReserveBlock  listing={listing} count={count} rating={rating}
+                            <ReserveBlock  
+                            range = {range} setRange = {setRange}
+                            duration = {duration} setDuration = {setDuration}
+                            listing={listing} count={count} rating={rating}
                             booking = {booking} setBooking = {setBooking}/>
                         </div>
 

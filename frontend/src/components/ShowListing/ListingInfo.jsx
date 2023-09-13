@@ -3,13 +3,14 @@ import placeOffers from '../../assets/place-offers.png'
 import lisingInfo from '../../assets/bellow-subheader.png'
 // import DateRange from '../Calendar/DateRangeComp';
 import { Calendar } from 'react-date-range';
+import ShowDateRange from '../Calendar/ShowDateRange';
 // import DateRangePicker from '../Calendar/DateRangePickerComp';
 // import CalendarComp from '../Calendar/CalendarComp';
 // import DateRangeComp from '../Calendar/DateRangeComp';
 // import DateRangePickerComp from '../Calendar/DateRangeComp';
 // import DateRangeReserve from '../Calendar/DateRangeReserve';
 
-const ListingInfo = ({ listing }) => {
+const ListingInfo = ({ listing, booking, setBooking, duration,  range, setRange }) => {
 
     let style = "height: 200px";
     const revealDescription = () => {
@@ -62,7 +63,11 @@ const ListingInfo = ({ listing }) => {
             <div className='listing-calendar' id="listing-calendar">
                 <div className='listing-info-calendar'>
                     
-                    <Calendar/>
+                    <ShowDateRange
+                    range = {range} setRange = {setRange}
+                    duration = {duration} listing={listing} 
+                    booking = {booking} setBooking = {setBooking}
+                    />
                 </div>
             </div>
 

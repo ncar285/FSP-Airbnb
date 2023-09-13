@@ -112,6 +112,10 @@
 
 }
 
+.select-dates-focus.focus.static {
+    position: static;
+}
+
 .select-dates-focus.focus .checkin-checkout{
     width: 300px;
     align-items: flex-end;
@@ -142,7 +146,6 @@
 
 .select-date-header.focus .calendar-modal-title {
     display: block;
-    /* display: flex; */
     justify-content: space-between;
 }
 

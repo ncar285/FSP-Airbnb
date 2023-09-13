@@ -8,7 +8,7 @@ import { AiFillStar } from "react-icons/ai"
 import { getBookingErrors } from '../../store/errorsReducer';
 import DateRangeReserve from '../Calendar/DateRangeReserve'
 
-const ReserveBlock = ( { listing, count, rating, booking, setBooking } ) => {
+const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration,  range, setRange } ) => {
 
     const dispatch = useDispatch()
     const user = useSelector(getCurrentUser)
@@ -38,32 +38,20 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking } ) => {
         }
     }
 
-    const [duration, setDuration] = useState(null);
 
+    // const [maxGuests, setMaxGuest] = useState(false)
+    // const [minGuests, setMinGuest] = useState(true)
 
-    useEffect(() => {
-        if (booking.endDate && booking.startDate){
-            const startDate = new Date(booking.startDate);
-            const endDate = new Date(booking.endDate);
-            const diffTime = endDate - startDate;
-            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-            setDuration(diffDays)
-        }
-    }, [booking]);
-
-    const [maxGuests, setMaxGuest] = useState(false)
-    const [minGuests, setMinGuest] = useState(true)
-
-    useEffect((()=>{
-        if (booking.guests === listing.guests){
-            setMaxGuest(true)
-        } else if ((booking.guests === 1)){
-            setMinGuest(true)
-        } else {
-            setMinGuest(false)
-            setMaxGuest(false)
-        }
-    }),[booking.guests])
+    // useEffect((()=>{
+    //     if (booking.guests === listing.guests){
+    //         setMaxGuest(true)
+    //     } else if ((booking.guests === 1)){
+    //         setMinGuest(true)
+    //     } else {
+    //         setMinGuest(false)
+    //         setMaxGuest(false)
+    //     }
+    // }),[booking.guests])
 
     // const isDayBlocked = momentDate => {
     //     if (momentDate.format('ddd') === 'Mon' && ['Jul', 'Aug'].includes(momentDate.format('MMM'))) return true
@@ -107,6 +95,7 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking } ) => {
                     duration = {duration}
                     open = {open}
                     setOpen = {setOpen}
+                    range = {range} setRange = {setRange}
                 />
 
                 <div>This place has a maximum of {listing.guests} guests</div>

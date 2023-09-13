@@ -8,15 +8,7 @@ import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import './DateRangeReserve.css'
 
-const DateRangeReserve = ({ booking, setBooking, listing, duration, open, setOpen}) => {
-
-    const [range, setRange] = useState([
-        {
-            startDate: new Date(), 
-            endDate: addDays(new Date(), 7),
-            key: 'selection'
-        }
-    ])
+const DateRangeReserve = ({ booking, setBooking, listing, duration, open, setOpen, range, setRange}) => {
 
     // const [open, setOpen] = useState(false)
     const refOne = useRef(null)
@@ -37,6 +29,20 @@ const DateRangeReserve = ({ booking, setBooking, listing, duration, open, setOpe
             setOpen(false)
         }
     }
+
+
+    useEffect(()=>{
+        if (duration !== 0) {
+            const timer = setTimeout(() => {
+                setOpen(false);
+            }, 300);
+            return () => clearTimeout(timer); // Cleanup
+        }
+    },[duration])
+
+
+
+    console.log(duration)
 
     const hideOnClickOutside = (e) => {
         if (refOne.current && !refOne.current.contains(e.target)){
