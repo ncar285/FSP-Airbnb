@@ -12,6 +12,8 @@ const DateRangeReserve = ({ booking, setBooking, listing, duration, open, setOpe
 
     // const [open, setOpen] = useState(false)
     const refOne = useRef(null)
+    const [max, setMax] = useState(false)
+    const [min, setMin] = useState(false)
 
     useEffect(()=>{
         document.addEventListener("keydown", hideOnEscape, true)
@@ -40,9 +42,6 @@ const DateRangeReserve = ({ booking, setBooking, listing, duration, open, setOpe
         }
     },[duration])
 
-
-
-    console.log(duration)
 
     const hideOnClickOutside = (e) => {
         if (refOne.current && !refOne.current.contains(e.target)){
@@ -164,11 +163,16 @@ const DateRangeReserve = ({ booking, setBooking, listing, duration, open, setOpe
                 </div>
 
                 <div class="number-input">
-                        <button id="guest-decrement-button" onClick={decrementGuests}><BiMinus id="decrement-button"/></button>
-                        {/* <div id="guests-quantity" >{booking.guests}</div> */}
-                        <button id="guest-increment-button" onClick={incrementGuests}><AiOutlinePlus id="increment-button"/></button>
-                            {/* {maxGuests &&
-                            <div>max guests!</div>} */}
+                    <button id="guest-decrement-button" 
+                        className={`${(booking.guests === 1) ? 'inactive' : ''}`}
+                        onClick={decrementGuests}>
+                        <BiMinus id="decrement-button"/>
+                    </button>
+                    <button id="guest-increment-button" 
+                            className={`${(booking.guests === listing.guests) ? 'inactive' : ''}`}
+                            onClick={incrementGuests}>
+                            <AiOutlinePlus id="increment-button"/>
+                    </button>
                 </div>
     
             </div>

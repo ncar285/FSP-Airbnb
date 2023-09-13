@@ -64,10 +64,13 @@
     border: none;
 }
 
-.listing-info-calendar{
-    border-radius: 20px;
-    height: 400px;
-    background-color: var(--light_grey);
+.listing-info-calendar .calendarWrap{
+    border: none;
+    /* height: 400px; */
+}
+
+.listing-info-calendar .rdrCalendarWrapper {
+    width: 100%;
 }
 
 

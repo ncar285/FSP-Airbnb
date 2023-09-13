@@ -24,6 +24,7 @@
     justify-content: space-between;
 }
 
+
 /* INCREMENT DECREMENT BUTTONS */
 
 .number-input{
@@ -49,6 +50,29 @@
     align-items: center;
     font-size: 40px;
     padding: none;
+}
+
+#guest-decrement-button:hover,
+#guest-increment-button:hover {
+    border: 1px solid var(--dark_grey);
+    color: var(--dark_grey);
+    cursor: pointer;
+}
+
+#guest-decrement-button.inactive,
+#guest-increment-button.inactive,
+#guest-decrement-button.inactive:hover,
+#guest-increment-button.inactive:hover {
+    border: 1px solid var(--light_light_grey);
+    color: var(--light_light_grey);
+    cursor: not-allowed;
+}
+
+#guest-decrement-button.inactive:hover::before,
+#guest-increment-button.inactive:hover::before {
+    position: absolute;
+    font-size: larger;
+    z-index: 100;
 }
 
 /* SETTINGS BLOCK INPUTS */
