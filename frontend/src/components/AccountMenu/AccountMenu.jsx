@@ -5,6 +5,7 @@ import { activateRegisterModal } from '../../store/uiReducer';
 import { useDispatch, useSelector } from "react-redux"
 import { getCurrentUser } from '../../store/sessionsReducer';
 import { logoutUser } from '../../store/sessionsReducer';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 const AccountMenu = ({ handleMenuClick, margin, setMenuOpen }) => {
@@ -15,17 +16,20 @@ const AccountMenu = ({ handleMenuClick, margin, setMenuOpen }) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(getCurrentUser);
 
-
+    const history = useHistory()
 
     const renderAccountPage = () => window.location.href = '/account';
 
     const handleSignOut = async e => {
         e.preventDefault();
         dispatch(logoutUser());
-        window.location.reload(); 
+        setMenuOpen(false)
+        history.push('/');
+        // window.location.reload(); 
     }
 
     const handleRegister = () => {
+        setMenuOpen(false)
         handleMenuClick();
         dispatch(activateRegisterModal());
         requestAnimationFrame(() => {

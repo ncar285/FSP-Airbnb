@@ -1,5 +1,5 @@
 .or-text {
-    width: 40px;
+    margin: 0 1rem;
 }
 .line {
     height: 1px;
@@ -61,7 +61,7 @@
 
 /*! ICONS & BUTTONS */
 
-.button-icon, .demo-icon {
+.button-icon {
     position: absolute;
     left: 50px;
     display: flex;
@@ -81,14 +81,20 @@
     color: var(--dark_grey)
 }
 
-#demo-arrow {
+/* #demo-arrow {
     color: var(--brand-color);
     font-size: 30px;
     position: absolute;
     right: 50px;
+} */
+
+.quick-sign-up button .main {
+    display: flex;
+    align-items: center;
 }
 
-div.demo-icon{
-    position: absolute;
-    right: 50px;
+.demo-arrow {
+    font-size: 1.5rem;
 }
+
+

@@ -12,6 +12,8 @@ import { login } from "../../store/sessionsReducer";
 import { BsArrowRightCircleFill } from 'react-icons/bs'
 import { createUser } from "../../store/sessionsReducer";
 import {RxCross2} from "react-icons/rx"
+import { MdKeyboardArrowRight } from 'react-icons/md'
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const RegisterForm = () => {
@@ -28,6 +30,8 @@ const RegisterForm = () => {
     const [firstname, setFirstname] = useState('')
     const [lastname, setLastname] = useState('')
     const [password, setPassword] = useState('')
+
+    const history = useHistory()
     
     if (!display) return null
 
@@ -40,6 +44,7 @@ const RegisterForm = () => {
         const res = dispatch(login(user))
         if (res){
             dispatch(deactivateRegisterModal());
+            history.push('/account');
         } else {
             // return ['ERROR LOGGING IN => CREDENTIALS']
         }
@@ -174,10 +179,10 @@ const RegisterForm = () => {
                     <div className="quick-sign-up">
                         <form action="">
                             <button onClick={handleDemoLogin}>
-                                <div className="demo-icon">
+                                {/* <div className="demo-icon">
                                     <BsArrowRightCircleFill className="icon" id="demo-arrow"/>
-                                </div>
-                                <div className="main">Continue with Demo</div>
+                                </div> */}
+                                <div className="main">Login as Demo User <MdKeyboardArrowRight className="demo-arrow"/></div>
                             </button>
                         </form>
                     </div>

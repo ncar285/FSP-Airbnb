@@ -56,7 +56,7 @@ const NavBar = ({ tagsOn, searchType, barType}) => {
                     <img id="logo" src={logo} alt="fairbnb-logo" />
                 </div>
                 <div className="middle-search">
-                    <SearchBar searchType = {searchType} setSearchParams={setSearchParams}/>
+                    <SearchBar searchType = {searchType} setSearchParams={setSearchParams} setMenuOpen={setMenuOpen}/>
                 </div >
                 <div className='right-menu' style={{ right: dynamicStyle().margin}}>
                     <MenuButton handleMenuClick={handleMenuClick}/>
@@ -65,7 +65,7 @@ const NavBar = ({ tagsOn, searchType, barType}) => {
                 menuOpen &&
                 < AccountMenu margin = {dynamicStyle().margin} 
                 handleMenuClick = {handleMenuClick}
-                setMenuOpen = {setMenuOpen}/>
+                setMenuOpen = {setMenuOpen}/> 
                 }
             </div>
             <div className="lower-nav-bar">

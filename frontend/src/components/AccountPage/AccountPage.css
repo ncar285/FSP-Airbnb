@@ -11,26 +11,15 @@
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-
+    margin-right: 1rem;
 }
 
 .account-right {
     width: 60%;
     border: 1px solid black;
+    margin-right: 1rem;
 }
 
-
-
-.profile-block {
-    width: 350px;
-    height: 200px;
-    /* margin: 20px; */
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 20px;
-
-}
 
 .trips-header {
     font-size: 30px;
