@@ -6,6 +6,7 @@ import { useContext, useState } from 'react'
 import { SearchContext } from '../../../App'
 import { getListings } from '../../../store/listingsReducer'
 import { useHistory } from 'react-router-dom';
+import { FaSearch } from 'react-icons/fa'
 
 const SearchBar = ({ searchType, setSearchParams}) => {
 
@@ -19,7 +20,8 @@ const SearchBar = ({ searchType, setSearchParams}) => {
         setSearchString(e.target.value)
     }
 
-    const handleSearch = () => {
+    const handleSearch = (e) => {
+        e.preventDefault();
         history.push('/');
         dispatch(getListings({ search: searchString }));
         setSearchParams({ search: searchString });
@@ -48,20 +50,20 @@ const SearchBar = ({ searchType, setSearchParams}) => {
         )
     }else if ( searchType === "simple"){
         return (
-            <div 
-            // onClick={() => dispatch(activateSearchModal())} 
-            className="search-bar">
-                <div className="search-prompt">
-                    <input className='search-string'
-                    type="text" 
-                    onChange = {updateSearch}
-                    placeholder='Start your search' 
-                    value = {searchString}/>
+            <form onSubmit={handleSearch}>
+                <div className="search-bar">
+                    <div className="search-prompt">
+                        <input className='search-string'
+                        type="text" 
+                        onChange={updateSearch}
+                        placeholder='Start your search' 
+                        value={searchString}/>
+                    </div>
+                    <button className="s-button" type="submit">
+                        <FaSearch className='search-icon'/>
+                    </button>
                 </div>
-                <div className="s-button" onClick={handleSearch}>
-                    <img src={sButton} alt="" />
-                </div>
-            </div>
+            </form>
         )
     }
 }

@@ -49,6 +49,7 @@
 }
 
 .s-button {
+    all: unset;
     height: 30px;
     width: 30px;
     margin: 7.5px;
@@ -57,11 +58,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
-.s-button img {
-    height: 40%;
-    width: 40%;
+.search-icon {
+    font-size: 0.75rem;
 }
 
 .search-prompt input{
