@@ -1,20 +1,19 @@
 import './ListingInfo.css'
 import placeOffers from '../../assets/place-offers.png'
 import lisingInfo from '../../assets/bellow-subheader.png'
-// import DateRange from '../Calendar/DateRangeComp';
-import { Calendar } from 'react-date-range';
 import ShowDateRange from '../Calendar/ShowDateRange';
-// import DateRangePicker from '../Calendar/DateRangePickerComp';
-// import CalendarComp from '../Calendar/CalendarComp';
-// import DateRangeComp from '../Calendar/DateRangeComp';
-// import DateRangePickerComp from '../Calendar/DateRangeComp';
-// import DateRangeReserve from '../Calendar/DateRangeReserve';
+import { useState } from 'react';
+import { RxCross2 } from 'react-icons/rx'
+import { MdKeyboardArrowRight } from 'react-icons/md'
 
 const ListingInfo = ({ listing, booking, setBooking, duration,  range, setRange }) => {
 
-    let style = "height: 200px";
+    const [descriptionModal, setDescriptionModal] = useState(false)
     const revealDescription = () => {
-        style = "";
+        setDescriptionModal(true)
+    }
+    const hideDescription = () => {
+        setDescriptionModal(false)
     }
 
     return (
@@ -43,9 +42,11 @@ const ListingInfo = ({ listing, booking, setBooking, duration,  range, setRange 
                 <img src={lisingInfo} alt="" />
             </div>
             <div className='listing-description'>
-                <p style={{style}}>{listing.description}</p>
-                {/* <div onClick={revealDescription}>Show More</div> */}
-                <a href="">Show More </a>
+                <p className='description-preview'>{listing.description}</p>
+                <div className='elipses'><p>...</p></div>
+                <div className="show-more" onClick={revealDescription}>Show More <MdKeyboardArrowRight className='arrow-more'/></div>
+
+
 
             </div>
             <div className='listing-amenities'>
@@ -70,6 +71,19 @@ const ListingInfo = ({ listing, booking, setBooking, duration,  range, setRange 
                     />
                 </div>
             </div>
+
+
+            {descriptionModal && 
+                <div className='description-modal-background' onClick={hideDescription}>
+                    <div className='description-modal' onClick={(e) => e.stopPropagation()}>
+                        <button className='close-button'onClick={hideDescription}><RxCross2/></button>
+                        <div className='description-container'>
+                            <h1>About this space</h1>
+                            <p className='listing-description'>{listing.description}</p>
+                        </div>
+                    </div>
+                </div>
+            }
 
         </div>
     )
