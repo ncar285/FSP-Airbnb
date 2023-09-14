@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-
+  
   namespace :api, defaults: {format: :json} do 
     resources :users, only: [:show, :create, :index] do
       collection do
@@ -12,7 +12,11 @@ Rails.application.routes.draw do
       end
     end
     resource :session, only: [:show, :create, :destroy]
-    resources :listings, only: [:show, :index]
+    resources :listings, only: [:show, :index] do 
+      collection do 
+        get 'mapsIndex'
+      end
+    end
     resources :reviews, only: [:show, :create, :update, :destroy]
     resources :bookings, only: [:show, :create, :update, :destroy]
   end

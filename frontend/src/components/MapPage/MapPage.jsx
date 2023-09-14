@@ -1,6 +1,8 @@
 import { FaListUl } from "react-icons/fa"
-import './MapPage.css'
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
+import { Wrapper } from "@googlemaps/react-wrapper";
+import ListingsMap from "./ListingsMap";
+import './MapPage.css'
 
 const MapPage = () => {
 
@@ -14,10 +16,9 @@ const MapPage = () => {
 
         <>
         <div className='full-screen-map-container'>
-
-
-
-
+            <Wrapper apiKey={"YOUR_API_KEY"}>
+                <ListingsMap />
+            </Wrapper>
         </div>
 
         <button className='toggle-map-button' onClick={mapMode}>
