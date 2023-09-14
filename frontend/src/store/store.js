@@ -8,6 +8,9 @@ import usersReducer from './usersReducer';
 import bookingsReducer from './bookingsReducer';
 import { errorsReducer } from './errorsReducer';
 
+// ! unnstall this
+import { createLogger } from 'redux-logger';
+
 
 export const rootReducer = combineReducers({ 
     ui: uiReducer,
@@ -19,6 +22,9 @@ export const rootReducer = combineReducers({
     errors: errorsReducer
 })
 
+// ! delete this
+const logger = createLogger();
+
 export default function configureStore(preloadedState={}){
-    return createStore(rootReducer, preloadedState, applyMiddleware(thunk))
+    return createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger))
 }

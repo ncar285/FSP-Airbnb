@@ -12,11 +12,12 @@ const MapPage = () => {
         history.push('/')
     }
 
+
     return (
 
         <>
         <div className='full-screen-map-container'>
-            <Wrapper apiKey={"YOUR_API_KEY"}>
+            <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
                 <ListingsMap />
             </Wrapper>
         </div>

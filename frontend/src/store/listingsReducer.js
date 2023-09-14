@@ -46,7 +46,7 @@ export const getListings = params => async dispatch => {
 
 export const fetchMapIndex = () => async dispatch => {
   try {
-    const res = await fetch(`/api/listings/mapIndex`);
+    const res = await fetch(`/api/listings/map_index`);
     if (res.ok) {
       const data = await res.json();
       dispatch(receiveListingMapData(data));
@@ -86,7 +86,7 @@ export const selectListings = state => Object.values(state.listings);
 
 export const selectListing = listingId => state => state.listings[listingId] || null;
 
-export const selectMapData = state => state.listings.mapData;
+// export const selectMapData = state => state.listings.mapData;
 
 // export const getListingRevews = listingId => state.rev
 
