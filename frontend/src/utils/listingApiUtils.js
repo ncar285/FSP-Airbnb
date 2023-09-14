@@ -22,7 +22,7 @@ export const fetchListings = params => {
       });
     }
   }
-  // debugger
+
   return fetch(baseUrl)
     .then(res => {
       if(res.ok) {
@@ -45,3 +45,4 @@ export const fetchOneListing = async listingId => {
     // error handling
   }
 }
+

@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './ListinigsMap.css'
+import { useSelector } from 'react-redux'
+import { selectMapData } from '../../store/listingsReducer'
 
 
 const ListingsMap = () => {
@@ -10,6 +12,21 @@ const ListingsMap = () => {
     const mapOptions = {zoom: 4, center: myLatLng}
 
     const markers = useRef(null)
+
+    // const mapData = await fetchMapIndex()
+
+    const mapData = useSelector(selectMapData)
+
+
+    useEffect(()=>{
+        const getData = async () => {
+            await fetchMapIndex()
+        }
+        if (!markers){
+            getData()
+        }
+    },[])
+
 
 
     

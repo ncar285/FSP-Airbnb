@@ -19,9 +19,9 @@ class Api::ListingsController < ApplicationController
 
 
     def map_index
-        @listings = Listing.select(:id, :city, :state, :price, :address, :latitude, :longitude).all
+        @listings = Listing.select(:id, :city, :state, :country, :price, :address, :latitude, :longitude).all
         render :mapsIndex
-      end
+    end
 
     def show 
         # @listing = Listing.includes(reviews: :user).find_by(id: params[:id])

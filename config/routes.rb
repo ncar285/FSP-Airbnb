@@ -14,18 +14,21 @@ Rails.application.routes.draw do
     resource :session, only: [:show, :create, :destroy]
     resources :listings, only: [:show, :index] do 
       collection do 
-        get 'mapsIndex'
+        get 'map_index'
       end
     end
     resources :reviews, only: [:show, :create, :update, :destroy]
     resources :bookings, only: [:show, :create, :update, :destroy]
   end
 
+  # get '/api/listings/mapsIndex', to: 'listings#map_index'
+
   post 'api/test', to: 'application#test'
 
   get '*path',
     to: 'static_pages#frontend', constraints: 
     lambda {|req| !req.xhr? && req.format.html? }
+
 
   root to: 'static_pages#frontend'
 
