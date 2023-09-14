@@ -6,6 +6,7 @@ import BookingItem from "../BookingItem/BookingItem"
 import { getBookings } from "../../store/bookingsReducer"
 import './AccountPage.css'
 import UserWelcomeHome from "../UserWelcomeHome/UserWelcomeHome"
+import OldBooking from "../BookingItem/OldBooking"
 
 const AccountPage = () => {
 
@@ -38,6 +39,32 @@ const AccountPage = () => {
 
                 <div className="account-left">
                     <UserWelcomeHome data={data}/>
+
+                    <div className="personal-info">
+                        <div className="pi-header">Personal Info</div>
+                        <div className="info-block">
+                            <div className="ibhd">
+                                <p className="ibhd-hed">Legal Name</p>
+                                <p>{`${user.firstname} ${user.lastname}`}</p>
+                            </div>
+                            <div class="tooltip-wrapper">
+                                <div className="ibhde">Edit</div>
+                                <div class="tooltip">Can't edit demo user, sign up to use this feature</div>
+                            </div>
+                        </div>
+                        <div className="pi-spacer"></div>
+                        <div className="info-block">
+                            <div className="ibhd">
+                                <p className="ibhd-hed">Email address</p>
+                                <p>{`${user.email}`}</p>
+                            </div>
+                            <div class="tooltip-wrapper">
+                                <div className="ibhde">Edit</div>
+                                <div class="tooltip">Can't edit demo user, sign up to use this feature</div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
                 <div className="account-right">
@@ -64,18 +91,27 @@ const AccountPage = () => {
                         }
                     </div>
 
-                    { previousBookings &&
-                        <div className="booking-upcoming">Past reservations</div>
-                    }
-                    <div className='bookings-container'>
-                        {previousBookings &&
-                        <div>{Object.values(previousBookings).map((booking)=><BookingItem booking={booking} /> )}</div>
-                        }
-                    </div>
+                   
 
                 </div>
 
+                
+
             </div>
+
+            <div className="past-reservations-lower">
+                { previousBookings &&
+                    <div className="booking-upcoming">Past reservations</div>
+                }
+
+                <div className='bookings-container-lower'>
+                    {previousBookings &&
+                        <div>{Object.values(previousBookings).map((booking)=>
+                            <OldBooking booking={booking}/> )}</div>
+                    }
+                </div>
+            </div>
+
             
         </>
     )

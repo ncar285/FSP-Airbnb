@@ -1,5 +1,11 @@
 json.extract! @user, :id, :email,  :firstname, :lastname, :created_at, :updated_at
 
+json.reviews do
+    json.array! @user.reviews do |review|
+        json.extract! review, :id, :listing_id, :rating, :body
+    end
+end
+
 json.photo_url @user.photo.attached? ? url_for(@user.photo) :  nil
 
 json.bookings do

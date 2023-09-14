@@ -9,6 +9,7 @@ import DeleteReviewModal from './components/DeleteReviewModal/DeleteReviewModal.
 import EditReviewModal from './components/EditReviewModal/EditReviewModal.jsx';
 import AccountPage from './components/AccountPage/AccountPage.jsx';
 import Footer from './components/Footer/Footer.jsx';
+import MapPage from './components/MapPage/MapPage.jsx';
 
 export const SearchContext = React.createContext();
 
@@ -26,6 +27,12 @@ function App() {
             <Splash />
             <Footer alwaysthere={true}/>
           
+        </Route>
+        <Route path="/map">
+            <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
+            <RegisterForm />
+            <MapPage/>
+            <Footer/>
         </Route>
         <Route path="/listing/:listingId">
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>

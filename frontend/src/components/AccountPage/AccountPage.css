@@ -1,14 +1,12 @@
 .account-show-page{
     margin: 0px var(--show_margin);
-    margin-top: 70px;
+    margin-top: 5rem;
     display: flex;
     justify-content: space-between;
-    /* width: 100%; */
 }
 
 .account-left {
     width: 40%;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     margin-right: 1rem;
@@ -17,7 +15,7 @@
 .account-right {
     width: 60%;
     /* border: 1px solid black; */
-    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 
@@ -30,3 +28,95 @@
     margin-top: 40px;
     margin-bottom: 15px;
 }
+
+/* ! personal info */
+
+.personal-info {
+    position: sticky;
+    top: 25rem;
+}
+
+.info-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pi-header{
+    font-family: 'airbnb5';
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+.personal-info{
+    font-family: 'airbnb2';
+}
+
+.ibhd-hed {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.pi-spacer {
+    height: 1px;
+    background-color: #cccc;
+    margin: 2rem 0;
+}
+
+.ibhde {
+    font-family: 'airbnb5';
+    text-decoration: underline;
+}
+
+.ibhde:hover {
+    cursor: pointer;
+}
+
+
+/* ! tool tip trial */
+
+.tooltip-wrapper {
+    position: relative;
+}
+
+.tooltip {
+    display: none;
+
+    width: 7.5rem;
+
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-80%) translateY(-0.5rem);
+    
+    background-color: #333;
+    
+    color: white;
+    
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+
+    font-family: 'airbnb4';
+    font-size: 1rem;
+    z-index: 100;
+}
+
+.tooltip-wrapper:hover .tooltip {
+    display: block;
+}
+
+
+/* ! old bookings */
+
+.past-reservations-lower {
+    margin-left: var(--show_margin);
+    margin-right: var(--show_margin);
+    /* background-color: green; */
+}
+
+.bookings-container-lower div{
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+

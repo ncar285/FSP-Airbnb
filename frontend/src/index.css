@@ -140,3 +140,31 @@
 body {
     font-family: 'airbnb5', sans-serif;
 }
+
+.toggle-map-button {
+    all: unset;
+    position: fixed;
+    bottom: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #282424;
+    color: white;
+    z-index: 102;
+    font-size: 0.8rem;
+    font-family: 'airbnb5';
+    padding: 1rem;
+    border-radius: 1.4rem;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.toggle-map-icon {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.toggle-map-button:hover {
+    cursor: pointer;
+    transform: translateX(-50%) scale(1.05);
+}

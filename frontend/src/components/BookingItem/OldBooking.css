@@ -1,0 +1,80 @@
+.obi-wrap{
+    width: 33.33%;
+    /* padding-right: 3rem; */
+    height: min-content;
+    display: flex;
+    box-shadow: var(--strong_shadow);
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+
+/* ! LHS image */
+
+.obi-details{
+    background-color: white;
+    width: 50%;
+    padding: 1rem;
+}
+
+
+.obi-image {
+    width: 100%;
+    /* height: 100%; */
+    /* min-height: 100%; */
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+.obi-image {
+    height: 5rem;
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.booking-details p {
+    font-family: 'airbnb4';
+    font-size: 0.75rem;
+    margin: 0.5rem 0;
+}
+
+.booking-details .BDD-date,
+.booking-details .BDD-address {
+    font-size: 1rem;
+}
+
+.booking-details .BDD-address {
+    line-height: 1.25rem;
+}
+
+
+.booking-item-spacer {
+    height: 1px;
+    background-color: #cccc;
+    margin: 1rem 0;
+}
+
+.booking-details-dates {
+    display: flex;
+}
+
+.BDD-left { 
+    min-width: 20%;
+    padding-right: 1rem;
+    border-right: #cccc 1px solid;
+}
+
+.BDD-right {
+    padding-left: 1rem;
+}
+

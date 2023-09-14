@@ -1,6 +1,73 @@
 .profile-block {
-    height: 200px;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 20px;
+    position: sticky;
+    top: 10rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: var(--strong_shadow);
+    display: flex;
+}
+
+.PB-left-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+/* ! left side of the user's profilee block */
+
+.PB-user-name, 
+.PB-val{
+    font-family: 'airbnb5';
+    font-size: 2rem;
+}
+
+.PB-user-name {
+    text-align: center;
+}
+
+.user-profile-image {
+    height: 7.5rem;
+    width: 7.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.PB-default-profile {
+    color: var(--dark_grey);
+    font-size: 5rem;
+}
+
+.user-profile-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ! right side of the users profile block */
+
+.PB-right-side {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.PB-RHS-containier {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+
+.show-review-dets p, 
+.show-time-on-fbnb p,
+.PB-left-side p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 'airbnb5';
 }
