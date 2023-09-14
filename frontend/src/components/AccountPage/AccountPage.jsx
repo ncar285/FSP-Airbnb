@@ -26,6 +26,12 @@ const AccountPage = () => {
         return <p>loading</p>;
     }
 
+    const today = new Date()
+    const currentBookings = Object.values(bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today)
+    // .sort(booking => booking.startDate)
+    const upcomingsBookings = Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate)
+    const previousBookings = Object.values(bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate)
+
     return (
         <>
             <div className="account-show-page">
@@ -37,14 +43,33 @@ const AccountPage = () => {
                 <div className="account-right">
                     <div className="trips-header">Trips</div>
 
-                    { bookings ? 
+                    { currentBookings && 
+                        <div className="booking-upcoming">Current accommodation</div>
+                    }
+
+                    <div className='bookings-container'>
+                        {currentBookings &&
+                        <div>{Object.values(currentBookings).map((booking)=><BookingItem booking={booking} /> )}</div>
+                        }
+                    </div>
+
+                    { upcomingsBookings ? 
                         <div className="booking-upcoming">Upcoming reservations</div>
                         :
-                        <div className="booking-upcoming">You have no pcoming reservations</div>
+                        <div className="booking-upcoming">You have no upcoming reservations</div>
                     }
                     <div className='bookings-container'>
-                        {bookings &&
-                        <div>{Object.values(bookings).map((booking)=><BookingItem booking={booking} /> )}</div>
+                        {upcomingsBookings &&
+                        <div>{Object.values(upcomingsBookings).map((booking)=><BookingItem booking={booking} /> )}</div>
+                        }
+                    </div>
+
+                    { previousBookings &&
+                        <div className="booking-upcoming">Past reservations</div>
+                    }
+                    <div className='bookings-container'>
+                        {previousBookings &&
+                        <div>{Object.values(previousBookings).map((booking)=><BookingItem booking={booking} /> )}</div>
                         }
                     </div>
 

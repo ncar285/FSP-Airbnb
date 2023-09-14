@@ -35,11 +35,10 @@ const RegisterForm = () => {
     
     if (!display) return null
 
-
     const handleDemoLogin = async() => {
         const user = {
-            email: "demis@user.io",
-            password: "password"
+            email: "demo@user.io",
+            password: "tomandjerryarethegreatest"
         }
         const res = dispatch(login(user))
         if (res){

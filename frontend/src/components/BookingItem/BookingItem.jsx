@@ -27,16 +27,52 @@ const BookingItem = ({ booking }) => {
     //     <FaEdit onClick = {handleEditClick}/>
     // </div>
 
+
+    const startDate = new Date(booking.startDate);
+    const startDay = startDate.getDate();
+    const startMonth = startDate.toLocaleString('en-US', { month: 'short' });
+
+    const year = startDate.getFullYear();
+
+    const endDate = new Date(booking.endDate);
+    const endDay = endDate.getDate();
+    const endMonth = endDate.toLocaleString('en-US', { month: 'short' });
+
+    const formattedStartDate = `${startDay} ${startMonth}`;
+    const formattedEndDate = `${endDay} ${endMonth}`;
+    const formattedYear = `${year}`;
+
+
+    const longAddress = `${booking.address}, ${booking.city}`
+    const country = (booking.state === 'California') ? 'United States' : booking.state
+
+
+  
     return (
         <>
             <div className="booking-item">
                 <div className='booking-details'>
 
+                    <div>{booking.city} {booking.state}</div>
+                    <p>Entire rental unit hosted by Amanda</p>
+                    <div className="booking-item-spacer"></div>
+
+                    <div className='booking-details-dates'>
+                        <div className='BDD-left'>
+                            <p className='BDD-date'>{formattedStartDate} -</p>
+                            <p className='BDD-date'>{formattedEndDate}</p>
+                            <p>{formattedYear}</p>
+                        </div>
+                        <div className='BDD-right'>
+                            <p className='BDD-address'>{longAddress}</p>
+                            <p>{country}</p>
+                        </div>
+                    </div>
+
                 </div>
                 <div className='booking-item-image'>
                     <img src={booking.photoUrl} alt="" 
                     className='booking-image'/>
-
                 </div>
                
             </div>

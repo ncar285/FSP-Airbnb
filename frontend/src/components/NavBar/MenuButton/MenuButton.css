@@ -16,19 +16,26 @@
 }
 
 .list, .profile-icon {
-    height: 100%;
-    width: 50%;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
 
-#default-profile, .profile-icon img {
+#default-profile {
     color: var(--dark_grey);
     font-size: 60px;
     height: 30px;
     border-radius: 50%;
+}
+
+#default-profile, .profile-icon img {
+    height: 100%;
+    object-fit: cover;
 }
 
 .menu-list{

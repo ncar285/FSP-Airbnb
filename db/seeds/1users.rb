@@ -3,14 +3,14 @@ require 'csv'
 #! CREATE THE DEMO USER
 
 puts "Creating Demo user..."
-demis = User.create!(
-  firstname: 'Demis', 
-  lastname: 'Hassabis', 
-  email: 'demis@user.io', 
-  password: 'password'
+tom = User.create!(
+  firstname: 'Thomas', 
+  lastname: 'Jasper Cat, Sr', 
+  email: 'demo@user.io', 
+  password: 'tomandjerryarethegreatest'
 )
-file = File.open("app/assets/images/demis.jpg")
-demis.photo.attach(io: file, filename: "demis.jpg")
+file = File.open("app/assets/images/tom1.jpg")
+tom.photo.attach(io: file, filename: "tom1.jpg")
 puts "Done!"
 
 #! SEED 100 USERS
