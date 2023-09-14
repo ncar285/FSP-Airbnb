@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 import { getListingRevews } from "../../store/reviewsReducer"
 
 const ListingItem = ({ listing, key }) => {
-    const photoCount = listing.photoUrls.length
+    const photoCount = listing.photoUrls?.length
     const listingImagesRef = useRef(null);
     const stringPrice = Math.floor(listing.price).toLocaleString()
     const [leftArrow, setLeftArrow] = useState(false)
@@ -19,13 +19,13 @@ const ListingItem = ({ listing, key }) => {
     useEffect(()=>{
         if (currentPhoto === 1){
             setLeftArrow(false)
-        } else if (currentPhoto === listing.photoUrls.length){
+        } else if (currentPhoto === listing.photoUrls?.length){
             setRightArrow(false)
         }
     },[currentPhoto])
 
     useEffect(()=>{
-        if (currentPhoto > 1 && currentPhoto < listing.photoUrls.length){
+        if (currentPhoto > 1 && currentPhoto < listing.photoUrls?.length){
             setLeftArrow(true)
             setRightArrow(true)
         }

@@ -1,5 +1,6 @@
 import "./NavBar.css"
-import logo from "../../assets/airbnb.svg"
+import logo from "../../assets/fairbnb.svg"
+// import fairbnb from "../assets/fairbnb.png"
 import AccountMenu from "../AccountMenu/AccountMenu.jsx"
 import { useContext, useState } from "react";
 import SearchBar from "./Search/SearchBar";

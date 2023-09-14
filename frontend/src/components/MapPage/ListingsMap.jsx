@@ -8,8 +8,7 @@ const ListingsMap = () => {
     const dispatch = useDispatch();
     const [map, setMap] = useState(null)
     const mapRef = useRef(null)
-    // const myLatLng = {lat: 37.755810, lng: -122.416890}
-    const mapOptions = {zoom: 4, center: {lat: 37.755810, lng: -122.416890}}
+    const mapOptions = {zoom: 4, center: {lat: 35, lng: -70}}
     const markers = useRef({})
     const mapData = useSelector(state => state.listings.mapData)
 
@@ -31,7 +30,21 @@ const ListingsMap = () => {
                 const marker = new window.google.maps.Marker({
                     position: {lat: listing.latitude, lng: listing.longitude},
                     map,
-                    title: listing.price
+                    title: `${listing.price}`,
+                    label: {
+                        text: `$${listing.price}`,  // Price
+                        color: 'white',  // Text color
+                        fontSize: '14px',  // Font size
+                        fontWeight: 'bold'  // Font weight
+                    },
+                    icon: {
+                        path: window.google.maps.SymbolPath.CIRCLE,  // Shape
+                        scale: 10,  // Size
+                        strokeColor: 'blue',  // Border color
+                        strokeWeight: 4,  // Border thickness
+                        fillColor: 'blue',  // Background color
+                        fillOpacity: 1  // Opacity
+                    }
                 });
                 markers.current[listings.id] = marker
             }))
@@ -41,17 +54,9 @@ const ListingsMap = () => {
     return  (
         <div 
             className='map-object'
-            ref={mapRef}>
-                
+            ref={mapRef}>     
         </div>
     )
-
-
-    // return  (
-    //     <div ref={mapRef}>
-    //             map
-    //     </div>
-    // )
 
 }
 
