@@ -7,9 +7,10 @@
 #  updated_at :datetime         not null
 #  user_id    :bigint           not null
 #  listing_id :bigint           not null
-#  start_date :string           not null
-#  end_date   :string           not null
+#  start_date :date             not null
+#  end_date   :date             not null
 #  guests     :integer          not null
+#  price      :integer
 #
 class Booking < ApplicationRecord
 

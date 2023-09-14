@@ -19,6 +19,9 @@
 #  state       :string
 #  city        :string
 #  tag_line    :string
+#  latitude    :float
+#  longitude   :float
+#  country     :string
 #
 class Listing < ApplicationRecord
 
@@ -26,7 +29,7 @@ class Listing < ApplicationRecord
     
     validates_inclusion_of :pets, in: [true, false]
     
-    # validates :latitude, uniqueness: { scope: :longitude }
+    validates :latitude, uniqueness: { scope: :longitude }
 
     validates :address, uniqueness: true
 

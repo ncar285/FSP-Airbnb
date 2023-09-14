@@ -22,6 +22,9 @@ csv.each do |row|
   listing.price = row['price'].to_i
   listing.state = row['state']
   listing.city = row['city']
+  listing.country = row['country']
+  listing.longitude = row['longitude']
+  listing.latitude = row['latitude']
   listing.address = row['address']
   listing.postcode = row['postcode']
   listing.guests = row['guests'].to_i

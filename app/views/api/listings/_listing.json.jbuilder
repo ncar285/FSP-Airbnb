@@ -1,4 +1,4 @@
-json.extract! listing, :id, :tag_line, :city, :state, :price, :address
+json.extract! listing, :id, :tag_line, :city, :state,  :country, :price, :address
 
 review_ratings = listing.reviews.map{ |review| review.rating }
 if review_ratings.count > 0

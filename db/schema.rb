@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_24_012936) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_14_201411) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,8 +72,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_24_012936) do
     t.string "state"
     t.string "city"
     t.string "tag_line"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "country"
     t.index ["address"], name: "index_listings_on_address", unique: true
     t.index ["guests"], name: "index_listings_on_guests"
+    t.index ["latitude", "longitude"], name: "index_listings_on_latitude_and_longitude", unique: true
     t.index ["owner_id"], name: "index_listings_on_owner_id"
     t.index ["price"], name: "index_listings_on_price"
     t.index ["title"], name: "index_listings_on_title"
