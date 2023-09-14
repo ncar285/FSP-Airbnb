@@ -29,10 +29,9 @@ function App() {
           
         </Route>
         <Route path="/map">
-            <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
+            <NavBar tagsOn={false} searchType={"simple"} barType={"home"}/>
             <RegisterForm />
             <MapPage/>
-            <Footer/>
         </Route>
         <Route path="/listing/:listingId">
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
