@@ -3,13 +3,28 @@
     margin-top: 5rem;
     display: flex;
     justify-content: space-between;
+    
 }
+
+
 
 .account-left {
     width: 40%;
     display: flex;
     flex-direction: column;
     margin-right: 1rem;
+}
+
+.sticky-container{
+    /* height: 800px; */
+    position: sticky;
+    top: 5rem;
+    flex-direction: column;
+    /* margin-right: 1rem; */
+    margin: 4rem 0;
+    /* border: 1px solid black; */
+
+
 }
 
 .account-right {
@@ -25,15 +40,17 @@
 
 .booking-upcoming{
     font-size: 20px;
-    margin-top: 40px;
-    margin-bottom: 15px;
+    /* margin-top: 40px; */
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
 }
 
 /* ! personal info */
 
 .personal-info {
-    position: sticky;
-    top: 25rem;
+    /* position: sticky;
+    top: 25rem; */
+    /* margin-top: 2rem; */
 }
 
 .info-block {
@@ -110,10 +127,10 @@
 .past-reservations-lower {
     margin-left: var(--show_margin);
     margin-right: var(--show_margin);
-    /* background-color: green; */
+    margin-bottom: 2.5rem;
 }
 
-.bookings-container-lower div{
+.obi-items-list{
     /* background-color: yellow; */
     display: flex;
     justify-content: space-between;

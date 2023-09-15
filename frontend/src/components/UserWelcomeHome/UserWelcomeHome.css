@@ -1,6 +1,6 @@
 .profile-block {
-    position: sticky;
-    top: 10rem;
+    /* position: sticky;
+    top: 10rem; */
     border-radius: 1rem;
     padding: 1rem;
     box-shadow: var(--strong_shadow);

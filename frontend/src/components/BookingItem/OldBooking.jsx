@@ -27,6 +27,7 @@ const OldBooking = ({ booking }) => {
     return (
         <>
             <div className="obi-wrap">
+
                 <div className='obi-details'>
                     <div className='obi-image'>
                         <img src={booking.photoUrl} alt="" 
@@ -34,16 +35,12 @@ const OldBooking = ({ booking }) => {
                     </div>
 
 
-                    <div className='booking-details-dates'>
-                        <div className='BDD-left'>
-                            <p className='BDD-date'>{booking.city}</p>
-                            <p className='BDD-date'>{`Hosted by ${booking.owner}`}</p>
+                    <div className='obi-details'>
+                        <div className='obi-left'>
+                            <p id='obi-place'>{booking.city}</p>
+                            <p className='obi-hosted-by'>{`Hosted by ${booking.owner}`}</p>
 
-                            <p>{`${formattedStartDate} - ${formattedEndDate}`}</p>
-                        </div>
-                        <div className='BDD-right'>
-                            <p className='BDD-address'>{longAddress}</p>
-                            <p>{country}</p>
+                            <p className='obi-date'>{`${formattedStartDate} - ${formattedEndDate}`}</p>
                         </div>
                     </div>
 

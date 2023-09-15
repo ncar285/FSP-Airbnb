@@ -4,9 +4,9 @@ import { fetchUserShow, selectUserData } from "../../store/usersReducer"
 import { useEffect } from "react"
 import BookingItem from "../BookingItem/BookingItem"
 import { getBookings } from "../../store/bookingsReducer"
-import './AccountPage.css'
 import UserWelcomeHome from "../UserWelcomeHome/UserWelcomeHome"
 import OldBooking from "../BookingItem/OldBooking"
+import './AccountPage.css'
 
 const AccountPage = () => {
 
@@ -38,7 +38,11 @@ const AccountPage = () => {
             <div className="account-show-page">
 
                 <div className="account-left">
+
+                    <div className="sticky-container">
+
                     <UserWelcomeHome data={data}/>
+                    
 
                     <div className="personal-info">
                         <div className="pi-header">Personal Info</div>
@@ -62,6 +66,8 @@ const AccountPage = () => {
                                 <div className="ibhde">Edit</div>
                                 <div class="tooltip">Can't edit demo user, sign up to use this feature</div>
                             </div>
+                        </div>
+
                         </div>
 
                     </div>
@@ -106,7 +112,7 @@ const AccountPage = () => {
 
                 <div className='bookings-container-lower'>
                     {previousBookings &&
-                        <div>{Object.values(previousBookings).map((booking)=>
+                        <div className="obi-items-list">{Object.values(previousBookings).map((booking)=>
                             <OldBooking booking={booking}/> )}</div>
                     }
                 </div>

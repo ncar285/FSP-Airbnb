@@ -1,38 +1,18 @@
 .obi-wrap{
-    width: 33.33%;
-    /* padding-right: 3rem; */
-    height: min-content;
+    min-width: 30%;
+    /* height: 8rem; */
+    margin: 1rem  0 1rem 1rem;
+    /* border-radius: 1rem; */
+    /* border: 1px solid black; */
+}
+.obi-details{
     display: flex;
-    box-shadow: var(--strong_shadow);
-    margin-bottom: 1.5rem;
-    border-radius: 1rem;
-    overflow: hidden;
+    background-color: white;
+    align-items: center;
 }
 
 
 /* ! LHS image */
-
-.obi-details{
-    background-color: white;
-    width: 50%;
-    padding: 1rem;
-}
-
-
-.obi-image {
-    width: 100%;
-    /* height: 100%; */
-    /* min-height: 100%; */
-    height: auto;
-    object-fit: cover;
-}
-
-
-
-
-
-
-
 
 .obi-image {
     height: 5rem;
@@ -40,12 +20,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: cover;
+    /* padding-right: 1rem; */
+    border-radius: 0.5rem;
 }
 
-.booking-details p {
+
+/* ! RHS DDETAIls */
+
+.obi-left {
+    margin-left: 1rem;
+}
+
+.obi-left p {
     font-family: 'airbnb4';
     font-size: 0.75rem;
     margin: 0.5rem 0;
+}
+
+#obi-place {
+    font-size: 1rem;
+    font-family: 'airbnb5';
 }
 
 .booking-details .BDD-date,
