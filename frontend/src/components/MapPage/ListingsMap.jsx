@@ -12,6 +12,17 @@ const ListingsMap = () => {
     const markers = useRef({})
     const mapData = useSelector(state => state.listings.mapData)
 
+    const [selectedListing, setSelectedListing] = useState(null)
+
+    const selectedListingRef = useRef(selectedListing);
+
+    useEffect(() => {
+        selectedListingRef.current = selectedListing;
+    }, [selectedListing]);
+
+    // console.log(selectedListing)
+    console.log("main document!",selectedListing)
+
     useEffect(() => {
         dispatch(fetchMapIndex());
     }, []);
@@ -23,6 +34,20 @@ const ListingsMap = () => {
         }
     },[map])
 
+
+
+
+
+    const svgMarker = {
+        path: "M -8 -5 L 8 -5 A 5 5 0 0 1 8 5 L -8 5 A 5 5 0 0 1 -8 -5 Z",
+        scale: 2,
+        strokeColor: 'white',
+        fillColor: 'white',
+        fillOpacity: 1,
+        strokeWeight: 1,
+        rotation: 0,
+    };
+
     useEffect(()=>{
         if (mapData && map){
             const listings = Object.values(mapData)
@@ -32,24 +57,72 @@ const ListingsMap = () => {
                     map,
                     title: `${listing.price}`,
                     label: {
-                        text: `$${listing.price}`,  // Price
-                        color: 'white',  // Text color
-                        fontSize: '14px',  // Font size
-                        fontWeight: 'bold'  // Font weight
+                        text: `$${listing.price}`,
+                        color: 'black',
+                        fontSize: '14px',
+                        fontWeight: 'bold'
                     },
-                    icon: {
-                        path: window.google.maps.SymbolPath.CIRCLE,  // Shape
-                        scale: 10,  // Size
-                        strokeColor: 'blue',  // Border color
-                        strokeWeight: 4,  // Border thickness
-                        fillColor: 'blue',  // Background color
-                        fillOpacity: 1  // Opacity
-                    }
+                    icon: svgMarker,
+                    id: listing.id
                 });
-                markers.current[listings.id] = marker
+                marker.addListener("click", ()=>toggleColor(marker));
+                markers.current[listing.id] = marker
             }))
         }
     },[mapData, map])
+
+
+    const toggleColor = (marker) => { 
+        const oldSelectedListing = selectedListingRef.current;
+        const oldMarker = markers.current[oldSelectedListing];
+        if (oldSelectedListing !== null){
+            if (oldSelectedListing === marker.id){
+                // we are unselecting (double click)
+                unselectMarker(oldMarker)
+                setSelectedListing(null);
+            }else {
+                // we are unselecting the old and selecting the new
+                unselectMarker(oldMarker)
+                selectMarker(marker)
+            }
+        } else {
+            selectMarker(marker)
+        }
+    }
+
+    const selectMarker = (marker) => {
+        setSelectedListing(marker.id);
+        marker.setLabel({
+            ...marker.getLabel(),
+            color: 'white',
+            fontSize: '18px',
+        });
+        marker.setIcon({
+            ...marker.getIcon(),
+            fillColor: 'black',
+            strokeColor: 'black',
+            scale: 2.5,
+        });
+    }
+
+    const unselectMarker = (marker) => {
+        marker.setLabel({
+            ...marker.getLabel(),
+            color: 'black',
+            fontSize: '14px',
+        });
+        marker.setIcon({
+            ...marker.getIcon(),
+            fillColor: 'white',
+            strokeColor: 'white',
+            scale: 2,
+        });
+    }
+
+
+
+      
+    window.initMap = map;
 
     return  (
         <div 
