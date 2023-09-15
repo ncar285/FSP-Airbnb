@@ -15,7 +15,7 @@
 .booking-item:hover {
     transform: scale(1.05);
     cursor: pointer;
-    z-index: 100;
+    /* z-index: 100; */
 }
 
 /* ! left half of the booking component */
@@ -79,6 +79,28 @@
     align-items: center;
 }
 
+.crud-buttons .cancel {
+    border-radius: 1rem;
+    border: 2px solid var(--brand-color);
+    color: var(--brand-color);
+    background-color: transparent;
+}
+.crud-buttons .cancel:hover {
+    /* background-color: #cccc; */
+    background-color: rgba(254, 56, 92, 0.1);
+    
+}
+
+.crud-buttons .modify {
+    border-radius: 1rem;
+    border: 2px solid var(--coal);
+    color: var(--coal);
+    background-color: transparent;
+}
+.crud-buttons .modify:hover {
+    background-color: #cccc;
+}
+
 
 
 
@@ -115,7 +137,7 @@
 
 .when-message,
 .more-button-bki {
-    z-index: 300;
+    /* z-index: 300; */
     position: absolute;
     top: 1rem;
     padding: 0.25rem 0.5rem;
@@ -141,3 +163,8 @@
 .more-button-bki:hover {
     background-color: white;
 }
+
+/* !update modal */
+
+
+/* !cancel modal */

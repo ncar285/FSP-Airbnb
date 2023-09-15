@@ -1,12 +1,16 @@
 import { useDispatch, useSelector } from "react-redux"
 import { getCurrentUser } from "../../store/sessionsReducer"
 import { fetchUserShow, selectUserData } from "../../store/usersReducer"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import BookingItem from "../BookingItem/BookingItem"
-import { getBookings } from "../../store/bookingsReducer"
+import { deleteBooking, getBookings } from "../../store/bookingsReducer"
 import UserWelcomeHome from "../UserWelcomeHome/UserWelcomeHome"
 import OldBooking from "../BookingItem/OldBooking"
+import { RxCross2 } from 'react-icons/rx'
+
 import './AccountPage.css'
+import FlatBookingItem from "../BookingItem/FlatBookingItem"
+import EditForm from "./EditForm"
 
 const AccountPage = () => {
 
@@ -14,6 +18,13 @@ const AccountPage = () => {
     const dispatch = useDispatch()
     const data = useSelector(selectUserData)
     const bookings  = useSelector(getBookings)
+
+
+    const [cancelModal, setCancelModal] = useState(false);
+    const [modifyModal, setModifyModal] = useState(false);
+    const [modalBooking, setModalBooking] = useState(null);
+
+
 
 
     useEffect(() => {
@@ -29,12 +40,75 @@ const AccountPage = () => {
 
     const today = new Date()
     const currentBookings = Object.values(bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today)
-    // .sort(booking => booking.startDate)
     const upcomingsBookings = Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate)
     const previousBookings = Object.values(bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate)
 
+
     return (
         <>
+
+            {modifyModal &&
+                <div className='basic-modal-background' 
+                onClick={()=>{
+                    setModalBooking(null)
+                    setModifyModal(false)}}
+                >
+                    <div className='basic-modal' onClick={(e) => e.stopPropagation()}>
+                        <div className="modify-title">
+                            <button className='close-button'
+                                onClick={()=>{
+                                    setModalBooking(null)
+                                    setModifyModal(false)}}
+                                >
+                                <RxCross2/>
+                            </button>
+                            <p className="header-1 modify-cancel">Edit your upcoming booking</p>
+                        </div>
+                        
+                        <div className='modify-modal-container'>
+                            <div>
+                                <FlatBookingItem booking={modalBooking}/>
+                            </div>
+
+                            <div className="standard-spacer"></div>
+
+                            <p className="subheader">Change the dates</p>
+                            <div><EditForm booking={modalBooking}/></div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+            {cancelModal &&
+                <div className='basic-modal-background' onClick={()=>setCancelModal(false)}>
+                    <div className='basic-modal listing-description' onClick={(e) => e.stopPropagation()}>
+                        <div className="cancel-title">
+                            <button className='close-button'
+                                onClick={()=>{
+                                    setModalBooking(null)
+                                    setCancelModal(false)}
+                                }
+                                >
+                                <RxCross2/>
+                            </button>
+                            <p className="header-1 modify-cancel">Are you sure you want to cancel this booking?</p>
+                        </div>
+
+        
+                        <div className='cancel-modal-container'>
+                            <div>
+                                <FlatBookingItem booking={modalBooking}/>
+                            </div>
+
+                            <div className="standard-spacer"></div>
+                            <p>cancel buttons goes here..</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
             <div className="account-show-page">
 
                 <div className="account-left">
@@ -77,23 +151,32 @@ const AccountPage = () => {
                     <div className="trips-header">Trips</div>
 
                     { currentBookings && 
-                        <div className="booking-upcoming">Current accommodation</div>
+                        <div className="subheading">Current accommodation</div>
                     }
 
                     <div className='bookings-container'>
                         {currentBookings &&
-                        <div>{Object.values(currentBookings).map((booking)=><BookingItem booking={booking} type={"current"}/> )}</div>
+                        <div>{Object.values(currentBookings).map((booking)=>
+                        <BookingItem booking={booking} type={"current"}/> )}</div>
                         }
                     </div>
 
                     { upcomingsBookings ? 
-                        <div className="booking-upcoming">Upcoming reservations</div>
+                        <div className="subheading">Upcoming reservations</div>
                         :
-                        <div className="booking-upcoming">You have no upcoming reservations</div>
+                        <div className="subheading">You have no upcoming reservations</div>
                     }
                     <div className='bookings-container'>
                         {upcomingsBookings &&
-                        <div>{Object.values(upcomingsBookings).map((booking)=><BookingItem booking={booking} type={"upcoming"}/> )}</div>
+                        <div>{Object.values(upcomingsBookings).map((booking)=>
+                        <BookingItem booking={booking} 
+                        type={"upcoming"}
+                        modalBooking = {modalBooking}
+                        setModalBooking = {setModalBooking}
+                        cancelModal = {cancelModal} 
+                        setCancelModal = {setCancelModal}
+                        modifyModal = {cancelModal} 
+                        setModifyModal = {setModifyModal}/> )}</div>
                         }
                     </div>
 

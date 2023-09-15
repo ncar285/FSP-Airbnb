@@ -16,6 +16,7 @@
     --show_width: calc(100vw - 2*(var(--show_margin)));
     --shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
     --strong_shadow: rgba(0, 0, 0, 0.22) 0px 6px 16px;
+    --coal: #282424
 }
 
 /* ! GRID DIMENSION */
@@ -147,7 +148,7 @@ body {
     bottom: 7rem;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #282424;
+    background-color: var(--coal);
     color: white;
     z-index: 102;
     font-size: 0.8rem;
@@ -167,4 +168,89 @@ body {
 .toggle-map-button:hover {
     cursor: pointer;
     transform: translateX(-50%) scale(1.05);
+}
+
+
+/* ! */
+
+.basic-modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+.basic-modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 101;
+    border-radius: 1rem;
+    padding: 2rem;
+    font-family: 'airbnb2';
+    overflow: hidden;
+    /* overflow-y: auto; */
+}
+
+
+/* !headers and fonts */
+
+.header-1 {
+    margin-bottom: 1rem;
+    font-family: 'airbnb5';
+    font-size: 24px;
+}
+
+.long-text {
+    font-family: 'airbnb2';
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.subheading{
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+}
+
+.close-button {
+    top: 1rem;
+    margin-bottom: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 102;
+}
+
+.standard-spacer {
+    height: 1px;
+    background-color: #cccc;
+    margin: 1rem 0;
+}
+
+/* ! global aibnb styles */
+
+.airbnb-button {
+    all: unset;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+    background-color: var(--brand-color);
+    border-radius: 10px;
+    border: none;
+    color: var(--dark_grey);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: 'airbnb5';
+    color: white;
 }

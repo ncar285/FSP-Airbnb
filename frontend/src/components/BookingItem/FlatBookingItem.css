@@ -1,0 +1,8 @@
+.flat-booking-item{
+    position: relative;
+    height: 13rem;
+    display: flex;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+

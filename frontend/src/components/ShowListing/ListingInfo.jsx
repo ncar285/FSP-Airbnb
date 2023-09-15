@@ -3,7 +3,7 @@ import placeOffers from '../../assets/place-offers.png'
 import lisingInfo from '../../assets/bellow-subheader.png'
 import ShowDateRange from '../Calendar/ShowDateRange';
 import { useState } from 'react';
-import { RxCross2 } from 'react-icons/rx'
+import { RxCross2 } from 'react-icons/rx';
 import { MdKeyboardArrowRight } from 'react-icons/md'
 
 const ListingInfo = ({ listing, booking, setBooking, duration,  range, setRange }) => {
@@ -74,12 +74,12 @@ const ListingInfo = ({ listing, booking, setBooking, duration,  range, setRange 
 
 
             {descriptionModal && 
-                <div className='description-modal-background' onClick={hideDescription}>
-                    <div className='description-modal' onClick={(e) => e.stopPropagation()}>
+                <div className='basic-modal-background' onClick={hideDescription}>
+                    <div className='basic-modal listing-description' onClick={(e) => e.stopPropagation()}>
                         <button className='close-button'onClick={hideDescription}><RxCross2/></button>
                         <div className='description-container'>
-                            <h1>About this space</h1>
-                            <p className='listing-description'>{listing.description}</p>
+                            <p className='header-1'>About this space</p>
+                            <p className='long-text listing-description'>{listing.description}</p>
                         </div>
                     </div>
                 </div>

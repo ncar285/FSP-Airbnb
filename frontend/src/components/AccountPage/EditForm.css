@@ -1,18 +1,7 @@
-#booking-block{
-    /* height: 450px; */
-    border: 1px solid black;
-    border: 1px solid var(--light_grey);
+#edit-form-block{
     background-color: white;
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: var(--shadow);
     color: var(--dark_grey);
     font-family: 'airbnb2';
-    /* background-color: yellow; */
-    position: sticky;
-    top: 20px;
-    /* width: 100%; */
-    /* width: 320px; */
 }
 
 #booking-block .pricing-header {
@@ -120,6 +109,7 @@
     font-size: 20px;
     font-family: 'airbnb5';
     color: white;
+
 }
 
 .book-button:hover {

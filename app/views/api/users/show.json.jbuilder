@@ -15,6 +15,7 @@ json.bookings do
             json.extract! booking.listing, :city, :state, :address 
             json.photo_url booking.listing.photos.attached? ? url_for(booking.listing.photos[0]) : nil
             json.owner booking.listing.owner.firstname
+            json.listingId booking.listing.id
         end
     end
 end
