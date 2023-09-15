@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchMapIndex } from '../../store/listingsReducer'
 import './ListingsMap.css'
+import ListingItem from '../Splash/ListingItem'
 
 
 const ListingsMap = () => {
@@ -11,6 +12,8 @@ const ListingsMap = () => {
     const mapOptions = {zoom: 4, center: {lat: 35, lng: -70}}
     const markers = useRef({})
     const mapData = useSelector(state => state.listings.mapData)
+
+    const [infoWindow, setInfoWindow] = useState(null);
 
     const [selectedListing, setSelectedListing] = useState(null)
 
@@ -33,6 +36,7 @@ const ListingsMap = () => {
             setMap( newMap)
         }
     },[map])
+
 
 
 
@@ -88,6 +92,26 @@ const ListingsMap = () => {
         } else {
             selectMarker(marker)
         }
+
+
+
+        if (selectedListing) {
+            if (infoWindow) {
+              infoWindow.close();
+            }
+            const contentString = <ListingItem className="listing-map-preview"/>;
+            const newInfoWindow = new window.google.maps.InfoWindow({
+              content: contentString,
+              position: marker.getPosition(),
+            });
+            newInfoWindow.open(map, marker);
+            setInfoWindow(newInfoWindow);
+          }
+
+
+
+
+
     }
 
     const selectMarker = (marker) => {
