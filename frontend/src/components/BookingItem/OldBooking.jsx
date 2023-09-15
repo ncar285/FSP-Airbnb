@@ -21,7 +21,7 @@ const OldBooking = ({ booking }) => {
     const longAddress = `${booking.address}, ${booking.city}`
     const country = (booking.state === 'California') ? 'United States' : booking.state
 
-    console.log(booking)
+    // console.log(booking)
 
   
     return (

@@ -82,7 +82,7 @@ const AccountPage = () => {
 
                     <div className='bookings-container'>
                         {currentBookings &&
-                        <div>{Object.values(currentBookings).map((booking)=><BookingItem booking={booking} /> )}</div>
+                        <div>{Object.values(currentBookings).map((booking)=><BookingItem booking={booking} type={"current"}/> )}</div>
                         }
                     </div>
 
@@ -93,7 +93,7 @@ const AccountPage = () => {
                     }
                     <div className='bookings-container'>
                         {upcomingsBookings &&
-                        <div>{Object.values(upcomingsBookings).map((booking)=><BookingItem booking={booking} /> )}</div>
+                        <div>{Object.values(upcomingsBookings).map((booking)=><BookingItem booking={booking} type={"upcoming"}/> )}</div>
                         }
                     </div>
 
@@ -107,7 +107,7 @@ const AccountPage = () => {
 
             <div className="past-reservations-lower">
                 { previousBookings &&
-                    <div className="booking-upcoming">Past reservations</div>
+                    <div className="booking-upcoming">Where you've been</div>
                 }
 
                 <div className='bookings-container-lower'>

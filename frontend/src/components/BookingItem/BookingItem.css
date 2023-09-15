@@ -1,7 +1,8 @@
 
 .booking-item{
-    /* height: 10rem; */
-    height: min-content;
+    position: relative;
+    height: 13rem;
+    /* height: min-content; */
     /* border: 1px solid black; */
     display: flex;
     box-shadow: var(--strong_shadow);
@@ -58,6 +59,31 @@
     border-right: #cccc 1px solid;
 }
 
+
+/* !crud buttons */
+
+.crud-buttons {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.crud-buttons button {
+    all: unset;
+    /* margin-top: 0.5rem; */
+    /* height: 5rem; */
+    padding: 0.5rem;
+    width: 40%;
+    background-color: #cccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
 .BDD-right {
     padding-left: 1rem;
 }
@@ -79,4 +105,39 @@
     /* min-height: 100%; */
     height: auto;
     object-fit: cover;
+}
+
+/* ! message about wheen the bookign is for */
+
+.static-image-container {
+    position: relative;
+}
+
+.when-message,
+.more-button-bki {
+    z-index: 300;
+    position: absolute;
+    top: 1rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-family: 'airbnb5';
+    background-color: rgba(255,255,255,0.9);
+}
+.when-message {
+    left: calc(50% + 2rem);
+    min-width: 4rem;
+}
+.more-button-bki {
+    width: 1rem;
+    height: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.more-button-bki:hover {
+    background-color: white;
 }
