@@ -8,6 +8,7 @@ import { AiFillStar } from "react-icons/ai"
 import { getBookingErrors } from '../../store/errorsReducer';
 import DateRangeReserve from '../Calendar/DateRangeReserve'
 import { fetchListing, selectListing } from '../../store/listingsReducer'
+import DRRSimplified from '../Calendar/DRRSimplified'
 
 const EditForm = ( { booking } ) => {
 
@@ -72,7 +73,9 @@ const EditForm = ( { booking } ) => {
 
                 { listing && 
 
-                    <DateRangeReserve
+                
+
+                    <DRRSimplified
                         booking = {updatedBooking}
                         setBooking = {setUpdatedBooking}
                         listing = {listing}
@@ -83,14 +86,16 @@ const EditForm = ( { booking } ) => {
                     />
                 }
 
-                <div>This place has a maximum of {listing?.guests} guests</div>
+            
 
             </div>
 
             {
-                duration &&
+                !open &&
 
                 <>
+
+                <div>This place has a maximum of {listing?.guests} guests</div>
         
 
                     <div className="price-calcs">
@@ -111,7 +116,7 @@ const EditForm = ( { booking } ) => {
 
                     <div className="price-calcs">
                         <div>
-                            <p>Total before taxes</p>
+                            <p>Updated total before taxes</p>
                         </div>
                         <div className='pc-values'>
                             <p>${totalBeforeTax.toLocaleString()}</p>

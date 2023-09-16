@@ -1,0 +1,27 @@
+
+.simplified-guests-input-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+}
+
+.simplified-number-input{
+    margin-right: 60%;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    width: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-price {
+    font-family: 'airbnb5';
+}
+
+.updated-dates-header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+

@@ -72,7 +72,7 @@ const AccountPage = () => {
 
                             <div className="standard-spacer"></div>
 
-                            <p className="subheader">Change the dates</p>
+                            {/* <p className="subheader">Change the dates</p> */}
                             <div><EditForm booking={modalBooking}/></div>
 
                         </div>

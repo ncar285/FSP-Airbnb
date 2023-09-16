@@ -6,9 +6,9 @@ import { AiOutlinePlus } from "react-icons/ai"
 import { BiMinus } from "react-icons/bi"
 import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
-import './DateRangeReserve.css'
+import './DRRSimplified.css'
 
-const DateRangeReserve = ({ booking, setBooking, listing, duration, open, setOpen, range, setRange}) => {
+const DRRSimplified = ({ booking, setBooking, listing, duration, open, setOpen, range, setRange}) => {
 
     // const [open, setOpen] = useState(false)
     const refOne = useRef(null)
@@ -71,19 +71,19 @@ const DateRangeReserve = ({ booking, setBooking, listing, duration, open, setOpe
     }
 
     return (
-        <div className='calendarWrap'>
+        <div className='simple-calendarWrap'>
 
             <div className='static-container'>
 
             <div ref={refOne}
-                className={`select-dates-focus ${open ? 'focus' : ''}`}>
+                className="update-dates">
 
 
                     <div
-                        className={`select-date-header ${open ? 'focus' : ''}`}>
+                        className="update-dates-header">
              
                         <div className='calendar-modal-title'>
-                            <div className='select-dates'>{ duration ? `${duration} night${duration===1 ? '' : 's'}` : "Select dates"}</div>
+                            <div className='select-dates'>{ duration ? `${duration} night${duration===1 ? '' : 's'}` : "Re-select dates"}</div>
                             <div>{ duration ? `${booking.startDate} - ${booking.endDate}` 
                             : "Add your travel dates for exact pricing"}</div>
                         </div>
@@ -135,45 +135,44 @@ const DateRangeReserve = ({ booking, setBooking, listing, duration, open, setOpe
                     </div>
 
 
-                    { open &&
-                        <div className='calendar-sub-buttons'>
-                            <button 
-                            onClick = { () => setOpen(false)}
-                            className='close-calendar'>
-                                Close
-                            </button>
-                        </div>
-                    }
-               
                     
 
                 </div>
 
             </div>
 
-            <div className='guests-input-container'>
-                <div className='guests-input-new'>
-                    <div className='guests-input-header'>GUESTS</div>
-                    <div className='guests-input-val'>
-                        {`${booking ? booking.guests : '1'} guest${booking ? (booking.guests > 1 ? 's' : '') : ''}`}
-                        {/* 7 guests, 3 infants, 1 pet */}
+
+          
+
+            {!open && 
+
+                <div className='simplified-guests-input-container'>
+
+
+                    <div className="updated-dates-header">
+                        <div className='calendar-modal-title'>
+                            <div className='select-dates'>Guests</div>
+                            <div>{`${booking ? booking.guests : '1'} guest${booking ? (booking.guests > 1 ? 's' : '') : ''}`}</div>
+                        </div>
                     </div>
+
+
+                    <div class="simplified-number-input">
+                        <button id="guest-decrement-button" 
+                            className={`${(booking.guests === 1) ? 'inactive' : ''}`}
+                            onClick={decrementGuests}>
+                            <BiMinus id="decrement-button"/>
+                        </button>
+                        <button id="guest-increment-button" 
+                                className={`${(booking.guests === listing.guests) ? 'inactive' : ''}`}
+                                onClick={incrementGuests}>
+                                <AiOutlinePlus id="increment-button"/>
+                        </button>
+                    </div>
+        
                 </div>
 
-                <div class="number-input">
-                    <button id="guest-decrement-button" 
-                        className={`${(booking.guests === 1) ? 'inactive' : ''}`}
-                        onClick={decrementGuests}>
-                        <BiMinus id="decrement-button"/>
-                    </button>
-                    <button id="guest-increment-button" 
-                            className={`${(booking.guests === listing.guests) ? 'inactive' : ''}`}
-                            onClick={incrementGuests}>
-                            <AiOutlinePlus id="increment-button"/>
-                    </button>
-                </div>
-    
-            </div>
+            }
 
             
 
@@ -184,4 +183,4 @@ const DateRangeReserve = ({ booking, setBooking, listing, duration, open, setOpe
 
 }
 
-export default DateRangeReserve
+export default DRRSimplified
