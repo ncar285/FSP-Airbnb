@@ -2,15 +2,11 @@ import './EditForm.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCurrentUser } from '../../store/sessionsReducer'
 import { useEffect, useState } from 'react'
-import { createBooking } from '../../store/bookingsReducer'
-import { activateRegisterModal } from '../../store/uiReducer'
-import { AiFillStar } from "react-icons/ai"
-import { getBookingErrors } from '../../store/errorsReducer';
-import DateRangeReserve from '../Calendar/DateRangeReserve'
 import { fetchListing, selectListing } from '../../store/listingsReducer'
 import DRRSimplified from '../Calendar/DRRSimplified'
+// import success from "../../assets/success.gif"
 
-const EditForm = ( { booking } ) => {
+const EditForm = ( { booking, setSuccessMessage, setModifyModal} ) => {
 
     
     
@@ -20,27 +16,36 @@ const EditForm = ( { booking } ) => {
     const [duration, setDuration] = useState(null);
     const dispatch = useDispatch()
     const [open, setOpen] = useState(false)
-
-    console.log(listing)
+    // const [successMessage, setSuccessMessage] = useState(false)
 
     const [range, setRange] = useState([
         {
-            startDate: new Date(), 
-            endDate: new Date(),
+            startDate: new Date(booking.startDate), 
+            endDate: new Date(booking.endDate),
             key: 'selection'
         }
     ])
 
-
-
-
     const [updatedBooking, setUpdatedBooking] = useState({
         userId: currentUserId,
         listingId: parseInt(booking.listingId, 10),
-        startDate: new Date(),
-        endDate: new Date(),
+        startDate: new Date(booking.startDate),
+        endDate: new Date(booking.endDate),
         guests: 1
     })
+
+    const handleUpdateBooking = () => {
+        setModifyModal(false)
+        setSuccessMessage(true)
+        setTimeout(()=>{
+            setSuccessMessage(false)
+        }, 1900)
+    }
+    
+    // setSuccessMessage(true)
+
+
+
 
     useEffect(() => {
         dispatch(fetchListing(booking.listingId));
@@ -68,13 +73,13 @@ const EditForm = ( { booking } ) => {
         
         <div id='edit-form-block'>
 
+            {/* {successMessage ? 
+            <div><img src={success} alt="" /></div>
+            : 
+            <> */}
+            
             <div className='select-dates-focus'>
-
-
                 { listing && 
-
-                
-
                     <DRRSimplified
                         booking = {updatedBooking}
                         setBooking = {setUpdatedBooking}
@@ -85,9 +90,6 @@ const EditForm = ( { booking } ) => {
                         range = {range} setRange = {setRange}
                     />
                 }
-
-            
-
             </div>
 
             {
@@ -130,13 +132,15 @@ const EditForm = ( { booking } ) => {
 
 
                     <button className="airbnb-button" 
-                    // onClick={handleUpdateBooking}
+                    onClick={handleUpdateBooking}
                     >
                         Update
                     </button>
                 </>
              
             }
+
+        {/* </> } */}
 
         </div>
  

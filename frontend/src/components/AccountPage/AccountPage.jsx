@@ -12,6 +12,8 @@ import './AccountPage.css'
 import FlatBookingItem from "../BookingItem/FlatBookingItem"
 import EditForm from "./EditForm"
 
+import success from "../../assets/7efs.gif"
+
 const AccountPage = () => {
 
     const user = useSelector(getCurrentUser)
@@ -25,6 +27,9 @@ const AccountPage = () => {
     const [modalBooking, setModalBooking] = useState(null);
 
 
+    const [successMessage, setSuccessMessage] = useState(false)
+
+
 
 
     useEffect(() => {
@@ -32,6 +37,25 @@ const AccountPage = () => {
             dispatch(fetchUserShow(user.id));
         }
     }, [dispatch, user]);
+
+
+
+    // const handleUpdateBooking = () => {
+    //     setModifyModal(false)
+    //     setSuccessMessage(true)
+    //     setTimeout(()=>{
+    //         setSuccessMessage(false)
+    //     }, 1900)
+    // }
+
+    const cancelBooking =  () => {
+        dispatch(deleteBooking)
+        setCancelModal(false)
+        setSuccessMessage(true)
+        setTimeout(()=>{
+            setSuccessMessage(false)
+        }, 1900)
+    }
 
 
     if (!user) {
@@ -46,6 +70,13 @@ const AccountPage = () => {
 
     return (
         <>
+            {successMessage && 
+                <div className="basic-modal-background success-gif" >
+                    <div className="basic-modal success-container">
+                        <img src={success} alt="" />
+                    </div>
+                </div>
+            }
 
             {modifyModal &&
                 <div className='basic-modal-background' 
@@ -73,7 +104,10 @@ const AccountPage = () => {
                             <div className="standard-spacer"></div>
 
                             {/* <p className="subheader">Change the dates</p> */}
-                            <div><EditForm booking={modalBooking}/></div>
+                            <div><EditForm booking={modalBooking} 
+                            setSuccessMessage={setSuccessMessage}
+                            setModifyModal={setModifyModal}
+                            /></div>
 
                         </div>
                     </div>
@@ -83,7 +117,7 @@ const AccountPage = () => {
 
             {cancelModal &&
                 <div className='basic-modal-background' onClick={()=>setCancelModal(false)}>
-                    <div className='basic-modal listing-description' onClick={(e) => e.stopPropagation()}>
+                    <div className='basic-modal' onClick={(e) => e.stopPropagation()}>
                         <div className="cancel-title">
                             <button className='close-button'
                                 onClick={()=>{
@@ -103,7 +137,20 @@ const AccountPage = () => {
                             </div>
 
                             <div className="standard-spacer"></div>
-                            <p>cancel buttons goes here..</p>
+                            {/* <p>cancel buttons goes here..</p> */}
+                            <div className="cancel-booking-decisions">
+                                <button 
+                                    className="airbnb-button"
+                                    onClick={()=>{
+                                        setModalBooking(null)
+                                        setCancelModal(false)}
+                                    }>Nevermind
+                                </button>
+                                <button className="airbnb-button"
+                                    onClick={cancelBooking}>
+                                    Cancel booking
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

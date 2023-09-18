@@ -133,3 +133,16 @@
     flex-wrap: wrap;
 }
 
+
+/* ! cancel button decisions */
+
+.cancel-booking-decisions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel-booking-decisions button {
+    width: 40%;
+}
+
