@@ -55,7 +55,8 @@ const AccountPage = () => {
     }
 
     const today = new Date()
-    const currentBookings = Object.values(bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today)
+    const currentBookings = []
+    // Object.values(bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today)
     const upcomingsBookings = Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate)
     const previousBookings = Object.values(bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate)
 

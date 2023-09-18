@@ -4,6 +4,8 @@ import { getCurrentUser } from '../../store/sessionsReducer'
 import { useEffect, useState } from 'react'
 import { fetchListing, selectListing } from '../../store/listingsReducer'
 import DRRSimplified from '../Calendar/DRRSimplified'
+import { updateBooking } from '../../store/bookingsReducer'
+import { fetchUserShow } from '../../store/usersReducer'
 // import success from "../../assets/success.gif"
 
 const EditForm = ( { booking, setSuccessMessage, setModifyModal} ) => {
@@ -27,6 +29,7 @@ const EditForm = ( { booking, setSuccessMessage, setModifyModal} ) => {
     ])
 
     const [updatedBooking, setUpdatedBooking] = useState({
+        id: booking.id,
         userId: currentUserId,
         listingId: parseInt(booking.listingId, 10),
         startDate: new Date(booking.startDate),
@@ -34,15 +37,28 @@ const EditForm = ( { booking, setSuccessMessage, setModifyModal} ) => {
         guests: 1
     })
 
-    const handleUpdateBooking = () => {
+    const handleUpdateBooking = async () => {
         setModifyModal(false)
-        setSuccessMessage(true)
-        setTimeout(()=>{
-            setSuccessMessage(false)
-        }, 1900)
+        const res = dispatch(updateBooking(updatedBooking))
+        if (res.ok){
+            setSuccessMessage(true)
+            setTimeout(()=>{
+                setSuccessMessage(false)
+            }, 1900)
+            dispatch(fetchUserShow(currentUserId));
+        }
     }
+
+    // params.require(:booking).permit(:id, :user_id, :listing_id, :start_date, :end_date, :guests)
     
     // setSuccessMessage(true)
+
+    // const updateBooking = (e, param) => {
+    //     const val = e.target.value;
+    //     setUpdatedBooking({...updatedBooking, [param]: val})
+    // }
+
+    // console.log(updatedBooking)
 
 
 

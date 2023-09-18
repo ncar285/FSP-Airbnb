@@ -25,48 +25,26 @@ const BookingItem = ({ booking, type, setCancelModal, setModifyModal, setModalId
     const country = (booking.state === 'California') ? 'United States' : booking.state
 
 
-    const today = new Date()
-    var diffDays = startDate.getDate() - today.getDate();
-    const units = (diffDays >= 30) ? 'month' : 'days';
-    const amount = (diffDays >= 30) ? diffDays/30 : diffDays;
-    const plural = (units > 1) ? 's' : '';
-    const when = (diffDays <= 0) ? 'Current' : `In ${amount} ${units}${plural}`
+    const when = () => {
+        // debugger 
+        
 
+        const today = new Date()
+        const diffDays = startDate.getDate() - today.getDate();
+        const diffMonths = startDate.getMonth() - today.getMonth();
+        const units = (diffMonths > 0) ? 'month' : 'day';
+        const amount = (diffMonths > 0) ? diffMonths : diffDays;
+        const plural = (amount > 1) ? 's' : '';
+        return  (diffMonths === 0 && diffDays <= 0) ? 'Current' : `In ${amount} ${units}${plural}`
+    }
 
-
-        // ! delete actions
-        const  handleCancelClick = async () => {
-            setCancelModal(true)
-        }
-    
-        const handleDelete = async () => {
-            dispatch(deleteBooking(booking.id))
-        }
-    
-    
-        // ! update actions
-    
-        const  handleModifyClick = () => {
-            setModifyModal(true)
-        }
-    
-        const  handleUpdate= async() => {
-    
-            // newBooking = {...booking, 
-            //     startDate: newStartDate, 
-            //     endDate: newEndDate,
-            //     guests: newGuestCount
-            // }
-            // dispatch(updateBooking(newBoooking))
-        }
-    
   
     return (
         <>
 
             <div className="booking-item">
 
-                <div className='when-message'>{when}</div>
+                <div className='when-message'>{when()}</div>
 
                 <div className='booking-details'>
 

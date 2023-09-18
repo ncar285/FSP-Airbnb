@@ -15,6 +15,7 @@ export const postBooking = async booking => {
 
 // update a booking
 export const patchBooking = async bookingBata => {
+    debugger
     const res = await csrfFetch(`/api/bookings/${bookingBata.id}`, {
         method: 'PATCH',
         body: JSON.stringify(bookingBata)

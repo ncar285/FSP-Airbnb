@@ -4,6 +4,7 @@ import { receiveError } from "./errorsReducer";
 
 export const RECEIVE_BOOKING = 'RECEIVE_BOOKING'
 export const REMOVE_BOOKING  = 'REMOVE_BOOKING'
+export const REPLACE_BOOKING = 'REPLACE_BOOKING'
 
 // ACTION CREATORS 
 export const receiveBooking = booking => {
@@ -16,6 +17,11 @@ export const receiveBooking = booking => {
 export const removeBooking = bookingId => ({
     type: REMOVE_BOOKING,
     payload: bookingId
+})
+
+export const replaceBooking = bookingData => ({
+    type: REPLACE_BOOKING,
+    payload: bookingData
 })
 
 
@@ -47,7 +53,6 @@ export const createBooking = bookingData => async (dispatch) => {
 
 export const updateBooking = bookingData => async (dispatch) => {
     const booking = await patchBooking(bookingData);
-    // sessionStorage.setItem("myReview", JSON.stringify(booking))
     dispatch(receiveBooking(booking));
 };
 
@@ -69,6 +74,9 @@ const bookingsReducer = (state = initialState, action) => {
     // return { ...state, ...action.payload };
         case REMOVE_BOOKING:
             delete newState[action.payload]
+            return newState;
+        case REPLACE_BOOKING:
+            newState[action.payload.id] = action.payload
             return newState;
         case RECEIVE_USER:
             return action.payload.bookings
