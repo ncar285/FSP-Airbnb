@@ -40,16 +40,8 @@ const AccountPage = () => {
 
 
 
-    // const handleUpdateBooking = () => {
-    //     setModifyModal(false)
-    //     setSuccessMessage(true)
-    //     setTimeout(()=>{
-    //         setSuccessMessage(false)
-    //     }, 1900)
-    // }
-
     const cancelBooking =  () => {
-        dispatch(deleteBooking)
+        dispatch(deleteBooking(modalBooking.id))
         setCancelModal(false)
         setSuccessMessage(true)
         setTimeout(()=>{
@@ -67,6 +59,7 @@ const AccountPage = () => {
     const upcomingsBookings = Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate)
     const previousBookings = Object.values(bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate)
 
+    // console.log(upcomingsBookings)
 
     return (
         <>
@@ -208,7 +201,7 @@ const AccountPage = () => {
                         }
                     </div>
 
-                    { upcomingsBookings ? 
+                    { upcomingsBookings.length !== 0 ? 
                         <div className="subheading">Upcoming reservations</div>
                         :
                         <div className="subheading">You have no upcoming reservations</div>
@@ -236,7 +229,7 @@ const AccountPage = () => {
             </div>
 
             <div className="past-reservations-lower">
-                { previousBookings &&
+                { previousBookings.length !== 0 &&
                     <div className="booking-upcoming">Where you've been</div>
                 }
 

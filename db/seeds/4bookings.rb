@@ -23,7 +23,7 @@ end
 # create current booking
 Booking.create!(
   user_id: user_id,
-  listing_id: rand(1..30),
+  listing_id: 9,
   start_date: current_date,
   end_date: current_date + 5.days,
   guests: 1
@@ -31,7 +31,7 @@ Booking.create!(
 
 # create future bookings
 start_date = current_date + 1.week
-3.times do
+5.times do
   duration = rand(3..7)
   end_date = start_date + duration.days
 
