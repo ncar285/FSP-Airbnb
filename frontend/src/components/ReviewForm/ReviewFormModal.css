@@ -14,3 +14,13 @@
 .filled {
     color: var(--brand-color)
 }
+
+.review-modal .header-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.review-modal .header-1:hover {
+    cursor: pointer;
+}
+

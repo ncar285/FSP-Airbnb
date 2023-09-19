@@ -25,6 +25,7 @@ const OldBooking = ({ booking }) => {
     const country = (booking.state === 'California') ? 'United States' : booking.state
     
     const [viewReview, setViewReview] = useState(null)
+    const [openModal, setOpenModal] = useState(false)
     // console.log(booking)
 
     // console.log(booking.myReview)
@@ -52,7 +53,10 @@ const OldBooking = ({ booking }) => {
                     {/* my_review */}
 
                     <div className='leave-booking-review'
-                    onClick={()=>setViewReview(booking.myReview ? booking.myReview : false)}>
+                    onClick={()=>{
+                        setOpenModal(true)
+                        setViewReview(booking.myReview)
+                        }}>
 
                     {booking.myReview ? 
                         // <AiTwotoneEdit/>
@@ -71,7 +75,7 @@ const OldBooking = ({ booking }) => {
             </div>
 
             {
-                viewReview && 
+                openModal && 
                 <ReviewFormModal review = {viewReview} setReview={setViewReview}/>
             }
 

@@ -6,6 +6,7 @@ import { getCurrentUser } from '../../store/sessionsReducer'
 import { useSelector } from 'react-redux'
 import {AiOutlineStar} from 'react-icons/ai'
 import {AiFillStar} from 'react-icons/ai'
+import {AiTwotoneEdit} from 'react-icons/ai'
 
 const ReviewFormModal = ({review, setReview}) => {
 
@@ -118,10 +119,13 @@ const ReviewFormModal = ({review, setReview}) => {
             <div className='review-modal basic-modal'
             onClick={(e)=>e.stopPropagation()}>
                 <form onSubmit={handleSubmitReview}>
-                    {/* {(mode === 'create') && */}
+                    
                     <div className='header-1'>
                         {getHeaderText(mode)}
+                        {(mode === 'view') && 
+                        <AiTwotoneEdit onClick={()=>{setMode('edit')}}/> }
                     </div>
+
                     <div className='score-inputs'>
                         
                         <div className='left-review-categories'>
