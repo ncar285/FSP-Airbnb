@@ -16,6 +16,7 @@ export const rootReducer = combineReducers({
     ui: uiReducer,
     session: sessionsReducer,
     listings: listingsReducer,
+    mapData: mapReducer,
     reviews: reviewsReducer,
     userData: usersReducer,
     bookings: bookingsReducer,

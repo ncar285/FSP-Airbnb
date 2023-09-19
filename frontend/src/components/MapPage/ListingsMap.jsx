@@ -1,37 +1,53 @@
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMapIndex, selectListing } from '../../store/listingsReducer'
+import { fetchMapIndex, getListings, selectListing, selectListings } from '../../store/listingsReducer'
+import ListingItem from '../Splash/ListingItem';
+import ReactDOM from 'react-dom';
 import './ListingsMap.css'
-import ListingItem from '../Splash/ListingItem'
 
 
 const ListingsMap = () => {
     const dispatch = useDispatch();
-    const [map, setMap] = useState(null)
-    const mapRef = useRef(null)
-    const mapOptions = {zoom: 4, center: {lat: 35, lng: -70}}
-    const markers = useRef({})
-    const mapData = useSelector(state => state.listings.mapData)
-
+    const [map, setMap] = useState(null);
+    const mapRef = useRef(null);
+    const mapOptions = {zoom: 4, center: {lat: 35, lng: -70}};
+    const markers = useRef({});
     const [infoWindow, setInfoWindow] = useState(null);
-
-    const [selectedListing, setSelectedListing] = useState(null)
-
+    const [selectedListing, setSelectedListing] = useState(null);
     const selectedListingRef = useRef(selectedListing);
+    
 
-    const selectedListingObj = useSelector(selectListing(selectedListing))
+    const mapData = useSelector(state => state.listings.mapData);
+    const listings = useSelector(state => state.listings);
 
+    const [selectedListingObj, setSelectedListingObj] = useState(null)
+    const [presentListing, setPresentListing] = useState(false)
+    
+
+    
+    
     useEffect(() => {
         selectedListingRef.current = selectedListing;
     }, [selectedListing]);
 
-    // useEffect(() => {
-    //     const selectedListingObj = useSelector(selectListing(selectedListing));
-    // }, [selectedListing]);
+    useEffect(()=>{
+        if (selectedListing){
+            setPresentListing(true)
+            const obj = listings.filter((listing)=> listing.id === selectedListing)
+            setSelectedListingObj(obj[0])
+        } else {
+            setSelectedListingObj(null)
+        }
+    },[selectedListing])
 
-    // console.log(selectedListing)
-    console.log("main document!",selectedListing)
-    console.log('main doc, selected listing object: ', selectedListingObj)
+
+    useEffect(() => {
+        dispatch(getListings())
+    },[])
+
+
+    // console.log(presentListing)
+    
 
     useEffect(() => {
         dispatch(fetchMapIndex());
@@ -43,11 +59,6 @@ const ListingsMap = () => {
             setMap( newMap)
         }
     },[map])
-
-
-
-
-
 
     const svgMarker = {
         path: "M -8 -5 L 8 -5 A 5 5 0 0 1 8 5 L -8 5 A 5 5 0 0 1 -8 -5 Z",
@@ -83,43 +94,86 @@ const ListingsMap = () => {
     },[mapData, map])
 
 
+    // const toggleColor = (marker) => { 
+    //     const oldSelectedListing = selectedListingRef.current;
+    //     const oldMarker = markers.current[oldSelectedListing];
+    //     if (oldSelectedListing !== null){
+    //         if (oldSelectedListing === marker.id){
+    //             // we are unselecting (double click)
+    //             unselectMarker(oldMarker)
+    //             setSelectedListing(null);
+    //         }else {
+    //             // we are unselecting the old and selecting the new
+    //             unselectMarker(oldMarker)
+    //             selectMarker(marker)
+    //         }
+    //     } else {
+    //         selectMarker(marker)
+    //     }
+
+    //     if (selectedListing) {
+    //         if (infoWindow) {
+    //           infoWindow.close();
+    //         }
+    //         const contentString = <ListingItem className="listing-map-preview"/>;
+    //         const newInfoWindow = new window.google.maps.InfoWindow({
+    //           content: contentString,
+    //           position: marker.getPosition(),
+    //         });
+    //         newInfoWindow.open(map, marker);
+    //         setInfoWindow(newInfoWindow);
+    //     }
+    // }
+
+    const renderToString = (reactComponent) => {
+        const div = document.createElement('div');
+        ReactDOM.render(reactComponent, div);
+        return div.innerHTML;
+    };
+
+
     const toggleColor = (marker) => { 
         const oldSelectedListing = selectedListingRef.current;
         const oldMarker = markers.current[oldSelectedListing];
-        if (oldSelectedListing !== null){
-            if (oldSelectedListing === marker.id){
-                // we are unselecting (double click)
-                unselectMarker(oldMarker)
-                setSelectedListing(null);
-            }else {
-                // we are unselecting the old and selecting the new
-                unselectMarker(oldMarker)
-                selectMarker(marker)
-            }
-        } else {
-            selectMarker(marker)
+        if (oldSelectedListing !== null) {
+            unselectMarker(oldMarker);
         }
-
-
-
-        if (selectedListing) {
+    
+        if (oldSelectedListing !== marker.id) {
+            selectMarker(marker);
             if (infoWindow) {
-              infoWindow.close();
+                infoWindow.close();
             }
-            const contentString = <ListingItem className="listing-map-preview"/>;
+
+    
+            // Update contentString to be a valid HTML string representation
+            // const contentString = '<div class="listing-map-preview">Your content here</div>';
+            
+            debugger
+
+            const obj = Object.values(listings[0]).filter(listing=>listing.id === marker.id)[0]
+
+            // console.log(obj[0])
+
+
+            const contentString = renderToString(<ListingItem listing={obj[0]} />);
             const newInfoWindow = new window.google.maps.InfoWindow({
-              content: contentString,
-              position: marker.getPosition(),
+                content: contentString,
+                position: marker.getPosition(),
             });
             newInfoWindow.open(map, marker);
             setInfoWindow(newInfoWindow);
-          }
-
-
-
+        } else {
+            setSelectedListing(null);
+            if (infoWindow) {
+                infoWindow.close();
+            }
+        }
 
 
     }
+
+
 
     const selectMarker = (marker) => {
         setSelectedListing(marker.id);
@@ -150,10 +204,8 @@ const ListingsMap = () => {
         });
     }
 
-
-
       
-    window.initMap = map;
+    // window.initMap = map;
 
 
     return  (
@@ -162,9 +214,11 @@ const ListingsMap = () => {
             className='map-object'
             ref={mapRef}>     
         </div>
-        {/* <div className='map-listing-preview basic-modal'>
+        { presentListing &&
+        <div className='map-listing-preview basic-modal'>
             <p>{selectedListingObj ? selectedListingObj.city : ''}</p>
-        </div> */}
+        </div>
+        }
         </>
 
     )
