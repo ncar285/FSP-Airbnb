@@ -30,6 +30,9 @@ const AccountPage = () => {
     const [successMessage, setSuccessMessage] = useState(false)
 
 
+    const [currentBookings, setCurrentBookings] = useState([])
+    const [upcomingsBookings, setUpcomingsBookings] = useState([])
+    const [previousBookings, setPreviousBookings] = useState([])
 
 
     useEffect(() => {
@@ -37,6 +40,18 @@ const AccountPage = () => {
             dispatch(fetchUserShow(user.id));
         }
     }, [dispatch, user]);
+
+
+
+    useEffect(() => {
+        if (bookings){ 
+            // debugger
+            const today = new Date()
+            setCurrentBookings(Object.values(bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today))
+            setUpcomingsBookings(Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate))
+            setPreviousBookings(Object.values(bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate))
+        }
+    }, [bookings]);
 
 
 
@@ -54,11 +69,7 @@ const AccountPage = () => {
         return <p>loading</p>;
     }
 
-    const today = new Date()
-    const currentBookings = []
-    // Object.values(bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today)
-    const upcomingsBookings = Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate)
-    const previousBookings = Object.values(bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate)
+
 
     // console.log(upcomingsBookings)
 
@@ -202,7 +213,7 @@ const AccountPage = () => {
                         }
                     </div>
 
-                    { upcomingsBookings.length !== 0 ? 
+                    { upcomingsBookings && upcomingsBookings.length !== 0 ? 
                         <div className="subheading">Upcoming reservations</div>
                         :
                         <div className="subheading">You have no upcoming reservations</div>
@@ -230,12 +241,12 @@ const AccountPage = () => {
             </div>
 
             <div className="past-reservations-lower">
-                { previousBookings.length !== 0 &&
+                { previousBookings && previousBookings.length !== 0 &&
                     <div className="booking-upcoming">Where you've been</div>
                 }
 
                 <div className='bookings-container-lower'>
-                    {previousBookings &&
+                    {previousBookings && previousBookings.length !== 0  &&
                         <div className="obi-items-list">{Object.values(previousBookings).map((booking)=>
                             <OldBooking booking={booking}/> )}</div>
                     }

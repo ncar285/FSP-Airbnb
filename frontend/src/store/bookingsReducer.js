@@ -53,7 +53,8 @@ export const createBooking = bookingData => async (dispatch) => {
 
 export const updateBooking = bookingData => async (dispatch) => {
     const booking = await patchBooking(bookingData);
-    dispatch(receiveBooking(booking));
+    return booking
+    // dispatch(replaceBooking(booking));
 };
 
 export const deleteBooking = bookingId => async (dispatch) => {

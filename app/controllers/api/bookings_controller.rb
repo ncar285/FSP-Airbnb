@@ -23,9 +23,7 @@ class Api::BookingsController < ApplicationController
 
     def update
         @booking = Booking.find_by(id: params[:id])
-        # debugger
         if @booking && current_user && @booking.update(booking_params)
-            debugger
             render :show 
         else
             render json: @booking.errors.full_messages, status: 422

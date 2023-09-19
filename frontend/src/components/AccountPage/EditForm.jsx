@@ -34,13 +34,14 @@ const EditForm = ( { booking, setSuccessMessage, setModifyModal} ) => {
         listingId: parseInt(booking.listingId, 10),
         startDate: new Date(booking.startDate),
         endDate: new Date(booking.endDate),
-        guests: 1
+        guests: booking.guests
     })
 
     const handleUpdateBooking = async () => {
         setModifyModal(false)
-        const res = dispatch(updateBooking(updatedBooking))
-        if (res.ok){
+        const res = await dispatch(updateBooking(updatedBooking))
+        // debugger
+        if (res){
             setSuccessMessage(true)
             setTimeout(()=>{
                 setSuccessMessage(false)
@@ -48,19 +49,6 @@ const EditForm = ( { booking, setSuccessMessage, setModifyModal} ) => {
             dispatch(fetchUserShow(currentUserId));
         }
     }
-
-    // params.require(:booking).permit(:id, :user_id, :listing_id, :start_date, :end_date, :guests)
-    
-    // setSuccessMessage(true)
-
-    // const updateBooking = (e, param) => {
-    //     const val = e.target.value;
-    //     setUpdatedBooking({...updatedBooking, [param]: val})
-    // }
-
-    // console.log(updatedBooking)
-
-
 
 
     useEffect(() => {
