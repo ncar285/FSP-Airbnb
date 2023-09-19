@@ -14,3 +14,28 @@
     width: 18rem;
     /* height: 8rem; */
 }
+
+.info-popup li {
+    list-style-type: none;
+}
+
+.info-popup .item .slideshow-container {
+    border-radius: 0;
+}
+
+.info-popup .item .loaded-text {
+    padding: 0.5rem;
+}
+
+/* .gm-style-iw.gm-style-iw-c !important{
+    padding: auto;
+} */
+
+.gm-style-iw {
+    padding: 0 !important;
+}
+
+.gm-style-iw-d {
+    padding: 0 !important;
+    overflow: visible !important;
+}

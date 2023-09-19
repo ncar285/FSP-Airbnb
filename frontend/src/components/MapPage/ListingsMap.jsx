@@ -84,18 +84,34 @@ const ListingsMap = () => {
         return div.innerHTML;
     };
 
+    
     const showListingInfoWindow = (marker) => {
+
+        // debugger 
 
         const listingArray = Object.values(listingsRef.current)
         const obj = listingArray.filter(listing=>listing.id === marker.id)[0]
-        const contentString = renderToString(<div className="info-popup"><ListingItem listing={obj} /></div>);
+
+        const div = document.createElement('div');
+        
+        ReactDOM.render(
+          <div className="info-popup" 
+        //   onClick={() => renderShow(marker.id)}
+          >
+            <ListingItem listing={obj} />
+          </div>, 
+          div
+        );
+        
         const newInfoWindow = new window.google.maps.InfoWindow({
-            content: contentString,
-            position: marker.getPosition(),
+          content: div,
+          position: marker.getPosition(),
         });
+        
         newInfoWindow.open(map, marker);
         infoWindowRef.current = newInfoWindow;
-    }
+      };
+
 
     const closeInfoWindow = () => {
         if (infoWindowRef.current) {
@@ -147,6 +163,13 @@ const ListingsMap = () => {
 
         } else {
             setSelectedListing(null);
+        }
+    }
+
+    const renderShow = (id) => {
+        // debugger
+        if (selectedListing === id){
+            return window.open(`/listing/${id}`, '_blank');
         }
     }
 

@@ -106,6 +106,7 @@ const ListingItem = ({ listing, key }) => {
         } 
         return photoEles;
     }
+    
     return (
         <li>
             <div onClick={renderShow} key={key} className="item">
