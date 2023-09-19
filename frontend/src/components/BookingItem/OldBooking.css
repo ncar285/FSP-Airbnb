@@ -1,9 +1,7 @@
 .obi-wrap{
     min-width: 30%;
-    /* height: 8rem; */
     margin: 1rem  0 1rem 1rem;
-    /* border-radius: 1rem; */
-    /* border: 1px solid black; */
+    position: relative;
 }
 .obi-details{
     display: flex;
@@ -73,9 +71,23 @@
     padding-left: 1rem;
 }
 
+/* review icon */
+
 .leave-booking-review {
     position: absolute;
+    font-size: 1rem;
+    font-family: 'airbnb2';
     top: 5px;
-    right: 5px;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #cccc;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.leave-booking-review:hover {
+    cursor: pointer;
 }
 

@@ -1,0 +1,16 @@
+.star-rating-selection { 
+    display: flex;
+    align-items: center;
+}
+
+.indv-star:hover {
+    cursor: pointer;
+}
+
+.indv-star * {
+    font-size: 2rem;
+}
+
+.filled {
+    color: var(--brand-color)
+}

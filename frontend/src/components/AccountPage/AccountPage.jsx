@@ -13,6 +13,7 @@ import FlatBookingItem from "../BookingItem/FlatBookingItem"
 import EditForm from "./EditForm"
 
 import success from "../../assets/7efs.gif"
+import ReviewFormModal from "../ReviewForm/ReviewFormModal"
 
 const AccountPage = () => {
 
@@ -242,7 +243,7 @@ const AccountPage = () => {
 
             <div className="past-reservations-lower">
                 { previousBookings && previousBookings.length !== 0 &&
-                    <div className="booking-upcoming">Where you've been</div>
+                    <div className="booking-upcoming subheading">Where you've been</div>
                 }
 
                 <div className='bookings-container-lower'>
@@ -252,6 +253,9 @@ const AccountPage = () => {
                     }
                 </div>
             </div>
+
+
+            
 
             
         </>

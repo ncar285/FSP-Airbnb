@@ -1,6 +1,9 @@
 import './OldBooking.css'
 import { useDispatch } from 'react-redux'
 import { AiFillStar } from 'react-icons/ai'
+import { AiTwotoneEdit } from 'react-icons/ai'
+import { useState } from 'react'
+import ReviewFormModal from '../ReviewForm/ReviewFormModal'
 
 const OldBooking = ({ booking }) => {
     const startDate = new Date(booking.startDate);
@@ -16,11 +19,15 @@ const OldBooking = ({ booking }) => {
     const formattedStartDate = `${startDay} ${startMonth} ${startYear}`;
     const formattedEndDate = `${endDay} ${endMonth} ${endYear}`;
 
-
+    
+    
     const longAddress = `${booking.address}, ${booking.city}`
     const country = (booking.state === 'California') ? 'United States' : booking.state
-
+    
+    const [viewReview, setViewReview] = useState(null)
     // console.log(booking)
+
+    // console.log(booking.myReview)
 
   
     return (
@@ -42,12 +49,34 @@ const OldBooking = ({ booking }) => {
                             <p className='obi-date'>{`${formattedStartDate} - ${formattedEndDate}`}</p>
                         </div>
                     </div>
+                    {/* my_review */}
 
-                    <div className='leave-booking-review'><AiFillStar/></div>
+                    <div className='leave-booking-review'
+                    onClick={()=>setViewReview(booking.myReview ? booking.myReview : false)}>
+
+                    {booking.myReview ? 
+                        // <AiTwotoneEdit/>
+                        <AiFillStar/>
+                    : 
+                        <>
+                            <p>Rate</p>
+                        </>
+
+                    }
+
+                    </div>
 
                 </div>
                
             </div>
+
+            {
+                viewReview && 
+                <ReviewFormModal review = {viewReview} setReview={setViewReview}/>
+            }
+
+
+            
         </>
     )
 

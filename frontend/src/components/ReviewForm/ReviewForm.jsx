@@ -11,26 +11,8 @@ import { FaStar } from 'react-icons/fa';
 
 const ReviewForm = ({editMode = false, review, setReview}) => {
     const dispatch = useDispatch()
-  
     const loggedInUser = useSelector(getCurrentUser)
     const [displayLoginMessage, setDisplayLoginMessage] = useState(false)
-
-
-    // const oldReview = useSelector(getUserReview)
-    // const oldBody = oldReview?.body ? oldReview.body : null
-    // const oldCleanliness = oldReview?.cleanliness ? oldReview.cleanliness : null
-    // const oldCommunication = oldReview?.communication ? oldReview.communication : null
-    // const oldCheckIn = oldReview?.checkIn ? oldReview.checkIn : null
-    // const oldAccuracy = oldReview?.accuracy ? oldReview.accuracy : null
-    // const oldLocation = oldReview?.location ? oldReview.location : null
-    // const oldValue = oldReview?.value ? oldReview.value : null
-    // const [body, setBody] = useState(oldBody || null)
-    // const [cleanliness, setCleanliness] = useState(oldCleanliness || null)
-    // const [communication, setCommunication] = useState(oldCommunication || null)
-    // const [checkIn, setCheckIn] = useState(oldCheckIn || null)
-    // const [accuracy, setAccuracy] = useState(oldAccuracy || null)
-    // const [location, setLocation] = useState(oldLocation || null)
-    // const [value, setValue] = useState(oldValue || null)
 
     useEffect(()=>{
         if (loggedInUser){

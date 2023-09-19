@@ -23,7 +23,7 @@ json.bookings do
             
             json.my_review do
               if my_review
-                json.extract! my_review, :id, :listing_id, :rating, :body
+                json.extract! my_review, :id, :listing_id, :rating, :body, :cleanliness, :communication, :check_in, :accuracy, :location, :value
               else
                 json.null!
               end
