@@ -73,3 +73,9 @@
     padding-left: 1rem;
 }
 
+.leave-booking-review {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+

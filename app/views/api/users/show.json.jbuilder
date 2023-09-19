@@ -15,7 +15,20 @@ json.bookings do
             json.extract! booking.listing, :city, :state, :address 
             json.photo_url booking.listing.photos.attached? ? url_for(booking.listing.photos[0]) : nil
             json.owner booking.listing.owner.firstname
-            json.listingId booking.listing.id
+
+            listing_id = booking.listing.id
+            
+            json.listingId listing_id
+            my_review = @user.reviews.find { |review| review.listing_id == listing_id }
+            
+            json.my_review do
+              if my_review
+                json.extract! my_review, :id, :listing_id, :rating, :body
+              else
+                json.null!
+              end
+            end
+
         end
     end
 end

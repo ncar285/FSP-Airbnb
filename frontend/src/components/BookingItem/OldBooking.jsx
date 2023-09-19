@@ -1,9 +1,8 @@
 import './OldBooking.css'
 import { useDispatch } from 'react-redux'
+import { AiFillStar } from 'react-icons/ai'
 
 const OldBooking = ({ booking }) => {
-
-
     const startDate = new Date(booking.startDate);
     const startDay = startDate.getDate();
     const startMonth = startDate.toLocaleString('en-US', { month: 'short' });
@@ -43,6 +42,8 @@ const OldBooking = ({ booking }) => {
                             <p className='obi-date'>{`${formattedStartDate} - ${formattedEndDate}`}</p>
                         </div>
                     </div>
+
+                    <div className='leave-booking-review'><AiFillStar/></div>
 
                 </div>
                

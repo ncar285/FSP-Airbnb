@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMapIndex } from '../../store/listingsReducer'
+import { fetchMapIndex, selectListing } from '../../store/listingsReducer'
 import './ListingsMap.css'
 import ListingItem from '../Splash/ListingItem'
 
@@ -19,12 +19,19 @@ const ListingsMap = () => {
 
     const selectedListingRef = useRef(selectedListing);
 
+    const selectedListingObj = useSelector(selectListing(selectedListing))
+
     useEffect(() => {
         selectedListingRef.current = selectedListing;
     }, [selectedListing]);
 
+    // useEffect(() => {
+    //     const selectedListingObj = useSelector(selectListing(selectedListing));
+    // }, [selectedListing]);
+
     // console.log(selectedListing)
     console.log("main document!",selectedListing)
+    console.log('main doc, selected listing object: ', selectedListingObj)
 
     useEffect(() => {
         dispatch(fetchMapIndex());
@@ -148,11 +155,18 @@ const ListingsMap = () => {
       
     window.initMap = map;
 
+
     return  (
+        <>
         <div 
             className='map-object'
             ref={mapRef}>     
         </div>
+        {/* <div className='map-listing-preview basic-modal'>
+            <p>{selectedListingObj ? selectedListingObj.city : ''}</p>
+        </div> */}
+        </>
+
     )
 
 }
