@@ -9,15 +9,19 @@ import { fetchMapIndex } from '../../store/mapReducer';
 
 const ListingsMap = () => {
     const dispatch = useDispatch();
-    const [map, setMap] = useState(null);
     const mapRef = useRef(null);
     const mapOptions = {zoom: 4, center: {lat: 35, lng: -70}};
-    const markers = useRef({});
-    const [infoWindow, setInfoWindow] = useState(null);
-    const [selectedListing, setSelectedListing] = useState(null);
-    const selectedListingRef = useRef(selectedListing);
     const mapData = useSelector(state => state.mapData);
     const listings = useSelector(state => state.listings);
+    
+    const [map, setMap] = useState(null);
+    const [selectedListing, setSelectedListing] = useState(null);
+    
+    const [infoWindow, setInfoWindow] = useState(null);
+
+    const infoWindowRef = useRef(null);
+    const markers = useRef({});
+    const selectedListingRef = useRef(selectedListing);
     const listingsRef = useRef(null);
     
     useEffect(() => {
@@ -30,17 +34,13 @@ const ListingsMap = () => {
 
     useEffect(() => {
         dispatch(getListings())
-        console.log('Listings after dispatch:', listings);
-    },[])
-
-    useEffect(() => {
         dispatch(fetchMapIndex());
-    }, []);
+    },[])
 
     useEffect(()=>{
         if (!map){
             const newMap = new window.google.maps.Map(mapRef.current, mapOptions)
-            setMap( newMap)
+            setMap(newMap)
         }
     },[map])
 
@@ -85,45 +85,24 @@ const ListingsMap = () => {
     };
 
     const showListingInfoWindow = (marker) => {
+
         const listingArray = Object.values(listingsRef.current)
         const obj = listingArray.filter(listing=>listing.id === marker.id)[0]
-        const contentString = renderToString(<ListingItem listing={obj} />);
+        const contentString = renderToString(<div className="info-popup"><ListingItem listing={obj} /></div>);
         const newInfoWindow = new window.google.maps.InfoWindow({
             content: contentString,
             position: marker.getPosition(),
         });
         newInfoWindow.open(map, marker);
-        setInfoWindow(newInfoWindow);
+        infoWindowRef.current = newInfoWindow;
     }
 
-
-    const toggleColor = (marker) => { 
-        const oldSelectedListing = selectedListingRef.current;
-        const oldMarker = markers.current[oldSelectedListing];
-        if (oldSelectedListing !== null) {
-            unselectMarker(oldMarker);
+    const closeInfoWindow = () => {
+        if (infoWindowRef.current) {
+            infoWindowRef.current.close();
+            infoWindowRef.current = null;
         }
-    
-        if (oldSelectedListing !== marker.id) {
-            selectMarker(marker);
-            if (infoWindow) {
-                infoWindow.close();
-            }
-
-            showListingInfoWindow(marker);
-
-       
-        } else {
-            setSelectedListing(null);
-            if (infoWindow) {
-                infoWindow.close();
-            }
-        }
-
-
     }
-
-
 
     const selectMarker = (marker) => {
         setSelectedListing(marker.id);
@@ -153,6 +132,24 @@ const ListingsMap = () => {
             scale: 2,
         });
     }
+
+    const toggleColor = (marker) => { 
+        const oldSelectedListing = selectedListingRef.current;
+        const oldMarker = markers.current[oldSelectedListing];
+        if (oldSelectedListing !== null) {
+            unselectMarker(oldMarker);
+            closeInfoWindow(oldMarker)
+        }
+    
+        if (oldSelectedListing !== marker.id) {
+            selectMarker(marker);
+            showListingInfoWindow(marker);
+
+        } else {
+            setSelectedListing(null);
+        }
+    }
+
 
 
     return  (

@@ -9,6 +9,8 @@
     z-index: 200;
 }
 
-.map-listing-preview {
-    
+.info-popup {
+    /* all: unset; */
+    width: 18rem;
+    /* height: 8rem; */
 }
