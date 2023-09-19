@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMapIndex, getListings, selectListing, selectListings } from '../../store/listingsReducer'
+import { getListings, selectListing, selectListings } from '../../store/listingsReducer'
 import ListingItem from '../Splash/ListingItem';
 import ReactDOM from 'react-dom';
 import './ListingsMap.css'
+import { fetchMapIndex } from '../../store/mapReducer';
 
 
 const ListingsMap = () => {
@@ -15,39 +16,22 @@ const ListingsMap = () => {
     const [infoWindow, setInfoWindow] = useState(null);
     const [selectedListing, setSelectedListing] = useState(null);
     const selectedListingRef = useRef(selectedListing);
-    
-
-    const mapData = useSelector(state => state.listings.mapData);
+    const mapData = useSelector(state => state.mapData);
     const listings = useSelector(state => state.listings);
-
-    const [selectedListingObj, setSelectedListingObj] = useState(null)
-    const [presentListing, setPresentListing] = useState(false)
-    
-
-    
+    const listingsRef = useRef(null);
     
     useEffect(() => {
         selectedListingRef.current = selectedListing;
     }, [selectedListing]);
 
-    useEffect(()=>{
-        if (selectedListing){
-            setPresentListing(true)
-            const obj = listings.filter((listing)=> listing.id === selectedListing)
-            setSelectedListingObj(obj[0])
-        } else {
-            setSelectedListingObj(null)
-        }
-    },[selectedListing])
-
+    useEffect(() => {
+        listingsRef.current = listings;
+    }, [listings]);
 
     useEffect(() => {
         dispatch(getListings())
+        console.log('Listings after dispatch:', listings);
     },[])
-
-
-    // console.log(presentListing)
-    
 
     useEffect(() => {
         dispatch(fetchMapIndex());
@@ -72,8 +56,8 @@ const ListingsMap = () => {
 
     useEffect(()=>{
         if (mapData && map){
-            const listings = Object.values(mapData)
-            listings.forEach((listing => {
+            const mapListings = Object.values(mapData)
+            mapListings.forEach((listing => {
                 const marker = new window.google.maps.Marker({
                     position: {lat: listing.latitude, lng: listing.longitude},
                     map,
@@ -94,42 +78,23 @@ const ListingsMap = () => {
     },[mapData, map])
 
 
-    // const toggleColor = (marker) => { 
-    //     const oldSelectedListing = selectedListingRef.current;
-    //     const oldMarker = markers.current[oldSelectedListing];
-    //     if (oldSelectedListing !== null){
-    //         if (oldSelectedListing === marker.id){
-    //             // we are unselecting (double click)
-    //             unselectMarker(oldMarker)
-    //             setSelectedListing(null);
-    //         }else {
-    //             // we are unselecting the old and selecting the new
-    //             unselectMarker(oldMarker)
-    //             selectMarker(marker)
-    //         }
-    //     } else {
-    //         selectMarker(marker)
-    //     }
-
-    //     if (selectedListing) {
-    //         if (infoWindow) {
-    //           infoWindow.close();
-    //         }
-    //         const contentString = <ListingItem className="listing-map-preview"/>;
-    //         const newInfoWindow = new window.google.maps.InfoWindow({
-    //           content: contentString,
-    //           position: marker.getPosition(),
-    //         });
-    //         newInfoWindow.open(map, marker);
-    //         setInfoWindow(newInfoWindow);
-    //     }
-    // }
-
     const renderToString = (reactComponent) => {
         const div = document.createElement('div');
         ReactDOM.render(reactComponent, div);
         return div.innerHTML;
     };
+
+    const showListingInfoWindow = (marker) => {
+        const listingArray = Object.values(listingsRef.current)
+        const obj = listingArray.filter(listing=>listing.id === marker.id)[0]
+        const contentString = renderToString(<ListingItem listing={obj} />);
+        const newInfoWindow = new window.google.maps.InfoWindow({
+            content: contentString,
+            position: marker.getPosition(),
+        });
+        newInfoWindow.open(map, marker);
+        setInfoWindow(newInfoWindow);
+    }
 
 
     const toggleColor = (marker) => { 
@@ -145,24 +110,9 @@ const ListingsMap = () => {
                 infoWindow.close();
             }
 
-    
-            // Update contentString to be a valid HTML string representation
-            // const contentString = '<div class="listing-map-preview">Your content here</div>';
-            
-            debugger
+            showListingInfoWindow(marker);
 
-            const obj = Object.values(listings[0]).filter(listing=>listing.id === marker.id)[0]
-
-            // console.log(obj[0])
-
-
-            const contentString = renderToString(<ListingItem listing={obj[0]} />);
-            const newInfoWindow = new window.google.maps.InfoWindow({
-                content: contentString,
-                position: marker.getPosition(),
-            });
-            newInfoWindow.open(map, marker);
-            setInfoWindow(newInfoWindow);
+       
         } else {
             setSelectedListing(null);
             if (infoWindow) {
@@ -204,22 +154,14 @@ const ListingsMap = () => {
         });
     }
 
-      
-    // window.initMap = map;
-
 
     return  (
-        <>
+      
         <div 
             className='map-object'
             ref={mapRef}>     
         </div>
-        { presentListing &&
-        <div className='map-listing-preview basic-modal'>
-            <p>{selectedListingObj ? selectedListingObj.city : ''}</p>
-        </div>
-        }
-        </>
+  
 
     )
 

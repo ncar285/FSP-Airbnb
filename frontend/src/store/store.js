@@ -7,8 +7,9 @@ import reviewsReducer from './reviewsReducer';
 import usersReducer from './usersReducer';
 import bookingsReducer from './bookingsReducer';
 import { errorsReducer } from './errorsReducer';
+import mapReducer from './mapReducer';
 
-// ! unnstall this
+// ! unnstall this before re-hosting
 import { createLogger } from 'redux-logger';
 
 

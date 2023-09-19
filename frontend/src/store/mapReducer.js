@@ -28,10 +28,10 @@ export const fetchMapIndex = () => async dispatch => {
 
 // REDUCER
 const mapReducer = (state = {}, action) => {
-  const nextState = { ...state }
+//   const nextState = { ...state }
   switch (action.type) {
     case RECEIVE_LISTING_MAP_DATA:
-      return {...nextState, mapData: action.payload}
+      return {...action.payload}
     default:
       return state
   }

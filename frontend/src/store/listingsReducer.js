@@ -14,10 +14,10 @@ export const receiveListing = listing => ({
   payload: listing
 })
 
-export const receiveListingMapData = listingsData => ({
-  type: RECEIVE_LISTING_MAP_DATA,
-  payload: listingsData,
-});
+// export const receiveListingMapData = listingsData => ({
+//   type: RECEIVE_LISTING_MAP_DATA,
+//   payload: listingsData,
+// });
 
 export const receiveListings = listings => ({
   type: RECEIVE_LISTINGS,
@@ -44,21 +44,21 @@ export const getListings = params => async dispatch => {
 
 
 
-export const fetchMapIndex = () => async dispatch => {
-  try {
-    const res = await fetch(`/api/listings/map_index`);
-    if (res.ok) {
-      const data = await res.json();
-      dispatch(receiveListingMapData(data));
-    } else {
-      console.log('error')
-      // dispatch(receiveListingMapError("Failed to fetch data"));
-    }
-  } catch (error) {
-    console.log('error')
-    // dispatch(receiveListingMapError(error.message));
-  }
-};
+// export const fetchMapIndex = () => async dispatch => {
+//   try {
+//     const res = await fetch(`/api/listings/map_index`);
+//     if (res.ok) {
+//       const data = await res.json();
+//       dispatch(receiveListingMapData(data));
+//     } else {
+//       console.log('error')
+//       // dispatch(receiveListingMapError("Failed to fetch data"));
+//     }
+//   } catch (error) {
+//     console.log('error')
+//     // dispatch(receiveListingMapError(error.message));
+//   }
+// };
 
   
 export const fetchListing = listingId => dispatch => (
@@ -104,8 +104,8 @@ const listingsReducer = (state = {}, action) => {
     case REMOVE_LISTING:
       delete nextState[action.payload]
       return nextState
-    case RECEIVE_LISTING_MAP_DATA:
-      return {...nextState, mapData: action.payload}
+    // case RECEIVE_LISTING_MAP_DATA:
+    //   return {...nextState, mapData: action.payload}
     default:
       return state
   }
