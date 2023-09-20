@@ -33,8 +33,9 @@ export const deactivateSearchModal = () => ({
 })
 
 //REVIEW ACTION CREATORS
-export const activateERM = () => ({
-    type: ACTIVATE_ERM
+export const activateERM = (paramData) => ({
+    type: ACTIVATE_ERM,
+    payload: paramData 
 })
 
 export const deactivateERM = () => ({
@@ -56,8 +57,8 @@ export const deactivateDRM = () => ({
 // SELECTORS 
 
 export const getDRMState = state => state.ui.deleteReviewModal
-
 export const getERMState = state => state.ui.editReviewModal
+export const getERMParams = state => state.ui.ERMparams
 
 
 
@@ -65,6 +66,7 @@ const initialState = {
     registerModal: null,
     searchModal: null,
     editReviewModal: null,
+    ERMparams: {},
     deleteReviewModal: null
 }
 
@@ -81,7 +83,7 @@ const uiReducer = (state = initialState, action) => {
             return {...state, searchModal: false}
             // ! REVIEW CRUD MODALS
         case ACTIVATE_ERM:
-            return {...state, editReviewModal: true}
+            return {...state, editReviewModal: true, ERMparams: action.payload}
         case DEACTIVATE_ERM:
             return {...state, editReviewModal: false}
         case ACTIVATE_DRM:

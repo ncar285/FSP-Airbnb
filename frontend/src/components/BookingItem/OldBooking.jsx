@@ -4,6 +4,7 @@ import { AiFillStar } from 'react-icons/ai'
 import { AiTwotoneEdit } from 'react-icons/ai'
 import { useState } from 'react'
 import ReviewFormModal from '../ReviewForm/ReviewFormModal'
+import { activateERM } from '../../store/uiReducer'
 
 const OldBooking = ({ booking }) => {
     const startDate = new Date(booking.startDate);
@@ -19,7 +20,7 @@ const OldBooking = ({ booking }) => {
     const formattedStartDate = `${startDay} ${startMonth} ${startYear}`;
     const formattedEndDate = `${endDay} ${endMonth} ${endYear}`;
 
-    
+    const dispatch = useDispatch();
     
     const longAddress = `${booking.address}, ${booking.city}`
     const country = (booking.state === 'California') ? 'United States' : booking.state
@@ -29,6 +30,15 @@ const OldBooking = ({ booking }) => {
     // console.log(booking)
 
     // console.log(booking.myReview)
+
+    const openReviewModal = () => {
+        // setViewReview(booking.myReview)
+        const review = viewReview || booking.myReview
+        const setReview = setViewReview
+        const listingId = booking.listingId
+        // debugger
+        dispatch(activateERM({review, setReview, listingId}))
+    }
 
   
     return (
@@ -53,10 +63,7 @@ const OldBooking = ({ booking }) => {
                     {/* my_review */}
 
                     <div className='leave-booking-review'
-                    onClick={()=>{
-                        setOpenModal(true)
-                        setViewReview(booking.myReview)
-                        }}>
+                    onClick={openReviewModal}>
 
                     {booking.myReview ? 
                         // <AiTwotoneEdit/>
@@ -74,10 +81,10 @@ const OldBooking = ({ booking }) => {
                
             </div>
 
-            {
+            {/* {
                 openModal && 
                 <ReviewFormModal review = {viewReview} setReview={setViewReview} listingId = {booking.listingId}/>
-            }
+            } */}
 
 
             

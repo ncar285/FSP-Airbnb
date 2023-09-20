@@ -46,10 +46,6 @@ const ReviewFormModal = ({review, setReview, listingId}) => {
         )
     }
 
-    // if (review === null) {
-
-    // }
-
     const handleSubmitReview = async e => {
         debugger
         e.preventDefault();

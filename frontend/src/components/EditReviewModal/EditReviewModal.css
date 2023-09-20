@@ -1,4 +1,4 @@
-.ERM-background {
+/* .ERM-background {
     position: fixed;
     top: 0;
     left: 0;
@@ -21,7 +21,6 @@
 }
 
 .ERM{
-    /* width: 500px; */
     padding: 20px;
     position: absolute;
     background-color: white;
@@ -80,4 +79,46 @@
 .ERM-options button:hover{
     cursor: pointer;
     background-color: var(--light_grey);
+} */
+
+.star-rating-selection { 
+    display: flex;
+    align-items: center;
+}
+
+.indv-star:hover {
+    cursor: pointer;
+}
+
+.indv-star * {
+    font-size: 2rem;
+}
+
+.filled {
+    color: var(--brand-color)
+}
+
+.review-modal .header-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.review-modal .header-1:hover {
+    cursor: pointer;
+}
+
+.review-modal textarea {
+    width: calc(100% - 30px);
+}
+
+.review-modal button {
+    width: 100%;
+}
+
+.review-modal .score-inputs {
+    justify-content: unset;
+}
+
+.view-old-review {
+    width: 25vw;
 }

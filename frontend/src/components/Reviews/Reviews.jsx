@@ -1,20 +1,9 @@
 import './Reviews.css'
 import { AiFillStar } from "react-icons/ai"
-// import { useEffect } from 'react'
-// import { getCurrentUser } from '../../store/sessionsReducer'
-// import { useState } from 'react'
-// import { useSelector } from 'react-redux'
-// import { selectListing } from '../../../store/listingsReducer'
 import { getListingRevews } from '../../store/reviewsReducer';
 import ReviewItem from './ReviewItem';
 import { useSelector } from 'react-redux';
 import { getUserReview } from '../../store/reviewsReducer';
-// import { selectListing } from '../../../store/listingsReducer';
-// import { getCurrentUser } from '../../../store/sessionsReducer';
-// import { useState } from 'react';
-// import MyReviewItem from './MyReviewItem';
-
-
 
 const Reviews = (  {count, rating, findAverageScore} ) => {
     const userReview = useSelector(getUserReview)

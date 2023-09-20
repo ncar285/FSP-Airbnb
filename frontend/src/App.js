@@ -46,7 +46,7 @@ function App() {
             <RegisterForm />
             {/* <ShowListing/>  */}
             {/* <DeleteReviewModal/> */}
-            {/* <EditReviewModal/> */}
+            <EditReviewModal/>
             <AccountPage/>
             <Footer/>
         </Route>
