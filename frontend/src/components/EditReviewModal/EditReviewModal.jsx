@@ -16,6 +16,7 @@ import { useSelector } from 'react-redux'
 import {AiOutlineStar} from 'react-icons/ai'
 import {AiFillStar} from 'react-icons/ai'
 import {AiTwotoneEdit} from 'react-icons/ai'
+import {GrFormView} from 'react-icons/gr'
 import { deactivateERM, getERMParams, getERMState } from '../../store/uiReducer'
 
 const EditReviewModal = () => {
@@ -87,39 +88,46 @@ const EditReviewModal = () => {
     // )
 
     const active = useSelector(getERMState)
-    const {review, setReview, listingId} = useSelector(getERMParams)
+    // const {review, setReview, listingId} = useSelector(getERMParams)
     const dispatch = useDispatch()
     const loggedInUser = useSelector(getCurrentUser)
     const [displayLoginMessage, setDisplayLoginMessage] = useState(false)
 
 
-    // const findMode = review ? 'view' : 'create'
-    const findMode = () => {
-        // debugger
-        return review ? 'view' : 'create'
-    }
-    const [mode, setMode] = useState(findMode())
+    const params = useSelector(getERMParams);
+    const { review, setReview, listingId } = params;
 
-    useEffect(()=>{
-        if (review === null && mode === 'create'){
-            setReview({
-                author_id: loggedInUser.id,
-                listing_id: listingId,
-                body: '',
-                accuracy: null,
-                cleanliness: null,
-                communication: null,
-                location: null, 
-                value: null
-            })
-    
+
+    const [mode, setMode] = useState(review ? 'view' : 'create')
+
+    useEffect(() => {
+        
+        if(params) {
+        
+          setMode(review ? 'view' : 'create');
+          
+          const initialReview = review || {
+            author_id: loggedInUser.id,
+            listing_id: listingId,
+            body: '',
+            accuracy: null,
+            cleanliness: null,
+            communication: null,
+            location: null, 
+            value: null
+          };
+          
+          if(setReview) {
+            setReview(initialReview);
+          }
         }
-    }, review, mode)
+    }, [active, loggedInUser]);
 
 
-    console.log(review)
-    console.log(mode)
-    console.log(review === null && mode === 'create')
+    console.log("review", review)
+    console.log("mode", mode)
+    console.log("review", review)
+
 
     useEffect(()=>{
         if (loggedInUser){
@@ -232,6 +240,8 @@ const EditReviewModal = () => {
                         {getHeaderText(mode)}
                         {(mode === 'view') && 
                         <AiTwotoneEdit onClick={()=>{setMode('edit')}}/> }
+                        {(mode === 'edit') &&
+                        <GrFormView onClick={()=>{setMode('view')}}/>}
                     </div>
 
                     <div className='score-inputs'>
