@@ -1,3 +1,7 @@
+.review-modal {
+    /* width: 20vw; */
+}
+
 .star-rating-selection { 
     display: flex;
     align-items: center;
@@ -24,3 +28,23 @@
     cursor: pointer;
 }
 
+
+.review-modal textarea {
+    /* width: auto; */
+    width: calc(100% - 30px);
+}
+
+.review-modal button {
+    width: 100%;
+}
+
+.review-modal .score-inputs {
+
+    /* justify-content: space-between; */
+    justify-content: unset;
+}
+
+
+.view-old-review {
+    width: 25vw;
+}

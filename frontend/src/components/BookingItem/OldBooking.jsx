@@ -76,7 +76,7 @@ const OldBooking = ({ booking }) => {
 
             {
                 openModal && 
-                <ReviewFormModal review = {viewReview} setReview={setViewReview}/>
+                <ReviewFormModal review = {viewReview} setReview={setViewReview} listingId = {booking.listingId}/>
             }
 
 

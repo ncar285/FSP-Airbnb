@@ -1,28 +1,36 @@
 import './ReviewFormModal.css'
 import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { createReview } from '../../store/reviewsReducer'
+import { createReview, updateReview } from '../../store/reviewsReducer'
 import { getCurrentUser } from '../../store/sessionsReducer'
 import { useSelector } from 'react-redux'
 import {AiOutlineStar} from 'react-icons/ai'
 import {AiFillStar} from 'react-icons/ai'
 import {AiTwotoneEdit} from 'react-icons/ai'
 
-const ReviewFormModal = ({review, setReview}) => {
+const ReviewFormModal = ({review, setReview, listingId}) => {
 
     
     const findMode = review ? 'view' : 'create'
     const [mode, setMode] = useState(findMode)
-
-    // setMode(review ? 'view' : 'create')
-
-    // console.log(review)
-    // console.log(mode)
-
-
     const dispatch = useDispatch()
     const loggedInUser = useSelector(getCurrentUser)
     const [displayLoginMessage, setDisplayLoginMessage] = useState(false)
+
+    if (review === null && mode === 'create'){
+        setReview({
+            author_id: loggedInUser.id,
+            listing_id: listingId,
+            body: '',
+            accuracy: null,
+            cleanliness: null,
+            communication: null,
+            location: null, 
+            value: null
+        })
+
+    }
+
 
     useEffect(()=>{
         if (loggedInUser){
@@ -38,10 +46,19 @@ const ReviewFormModal = ({review, setReview}) => {
         )
     }
 
+    // if (review === null) {
+
+    // }
+
     const handleSubmitReview = async e => {
+        debugger
         e.preventDefault();
-        if (loggedInUser){
+        if (loggedInUser && mode === 'create'){
             dispatch(createReview(review))
+            setMode(null)
+        } else if (loggedInUser && mode === 'edit'){
+            dispatch(updateReview(review))
+            setMode(null)
         } else {
             setDisplayLoginMessage(true)
         }
@@ -49,23 +66,24 @@ const ReviewFormModal = ({review, setReview}) => {
 
 
     const reviewRadioButtons = ( category ) => {
+
         return (
             <>
                 <div className='star-rating-selection'>
                     <div className='indv-star' onClick={()=>setReview({...review, [category]: 1})}>
-                        {(review[category] >= 1) ? <AiFillStar className='filled'/> : <AiOutlineStar className='outline'/>}
+                        {(review && review[category] >= 1) ? <AiFillStar className='filled'/> : <AiOutlineStar className='outline'/>}
                     </div>
                     <div className='indv-star' onClick={()=>setReview({...review, [category]: 2})}>
-                        {(review[category] >= 2) ? <AiFillStar className='filled'/> : <AiOutlineStar className='outline'/>}
+                        {(review && review[category] >= 2) ? <AiFillStar className='filled'/> : <AiOutlineStar className='outline'/>}
                     </div>
                     <div className='indv-star' onClick={()=>setReview({...review, [category]: 3})}>
-                        {(review[category] >= 3) ? <AiFillStar className='filled'/> : <AiOutlineStar className='outline'/>}
+                        {(review && review[category] >= 3) ? <AiFillStar className='filled'/> : <AiOutlineStar className='outline'/>}
                     </div>
                     <div className='indv-star' onClick={()=>setReview({...review, [category]: 4})}>
-                        {(review[category] >= 4) ? <AiFillStar className='filled'/> : <AiOutlineStar className='outline'/>}
+                        {(review && review[category] >= 4) ? <AiFillStar className='filled'/> : <AiOutlineStar className='outline'/>}
                     </div>
                     <div className='indv-star' onClick={()=>setReview({...review, [category]: 5})}>
-                        {(review[category] >= 5) ? <AiFillStar className='filled'/> : <AiOutlineStar className='outline'/>}
+                        {(review && review[category] >= 5) ? <AiFillStar className='filled'/> : <AiOutlineStar className='outline'/>}
                     </div>
                 </div>
 
@@ -192,23 +210,15 @@ const ReviewFormModal = ({review, setReview}) => {
                         }
                             
                         {(mode === 'view') &&
-                            <p>{`"${review.body}"`}</p>
+                            <p className='view-old-review'>{`"${review.body}"`}</p>
                         }
-
-
                         
                     </div>
 
-                  
-
 
                     {(mode === 'create' || mode === 'edit') &&
-                        <button>Submit Review</button>
+                        <button type='submit'>Submit Review</button>
                     }
-                        
-                    {/* {(mode === 'view') &&
-                        <p>{`"${review.body}"`}</p>
-                    } */}
 
 
                 </form>

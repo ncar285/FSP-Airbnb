@@ -10,13 +10,33 @@
 }
 
 .info-popup {
-    /* all: unset; */
-    width: 18rem;
-    /* height: 8rem; */
+    width: 20rem;
+}
+
+.info-popup .slideshow-container {
+    height: 12rem;
+    object-fit: cover;
+}
+
+.info-popup .slideshow-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .info-popup li {
     list-style-type: none;
+}
+
+.info-popup .listing-images {
+    display: flex;
+    flex-direction: row;  /* Keep images in a row */
+    overflow-x: scroll;  /* Enable horizontal scrolling */
+}
+  
+.info-popup .loaded-image {
+    flex: 0 0 100%;  /* Don't grow, don't shrink, base width 100% of parent */
+    height: auto;  /* Maintain aspect ratio */
 }
 
 .info-popup .item .slideshow-container {
@@ -26,6 +46,8 @@
 .info-popup .item .loaded-text {
     padding: 0.5rem;
 }
+
+
 
 /* .gm-style-iw.gm-style-iw-c !important{
     padding: auto;
@@ -38,4 +60,31 @@
 .gm-style-iw-d {
     padding: 0 !important;
     overflow: visible !important;
+}
+
+/* ! the x or cross */
+
+.gm-ui-hover-effect { 
+    background-color: rgba(0,0,0,0.5) !important;
+    font-size: 2rem !important;
+    top: 0.5rem !important;
+    left: 0.5rem !important;
+    color: black !important;
+    border-radius: 1rem !important;
+
+    /* display: flex !important;
+    justify-content: center !important;
+    align-items: center !important; */
+}
+
+
+.gm-ui-hover-effect button * {
+    height: 1rem !important;
+    width: 1rem !important;
+}
+
+.gm-ui-hover-effect>span {
+    height: 20px !important;
+    width: 20px !important;
+    background-color: white !important;
 }
