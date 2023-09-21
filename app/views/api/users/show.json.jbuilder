@@ -2,7 +2,8 @@ json.extract! @user, :id, :email,  :firstname, :lastname, :created_at, :updated_
 
 json.reviews do
     json.array! @user.reviews do |review|
-        json.extract! review, :id, :listing_id, :rating, :body
+        json.extract! review, :id, :booking_id, :rating, :body
+        json.listing_id review.booking.listing.id
     end
 end
 
@@ -17,17 +18,19 @@ json.bookings do
             json.owner booking.listing.owner.firstname
 
             listing_id = booking.listing.id
+
+            json.my_review booking.review ? booking.review : nil
             
             json.listingId listing_id
-            my_review = @user.reviews.find { |review| review.listing_id == listing_id &&  }
+            # my_review = @user.reviews.find { |review| review.listing_id == listing_id &&  }
             
-            json.my_review do
-              if my_review
-                json.extract! my_review, :id, :listing_id, :rating, :body, :cleanliness, :communication, :check_in, :accuracy, :location, :value
-              else
-                json.null!
-              end
-            end
+            # json.my_review do
+            #   if my_review
+            #     json.extract! my_review, :id, :listing_id, :rating, :body, :cleanliness, :communication, :check_in, :accuracy, :location, :value
+            #   else
+            #     json.null!
+            #   end
+            # end
 
         end
     end

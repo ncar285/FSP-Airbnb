@@ -3,7 +3,6 @@
 # Table name: reviews
 #
 #  id            :bigint           not null, primary key
-#  listing_id    :bigint           not null
 #  author_id     :integer          not null
 #  body          :string           not null
 #  cleanliness   :integer          not null
@@ -15,6 +14,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  rating        :float
+#  booking_id    :bigint
 #
 class Review < ApplicationRecord
 
@@ -34,6 +34,8 @@ class Review < ApplicationRecord
     belongs_to :author,
         foreign_key: :author_id,
         class_name: :User
+
+
 
     def generate_rating
         total = self.cleanliness + self.communication + self.check_in + self.accuracy + self.location + self.value

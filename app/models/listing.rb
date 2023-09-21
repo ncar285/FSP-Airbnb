@@ -42,6 +42,10 @@ class Listing < ApplicationRecord
 
     has_many :bookings,
         dependent: :destroy
+
+    has_many :reviews, 
+        through: :bookings, 
+        source: :review
     
     # has_many :reviews,
     #     dependent: :destroy

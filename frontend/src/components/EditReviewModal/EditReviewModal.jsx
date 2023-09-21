@@ -20,14 +20,16 @@ const EditReviewModal = () => {
     const { review, setReview, listingId } = params;
     const [mode, setMode] = useState(review ? 'view' : 'create')
 
+    // ! to prevent breaking since models changed
+    const bookingId = 5
     useEffect(() => {
         
         if(params) {
           setMode(review ? 'view' : 'create');
 
           const initialReview = (review === undefined || Object.keys(review).length === 0) ? {
-            author_id: loggedInUser.id,
-            listing_id: listingId,
+            author_id: loggedInUser ? loggedInUser.id : null,
+            booking_id: bookingId,
             body: '',
             accuracy: null,
             cleanliness: null,
