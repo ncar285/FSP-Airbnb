@@ -1,5 +1,8 @@
 .review-modal {
     /* width: 20vw; */
+    max-width: 32vw;
+    max-width: calc(var(--show_width)*0.4);
+    min-width: calc(400px);
 }
 
 .star-rating-selection { 
@@ -39,12 +42,15 @@
 }
 
 .review-modal .score-inputs {
-
-    /* justify-content: space-between; */
-    justify-content: unset;
+    /* justify-content: unset; */
+    justify-content: space-between;
 }
 
 
 .view-old-review {
-    width: 25vw;
+    width: 100%;
+    line-height: 1.5rem;
+    font-family: 'airbnb2';
+    font-size: 1rem;
+    font-style: italic;
 }

@@ -219,7 +219,7 @@ const ReviewFormModal = ({review, setReview, listingId, setOpenModal, setSuccess
                         }
                             
                         {(mode === 'view') &&
-                            <p className='view-old-review'>{`"${review.body}"`}</p>
+                            <p className='view-old-review'>{`${review.body}`}</p>
                         }
                         
                     </div>
