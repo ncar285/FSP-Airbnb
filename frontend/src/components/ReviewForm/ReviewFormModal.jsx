@@ -8,7 +8,7 @@ import {AiOutlineStar} from 'react-icons/ai'
 import {AiFillStar} from 'react-icons/ai'
 import {AiTwotoneEdit} from 'react-icons/ai'
 
-const ReviewFormModal = ({review, setReview, listingId}) => {
+const ReviewFormModal = ({review, setReview, listingId, setOpenModal, setSuccessMessage}) => {
 
     
     const findMode = review ? 'view' : 'create'
@@ -46,15 +46,28 @@ const ReviewFormModal = ({review, setReview, listingId}) => {
         )
     }
 
+    const showSuccessMessage = async () => {
+        setSuccessMessage(true)
+        setTimeout(()=>{
+            setSuccessMessage(false)
+        }, 1900)
+    }
+
+
     const handleSubmitReview = async e => {
-        debugger
+
         e.preventDefault();
         if (loggedInUser && mode === 'create'){
             dispatch(createReview(review))
-            setMode(null)
+            setOpenModal(false)
+            showSuccessMessage()
+            // setSuccessMessage(true)
         } else if (loggedInUser && mode === 'edit'){
             dispatch(updateReview(review))
-            setMode(null)
+            setOpenModal(false)
+            showSuccessMessage()
+            // setSuccessMessage(true)
+
         } else {
             setDisplayLoginMessage(true)
         }

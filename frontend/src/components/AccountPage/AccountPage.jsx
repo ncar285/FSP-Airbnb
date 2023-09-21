@@ -249,7 +249,7 @@ const AccountPage = () => {
                 <div className='bookings-container-lower'>
                     {previousBookings && previousBookings.length !== 0  &&
                         <div className="obi-items-list">{Object.values(previousBookings).map((booking)=>
-                            <OldBooking booking={booking}/> )}</div>
+                            <OldBooking booking={booking} setSuccessMessage={setSuccessMessage}/> )}</div>
                     }
                 </div>
             </div>

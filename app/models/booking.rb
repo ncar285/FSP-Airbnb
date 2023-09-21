@@ -30,6 +30,9 @@ class Booking < ApplicationRecord
 
     belongs_to :listing 
 
+    has_one :review,
+        dependent: :destroy
+
 
     def valid_booking_dates 
         listing = Listing.find_by(id: listing_id)

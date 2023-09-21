@@ -20,13 +20,16 @@ class Review < ApplicationRecord
 
     validates :body, :cleanliness, :communication, :check_in, :accuracy, :location, :value, :author_id, :listing_id, presence: true
 
-    validates :author_id, uniqueness: {scope: :listing_id}
+    # validates :author_id, uniqueness: {scope: :listing_id}
+
+    validates :author_id, uniqueness: {scope: :booking_id}
 
     validates :rating, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }, allow_nil: true
 
     before_save :generate_rating
     
-    belongs_to :listing 
+    # belongs_to :listing 
+    belongs_to :booking
 
     belongs_to :author,
         foreign_key: :author_id,

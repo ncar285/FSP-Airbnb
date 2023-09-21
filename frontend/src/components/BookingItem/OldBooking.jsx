@@ -1,12 +1,12 @@
 import './OldBooking.css'
 import { useDispatch } from 'react-redux'
 import { AiFillStar } from 'react-icons/ai'
-import { AiTwotoneEdit } from 'react-icons/ai'
+// import { AiTwotoneEdit } from 'react-icons/ai'
 import { useState } from 'react'
 import ReviewFormModal from '../ReviewForm/ReviewFormModal'
 import { activateERM } from '../../store/uiReducer'
 
-const OldBooking = ({ booking }) => {
+const OldBooking = ({ booking, setSuccessMessage }) => {
     const startDate = new Date(booking.startDate);
     const startDay = startDate.getDate();
     const startMonth = startDate.toLocaleString('en-US', { month: 'short' });
@@ -22,23 +22,28 @@ const OldBooking = ({ booking }) => {
 
     const dispatch = useDispatch();
     
-    const longAddress = `${booking.address}, ${booking.city}`
-    const country = (booking.state === 'California') ? 'United States' : booking.state
+    // const longAddress = `${booking.address}, ${booking.city}`
+    // const country = (booking.state === 'California') ? 'United States' : booking.state
     
-    const [viewReview, setViewReview] = useState(null)
-    const [openModal, setOpenModal] = useState(false)
-    // console.log(booking)
 
-    // console.log(booking.myReview)
-
-    const openReviewModal = () => {
-        // setViewReview(booking.myReview)
-        const review = viewReview || booking.myReview
-        const setReview = setViewReview
-        const listingId = booking.listingId
-        // debugger
-        dispatch(activateERM({review, setReview, listingId}))
+    const initialReview = booking.myReview || {
+        author_id: null,
+        listing_id: booking.listingId,
+        body: '',
+        accuracy: null,
+        cleanliness: null,
+        communication: null,
+        location: null, 
+        value: null
     }
+    const [review, setReview] = useState(initialReview)
+    // const listingId = booking.listingId
+    const [openModal, setOpenModal] = useState(false)
+
+
+    // const openReviewModal = () => {
+    //     dispatch(activateERM({review, setReview, listingId}))
+    // }
 
   
     return (
@@ -63,7 +68,9 @@ const OldBooking = ({ booking }) => {
                     {/* my_review */}
 
                     <div className='leave-booking-review'
-                    onClick={openReviewModal}>
+                    // onClick={openReviewModal}
+                    onClick={()=>setOpenModal(true)}
+                    >
 
                     {booking.myReview ? 
                         // <AiTwotoneEdit/>
@@ -81,10 +88,15 @@ const OldBooking = ({ booking }) => {
                
             </div>
 
-            {/* {
+            {
                 openModal && 
-                <ReviewFormModal review = {viewReview} setReview={setViewReview} listingId = {booking.listingId}/>
-            } */}
+                <ReviewFormModal 
+                review = {review} 
+                setReview={setReview} 
+                listingId = {booking.listingId} 
+                setOpenModal={setOpenModal}
+                setSuccessMessage={setSuccessMessage}/>
+            }
 
 
             

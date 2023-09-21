@@ -19,7 +19,7 @@ json.bookings do
             listing_id = booking.listing.id
             
             json.listingId listing_id
-            my_review = @user.reviews.find { |review| review.listing_id == listing_id }
+            my_review = @user.reviews.find { |review| review.listing_id == listing_id &&  }
             
             json.my_review do
               if my_review

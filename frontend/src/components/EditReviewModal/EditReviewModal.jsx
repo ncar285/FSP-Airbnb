@@ -1,13 +1,4 @@
 import "./EditReviewModal.css"
-// import { deactivateERM } from "../../store/uiReducer";
-// import { useDispatch, useSelector } from "react-redux"
-// // import ReviewItem from "../ShowListing/Reviews/ReviewItem";
-// import { getUserReview } from "../../store/reviewsReducer";
-// import { getERMState } from "../../store/uiReducer";
-// import ReviewForm from "../ReviewForm/ReviewForm";
-// import { updateReview } from "../../store/reviewsReducer";
-// import { useEffect, useState } from "react";
-
 import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { createReview, updateReview } from '../../store/reviewsReducer'
@@ -21,92 +12,20 @@ import { deactivateERM, getERMParams, getERMState } from '../../store/uiReducer'
 
 const EditReviewModal = () => {
 
-    // const myReview = useSelector(getUserReview)
-    // const [review, setReview] = useState(myReview)
-    // const active = useSelector(getERMState)
-    // const dispatch = useDispatch()
-
-    
-    
-    
-    // useEffect(()=>{
-    //     if (myReview){
-    //         setReview(myReview)
-    //     }
-    // }, [myReview])
-
-    // if (!active) return null
-    
-    
-    // const handleExit = e => {
-    //     e.stopPropagation()
-    //     dispatch(deactivateERM())
-    // }
-
-    
-
-    // const handleEdit = async e => {
-    //     // e.preventDefault();
-    //     e.stopPropagation()
-    //     const newReview = {
-    //         id: review.id,
-    //         listing_id: review.listingId,
-    //         author_id: review.authorId,
-    //         body: review.body,
-    //         cleanliness: review.cleanliness,
-    //         communication: review.communication,
-    //         check_in: review.checkIn,
-    //         accuracy: review.accuracy,
-    //         location: review.location,
-    //         value: review.value
-    //     }
-    //     dispatch(updateReview(newReview))
-    //     dispatch(deactivateERM())
-    // }
-
-
-
-    // return (
-    //     <div className="ERM-container">
-    //     <div className="ERM-background" onClick={handleExit}></div>
-    //         <div className="ERM">
-    //             <div className="ERM-header">
-    //                 <div className="ERM-title-box"> 
-    //                     <h2 className="ERM-title">
-    //                         Edit your review
-    //                     </h2>
-    //                 </div>
-    //             </div>
-    //             <div className="ERM-options">
-    //                 <button 
-    //                 onClick={handleEdit}
-    //                 >Save</button>
-    //             </div>
-    //             <ReviewForm key={review.id} review={review} setReview={setReview} editMode={true}/> 
-    //         </div>
-    //     </div>
-    // )
-
     const active = useSelector(getERMState)
-    // const {review, setReview, listingId} = useSelector(getERMParams)
     const dispatch = useDispatch()
     const loggedInUser = useSelector(getCurrentUser)
     const [displayLoginMessage, setDisplayLoginMessage] = useState(false)
-
-
     const params = useSelector(getERMParams);
     const { review, setReview, listingId } = params;
-
-
     const [mode, setMode] = useState(review ? 'view' : 'create')
 
     useEffect(() => {
         
         if(params) {
-        
           setMode(review ? 'view' : 'create');
-          
-          const initialReview = review || {
+
+          const initialReview = (review === undefined || Object.keys(review).length === 0) ? {
             author_id: loggedInUser.id,
             listing_id: listingId,
             body: '',
@@ -115,7 +34,7 @@ const EditReviewModal = () => {
             communication: null,
             location: null, 
             value: null
-          };
+          } : review;
           
           if(setReview) {
             setReview(initialReview);
@@ -162,13 +81,20 @@ const EditReviewModal = () => {
         }
     }
 
+    const updateReviewField = (category, n) => {
+        // debugger
+        setReview({...review, [category]: n})
+        console.log('setting to this', {...review, [category]: n})
+    }
+
 
     const changeableRadioButtons = ( category ) => {
 
         return (
             <>
                 <div className='star-rating-selection'>
-                    <div className='indv-star' onClick={()=>setReview({...review, [category]: 1})}>
+                    <div className='indv-star' 
+                    onClick={()=>updateReviewField(category, 1)}>
                         {(review && review[category] >= 1) ? <AiFillStar className='filled'/> : <AiOutlineStar className='outline'/>}
                     </div>
                     <div className='indv-star' onClick={()=>setReview({...review, [category]: 2})}>
@@ -226,9 +152,6 @@ const EditReviewModal = () => {
             return '';
         }
     };
-
-    
-
 
     return (
         <div className='basic-modal-background' onClick={()=>dispatch(deactivateERM())}> 
