@@ -18,7 +18,7 @@
 #
 class Review < ApplicationRecord
 
-    validates :body, :cleanliness, :communication, :check_in, :accuracy, :location, :value, :author_id, :listing_id, presence: true
+    validates :body, :cleanliness, :communication, :check_in, :accuracy, :location, :value, :author_id, :booking_id, presence: true
 
     # validates :author_id, uniqueness: {scope: :listing_id}
 

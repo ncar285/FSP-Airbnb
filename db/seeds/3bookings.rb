@@ -4,6 +4,7 @@ user_id = 1
 
 start_date = current_date - 53.weeks 
 
+
 # create 15 bookings in the past
 15.times do |index| 
   duration = rand(3..7)

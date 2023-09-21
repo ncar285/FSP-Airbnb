@@ -6,10 +6,10 @@ require 'csv'
 
 #! RESETTING THINGS
 
-puts "Destroying booking..."
-Booking.destroy_all
 puts "Destroying reviews..."
 Review.destroy_all
+puts "Destroying booking..."
+Booking.destroy_all
 puts "Destroying listings..."
 Listing.destroy_all
 puts "Destroying users..."
