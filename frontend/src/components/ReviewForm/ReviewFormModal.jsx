@@ -8,35 +8,33 @@ import {AiOutlineStar} from 'react-icons/ai'
 import {AiFillStar} from 'react-icons/ai'
 import {AiTwotoneEdit} from 'react-icons/ai'
 
-const ReviewFormModal = ({review, setReview, listingId, setOpenModal, setSuccessMessage}) => {
+const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
 
-    
-    const findMode = review ? 'view' : 'create'
-    const [mode, setMode] = useState(findMode)
+
     const dispatch = useDispatch()
     const loggedInUser = useSelector(getCurrentUser)
+    
+    const [mode, setMode] = useState(null)
     const [displayLoginMessage, setDisplayLoginMessage] = useState(false)
 
-    if (review === null && mode === 'create'){
-        setReview({
-            author_id: loggedInUser.id,
-            listing_id: listingId,
-            body: '',
-            accuracy: null,
-            cleanliness: null,
-            communication: null,
-            location: null, 
-            value: null
-        })
+    const [review, setReview] = useState()
 
-    }
+    console.log("the focussed review: ", review)
+    console.log("mode: ", mode)
+
 
 
     useEffect(()=>{
-        if (loggedInUser){
-            setDisplayLoginMessage(false)
-        }
-    },[loggedInUser]) 
+        const modalData = JSON.parse(sessionStorage.getItem("reviewModal"));
+        setReview(modalData.review)
+        setMode(modalData.mode)
+        // if (loggedInUser){
+        //     setDisplayLoginMessage(false)
+        // }
+
+        // ! former dependency array:
+        // [loggedInUser]
+    },[]) 
 
     const loginMessage =() => {
         return (
@@ -55,22 +53,17 @@ const ReviewFormModal = ({review, setReview, listingId, setOpenModal, setSuccess
 
 
     const handleSubmitReview = async e => {
-
         e.preventDefault();
         if (loggedInUser && mode === 'create'){
             dispatch(createReview(review))
-            setOpenModal(false)
-            showSuccessMessage()
-            // setSuccessMessage(true)
         } else if (loggedInUser && mode === 'edit'){
             dispatch(updateReview(review))
-            setOpenModal(false)
-            showSuccessMessage()
-            // setSuccessMessage(true)
-
         } else {
             setDisplayLoginMessage(true)
         }
+        setOpenModal(false)
+        sessionStorage.removeItem("reviewModal");
+        showSuccessMessage()
     }
 
 
@@ -138,11 +131,17 @@ const ReviewFormModal = ({review, setReview, listingId, setOpenModal, setSuccess
         }
     };
 
+    const exitModal = () => {
+        // initializeReview()
+        sessionStorage.removeItem("reviewModal");
+        setOpenModal(false)
+    }
+
     
 
 
     return (
-        <div className='basic-modal-background' onClick={()=>setReview(null)}> 
+        <div className='basic-modal-background' onClick={exitModal}> 
             <div className='review-modal basic-modal'
             onClick={(e)=>e.stopPropagation()}>
                 <form onSubmit={handleSubmitReview}>

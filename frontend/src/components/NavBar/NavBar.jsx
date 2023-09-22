@@ -45,6 +45,7 @@ const NavBar = ({ tagsOn, searchType, barType}) => {
     const handleGoHome = () => {
         window.location.href = '/';
         history.push('/');
+        // sessionStorage.removeItem("myReview");
         setSearchParams({});
     }
 

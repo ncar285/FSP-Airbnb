@@ -56,20 +56,20 @@ export const getListingRevews = state => state.reviews? Object.values(state.revi
 
 export const createReview = reviewData => async (dispatch) => {
     const review = await postReview(reviewData);
-    sessionStorage.setItem("myReview", JSON.stringify(review))
+    // sessionStorage.setItem("myReview", JSON.stringify(review))
     dispatch(setCurrentReview(review));
 };
 
 
 export const updateReview = reviewData => async (dispatch) => {
     const review = await patchReview(reviewData);
-    sessionStorage.setItem("myReview", JSON.stringify(review))
+    // sessionStorage.setItem("myReview", JSON.stringify(review))
     dispatch(setCurrentReview(review));
 };
 
 export const deleteUserReview = reviewId => async (dispatch) => {
     await deleteReview(reviewId);
-    sessionStorage.setItem("myReview", null)
+    // sessionStorage.setItem("myReview", null)
     dispatch(removeCurrentReview(reviewId));
 };
 

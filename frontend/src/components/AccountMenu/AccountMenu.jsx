@@ -10,8 +10,6 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const AccountMenu = ({ handleMenuClick, margin, setMenuOpen }) => {
 
-
-
     const [showRegister] = useState(false)
     const dispatch = useDispatch();
     const sessionUser = useSelector(getCurrentUser);
@@ -25,6 +23,7 @@ const AccountMenu = ({ handleMenuClick, margin, setMenuOpen }) => {
         dispatch(logoutUser());
         setMenuOpen(false)
         history.push('/');
+        // sessionStorage.removeItem("myReview");
         // window.location.reload(); 
     }
 

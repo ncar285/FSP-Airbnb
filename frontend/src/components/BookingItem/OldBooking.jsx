@@ -1,10 +1,11 @@
 import './OldBooking.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { AiFillStar } from 'react-icons/ai'
 // import { AiTwotoneEdit } from 'react-icons/ai'
 import { useState } from 'react'
 import ReviewFormModal from '../ReviewForm/ReviewFormModal'
 import { activateERM } from '../../store/uiReducer'
+import { getCurrentUser } from '../../store/sessionsReducer'
 
 const OldBooking = ({ booking, setSuccessMessage }) => {
     const startDate = new Date(booking.startDate);
@@ -25,10 +26,11 @@ const OldBooking = ({ booking, setSuccessMessage }) => {
     // const longAddress = `${booking.address}, ${booking.city}`
     // const country = (booking.state === 'California') ? 'United States' : booking.state
     
+    const loggedInUser = useSelector(getCurrentUser)
 
     const initialReview = booking.myReview || {
-        author_id: null,
-        listing_id: booking.listingId,
+        author_id: loggedInUser.id,
+        booking_id: booking.id,
         body: '',
         accuracy: null,
         cleanliness: null,
@@ -36,14 +38,28 @@ const OldBooking = ({ booking, setSuccessMessage }) => {
         location: null, 
         value: null
     }
+
     const [review, setReview] = useState(initialReview)
     // const listingId = booking.listingId
     const [openModal, setOpenModal] = useState(false)
+
+   
 
 
     // const openReviewModal = () => {
     //     dispatch(activateERM({review, setReview, listingId}))
     // }
+
+
+    const clickOpenModal = () => {
+        const modalInfo = {
+            mode: booking.myReview ? 'view' : 'create',
+            booking: booking,
+            review: review
+        }
+        sessionStorage.setItem("reviewModal", JSON.stringify(modalInfo))
+        setOpenModal(true)
+    }
 
   
     return (
@@ -69,7 +85,7 @@ const OldBooking = ({ booking, setSuccessMessage }) => {
 
                     <div className='leave-booking-review'
                     // onClick={openReviewModal}
-                    onClick={()=>setOpenModal(true)}
+                    onClick={clickOpenModal}
                     >
 
                     {booking.myReview ? 
