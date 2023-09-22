@@ -22,6 +22,8 @@ const AccountPage = () => {
     const data = useSelector(selectUserData)
     const bookings  = useSelector(getBookings)
 
+    // const reviews = useSelector(getUserRevews)
+
 
     const [cancelModal, setCancelModal] = useState(false);
     const [modifyModal, setModifyModal] = useState(false);
@@ -71,8 +73,6 @@ const AccountPage = () => {
     }
 
 
-
-    // console.log(upcomingsBookings)
 
     return (
         <>

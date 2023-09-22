@@ -16,6 +16,8 @@
 #  rating        :float
 #  booking_id    :bigint
 #
+
+
 class Review < ApplicationRecord
 
     validates :body, :cleanliness, :communication, :check_in, :accuracy, :location, :value, :author_id, :booking_id, presence: true

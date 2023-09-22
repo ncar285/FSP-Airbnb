@@ -6,6 +6,8 @@ export const RECEIVE_BOOKING = 'RECEIVE_BOOKING'
 export const REMOVE_BOOKING  = 'REMOVE_BOOKING'
 export const REPLACE_BOOKING = 'REPLACE_BOOKING'
 
+export const ADD_REVIEW_TO_BOOKING = 'ADD_REVIEW_TO_BOOKING'
+
 // ACTION CREATORS 
 export const receiveBooking = booking => {
     return {
@@ -22,6 +24,11 @@ export const removeBooking = bookingId => ({
 export const replaceBooking = bookingData => ({
     type: REPLACE_BOOKING,
     payload: bookingData
+})
+
+export const addReviewToBooking = review => ({
+    type: ADD_REVIEW_TO_BOOKING,
+    payload: review
 })
 
 
@@ -70,7 +77,14 @@ const bookingsReducer = (state = initialState, action) => {
     let newState = {...state}
     switch (action.type) {
         case RECEIVE_BOOKING:
-    return { ...state, [action.payload.id]: action.payload };
+            return { ...state, [action.payload.id]: action.payload };
+        case ADD_REVIEW_TO_BOOKING:
+            const bookingId = action.payload.bookingId
+            // debugger
+            state[bookingId].myReview = action.payload
+
+            return {...state}
+            
     //     case SET_CURRENT_REVIEWS:
     // return { ...state, ...action.payload };
         case REMOVE_BOOKING:

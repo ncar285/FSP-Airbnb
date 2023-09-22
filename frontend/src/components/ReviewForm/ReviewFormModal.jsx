@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 import {AiOutlineStar} from 'react-icons/ai'
 import {AiFillStar} from 'react-icons/ai'
 import {AiTwotoneEdit} from 'react-icons/ai'
+import {AiFillEye} from 'react-icons/ai'
 
 const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
 
@@ -19,9 +20,7 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
 
     const [review, setReview] = useState()
 
-    console.log("the focussed review: ", review)
-    console.log("mode: ", mode)
-
+    
 
 
     useEffect(()=>{
@@ -150,6 +149,8 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
                         {getHeaderText(mode)}
                         {(mode === 'view') && 
                         <AiTwotoneEdit onClick={()=>{setMode('edit')}}/> }
+                        {(mode === 'edit') && 
+                        <AiFillEye onClick={()=>{setMode('view')}}/> }
                     </div>
 
                     <div className='score-inputs'>
@@ -172,9 +173,9 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
                             <div className='checkIn input'>
                                 <div className='category'>Check-in</div>
                                 {(mode === 'create' || mode === 'edit') &&
-                                reviewRadioButtons('checkIn')}
+                                reviewRadioButtons('check_in')}
                                 {(mode === 'view') &&
-                                viewReviewRadio('checkIn')}
+                                viewReviewRadio('check_in')}
                             </div>
                         </div>
 

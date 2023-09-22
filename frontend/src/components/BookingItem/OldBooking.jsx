@@ -35,6 +35,7 @@ const OldBooking = ({ booking, setSuccessMessage }) => {
         accuracy: null,
         cleanliness: null,
         communication: null,
+        check_in: null,
         location: null, 
         value: null
     }

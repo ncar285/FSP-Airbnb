@@ -37,7 +37,8 @@ class User < ApplicationRecord
 
     has_many :reviews,
         foreign_key: :author_id,
-        dependent: :destroy
+        dependent: :destroy,
+        class_name: :Review
 
     # has_many :wishlists,
     #     dependent: :destroy
