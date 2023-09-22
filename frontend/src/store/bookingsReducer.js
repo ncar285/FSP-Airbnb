@@ -7,6 +7,7 @@ export const REMOVE_BOOKING  = 'REMOVE_BOOKING'
 export const REPLACE_BOOKING = 'REPLACE_BOOKING'
 
 export const ADD_REVIEW_TO_BOOKING = 'ADD_REVIEW_TO_BOOKING'
+export const REMOVE_REVIEW_FROM_BOOKING = 'REMOVE_REVIEW_FROM_BOOKING'
 
 // ACTION CREATORS 
 export const receiveBooking = booking => {
@@ -31,9 +32,29 @@ export const addReviewToBooking = review => ({
     payload: review
 })
 
+export const removeReviewFromBooking = bookingId => ({
+    type: REMOVE_REVIEW_FROM_BOOKING,
+    payload: bookingId
+})
+
 
 // SELECTORS 
+
 export const getBookings = state => state.bookings
+export const getBooking = id => state => state.bookings[id] 
+export const getCurrentBookings = state => {
+    const today = new Date()
+    return Object.values(state.bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today)
+}
+export const getUpcomingBookings = state => {
+    // debugger
+    const today = new Date()
+    return Object.values(state.bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate)
+}
+export const getPreviousBookings = state => {
+    const today = new Date()
+    return Object.values(state.bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate)
+}
 
 
 // THUNK ACTION CREATORS
@@ -84,6 +105,12 @@ const bookingsReducer = (state = initialState, action) => {
             state[bookingId].myReview = action.payload
 
             return {...state}
+        case REMOVE_REVIEW_FROM_BOOKING: 
+            debugger
+            if (state[action.payload]) {
+                state[action.payload].myReview = null
+            } 
+            return { ...state};
             
     //     case SET_CURRENT_REVIEWS:
     // return { ...state, ...action.payload };

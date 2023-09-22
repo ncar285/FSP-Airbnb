@@ -45,8 +45,8 @@ function App() {
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
             <RegisterForm />
             {/* <ShowListing/>  */}
-            {/* <DeleteReviewModal/> */}
-            <EditReviewModal/>
+            <DeleteReviewModal/>
+            {/* <EditReviewModal/> */}
             <AccountPage/>
             <Footer/>
         </Route>

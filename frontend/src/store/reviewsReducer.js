@@ -1,7 +1,7 @@
 import { postReview } from "../utils/reviewApiUtils";
 import { patchReview } from "../utils/reviewApiUtils";
 import { deleteReview } from "../utils/reviewApiUtils";
-import { addReviewToBooking } from "./bookingsReducer";
+import { addReviewToBooking, removeReviewFromBooking } from "./bookingsReducer";
 
 //CONSTANTS
 export const RECEIVE_MY_REVIEW = 'RECEIVE_MY_REVIEW'
@@ -89,9 +89,11 @@ export const updateReview = reviewData => async (dispatch) => {
     dispatch(addReviewToBooking(review))
 };
 
-export const deleteUserReview = reviewId => async (dispatch) => {
-    await deleteReview(reviewId);
-    dispatch(removeCurrentReview(reviewId));
+export const deleteUserReview = review => async (dispatch) => {
+    await deleteReview(review.id);
+    // debugger
+    dispatch(removeReviewFromBooking(review.booking_id))
+    dispatch(removeCurrentReview(review.id));
 };
 
 

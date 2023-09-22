@@ -5,12 +5,26 @@ import ReviewItem from "../Reviews/ReviewItem";
 import { getUserReview } from "../../store/reviewsReducer";
 import { getDRMState } from "../../store/uiReducer";
 import { deleteUserReview } from "../../store/reviewsReducer";
+import { useEffect } from "react";
 
 const DeleteReviewModal = () => {
 
-    const review = useSelector(getUserReview)
     const dispatch = useDispatch()
     const active = useSelector(getDRMState)
+
+    // const review = useSelector(getUserReview)
+    let review
+
+    useEffect(()=>{
+        const modalData = JSON.parse(sessionStorage.getItem("reviewModal"));
+        if (modalData) {
+            review = modalData.review
+        }
+    },[active])
+
+
+    console.log(review)
+
 
     if (!active) return null
 
@@ -22,7 +36,7 @@ const DeleteReviewModal = () => {
     const handleDelete = async e => {
         // e.preventDefault();
         e.stopPropagation()
-        dispatch(deleteUserReview(review.id))
+        dispatch(deleteUserReview(review))
         dispatch(deactivateDRM())
     }
 
@@ -44,7 +58,9 @@ const DeleteReviewModal = () => {
                     <button onClick={handleDelete}>Yes</button>
                     <button onClick={handleExit}>No</button>
                 </div>
-                <ReviewItem key={review.id} review={review} editMode={false}/> 
+                {/* <ReviewItem 
+                key={review.id}
+                 review={review} editMode={false}/>  */}
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import { getCurrentUser } from "../../store/sessionsReducer"
 import { fetchUserShow, selectUserData } from "../../store/usersReducer"
 import { useEffect, useState } from "react"
 import BookingItem from "../BookingItem/BookingItem"
-import { deleteBooking, getBookings } from "../../store/bookingsReducer"
+import { deleteBooking, getBookings, getCurrentBookings, getPreviousBookings, getUpcomingBookings } from "../../store/bookingsReducer"
 import UserWelcomeHome from "../UserWelcomeHome/UserWelcomeHome"
 import OldBooking from "../BookingItem/OldBooking"
 import { RxCross2 } from 'react-icons/rx'
@@ -22,6 +22,8 @@ const AccountPage = () => {
     const data = useSelector(selectUserData)
     const bookings  = useSelector(getBookings)
 
+
+
     // const reviews = useSelector(getUserRevews)
 
 
@@ -33,10 +35,13 @@ const AccountPage = () => {
     const [successMessage, setSuccessMessage] = useState(false)
 
 
-    const [currentBookings, setCurrentBookings] = useState([])
-    const [upcomingsBookings, setUpcomingsBookings] = useState([])
-    const [previousBookings, setPreviousBookings] = useState([])
+    // const [currentBookings, setCurrentBookings] = useState([])
+    // const [upcomingsBookings, setUpcomingsBookings] = useState([])
+    // const [previousBookings, setPreviousBookings] = useState([])
 
+    const currentBookings = useSelector(getCurrentBookings);
+    const upcomingsBookings = useSelector(getUpcomingBookings);
+    const previousBookings = useSelector(getPreviousBookings);
 
     useEffect(() => {
         if (user){
@@ -46,15 +51,15 @@ const AccountPage = () => {
 
 
 
-    useEffect(() => {
-        if (bookings){ 
-            // debugger
-            const today = new Date()
-            setCurrentBookings(Object.values(bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today))
-            setUpcomingsBookings(Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate))
-            setPreviousBookings(Object.values(bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate))
-        }
-    }, [bookings]);
+    // useEffect(() => {
+    //     if (bookings){ 
+    //         // debugger
+    //         const today = new Date()
+    //         setCurrentBookings(Object.values(bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today))
+    //         setUpcomingsBookings(Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate))
+    //         setPreviousBookings(Object.values(bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate))
+    //     }
+    // }, [bookings]);
 
 
 

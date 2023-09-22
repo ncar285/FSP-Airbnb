@@ -2,10 +2,11 @@ import './OldBooking.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { AiFillStar } from 'react-icons/ai'
 // import { AiTwotoneEdit } from 'react-icons/ai'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ReviewFormModal from '../ReviewForm/ReviewFormModal'
 import { activateERM } from '../../store/uiReducer'
 import { getCurrentUser } from '../../store/sessionsReducer'
+import { getBooking } from '../../store/bookingsReducer'
 
 const OldBooking = ({ booking, setSuccessMessage }) => {
     const startDate = new Date(booking.startDate);
@@ -17,18 +18,34 @@ const OldBooking = ({ booking, setSuccessMessage }) => {
     const endDay = endDate.getDate();
     const endMonth = endDate.toLocaleString('en-US', { month: 'short' });
     const endYear = endDate.getFullYear();
-
     const formattedStartDate = `${startDay} ${startMonth} ${startYear}`;
     const formattedEndDate = `${endDay} ${endMonth} ${endYear}`;
-
     const dispatch = useDispatch();
-    
-    // const longAddress = `${booking.address}, ${booking.city}`
-    // const country = (booking.state === 'California') ? 'United States' : booking.state
-    
-    const loggedInUser = useSelector(getCurrentUser)
 
-    const initialReview = booking.myReview || {
+    const loggedInUser = useSelector(getCurrentUser)
+    // console.log(booking.myReview)
+
+    const [review, setReview] = useState(booking.myReview)
+    const [openModal, setOpenModal] = useState(false)
+
+    // useEffect(()=>{
+    //     if (mode === 'create'){
+    //         const initialReview = {
+    //             author_id: loggedInUser.id,
+    //             booking_id: booking.id,
+    //             body: '',
+    //             accuracy: null,
+    //             cleanliness: null,
+    //             communication: null,
+    //             check_in: null,
+    //             location: null, 
+    //             value: null
+    //         }
+    //         setReview(initialReview)
+    //     }
+    // },[])
+
+    const initialReview = {
         author_id: loggedInUser.id,
         booking_id: booking.id,
         body: '',
@@ -40,13 +57,6 @@ const OldBooking = ({ booking, setSuccessMessage }) => {
         value: null
     }
 
-    const [review, setReview] = useState(initialReview)
-    // const listingId = booking.listingId
-    const [openModal, setOpenModal] = useState(false)
-
-   
-
-
     // const openReviewModal = () => {
     //     dispatch(activateERM({review, setReview, listingId}))
     // }
@@ -56,7 +66,7 @@ const OldBooking = ({ booking, setSuccessMessage }) => {
         const modalInfo = {
             mode: booking.myReview ? 'view' : 'create',
             booking: booking,
-            review: review
+            review: booking.myReview ? booking.myReview : initialReview
         }
         sessionStorage.setItem("reviewModal", JSON.stringify(modalInfo))
         setOpenModal(true)

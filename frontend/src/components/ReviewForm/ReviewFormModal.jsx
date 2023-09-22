@@ -8,6 +8,8 @@ import {AiOutlineStar} from 'react-icons/ai'
 import {AiFillStar} from 'react-icons/ai'
 import {AiTwotoneEdit} from 'react-icons/ai'
 import {AiFillEye} from 'react-icons/ai'
+import { BsTrash3 } from "react-icons/bs"
+import { activateDRM } from '../../store/uiReducer'
 
 const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
 
@@ -20,19 +22,19 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
 
     const [review, setReview] = useState()
 
+    console.log(review)
+    console.log(mode)
     
-
+    const handleTrashCanClick = async () => {
+        setOpenModal(false)
+        dispatch(activateDRM())
+    }
 
     useEffect(()=>{
         const modalData = JSON.parse(sessionStorage.getItem("reviewModal"));
+        console.log(modalData)
         setReview(modalData.review)
         setMode(modalData.mode)
-        // if (loggedInUser){
-        //     setDisplayLoginMessage(false)
-        // }
-
-        // ! former dependency array:
-        // [loggedInUser]
     },[]) 
 
     const loginMessage =() => {
@@ -148,9 +150,19 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
                     <div className='header-1'>
                         {getHeaderText(mode)}
                         {(mode === 'view') && 
-                        <AiTwotoneEdit onClick={()=>{setMode('edit')}}/> }
+                        <>
+                        <div className='edit-delete-buttons'>
+                            <AiTwotoneEdit onClick={()=>{setMode('edit')}}/> 
+                            <BsTrash3 className="trash-button" onClick={handleTrashCanClick}/>
+                        </div>
+                        </>
+                        }
                         {(mode === 'edit') && 
-                        <AiFillEye onClick={()=>{setMode('view')}}/> }
+                        <>
+                            <AiFillEye onClick={()=>{setMode('view')}}/>
+                        {/* <BsTrash3 onClick={handleTrashCanClick}/> */}
+                        </>
+                         }
                     </div>
 
                     <div className='score-inputs'>
