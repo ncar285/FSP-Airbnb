@@ -33,6 +33,11 @@ const Splash = () => {
 
   return (
     <>
+      {listings.length === 0 &&
+      <div className='no-result-search'>
+        <p>No results match this search</p>
+      </div>
+      }
       <ul  className="splash">
         {listings.map(listing => (
             <ListingItem key={listing.id} listing={listing}/>

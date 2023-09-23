@@ -13,6 +13,17 @@
     grid-template-columns: repeat(var(--grid_columns), minmax(0, 1fr));
 }
 
+.no-result-search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+.no-result-search p {
+    font-family: 'airbnb5';
+    font-size: 1rem;
+}
+
 .item {
     width: 100%;
 }
