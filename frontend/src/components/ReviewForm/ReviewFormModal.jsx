@@ -67,6 +67,8 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
         showSuccessMessage()
     }
 
+    console.log(review)
+
 
     const reviewRadioButtons = ( category ) => {
 

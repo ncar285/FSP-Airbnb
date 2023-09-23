@@ -10,7 +10,31 @@ const UserWelcomeHome = ({data}) => {
     const currentUser = useSelector(getCurrentUser)
     const name = currentUser.id === 1 ? 'Tom And Jerry' : currentUser.firstname
     const reviewCount = data && data.reviews ? Object.values(data.reviews).length : null
-    const timeOnFbnb = data.id === 1 ? new Date(data.createdAt) : new Date(data.createdAt)
+    console.log(data)
+    // debugger
+
+    let createdAt = new Date(data.createdAt);
+    if (data.id === 1) {
+        createdAt.setDate(createdAt.getDate() - (103 * 7));
+    }
+    const currentDate = new Date();
+    const diffDays = currentDate.getDate() - createdAt.getDate();
+    const diffMonths = currentDate.getMonth() - createdAt.getMonth();
+    const diffYears = currentDate.getYear() - createdAt.getYear() ;
+
+    console.log(createdAt)
+
+    // debugger
+
+    // const timeOnFbnb = diffYears <= 0 ? (diffMonths <= 0 ? diffDays : diffMonths) : diffYears
+    const timeOnFbnb = diffYears > 0 ? diffYears : (diffMonths > 0 ? diffMonths : diffDays)
+    const TOFBNBUnit = diffYears > 0 ? 'Year' : (diffMonths > 0 ? 'Month' : 'Day');
+    const TOFBNBPlural = timeOnFbnb > 1 ? 's' : '';
+   
+
+    // const timeOnFbnb = data.id === 1 ? new Date(data.createdAt) : new Date(data.createdAt)
+
+    
     return  (
 
         <div className="profile-block">
@@ -34,9 +58,9 @@ const UserWelcomeHome = ({data}) => {
 
                     <div className='show-time-on-fbnb'>
                         {timeOnFbnb &&
-                            <div className='PB-val'>{reviewCount}</div>
+                            <div className='PB-val'>{timeOnFbnb}</div>
                         }
-                        <p>Years on Fairbnb</p>
+                        <p>{`${TOFBNBUnit}${TOFBNBPlural} on Fairbnb`}</p>
                     </div>
                 </div>
             </div>
