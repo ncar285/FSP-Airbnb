@@ -183,9 +183,9 @@ const AccountPage = () => {
                                 <p className="ibhd-hed">Legal Name</p>
                                 <p>{`${user.firstname} ${user.lastname}`}</p>
                             </div>
-                            <div class="tooltip-wrapper">
+                            <div className="tooltip-wrapper">
                                 <div className="ibhde">Edit</div>
-                                <div class="tooltip">Can't edit demo user, sign up to use this feature</div>
+                                <div className="tooltip">Can't edit demo user, sign up to use this feature</div>
                             </div>
                         </div>
                         <div className="pi-spacer"></div>
@@ -194,9 +194,9 @@ const AccountPage = () => {
                                 <p className="ibhd-hed">Email address</p>
                                 <p>{`${user.email}`}</p>
                             </div>
-                            <div class="tooltip-wrapper">
+                            <div className="tooltip-wrapper">
                                 <div className="ibhde">Edit</div>
-                                <div class="tooltip">Can't edit demo user, sign up to use this feature</div>
+                                <div className="tooltip">Can't edit demo user, sign up to use this feature</div>
                             </div>
                         </div>
 
@@ -215,7 +215,7 @@ const AccountPage = () => {
                     <div className='bookings-container'>
                         {currentBookings &&
                         <div>{Object.values(currentBookings).map((booking)=>
-                        <BookingItem booking={booking} type={"current"}/> )}</div>
+                        <BookingItem key={booking.id} booking={booking} type={"current"}/> )}</div>
                         }
                     </div>
 
@@ -228,6 +228,7 @@ const AccountPage = () => {
                         {upcomingsBookings &&
                         <div>{Object.values(upcomingsBookings).map((booking)=>
                         <BookingItem booking={booking} 
+                        key={booking.id}
                         type={"upcoming"}
                         modalBooking = {modalBooking}
                         setModalBooking = {setModalBooking}
@@ -254,7 +255,7 @@ const AccountPage = () => {
                 <div className='bookings-container-lower'>
                     {previousBookings && previousBookings.length !== 0  &&
                         <div className="obi-items-list">{Object.values(previousBookings).map((booking)=>
-                            <OldBooking booking={booking} setSuccessMessage={setSuccessMessage}/> )}</div>
+                            <OldBooking booking={booking} key={booking.id} setSuccessMessage={setSuccessMessage}/> )}</div>
                     }
                 </div>
             </div>

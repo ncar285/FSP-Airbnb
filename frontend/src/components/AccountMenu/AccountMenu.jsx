@@ -45,7 +45,7 @@ const AccountMenu = ({ handleMenuClick, margin, setMenuOpen }) => {
                 <>
                     <div style={{ right: margin}} className="account-options" id="account-options">
                         <button onClick={renderAccountPage}>Account</button>
-                        <div class="account-menu-spacer"></div>
+                        <div className="account-menu-spacer"></div>
                         <button onClick={handleSignOut}>Logout</button>
                     </div>
                 </>

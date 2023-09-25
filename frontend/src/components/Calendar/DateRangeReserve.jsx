@@ -160,7 +160,7 @@ const DateRangeReserve = ({ booking, setBooking, listing, duration, open, setOpe
                     </div>
                 </div>
 
-                <div class="number-input">
+                <div className="number-input">
                     <button id="guest-decrement-button" 
                         className={`${(booking.guests === 1) ? 'inactive' : ''}`}
                         onClick={decrementGuests}>

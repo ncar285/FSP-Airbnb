@@ -157,7 +157,7 @@ const DRRSimplified = ({ booking, setBooking, listing, duration, open, setOpen, 
                     </div>
 
 
-                    <div class="simplified-number-input">
+                    <div className="simplified-number-input">
                         <button id="guest-decrement-button" 
                             className={`${(booking.guests === 1) ? 'inactive' : ''}`}
                             onClick={decrementGuests}>
