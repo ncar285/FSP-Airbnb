@@ -6,3 +6,8 @@
     overflow: hidden;
 }
 
+.BCD-guests,
+.BCD-price {
+    display: flex;
+}
+

@@ -57,25 +57,17 @@ export const getBooking = id => state => state.bookings[id]
 
 
 // THUNK ACTION CREATORS
-export const createBooking = bookingData => async (dispatch) => {
+export const createBooking = (bookingData) => async (dispatch) => {
     try {
         const res = await postBooking(bookingData);
-        const booking = await res.json()
-        return dispatch(receiveBooking(booking));
-
-    } catch(err){
-        // dispatch(receiveError(
-           
-        // ))
-        const errors = await err.json()
-        dispatch(receiveError(errors))
-        // return errors
-
+        const booking = await res.json();
+        dispatch(receiveBooking(booking));
+        return { ok: true };
+    } catch (err) {
+        const errors = await err.json();
+        dispatch(receiveError(errors));
+        return { ok: false, errors };
     }
-    // if (res.ok){
-    // } else {
-        // return errors
-    // }
 };
 
 export const updateBooking = bookingData => async (dispatch) => {

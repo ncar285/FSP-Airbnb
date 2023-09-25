@@ -159,3 +159,12 @@
     /* width: 100%; */
     border: none;
 }
+
+.confirm-booking-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirm-booking-buttons button {
+    width: calc(50% - 1rem)
+}

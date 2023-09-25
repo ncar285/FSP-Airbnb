@@ -9,6 +9,8 @@ import { getBookingErrors } from '../../store/errorsReducer';
 import DateRangeReserve from '../Calendar/DateRangeReserve'
 import { RxCross2 } from 'react-icons/rx'
 import FlatBookingItem from '../BookingItem/FlatBookingItem'
+import success from "../../assets/7efs.gif"
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration,  range, setRange } ) => {
 
@@ -18,6 +20,9 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
     const [open, setOpen] = useState(false)
     const [confirmBooking, setConfirmBooking] = useState(false)
 
+    const [successMessage, setSuccessMessage] = useState(false)
+
+    const history = useHistory()
     // const newBooking = {
     //     userId: user ? user.id : null,
     //     listingId: parseInt(listing.id, 10),
@@ -28,15 +33,28 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
     
     // const [booking, setBooking] = useState(newBooking)
     
-    const handleSubmitBooking = async e  => {
+    const handleSubmitBooking = async (e) => {
         e.preventDefault();
-        const bookingObj = createBookingObject()
-        if (user){
-            dispatch(createBooking(bookingObj))
+        const bookingObj = createBookingObject();
+        let res = { ok: false };
+    
+        if (user) {
+            res = await dispatch(createBooking(bookingObj));
         } else {
-            dispatch(activateRegisterModal)
+            dispatch(activateRegisterModal());
         }
-    }
+    
+        if (res.ok) {
+            setConfirmBooking(false);
+            setSuccessMessage(true);
+            setTimeout(() => {
+                setSuccessMessage(false);
+                history.push('/account');
+            }, 1900);
+        } else {
+            // Handle error (if needed)
+        }
+    };
 
 
     const createBookingObject = () => {
@@ -45,6 +63,20 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
         return {userId: user.id, listingId: parseInt(listing.id, 10), startDate: start, endDate: end, guests: booking.guests }
     }
 
+    const createModalBookingObj = () => {
+        // debugger
+        return {
+            address: listing.address,
+            city: listing.city,
+            startDate: new Date(booking.startDate),
+            endDate: new Date(booking.endDate),
+            guests: booking.guests, 
+            listingId: listing.id,
+            owner: listing.owner.firstname,
+            photoUrl: listing.photoUrls[0],
+            state: listing.state           
+        }
+    }
 
     // const [maxGuests, setMaxGuest] = useState(false)
     // const [minGuests, setMinGuest] = useState(true)
@@ -78,6 +110,14 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
 
         <>
 
+            {successMessage && 
+                <div className="basic-modal-background success-gif" >
+                    <div className="basic-modal success-container">
+                        <img src={success} alt="" />
+                    </div>
+                </div>
+            }
+
             {confirmBooking &&
                 <div className='basic-modal-background' onClick={()=>setConfirmBooking(false)}>
                     <div className='basic-modal' onClick={(e) => e.stopPropagation()}>
@@ -88,11 +128,26 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
                             <p className="header-1 modify-cancel">Confirm your reservation details</p>
                         </div>
                         <div className='modify-modal-container'>
-                            <FlatBookingItem booking={createBookingObject()}/>
+                            <FlatBookingItem mode='confirm' booking={createModalBookingObj()}/>
                         </div>
-                        <button className="airbnb-button" onClick={handleSubmitBooking}>
-                            Confirm
-                        </button>
+                        {/* <div className='booking-confirm-details'>
+                            <div className='BCD-guests'>
+                                <p>Guests:</p>
+                                <p>{booking.guests}</p>
+                            </div>
+                            <div className='booking-confirm-details'>
+                                <p>Total price before tax:</p>
+                                <p>${totalBeforeTax.toLocaleString()}</p>
+                            </div>
+                        </div> */}
+                        <div className='confirm-booking-buttons'>
+                            <button className="airbnb-button" onClick={handleSubmitBooking}>
+                                Confirm & book
+                            </button>
+                            <button className="airbnb-button" onClick={()=>setConfirmBooking(false)}>
+                                Change booking
+                            </button>
+                        </div>
                     </div>
                 </div>
             }

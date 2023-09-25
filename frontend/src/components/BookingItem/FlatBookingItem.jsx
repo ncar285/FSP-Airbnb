@@ -1,6 +1,6 @@
 import './FlatBookingItem.css'
 
-const FlatBookingItem = ({ booking }) => {
+const FlatBookingItem = ({ booking, mode}) => {
 
     const startDate = new Date(booking.startDate);
     const startDay = startDate.getDate();
@@ -37,6 +37,22 @@ const FlatBookingItem = ({ booking }) => {
                         <div className='BDD-right'>
                             <p className='BDD-address'>{longAddress}</p>
                             <p>{country}</p>
+
+                            { mode === 'confirm' &&
+                                // <div className='booking-confirm-details'>
+                                <>
+                                
+                                    <div className='BCD-guests'>
+                                        <p>Guests:</p>
+                                        <p>{booking.guests}</p>
+                                    </div>
+                                    <div className='BCD-price'>
+                                        <p>Total price before tax:</p>
+                                        {/* <p>${totalBeforeTax.toLocaleString()}</p> */}
+                                    </div>
+                                {/* // </div> */}
+                                </>
+                            }
                         </div>
                     </div>
                 </div>
