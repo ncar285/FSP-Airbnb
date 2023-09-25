@@ -4,8 +4,11 @@ import { getListingRevews } from '../../store/reviewsReducer';
 import ReviewItem from './ReviewItem';
 import { useSelector } from 'react-redux';
 import { getUserReview } from '../../store/reviewsReducer';
+import { getCurrentUser } from '../../store/sessionsReducer';
 
 const Reviews = (  {count, rating, findAverageScore} ) => {
+
+    const currentUser = useSelector(getCurrentUser)
     const userReview = useSelector(getUserReview)
     const reviews = useSelector(getListingRevews)
     
@@ -16,13 +19,21 @@ const Reviews = (  {count, rating, findAverageScore} ) => {
     let location = findAverageScore(reviews, "location")
     let value = findAverageScore(reviews, "value")
 
-    const allOtherReviews = () => {
-        if (userReview){
-            const otherReviews = reviews.filter(review => review.authorId !== userReview?.authorId);
-            return otherReviews.map((review) => <ReviewItem key={review.id} review={review} />)
-        }else {
-            return reviews.map((review) => <ReviewItem key={review.id} review={review} />)
-        }
+    // console.log(userReview)
+
+    // const allOtherReviews = () => {
+    //     if (userReview){
+    //         const otherReviews = reviews.filter(review => review.authorId !== userReview?.authorId);
+    //         return otherReviews.map((review) => <ReviewItem key={review.id} review={review} />)
+    //     }else {
+    //         return reviews.map((review) => <ReviewItem key={review.id} review={review} />)
+    //     }
+    // }
+
+    const reviewsList = () => {
+        return reviews
+        .sort((a, b) => (a.authorId === currentUser.id ? -1 : b.authorId === currentUser.id ? 1 : 0))
+        .map((review) => <ReviewItem key={review.id} review={review} />);
     }
 
     return (
@@ -99,8 +110,13 @@ const Reviews = (  {count, rating, findAverageScore} ) => {
             </div>
         </div>
  
-        {userReview && <ReviewItem key={userReview.id} review={userReview} />}
-        {allOtherReviews()}
+        
+        <div className='reviews-list-container'>
+            {reviewsList()}
+        </div>
+        
+        {/* {userReview && <ReviewItem key={userReview.id} review={userReview} />}
+        {allOtherReviews()} */}
 
     </>
     )

@@ -73,6 +73,11 @@
     margin-left: 10px;
 }
 
+.reviews-list-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 
 
 

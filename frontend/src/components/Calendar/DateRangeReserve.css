@@ -190,6 +190,9 @@ button.rdrDay span.rdrEndEdge{
     background-color: var(--brand-color) !important;
 }
 
+/* button.rdrDayHovered>span {
+    border: 1px solid var(--brand-color) !important;
+} */
 /* button.rdrDay span.rdrDayInPreview {
     border-top: 1px solid var(--brand-color) !important;
     border-bottom: 1px solid var(--brand-color) !important;

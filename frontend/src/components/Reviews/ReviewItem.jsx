@@ -6,6 +6,8 @@ import { FaEdit } from "react-icons/fa"
 import { activateERM } from '../../store/uiReducer';
 import { activateDRM } from '../../store/uiReducer';
 import { useDispatch } from 'react-redux';
+import {MdKeyboardArrowRight} from 'react-icons/md'
+import { useEffect, useRef, useState } from 'react';
 
 const ReviewItem = ({ review, editMode = true }) => {
     const author = review.authorFirstname;
@@ -14,61 +16,65 @@ const ReviewItem = ({ review, editMode = true }) => {
     const imgUrl = review.authorPhotoUrl
     const user = useSelector(getCurrentUser)
     const dispatch = useDispatch()
-    // const currentUserPhoto = user.photoUrl
+    
+    
+    const [showMore, setShowMore] = useState(false)
 
-    const myReview = () => {
-        return (user && user.id === review.authorId) ? true : false
-    }
+    const myReview = (user && user.id === review.authorId)
+    
+    const reviewBodyRef = useRef(null);
 
-    const handleTrashCanClick = async () => {
-        dispatch(activateDRM())
-    }
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-    const handleEditClick = async () => {
-        dispatch(activateERM())
-    }
+    const updateWindowWidth = () => {
+        setWindowWidth(window.innerWidth);
+    };
 
-    if (myReview()){
-        return (
+    useEffect(() => {
+        window.addEventListener('resize', updateWindowWidth);
+        
+        return () => {
+            window.removeEventListener('resize', updateWindowWidth);
+        };
+    }, []);
+
+    useEffect(() => {
+        setTimeout(() => {
+            const reviewBody = reviewBodyRef.current;
+            if (reviewBody) {
+                const lineHeight = parseFloat(window.getComputedStyle(reviewBody).lineHeight);
+                const lines = Math.floor(reviewBody.scrollHeight / lineHeight);
+                setShowMore(lines > 3);
+            }
+        }, 0);
+    }, [review, windowWidth]);
+
+
+    return (
         <>
-            <div className='review-item my-review'>
+            <div className='review-item'>
+                {/* {`review-item ${myReview ? 'my-review' : ''}`}> */}
                 <div className='user-review-options'>
                     <div className='review-header'>
-                        <img className="author-profile" src={user.photoUrl} alt="" />
+                        <img className="author-profile" src={imgUrl} alt="" />
                         <div className='name-date'>
-                            <div className='reviewer-name'>{user.firstname}</div>
+                            <div className='reviewer-name'>{author}</div>
                             <div className='review-date'>{date}</div>
                         </div>
                     </div>
-                    {editMode &&
-                    <div className='review-crud-buttons'>
-                        <BsTrash3 onClick = {handleTrashCanClick}/>
-                        <FaEdit onClick = {handleEditClick}/>
+                </div>
+
+                <div className='rev-body'>
+                <p ref={reviewBodyRef} className='rev-description-preview'>{review.body}</p>
+                    { showMore &&
+                    <div className="show-more" >
+                        Show More <MdKeyboardArrowRight className='arrow-more'/>
                     </div>
                     }
                 </div>
-                <div className='review-content'>{review.body}</div>
-            </div>
+             </div>
         </>
-        )
-    }else {
-        return (
-            <>
-                <div className='review-item'>
-                    <div className='user-review-options'>
-                        <div className='review-header'>
-                            <img className="author-profile" src={imgUrl} alt="" />
-                            <div className='name-date'>
-                                <div className='reviewer-name'>{author}</div>
-                                <div className='review-date'>{date}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='review-content'>{review.body}</div>
-                </div>
-            </>
-        )
-    }
+    )
 }
 
 export default ReviewItem
