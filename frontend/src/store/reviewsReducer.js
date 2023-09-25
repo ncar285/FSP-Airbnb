@@ -91,7 +91,6 @@ export const updateReview = reviewData => async (dispatch) => {
 
 export const deleteUserReview = review => async (dispatch) => {
     await deleteReview(review.id);
-    // debugger
     dispatch(removeReviewFromBooking(review.booking_id))
     dispatch(removeCurrentReview(review.id));
 };

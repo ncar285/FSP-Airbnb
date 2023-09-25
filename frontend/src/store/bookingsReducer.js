@@ -47,7 +47,6 @@ export const getBooking = id => state => state.bookings[id]
 //     return Object.values(state.bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today)
 // }
 // export const getUpcomingBookings = state => {
-//     // debugger
 //     const today = new Date()
 //     return Object.values(state.bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate)
 // }
@@ -101,12 +100,10 @@ const bookingsReducer = (state = initialState, action) => {
             return { ...state, [action.payload.id]: action.payload };
         case ADD_REVIEW_TO_BOOKING:
             const bookingId = action.payload.bookingId
-            // debugger
             state[bookingId].myReview = action.payload
 
             return {...state}
         case REMOVE_REVIEW_FROM_BOOKING: 
-            debugger
             if (state[action.payload]) {
                 state[action.payload].myReview = null
             } 

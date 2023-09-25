@@ -26,8 +26,6 @@ const BookingItem = ({ booking, type, setCancelModal, setModifyModal, setModalId
 
 
     const when = () => {
-        // debugger
-
         const today = new Date()
         const diffDays = startDate.getDate() - today.getDate();
         const diffMonths = startDate.getMonth() - today.getMonth();

@@ -37,7 +37,6 @@ export const removeListing = listingId => ({
 
 // THUNK ACTION CREATORS
 export const getListings = params => async dispatch => {
-  // debugger
   const listings = await fetchListings(params)
   return dispatch(replaceListings(listings))
 }

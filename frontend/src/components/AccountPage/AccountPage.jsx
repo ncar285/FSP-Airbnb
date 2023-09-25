@@ -59,7 +59,6 @@ const AccountPage = () => {
 
     // useEffect(() => {
     //     if (bookings){ 
-    //         // debugger
     //         const today = new Date()
     //         setCurrentBookings(Object.values(bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today))
     //         setUpcomingsBookings(Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate))

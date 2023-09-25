@@ -40,7 +40,6 @@ const EditForm = ( { booking, setSuccessMessage, setModifyModal} ) => {
     const handleUpdateBooking = async () => {
         setModifyModal(false)
         const res = await dispatch(updateBooking(updatedBooking))
-        // debugger
         if (res){
             setSuccessMessage(true)
             setTimeout(()=>{

@@ -89,7 +89,6 @@ const RegisterForm = () => {
     }
 
     const handleSignup = async e => {
-        // debugger
         setShowPasswordMessage(false)
         e.preventDefault();
         const passwordCheck = checkPassword(password)

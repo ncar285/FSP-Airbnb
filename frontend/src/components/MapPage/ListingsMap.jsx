@@ -87,8 +87,6 @@ const ListingsMap = () => {
     
     const showListingInfoWindow = (marker) => {
 
-        // debugger 
-
         const listingArray = Object.values(listingsRef.current)
         const obj = listingArray.filter(listing=>listing.id === marker.id)[0]
 
@@ -167,7 +165,6 @@ const ListingsMap = () => {
     }
 
     const renderShow = (id) => {
-        // debugger
         if (selectedListing === id){
             return window.open(`/listing/${id}`, '_blank');
         }
