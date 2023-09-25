@@ -19,19 +19,9 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
     const errors = useSelector(getBookingErrors)
     const [open, setOpen] = useState(false)
     const [confirmBooking, setConfirmBooking] = useState(false)
-
     const [successMessage, setSuccessMessage] = useState(false)
-
     const history = useHistory()
-    // const newBooking = {
-    //     userId: user ? user.id : null,
-    //     listingId: parseInt(listing.id, 10),
-    //     startDate: null,
-    //     endDate: null,
-    //     guests: 1
-    // }
-    
-    // const [booking, setBooking] = useState(newBooking)
+
     
     const handleSubmitBooking = async (e) => {
         e.preventDefault();
@@ -52,7 +42,7 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
                 history.push('/account');
             }, 1900);
         } else {
-            // Handle error (if needed)
+            // Handle error
         }
     };
 
@@ -64,7 +54,6 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
     }
 
     const createModalBookingObj = () => {
-        // debugger
         return {
             address: listing.address,
             city: listing.city,
@@ -78,26 +67,6 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
         }
     }
 
-    // const [maxGuests, setMaxGuest] = useState(false)
-    // const [minGuests, setMinGuest] = useState(true)
-
-    // useEffect((()=>{
-    //     if (booking.guests === listing.guests){
-    //         setMaxGuest(true)
-    //     } else if ((booking.guests === 1)){
-    //         setMinGuest(true)
-    //     } else {
-    //         setMinGuest(false)
-    //         setMaxGuest(false)
-    //     }
-    // }),[booking.guests])
-
-    // const isDayBlocked = momentDate => {
-    //     if (momentDate.format('ddd') === 'Mon' && ['Jul', 'Aug'].includes(momentDate.format('MMM'))) return true
-    //     if(this.state.disabledDates.some(day2 => isSameDay(day1, day2))) return true
-    //     return false
-    // }
-    // momentDate => momentDate.format('d') === '0' && ['6','7'].includes(momentDate.format('M'))
 
     const durationCost = (listing.price*duration);
     const cleaningFee = Math.floor(listing.price * duration * 0.05 
@@ -130,16 +99,6 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
                         <div className='modify-modal-container'>
                             <FlatBookingItem mode='confirm' booking={createModalBookingObj()}/>
                         </div>
-                        {/* <div className='booking-confirm-details'>
-                            <div className='BCD-guests'>
-                                <p>Guests:</p>
-                                <p>{booking.guests}</p>
-                            </div>
-                            <div className='booking-confirm-details'>
-                                <p>Total price before tax:</p>
-                                <p>${totalBeforeTax.toLocaleString()}</p>
-                            </div>
-                        </div> */}
                         <div className='confirm-booking-buttons'>
                             <button className="airbnb-button" onClick={handleSubmitBooking}>
                                 Confirm & book
