@@ -51,10 +51,6 @@ const Splash = () => {
         {listings.map(listing => (
             <ListingItem key={listing.id} listing={listing}/>
         ))}
-        {/* {listings.map(listing => {
-    console.log("Listing ID:", listing.id);  // Debug line
-    return <ListingItem key={listing.id} listing={listing}/>
-})} */}
       </ul>
 
 
