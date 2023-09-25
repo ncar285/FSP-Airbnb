@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getListings, selectListing, selectListings } from '../../store/listingsReducer'
+import { getListings } from '../../store/listingsReducer'
 import ListingItem from '../Splash/ListingItem';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './ListingsMap.css'
 import { fetchMapIndex } from '../../store/mapReducer';
 
@@ -13,12 +13,8 @@ const ListingsMap = () => {
     const mapOptions = {zoom: 4, center: {lat: 35, lng: -70}};
     const mapData = useSelector(state => state.mapData);
     const listings = useSelector(state => state.listings);
-    
     const [map, setMap] = useState(null);
     const [selectedListing, setSelectedListing] = useState(null);
-    
-    const [infoWindow, setInfoWindow] = useState(null);
-
     const infoWindowRef = useRef(null);
     const markers = useRef({});
     const selectedListingRef = useRef(selectedListing);
@@ -76,30 +72,17 @@ const ListingsMap = () => {
             }))
         }
     },[mapData, map])
-
-
-    const renderToString = (reactComponent) => {
-        const div = document.createElement('div');
-        ReactDOM.render(reactComponent, div);
-        return div.innerHTML;
-    };
-
     
     const showListingInfoWindow = (marker) => {
-
         const listingArray = Object.values(listingsRef.current)
         const obj = listingArray.filter(listing=>listing.id === marker.id)[0]
-
         const div = document.createElement('div');
-        
-        ReactDOM.render(
-          <div className="info-popup" 
-        //   onClick={() => renderShow(marker.id)}
-          >
-            <ListingItem listing={obj} />
-          </div>, 
-          div
-        );
+        ReactDOM.createRoot(div)
+        .render(
+            <div className="info-popup">
+                <ListingItem listing={obj} />
+            </div>
+        )
         
         const newInfoWindow = new window.google.maps.InfoWindow({
           content: div,
@@ -154,7 +137,6 @@ const ListingsMap = () => {
             unselectMarker(oldMarker);
             closeInfoWindow(oldMarker)
         }
-    
         if (oldSelectedListing !== marker.id) {
             selectMarker(marker);
             showListingInfoWindow(marker);
@@ -164,22 +146,13 @@ const ListingsMap = () => {
         }
     }
 
-    const renderShow = (id) => {
-        if (selectedListing === id){
-            return window.open(`/listing/${id}`, '_blank');
-        }
-    }
-
 
 
     return  (
-      
         <div 
             className='map-object'
             ref={mapRef}>     
         </div>
-  
-
     )
 
 }

@@ -219,7 +219,8 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
 
                         {(mode === 'create' || mode === 'edit') &&
                             <textarea name="body" id="body" cols="30" rows="10" 
-                                value = { (mode === 'create') ? '' : review.body}
+                                // value = { (mode === 'create') ? '' : review.body}
+                                value = {review.body}
                                 placeholder= { (mode !== 'create') ? '' : "leave your review here" }
                                 onChange={e => setReview({ ...review, body: e.target.value })}
                                 >
