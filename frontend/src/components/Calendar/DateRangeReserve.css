@@ -182,7 +182,18 @@ button.rdrDay .rdrInRange,
 span.rdrStartEdge
 span.rdrEndEdge{ 
     color: var(--brand-color) !important;
+    background-color: var(--brand-color) !important;
 }
+
+button.rdrDay span.rdrStartEdge,
+button.rdrDay span.rdrEndEdge{
+    background-color: var(--brand-color) !important;
+}
+
+/* button.rdrDay span.rdrDayInPreview {
+    border-top: 1px solid var(--brand-color) !important;
+    border-bottom: 1px solid var(--brand-color) !important;
+} */
 
 .close-calendar {
     background-color: black;

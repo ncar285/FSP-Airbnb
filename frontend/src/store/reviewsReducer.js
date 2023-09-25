@@ -67,7 +67,7 @@ export const getUserReview = state => {
     }
 }
 
-export const getListingRevews = state => state.reviews? Object.values(state.reviews.listingReviews) : null
+export const getListingRevews = state => state.reviews ? Object.values(state.reviews) : null
 
 // export const getUserRevews = state => state.reviews? Object.values(state.reviews.myReviews) : null
 
