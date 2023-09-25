@@ -7,6 +7,8 @@ import { activateRegisterModal } from '../../store/uiReducer'
 import { AiFillStar } from "react-icons/ai"
 import { getBookingErrors } from '../../store/errorsReducer';
 import DateRangeReserve from '../Calendar/DateRangeReserve'
+import { RxCross2 } from 'react-icons/rx'
+import FlatBookingItem from '../BookingItem/FlatBookingItem'
 
 const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration,  range, setRange } ) => {
 
@@ -14,6 +16,7 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
     const user = useSelector(getCurrentUser)
     const errors = useSelector(getBookingErrors)
     const [open, setOpen] = useState(false)
+    const [confirmBooking, setConfirmBooking] = useState(false)
 
     // const newBooking = {
     //     userId: user ? user.id : null,
@@ -27,15 +30,19 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
     
     const handleSubmitBooking = async e  => {
         e.preventDefault();
+        const bookingObj = createBookingObject()
         if (user){
-            let start = booking.startDate.format('YYYY/MM/DD');
-            let end = booking.endDate.format('YYYY/MM/DD')
-            start = new Date(start);
-            end = new Date(end);
-            const data = await dispatch(createBooking({userId: user.id, listingId: parseInt(listing.id, 10), startDate: start, endDate: end, guests: booking.guests  }))
+            dispatch(createBooking(bookingObj))
         } else {
             dispatch(activateRegisterModal)
         }
+    }
+
+
+    const createBookingObject = () => {
+        const start = new Date(booking.startDate);
+        const end = new Date(booking.endDate);
+        return {userId: user.id, listingId: parseInt(listing.id, 10), startDate: start, endDate: end, guests: booking.guests }
     }
 
 
@@ -68,6 +75,29 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
     const totalBeforeTax = Math.floor(durationCost + cleaningFee + fairbnbServiceFee);
 
     return (
+
+        <>
+
+            {confirmBooking &&
+                <div className='basic-modal-background' onClick={()=>setConfirmBooking(false)}>
+                    <div className='basic-modal' onClick={(e) => e.stopPropagation()}>
+                        <div className="modify-title">
+                            <button className='close-button' onClick={()=>setConfirmBooking(false)}>
+                                <RxCross2/>
+                            </button>
+                            <p className="header-1 modify-cancel">Confirm your reservation details</p>
+                        </div>
+                        <div className='modify-modal-container'>
+                            <FlatBookingItem booking={createBookingObject()}/>
+                        </div>
+                        <button className="airbnb-button" onClick={handleSubmitBooking}>
+                            Confirm
+                        </button>
+                    </div>
+                </div>
+            }
+
+       
         
         <div id='booking-block'>
 
@@ -106,7 +136,7 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
                 duration ?
 
                 <>
-                    <button className="book-button" onClick={handleSubmitBooking}>
+                    <button className="book-button" onClick={()=>setConfirmBooking(true)}>
                         Reserve
                     </button>
 
@@ -151,6 +181,8 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
             }
 
         </div>
+
+        </>
  
     )
 
