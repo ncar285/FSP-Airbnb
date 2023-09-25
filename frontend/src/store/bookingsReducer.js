@@ -42,19 +42,19 @@ export const removeReviewFromBooking = bookingId => ({
 
 export const getBookings = state => state.bookings
 export const getBooking = id => state => state.bookings[id] 
-export const getCurrentBookings = state => {
-    const today = new Date()
-    return Object.values(state.bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today)
-}
-export const getUpcomingBookings = state => {
-    // debugger
-    const today = new Date()
-    return Object.values(state.bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate)
-}
-export const getPreviousBookings = state => {
-    const today = new Date()
-    return Object.values(state.bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate)
-}
+// export const getCurrentBookings = state => {
+//     const today = new Date()
+//     return Object.values(state.bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today)
+// }
+// export const getUpcomingBookings = state => {
+//     // debugger
+//     const today = new Date()
+//     return Object.values(state.bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate)
+// }
+// export const getPreviousBookings = state => {
+//     const today = new Date()
+//     return Object.values(state.bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate)
+// }
 
 
 // THUNK ACTION CREATORS
