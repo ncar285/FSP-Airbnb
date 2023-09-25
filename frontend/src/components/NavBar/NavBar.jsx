@@ -13,9 +13,6 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const NavBar = ({ tagsOn, searchType, barType}) => {
     const [menuOpen, setMenuOpen] = useState(false)
-    
-    // debugger
-    // console.log(useContext(SearchContext))
     const { searchParams, setSearchParams }  = useContext(SearchContext)
     const history = useHistory();
 

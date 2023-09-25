@@ -45,11 +45,6 @@ const EditReviewModal = () => {
     }, [active, loggedInUser]);
 
 
-    console.log("review", review)
-    console.log("mode", mode)
-    console.log("review", review)
-
-
     useEffect(()=>{
         if (loggedInUser){
             setDisplayLoginMessage(false)
@@ -84,9 +79,7 @@ const EditReviewModal = () => {
     }
 
     const updateReviewField = (category, n) => {
-        // debugger
         setReview({...review, [category]: n})
-        console.log('setting to this', {...review, [category]: n})
     }
 
 

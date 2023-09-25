@@ -145,9 +145,9 @@ const ShowListing = () => {
                         <Reviews count={count} rating={rating} findAverageScore={findAverageScore}/>
                     </div>
 
-                    <div className='create-review'>
+                    {/* <div className='create-review'>
                         {userReview ? null : <ReviewForm key={review.id} review={review} setReview={setReview} editMode={false}/>}
-                    </div>
+                    </div> */}
 
                 </div>
             </div>

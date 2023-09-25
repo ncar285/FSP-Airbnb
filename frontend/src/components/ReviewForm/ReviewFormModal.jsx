@@ -22,8 +22,6 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
 
     const [review, setReview] = useState()
 
-    console.log(review)
-    console.log(mode)
     
     const handleTrashCanClick = async () => {
         setOpenModal(false)
@@ -32,7 +30,6 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
 
     useEffect(()=>{
         const modalData = JSON.parse(sessionStorage.getItem("reviewModal"));
-        console.log(modalData)
         setReview(modalData.review)
         setMode(modalData.mode)
     },[]) 
@@ -66,9 +63,6 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
         sessionStorage.removeItem("reviewModal");
         showSuccessMessage()
     }
-
-    console.log(review)
-
 
     const reviewRadioButtons = ( category ) => {
 

@@ -23,14 +23,12 @@ const CalendarComp = () => {
     },[])
 
     const hideOnEscape = (e) => {
-        console.log(e.key)
         if (e.key === "Escape"){
             setOpen(false)
         }
     }
 
     const hideOnClickOutside = (e) => {
-        console.log(refOne.current)
         if (refOne.current && !refOne.current.contains(e.target)){
             setOpen(false)
         }

@@ -12,7 +12,6 @@ const DeleteReviewModal = () => {
     const dispatch = useDispatch()
     const active = useSelector(getDRMState)
 
-    // const review = useSelector(getUserReview)
     let review
 
     useEffect(()=>{
@@ -21,9 +20,6 @@ const DeleteReviewModal = () => {
             review = modalData.review
         }
     },[active])
-
-
-    console.log(review)
 
 
     if (!active) return null

@@ -5,13 +5,9 @@ import './UserWelcomeHome.css'
 
 const UserWelcomeHome = ({data}) => {
 
-    // debugger 
-
     const currentUser = useSelector(getCurrentUser)
     const name = currentUser.id === 1 ? 'Tom And Jerry' : currentUser.firstname
     const reviewCount = data && data.reviews ? Object.values(data.reviews).length : null
-    console.log(data)
-    // debugger
 
     let createdAt = new Date(data.createdAt);
     if (data.id === 1) {
@@ -22,9 +18,6 @@ const UserWelcomeHome = ({data}) => {
     const diffMonths = currentDate.getMonth() - createdAt.getMonth();
     const diffYears = currentDate.getYear() - createdAt.getYear() ;
 
-    console.log(createdAt)
-
-    // debugger
 
     // const timeOnFbnb = diffYears <= 0 ? (diffMonths <= 0 ? diffDays : diffMonths) : diffYears
     const timeOnFbnb = diffYears > 0 ? diffYears : (diffMonths > 0 ? diffMonths : diffDays)

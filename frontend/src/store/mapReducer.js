@@ -16,11 +16,11 @@ export const fetchMapIndex = () => async dispatch => {
       const data = await res.json();
       dispatch(receiveListingMapData(data));
     } else {
-      console.log('error')
+      // error handling
       // dispatch(receiveListingMapError("Failed to fetch data"));
     }
   } catch (error) {
-    console.log('error')
+    // error handling
     // dispatch(receiveListingMapError(error.message));
   }
 };

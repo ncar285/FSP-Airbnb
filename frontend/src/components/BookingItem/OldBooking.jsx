@@ -23,27 +23,9 @@ const OldBooking = ({ booking, setSuccessMessage }) => {
     const dispatch = useDispatch();
 
     const loggedInUser = useSelector(getCurrentUser)
-    // console.log(booking.myReview)
 
     const [review, setReview] = useState(booking.myReview)
     const [openModal, setOpenModal] = useState(false)
-
-    // useEffect(()=>{
-    //     if (mode === 'create'){
-    //         const initialReview = {
-    //             author_id: loggedInUser.id,
-    //             booking_id: booking.id,
-    //             body: '',
-    //             accuracy: null,
-    //             cleanliness: null,
-    //             communication: null,
-    //             check_in: null,
-    //             location: null, 
-    //             value: null
-    //         }
-    //         setReview(initialReview)
-    //     }
-    // },[])
 
     const initialReview = {
         author_id: loggedInUser.id,

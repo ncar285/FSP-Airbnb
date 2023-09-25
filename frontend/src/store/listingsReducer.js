@@ -41,25 +41,6 @@ export const getListings = params => async dispatch => {
   const listings = await fetchListings(params)
   return dispatch(replaceListings(listings))
 }
-
-
-
-// export const fetchMapIndex = () => async dispatch => {
-//   try {
-//     const res = await fetch(`/api/listings/map_index`);
-//     if (res.ok) {
-//       const data = await res.json();
-//       dispatch(receiveListingMapData(data));
-//     } else {
-//       console.log('error')
-//       // dispatch(receiveListingMapError("Failed to fetch data"));
-//     }
-//   } catch (error) {
-//     console.log('error')
-//     // dispatch(receiveListingMapError(error.message));
-//   }
-// };
-
   
 export const fetchListing = listingId => dispatch => (
   fetchOneListing(listingId)

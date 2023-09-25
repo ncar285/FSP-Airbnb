@@ -19,17 +19,6 @@ const Reviews = (  {count, rating, findAverageScore} ) => {
     let location = findAverageScore(reviews, "location")
     let value = findAverageScore(reviews, "value")
 
-    // console.log(userReview)
-
-    // const allOtherReviews = () => {
-    //     if (userReview){
-    //         const otherReviews = reviews.filter(review => review.authorId !== userReview?.authorId);
-    //         return otherReviews.map((review) => <ReviewItem key={review.id} review={review} />)
-    //     }else {
-    //         return reviews.map((review) => <ReviewItem key={review.id} review={review} />)
-    //     }
-    // }
-
     const reviewsList = () => {
         return reviews
         .sort((a, b) => (a.authorId === currentUser.id ? -1 : b.authorId === currentUser.id ? 1 : 0))
