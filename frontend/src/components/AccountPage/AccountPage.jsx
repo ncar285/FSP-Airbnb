@@ -22,11 +22,6 @@ const AccountPage = () => {
     const data = useSelector(selectUserData)
     const bookings  = useSelector(getBookings)
 
-
-
-    // const reviews = useSelector(getUserRevews)
-
-
     const [cancelModal, setCancelModal] = useState(false);
     const [modifyModal, setModifyModal] = useState(false);
     const [modalBooking, setModalBooking] = useState(null);
@@ -40,31 +35,12 @@ const AccountPage = () => {
     const upcomingsBookings = Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate)
     const previousBookings = Object.values(bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate)
     
-    // const [currentBookings, setCurrentBookings] = useState([])
-    // const [upcomingsBookings, setUpcomingsBookings] = useState([])
-    // const [previousBookings, setPreviousBookings] = useState([])
-
-
-    // const currentBookings = useSelector(getCurrentBookings);
-    // const upcomingsBookings = useSelector(getUpcomingBookings);
-    // const previousBookings = useSelector(getPreviousBookings);
 
     useEffect(() => {
         if (user){
             dispatch(fetchUserShow(user.id));
         }
     }, [dispatch, user]);
-
-
-
-    // useEffect(() => {
-    //     if (bookings){ 
-    //         const today = new Date()
-    //         setCurrentBookings(Object.values(bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today))
-    //         setUpcomingsBookings(Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate))
-    //         setPreviousBookings(Object.values(bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate))
-    //     }
-    // }, [bookings]);
 
 
 
