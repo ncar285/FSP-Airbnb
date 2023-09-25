@@ -92,7 +92,8 @@ const ShowListing = () => {
     const findAverageScore = (reviews, category) => {
         const array = reviews.map((review) => review[category])
         const sum = array.reduce((total, current) => total + current, 0);
-        return (category === "rating") ? Number((sum/(reviews.length)).toFixed(2)) : Number((sum/(reviews.length)).toFixed(1))
+        const avg = sum / reviews.length;
+        return category === "rating" ? avg.toFixed(2) : avg.toFixed(1);
     }
 
     const reviews = useSelector(getListingRevews)
