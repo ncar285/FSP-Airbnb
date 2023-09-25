@@ -31,6 +31,9 @@ const RegisterForm = () => {
     const [lastname, setLastname] = useState('')
     const [password, setPassword] = useState('')
 
+    const [passwordMessage, setPasswordMessage] = useState('')
+    const [showPasswordMessage, setShowPasswordMessage] = useState(false)
+
     const history = useHistory()
     
     if (!display) return null
@@ -75,20 +78,34 @@ const RegisterForm = () => {
         dispatch(deactivateRegisterModal())
     }
 
+    const checkPassword = (password) => {
+        const length = password.length >= 6 ? true : false 
+        const number = /[0-9]/.test(password);
+        let invalidParam
+        if (!length && !number) invalidParam = 'Password must 6 characters including at least 1 number'
+        if (!length && number) invalidParam = 'Password must be at least 6 characters'
+        if (length && !number) invalidParam = 'Password must contain at least 1 number'
+        return (length && number) || invalidParam
+    }
+
     const handleSignup = async e => {
+        // debugger
+        setShowPasswordMessage(false)
         e.preventDefault();
-        const user = {
-            email: userEmail,
-            firstname,
-            lastname,
-            password
+        const passwordCheck = checkPassword(password)
+        if (passwordCheck === true) {
+            const user = {
+                email: userEmail,
+                firstname,
+                lastname,
+                password
+            }
+            dispatch(createUser(user))
+            dispatch(deactivateRegisterModal())
+        } else {
+            setShowPasswordMessage(true)
+            setPasswordMessage(passwordCheck)
         }
-        await dispatch(createUser(user))
-        setUserEmail('')
-        setFirstname('')
-        setLastname('')
-        setPassword('')
-        await dispatch(deactivateRegisterModal())
     }
 
     const isValidEmail = email => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
@@ -204,10 +221,16 @@ const RegisterForm = () => {
                     
                         <form onSubmit={handleLogin}>
                             <input 
+                                className="password-input"
                                 type="password" 
                                 onChange={e => setPassword(e.target.value)}
                                 placeholder="Password"
                             />  
+                            <div className="warning-message-space">
+                                {showPasswordMessage &&
+                                    <p>{passwordMessage}</p>
+                                }
+                            </div>
                             <button className="continue main">Continue</button>
                             <p>Not you? 
                                 <a href="">

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { getCurrentUser } from '../../store/sessionsReducer';
 import { logoutUser } from '../../store/sessionsReducer';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { getListings } from '../../store/listingsReducer';
 
 
 const AccountMenu = ({ handleMenuClick, margin, setMenuOpen }) => {
@@ -23,6 +24,7 @@ const AccountMenu = ({ handleMenuClick, margin, setMenuOpen }) => {
         dispatch(logoutUser());
         setMenuOpen(false)
         history.push('/');
+        dispatch(getListings())
         // sessionStorage.removeItem("myReview");
         // window.location.reload(); 
     }
