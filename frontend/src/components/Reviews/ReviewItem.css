@@ -86,3 +86,7 @@
     font-family: 'airbnb4';
 }
 
+.rev-description-preview.fullsize { 
+    max-height: none;
+}
+

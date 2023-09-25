@@ -1,12 +1,13 @@
 import './ReviewItem.css'
 import { getCurrentUser } from "../../store/sessionsReducer";
 import { useSelector } from "react-redux";
-import { BsTrash3 } from "react-icons/bs"
-import { FaEdit } from "react-icons/fa"
-import { activateERM } from '../../store/uiReducer';
-import { activateDRM } from '../../store/uiReducer';
+// import { BsTrash3 } from "react-icons/bs"
+// import { FaEdit } from "react-icons/fa"
+// import { activateERM } from '../../store/uiReducer';
+// import { activateDRM } from '../../store/uiReducer';
 import { useDispatch } from 'react-redux';
 import {MdKeyboardArrowRight} from 'react-icons/md'
+import {MdKeyboardArrowUp} from 'react-icons/md'
 import { useEffect, useRef, useState } from 'react';
 
 const ReviewItem = ({ review, editMode = true }) => {
@@ -19,6 +20,7 @@ const ReviewItem = ({ review, editMode = true }) => {
     
     
     const [showMore, setShowMore] = useState(false)
+    const [fullSize, setFullSize] = useState(false)
 
     const myReview = (user && user.id === review.authorId)
     
@@ -32,7 +34,6 @@ const ReviewItem = ({ review, editMode = true }) => {
 
     useEffect(() => {
         window.addEventListener('resize', updateWindowWidth);
-        
         return () => {
             window.removeEventListener('resize', updateWindowWidth);
         };
@@ -65,10 +66,19 @@ const ReviewItem = ({ review, editMode = true }) => {
                 </div>
 
                 <div className='rev-body'>
-                <p ref={reviewBodyRef} className='rev-description-preview'>{review.body}</p>
-                    { showMore &&
-                    <div className="show-more" >
-                        Show More <MdKeyboardArrowRight className='arrow-more'/>
+                <p ref={reviewBodyRef} 
+                className = {`rev-description-preview ${fullSize ? 'fullsize' : ''}`  }>
+                {review.body}</p>
+                    { showMore && !fullSize &&
+                    <div onClick={()=>setFullSize(true)} className={`show-more ${fullSize ? 'fullsize' : ''}`  } >
+                        Show More <MdKeyboardArrowRight 
+                         className='arrow-more'/>
+                    </div>
+                    }
+                    { fullSize &&
+                    <div onClick={()=>setFullSize(false)} className={`show-more ${fullSize ? 'fullsize' : ''}`  } >
+                        Show Less <MdKeyboardArrowUp 
+                         className='arrow-more'/>
                     </div>
                     }
                 </div>
