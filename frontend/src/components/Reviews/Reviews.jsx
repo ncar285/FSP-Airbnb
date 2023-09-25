@@ -25,6 +25,14 @@ const Reviews = (  {count, rating, findAverageScore} ) => {
         .map((review) => <ReviewItem key={review.id} review={review} />);
     }
 
+    const scoreWidth = (subScore) => {
+        if (subScore === NaN){
+            return {};
+        } else {
+            return {width: `${(subScore / 5) * 100}%`};
+        }
+    }
+
     return (
     <>
         <div className='review-stats-block'>
@@ -41,7 +49,7 @@ const Reviews = (  {count, rating, findAverageScore} ) => {
                             <p>Cleanliness</p>
                             <div className='stat-bar'>
                                 <div className='outer cleanliness-score'>
-                                    <div style={{width: (cleanliness/5)*100}} className='inner cleanliness-score'></div>
+                                    <div style={scoreWidth(cleanliness)} className='inner cleanliness-score'></div>
                                 </div>
                                 <p>{cleanliness}</p>
                             </div>
@@ -50,7 +58,7 @@ const Reviews = (  {count, rating, findAverageScore} ) => {
                             <p>Communication</p>
                             <div className='stat-bar'>
                                 <div className='outer communication-score'>
-                                    <div style={{width: (communication/5)*100}} className='inner communication-score'></div>
+                                    <div style={scoreWidth(communication)} className='inner communication-score'></div>
                                 </div>
                                 <p>{communication}</p>
                             </div>
@@ -59,7 +67,7 @@ const Reviews = (  {count, rating, findAverageScore} ) => {
                             <p>Check-in</p>
                             <div className='stat-bar'>
                                 <div className='outer check-in-score'>
-                                    <div style={{width: (checkIn/5)*100}} className='inner check-in-score'></div>
+                                    <div style={scoreWidth(checkIn)} className='inner check-in-score'></div>
                                 </div>
                                 <p>{checkIn}</p>
                             </div>
@@ -70,7 +78,7 @@ const Reviews = (  {count, rating, findAverageScore} ) => {
                             <p>Accuracy</p>
                             <div className='stat-bar'>
                                 <div className='outer accuracy-score'>
-                                    <div style={{width: (accuracy/5)*100}} className='inner accuracy-score'></div>
+                                    <div style={scoreWidth(accuracy)} className='inner accuracy-score'></div>
                                 </div>
                                 <p>{accuracy}</p>
                             </div>
@@ -79,7 +87,7 @@ const Reviews = (  {count, rating, findAverageScore} ) => {
                             <p>Location</p>
                             <div className='stat-bar'>
                                 <div className='outer location-score'>
-                                    <div style={{width: (location/5)*100}} className='inner location-score'></div>
+                                    <div style={scoreWidth(location)} className='inner location-score'></div>
                                 </div>
                                 <p>{location}</p>
                             </div>
@@ -88,10 +96,9 @@ const Reviews = (  {count, rating, findAverageScore} ) => {
                             <p>location</p>
                             <div className='stat-bar'>
                                 <div className='outer value-score'>
-                                    <div style={{width: (value/5)*100}} className='inner value-score'></div>
+                                    <div style={scoreWidth(value)} className='inner value-score'></div>
                                 </div>
                                 <p>{value}</p>
-
                             </div>
                         </div>
                     </div>
@@ -99,13 +106,9 @@ const Reviews = (  {count, rating, findAverageScore} ) => {
             </div>
         </div>
  
-        
         <div className='reviews-list-container'>
             {reviewsList()}
         </div>
-        
-        {/* {userReview && <ReviewItem key={userReview.id} review={userReview} />}
-        {allOtherReviews()} */}
 
     </>
     )
