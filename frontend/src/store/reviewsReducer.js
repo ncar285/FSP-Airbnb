@@ -2,6 +2,7 @@ import { postReview } from "../utils/reviewApiUtils";
 import { patchReview } from "../utils/reviewApiUtils";
 import { deleteReview } from "../utils/reviewApiUtils";
 import { addReviewToBooking, removeReviewFromBooking } from "./bookingsReducer";
+import { createSelector } from 'reselect';
 
 //CONSTANTS
 export const RECEIVE_MY_REVIEW = 'RECEIVE_MY_REVIEW'
@@ -67,7 +68,11 @@ export const getUserReview = state => {
     }
 }
 
-export const getListingRevews = state => state.reviews ? Object.values(state.reviews) : null
+// export const getListingRevews = state => state.reviews ? Object.values(state.reviews) : null
+export const getListingRevews = createSelector(
+    [state => state.reviews],
+    (reviews) => reviews ? Object.values(reviews) : null
+);
 
 // export const getUserRevews = state => state.reviews? Object.values(state.reviews.myReviews) : null
 

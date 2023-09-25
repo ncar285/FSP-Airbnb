@@ -9,7 +9,7 @@ import { getCurrentUser } from '../../store/sessionsReducer';
 const Reviews = (  {count, rating, findAverageScore} ) => {
 
     const currentUser = useSelector(getCurrentUser)
-    const userReview = useSelector(getUserReview)
+    // const userReview = useSelector(getUserReview)
     const reviews = useSelector(getListingRevews)
     
     let cleanliness = findAverageScore(reviews, "cleanliness")
