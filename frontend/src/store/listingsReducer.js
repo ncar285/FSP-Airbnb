@@ -1,5 +1,6 @@
 import { fetchListings, fetchOneListing} from "../utils/listingApiUtils.js"
 // import { receiveBooking } from "./bookingsReducer.js";
+import { createSelector } from 'reselect';
 
 // CONSTANTS
 export const RECEIVE_LISTING = 'RECEIVE_LISTING'
@@ -62,7 +63,13 @@ export const fetchListingScore = listingId => dispatch => {
 }
 
 // SELECTORS
-export const selectListings = state => Object.values(state.listings);
+// export const selectListings = state => Object.values(state.listings);
+export const selectListings = createSelector(
+  [state => state.listings],
+  (listings) => Object.values(listings)
+);
+
+
 
 export const selectListing = listingId => state => state.listings[listingId] || null;
 

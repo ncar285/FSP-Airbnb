@@ -13,7 +13,7 @@ const Splash = () => {
 
   const listings = useSelector(selectListings)
   const dispatch = useDispatch();
-  const { searchParams, setSearchParams }  = useContext(SearchContext);
+  const { searchParams }  = useContext(SearchContext);
 
   const history = useHistory();
 
