@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react"
 import { useSelector } from "react-redux"
 import { getListingRevews } from "../../store/reviewsReducer"
 
-const ListingItem = ({ listing, key }) => {
+const ListingItem = ({ listing }) => {
     const photoCount = listing.photoUrls?.length
     const listingImagesRef = useRef(null);
     const stringPrice = Math.floor(listing.price).toLocaleString()
@@ -99,7 +99,7 @@ const ListingItem = ({ listing, key }) => {
         const photoEles = [];
         for(let i=0; i < photoCount; i++) {
             photoEles.push (
-                <div className="loaded-image">
+                <div key={i} className="loaded-image">
                     <img className="slide" src={listing.photoUrls[i]} alt="" data-index={i + 1} />
                 </div>
             )
@@ -109,7 +109,7 @@ const ListingItem = ({ listing, key }) => {
     
     return (
         <li>
-            <div onClick={renderShow} key={key} className="item">
+            <div onClick={renderShow} className="item">
                 <div className="inner-item">
                     <div className="slideshow-container">
                         {leftArrow &&
@@ -125,15 +125,11 @@ const ListingItem = ({ listing, key }) => {
                             <RightArrow className="arrow-icon"/>
                         </div>
                         }
-                        {/* <div>
-                            <a className="prev" onclick="plusSlides(-1)">&#10094;</a>
-                            <a className="next" onclick="plusSlides(1)">&#10095;</a>
+                        {/* <div className="current-photo-dots">
+                            <span className="dot" onClick="currentSlide(1)"></span>
+                            <span className="dot" onClick="currentSlide(2)"></span>
+                            <span className="dot" onClick="currentSlide(3)"></span>
                         </div> */}
-                        <div className="current-photo-dots">
-                            <span className="dot" onclick="currentSlide(1)"></span>
-                            <span className="dot" onclick="currentSlide(2)"></span>
-                            <span className="dot" onclick="currentSlide(3)"></span>
-                        </div>
                     </div>
 
                     <div className="loaded-text">
