@@ -37,18 +37,16 @@ function App() {
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
             <RegisterForm />
             <ShowListing/> 
-            <DeleteReviewModal/>
-            <EditReviewModal/>
             <Footer/>
         </Route>
         <Route path="/account/">
+          <div className="AccountPageWrapper">
             <NavBar tagsOn={false} searchType={"simple"} barType={"show"}/>
-            <RegisterForm />
-            {/* <ShowListing/>  */}
+            <RegisterForm/>
             <DeleteReviewModal/>
-            {/* <EditReviewModal/> */}
             <AccountPage/>
             <Footer/>
+          </div>
         </Route>
        
       </Switch>
