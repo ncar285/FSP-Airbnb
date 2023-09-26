@@ -18,24 +18,19 @@ import { addDays } from 'date-fns'
 import LoadingShowPage from '../LoadingShowPage/LoadingShowPage'
 
 const ShowListing = () => {
-    // const listingId = useSelector(selectListing).id
     const currentUserId = useSelector(getCurrentUser)?.id 
     const { listingId } = useParams();
-    const dispatch = useDispatch()
-    const listing = useSelector(selectListing(listingId))
-    const userReview = useSelector(getUserReview)
+    const dispatch = useDispatch();
+    const listing = useSelector(selectListing(listingId));
     const [duration, setDuration] = useState(null);
-    // const user = useSelector(getCurrentUser)
-
-    const [range, setRange] = useState([
-        {
-            startDate: new Date(), 
-            endDate: addDays(new Date(), 7),
-            key: 'selection'
-        }
-    ])
-
-    const newReview = {
+    const [booking, setBooking] = useState({
+        userId: currentUserId,
+        listingId: parseInt(listingId, 10),
+        startDate: null,
+        endDate: null,
+        guests: 1
+    });
+    const [review, setReview] = useState({
         listing_id: parseInt(listingId, 10),
         author_id: currentUserId,
         body: null,
@@ -45,24 +40,44 @@ const ShowListing = () => {
         accuracy: null,
         location: null,
         value: null
-        // const imgUrl = review.authorPhotoUrl
-    }
+    });
+    const [isLoading, setIsLoading] = useState(true);
+    const reviews = useSelector(getListingRevews);
+    const [range, setRange] = useState([
+        {
+            startDate: new Date(), 
+            endDate: addDays(new Date(), 7),
+            key: 'selection'
+        }
+    ])
 
-    const newBooking = {
-        userId: currentUserId,
-        listingId: parseInt(listingId, 10),
-        startDate: null,
-        endDate: null,
-        guests: 1
-    }
-    
-    const [booking, setBooking] = useState(newBooking)
+    // const newReview = {
+    //     listing_id: parseInt(listingId, 10),
+    //     author_id: currentUserId,
+    //     body: null,
+    //     cleanliness: null,
+    //     communication: null,
+    //     checkIn: null,
+    //     accuracy: null,
+    //     location: null,
+    //     value: null
+    // }
 
+    // const newBooking = {
+    //     userId: currentUserId,
+    //     listingId: parseInt(listingId, 10),
+    //     startDate: null,
+    //     endDate: null,
+    //     guests: 1
+    // }
     
-    const [review, setReview] = useState(newReview)
     
     useEffect(() => {
-        dispatch(fetchListing(listingId));
+        const fetchListingData = async () => {
+            await dispatch(fetchListing(listingId));
+            setIsLoading(false);
+        }
+        fetchListingData();
     }, [dispatch, listingId]);
 
 
@@ -77,7 +92,6 @@ const ShowListing = () => {
     }, [booking]);
 
 
-
     
     useEffect(() => {
         if (listing && listing.reviews) {
@@ -90,6 +104,10 @@ const ShowListing = () => {
         setReview(review)
     }, [review])
 
+    if (isLoading) {
+        return <LoadingShowPage/>
+    }
+
     const findAverageScore = (reviews, category) => {
         const array = reviews.map((review) => review[category])
         const sum = array.reduce((total, current) => total + current, 0);
@@ -97,16 +115,8 @@ const ShowListing = () => {
         return category === "rating" ? avg.toFixed(2) : avg.toFixed(1);
     }
 
-    const reviews = useSelector(getListingRevews)
     const count = Object.values(reviews).length;
-    const rating = findAverageScore(reviews, "rating")
-
-
-    const showLoading = true;
-
-    if (showLoading) {
-        return <LoadingShowPage/>
-    }
+    const rating = findAverageScore(reviews, "rating");
 
 
 
