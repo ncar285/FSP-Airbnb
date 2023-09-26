@@ -75,11 +75,6 @@ const EditForm = ( { booking, setSuccessMessage, setModifyModal} ) => {
     return (
         
         <div id='edit-form-block'>
-
-            {/* {successMessage ? 
-            <div><img src={success} alt="" /></div>
-            : 
-            <> */}
             
             <div className='select-dates-focus'>
                 { listing && 

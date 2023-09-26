@@ -21,7 +21,6 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
     const [confirmBooking, setConfirmBooking] = useState(false)
     const [successMessage, setSuccessMessage] = useState(false)
     const history = useHistory()
-
     
     const handleSubmitBooking = async (e) => {
         e.preventDefault();
@@ -31,7 +30,12 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
         if (user) {
             res = await dispatch(createBooking(bookingObj));
         } else {
+            await setConfirmBooking(false)
             dispatch(activateRegisterModal());
+            requestAnimationFrame(() => {
+            document.querySelector('.register-modal').classList.add('show');
+            });
+            
         }
     
         if (res.ok) {
@@ -48,9 +52,15 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
 
 
     const createBookingObject = () => {
-        const start = new Date(booking.startDate);
-        const end = new Date(booking.endDate);
-        return {userId: user.id, listingId: parseInt(listing.id, 10), startDate: start, endDate: end, guests: booking.guests }
+        if (user){
+            const start = new Date(booking.startDate);
+            const end = new Date(booking.endDate);
+            return {userId: user.id, listingId: parseInt(listing.id, 10), startDate: start, endDate: end, guests: booking.guests }
+        } 
+        // else {
+        //     setOpen(false)
+        //     dispatch(activateRegisterModal)
+        // }
     }
 
     const createModalBookingObj = () => {
