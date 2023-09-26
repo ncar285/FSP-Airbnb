@@ -49,11 +49,24 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
         }, 1900)
     }
 
+    const fixCheckInProblem = (review) => {
+        const newObj = {}
+        Object.keys(review).forEach((key)=>{
+            if (key === 'checkIn') {
+                newObj["check_in"] = review["checkIn"];
+            } else {
+                newObj[key] = review[key];
+            }
+        })
+        return newObj
+    }
+
 
     const handleSubmitReview = async e => {
         e.preventDefault();
         if (loggedInUser && mode === 'create'){
-            dispatch(createReview(review))
+            const newReview = fixCheckInProblem(review)
+            dispatch(createReview(newReview))
         } else if (loggedInUser && mode === 'edit'){
             dispatch(updateReview(review))
         } else {
@@ -140,7 +153,6 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
     };
 
     const exitModal = () => {
-        // initializeReview()
         sessionStorage.removeItem("reviewModal");
         setOpenModal(false)
     }
@@ -167,7 +179,6 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
                         {(mode === 'edit') && 
                         <>
                             <AiFillEye onClick={()=>{setMode('view')}}/>
-                        {/* <BsTrash3 onClick={handleTrashCanClick}/> */}
                         </>
                          }
                     </div>
@@ -230,7 +241,6 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
 
                         {(mode === 'create' || mode === 'edit') &&
                             <textarea name="body" id="body" cols="30" rows="10" 
-                                // value = { (mode === 'create') ? '' : review.body}
                                 value = {review.body}
                                 placeholder= { (mode !== 'create') ? '' : "leave your review here" }
                                 onChange={e => setReview({ ...review, body: e.target.value })}

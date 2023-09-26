@@ -15,35 +15,6 @@ export const SET_CURRENT_REVIEWS = 'SET_CURRENT_REVIEWS'
 export const REMOVE_CURRENT_REVIEW = 'REMOVE_CURRENT_REVIEW'
 
 // ACTION CREATORS
-
-// export const receiveReview = (review) => {
-//     return {
-//         type: RECEIVE_MY_REVIEW,
-//         payload: review
-//     };
-// };
-
-// export const removeReview = (reviewId) => {
-//     return {
-//         type: REMOVE_MY_REVIEW,
-//         payload: reviewId
-//     };
-// };
-
-// export const receiveReviews = (reviews) => {
-//     return {
-//         type: RECEIVE_MY_REVIEWS,
-//         payload: reviews
-//     };
-// };
-
-// export const setCurrentReview = (review) => {
-//     return {
-//         type: SET_CURRENT_REVIEW,
-//         payload: review
-//     };
-// };
-
 export const setCurrentReviews = (reviews) => {
     return {
         type: SET_CURRENT_REVIEWS,
@@ -82,6 +53,7 @@ export const getListingRevews = createSelector(
 // THUNK ACTION CREATORS
 
 export const createReview = reviewData => async (dispatch) => {
+    debugger
     const review = await postReview(reviewData);
     // receiveReview(review)
     dispatch(addReviewToBooking(review))
@@ -101,29 +73,10 @@ export const deleteUserReview = review => async (dispatch) => {
 };
 
 
-
-
 // REDUCER
-const initialState = {
-    // myReviews: {},
-    // listingReviews: {}
-};
-
+const initialState = {};
 const reviewsReducer = (state = initialState, action) => {
-    // const newState = {...state}
     switch (action.type) {
-        // case RECEIVE_MY_REVIEW:
-        //     const newList = {...state.myReviews, [action.payload.id]: action.payload }
-        //     return {...state, myReviews: newList}
-        // case REMOVE_MY_REVIEW:
-        //     const { [action.payload]: _, ...remainingReviews } = state.myReviews;
-        //     return { ...state, myReviews: remainingReviews };
-        // case RECEIVE_MY_REVIEWS:
-        //     return {...state, myReviews: action.payload}
-
-
-    //     case SET_CURRENT_REVIEW:
-    // return { ...state, [action.payload.id]: action.payload };
         case SET_CURRENT_REVIEWS:
             return { ...action.payload };
         case REMOVE_CURRENT_REVIEW:
