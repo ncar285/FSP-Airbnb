@@ -21,6 +21,7 @@ const AccountPage = () => {
     const dispatch = useDispatch()
     const data = useSelector(selectUserData)
     const bookings  = useSelector(getBookings)
+    // debugger
 
     const [cancelModal, setCancelModal] = useState(false);
     const [modifyModal, setModifyModal] = useState(false);
@@ -189,7 +190,7 @@ const AccountPage = () => {
                 <div className="account-right">
                     <div className="trips-header">Trips</div>
 
-                    { currentBookings && 
+                    { currentBookings.length !== 0 && 
                         <div className="subheading">Current accommodation</div>
                     }
 

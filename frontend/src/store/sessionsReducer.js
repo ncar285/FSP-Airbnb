@@ -24,6 +24,7 @@ export const getCurrentUser = state => state.session.user ? state.session.user :
 // THUNK ACTION CREATORS
 
 export const createUser = userData => async (dispatch) => {
+  // debugger
   const user = await postUser(userData);
   sessionStorage.setItem("currentUser", JSON.stringify(user))
   dispatch(setCurrentUser(user));

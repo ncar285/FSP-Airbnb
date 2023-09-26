@@ -89,7 +89,7 @@ const RegisterForm = () => {
         const length = password.length >= 6 ? true : false 
         const number = /[0-9]/.test(password);
         let invalidParam
-        if (!length && !number) invalidParam = 'Password must 6 characters including at least 1 number'
+        if (!length && !number) invalidParam = 'Password 6 or more characters, including at least 1 number'
         if (!length && number) invalidParam = 'Password must be at least 6 characters'
         if (length && !number) invalidParam = 'Password must contain at least 1 number'
         return (length && number) || invalidParam

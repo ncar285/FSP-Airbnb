@@ -110,7 +110,7 @@ const bookingsReducer = (state = initialState, action) => {
             newState[action.payload.id] = action.payload
             return newState;
         case RECEIVE_USER:
-            return action.payload.bookings
+            return action.payload.bookings ? action.payload.bookings : []
     default:
         return state;
     }
