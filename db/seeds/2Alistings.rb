@@ -5,15 +5,20 @@ require 'aws-sdk-s3'
 require 'csv'
 
 
-#! SEED 30 LISTINGS
-
-num_listings = 30;
+#! SEED FIRST 15 LISTINGS
+num_listings = 15;
+start_index = 0;
 
 puts "importing listings.csv..."
-csv_text = File.read(Rails.root.join('db', 'listings.csv'))
+csv_text = File.read(Rails.root.join('db', 'listings2A.csv'))
 csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
 n = 1;
-csv.each do |row|
+csv.each_with_index do |row, index|
+  # puts "this is n"
+  # puts "#{n}"
+  # puts "this is index:"
+  # puts index
+
   puts "filling data for listing ##{n}"
   listing = Listing.new
   listing.owner_id = row['owner_id'].to_i
@@ -36,13 +41,18 @@ csv.each do |row|
   listing.save!
   puts "listing ##{n} saved!"
   n += 1
-  break if n==num_listings+1
+  break if n== (start_index + num_listings + 1)
 end
 puts "uploading listing's..."
-photo_counts = [10, 6, 5, 8, 8, 7, 7, 6, 11, 
-  11, 8, 9, 11, 7, 14, 11, 14, 12, 10, 15, 
-  9, 13, 10, 9, 12, 9, 10, 13, 9, 12, 7]
-puts "phhoto array lengths matches listing count: #{(num_listings == photo_counts)}"
+
+photo_counts = 
+[
+  10, 6, 5, 8, 8, 
+  7, 7, 6, 11, 11, 
+  8, 9, 11, 7, 14
+]
+  
+puts "photo array lengths matches listing count: #{(num_listings == photo_counts.length)}"
 listings = Listing.order(:id)
 listings.each do |listing|
   n = listing.id
