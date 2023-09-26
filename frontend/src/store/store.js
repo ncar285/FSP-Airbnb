@@ -9,8 +9,8 @@ import bookingsReducer from './bookingsReducer';
 import { errorsReducer } from './errorsReducer';
 import mapReducer from './mapReducer';
 
-// ! unnstall this before re-hosting
-import { createLogger } from 'redux-logger';
+// // ! unnstall this before re-hosting
+// import { createLogger } from 'redux-logger';
 
 
 export const rootReducer = combineReducers({ 
@@ -24,9 +24,9 @@ export const rootReducer = combineReducers({
     errors: errorsReducer
 })
 
-// ! delete this
-const logger = createLogger();
+// // ! delete this
+// const logger = createLogger();
 
 export default function configureStore(preloadedState={}){
-    return createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger))
+    return createStore(rootReducer, preloadedState, applyMiddleware(thunk))
 }
