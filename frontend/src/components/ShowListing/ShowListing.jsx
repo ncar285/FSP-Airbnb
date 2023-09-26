@@ -15,6 +15,7 @@ import { getCurrentUser } from '../../store/sessionsReducer'
 import { getListingRevews } from '../../store/reviewsReducer'
 import { AiFillStar } from "react-icons/ai"
 import { addDays } from 'date-fns'
+import LoadingShowPage from '../LoadingShowPage/LoadingShowPage'
 
 const ShowListing = () => {
     // const listingId = useSelector(selectListing).id
@@ -99,6 +100,13 @@ const ShowListing = () => {
     const reviews = useSelector(getListingRevews)
     const count = Object.values(reviews).length;
     const rating = findAverageScore(reviews, "rating")
+
+
+    const showLoading = true;
+
+    if (showLoading) {
+        return <LoadingShowPage/>
+    }
 
 
 
