@@ -20,9 +20,14 @@ const Reviews = (  {count, rating, findAverageScore} ) => {
     let value = findAverageScore(reviews, "value")
 
     const reviewsList = () => {
-        return reviews
-        .sort((a, b) => (a.authorId === currentUser.id ? -1 : b.authorId === currentUser.id ? 1 : 0))
-        .map((review) => <ReviewItem key={review.id} review={review} />);
+        if (reviews && currentUser) {
+            return reviews
+            .sort((a, b) => (a.authorId === currentUser.id ? -1 : b.authorId === currentUser.id ? 1 : 0))
+            .map((review) => <ReviewItem key={review.id} review={review} />);
+        } else if (reviews) {
+            return reviews
+            .map((review) => <ReviewItem key={review.id} review={review} />);
+        }
     }
 
     const scoreWidth = (subScore) => {

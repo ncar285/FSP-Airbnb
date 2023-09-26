@@ -133,3 +133,19 @@
 #navigate-register-button:hover {
     background-color: rgba(0,0,0,0.1);
 }
+
+.use-another-acc {
+    display: flex;
+    font-family: 'airbnb2';
+}
+
+.use-another-acc:first-child{
+    margin-right: 1rem;
+}
+
+/* !warning message */
+
+.warning-message-space {
+    height: 1rem;
+    margin: 1rem 0;
+}

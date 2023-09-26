@@ -32,7 +32,10 @@ const RegisterForm = () => {
     const [password, setPassword] = useState('')
 
     const [passwordMessage, setPasswordMessage] = useState('')
-    const [showPasswordMessage, setShowPasswordMessage] = useState(false)
+    // const [showPasswordMessage, setShowPasswordMessage] = useState(false)
+
+    const [invalidSignUpCredentials, setInvalidSignUpCredentials] = useState(false)
+    const [invalidLoginCredentials, setInvalidLoginCredentials] = useState(false)
 
     const history = useHistory()
     
@@ -48,7 +51,7 @@ const RegisterForm = () => {
             dispatch(deactivateRegisterModal());
             history.push('/account');
         } else {
-            // return ['ERROR LOGGING IN => CREDENTIALS']
+            // should never error
         }
     }
 
@@ -59,11 +62,15 @@ const RegisterForm = () => {
             email: userEmail,
             password
         }
-        const res = dispatch(login(user))
-        if (res){
-            dispatch(deactivateRegisterModal());
-        } else {
-            // do some error stuff
+        try {
+            const res = await dispatch(login(user));
+            if (res) {
+                dispatch(deactivateRegisterModal());
+            } else {
+                setInvalidLoginCredentials(true);
+            }
+        } catch (error) {
+            setInvalidLoginCredentials(true);
         }
     }
 
@@ -78,7 +85,7 @@ const RegisterForm = () => {
         dispatch(deactivateRegisterModal())
     }
 
-    const checkPassword = (password) => {
+    const checkPassword = () => {
         const length = password.length >= 6 ? true : false 
         const number = /[0-9]/.test(password);
         let invalidParam
@@ -89,9 +96,9 @@ const RegisterForm = () => {
     }
 
     const handleSignup = async e => {
-        setShowPasswordMessage(false)
+        setInvalidSignUpCredentials(false)
         e.preventDefault();
-        const passwordCheck = checkPassword(password)
+        const passwordCheck = checkPassword()
         if (passwordCheck === true) {
             const user = {
                 email: userEmail,
@@ -102,7 +109,7 @@ const RegisterForm = () => {
             dispatch(createUser(user))
             dispatch(deactivateRegisterModal())
         } else {
-            setShowPasswordMessage(true)
+            setInvalidSignUpCredentials(true)
             setPasswordMessage(passwordCheck)
         }
     }
@@ -114,7 +121,6 @@ const RegisterForm = () => {
         if (isValidEmail(userEmail)){
             const response = await fetch(`/api/users/checkEmail?email=${userEmail}`);
             const data = await response.json();
-
             if (data.exists){
                 setFirstname(data.name)
                 return 'login'
@@ -207,8 +213,6 @@ const RegisterForm = () => {
                 }
 
                 {
-                    
-                
                     (formState === "login") &&
 
                     <div className="body">
@@ -226,18 +230,19 @@ const RegisterForm = () => {
                                 placeholder="Password"
                             />  
                             <div className="warning-message-space">
-                                {showPasswordMessage &&
-                                    <p>{passwordMessage}</p>
+                                { invalidLoginCredentials && 
+                                    <p>Your email or password is incorrect</p>
                                 }
                             </div>
                             <button className="continue main">Continue</button>
-                            <p>Not you? 
+                            <div className="use-another-acc">
+                                <p>Not you?</p> 
                                 <a href="">
                                     <div
                                     onClick={()=>setFormState('signup')}>
                                     Use another account</div>
                                 </a>
-                            </p>
+                            </div>
                         </form>
 
                     </div>
@@ -279,6 +284,12 @@ const RegisterForm = () => {
                                 onChange={e => setPassword(e.target.value)}
                                 placeholder="Password"
                             />  
+
+                            <div className="warning-message-space">
+                                { invalidSignUpCredentials && 
+                                    <p>{passwordMessage}</p>
+                                }
+                            </div>
                         
                             <button className="continue main">Continue</button>
                         </form>
