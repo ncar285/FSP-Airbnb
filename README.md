@@ -4,7 +4,7 @@
 
 Fairbnb is a web application inspired by Airbnb, designed to provide a seamless user experience for finding and booking distinctive short-term accommodations. Navigate through a curated list of unique homes, make bookings with virtual tokens, and leave reviews for your past stays.
 
-**Live Site**: [Fairbnb](https://fairbnb-airbnb.onrender.com/)
+**Live Site**: [Fairbnb](https://fairbnb-36c07c3f3067.herokuapp.com/)
 
 ---
 

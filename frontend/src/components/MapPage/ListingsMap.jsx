@@ -140,7 +140,6 @@ const ListingsMap = () => {
         if (oldSelectedListing !== marker.id) {
             selectMarker(marker);
             showListingInfoWindow(marker);
-
         } else {
             setSelectedListing(null);
         }

@@ -26,13 +26,18 @@ const BookingItem = ({ booking, type, setCancelModal, setModifyModal, setModalId
 
 
     const when = () => {
-        const today = new Date()
-        const diffDays = startDate.getDate() - today.getDate();
-        const diffMonths = startDate.getMonth() - today.getMonth();
-        const units = (diffMonths > 0) ? 'month' : 'day';
-        const amount = (diffMonths > 0) ? diffMonths : diffDays;
-        const plural = (amount > 1) ? 's' : '';
-        return  (diffMonths === 0 && diffDays <= 0) ? 'Current' : `In ${amount} ${units}${plural}`
+        const today = new Date();
+        const days = (startDate - today)/(1000*60*60*24);
+        if (days <= 0 ) return 'Current';
+        const weeks = days/7;
+        const months = days/30;
+        const years = days/365;
+        const times = [{year: years}, {month: months}, {week: weeks}, {day: days}]
+        const lowestOrderTime = times.filter((timeObj)=>Object.values(timeObj)[0] >= 1)
+        const order = Object.keys(lowestOrderTime[0])
+        const quant = Math.round(Object.values(lowestOrderTime[0]),1)
+        const plural = quant > 1 ? 's' : ''
+        return quant + ' ' + order + plural
     }
 
   
