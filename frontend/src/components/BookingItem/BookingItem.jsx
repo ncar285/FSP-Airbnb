@@ -28,6 +28,11 @@ const BookingItem = ({ booking, type, setCancelModal, setModifyModal, setModalId
     const when = () => {
         const today = new Date();
         const days = (startDate - today)/(1000*60*60*24);
+        if (booking.id === 16){
+            // debugger
+        }
+        console.log("booking: ", booking.id)
+        console.log(days)
         if (days <= 0 ) return 'Current';
         const weeks = days/7;
         const months = days/30;

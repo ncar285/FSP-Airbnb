@@ -4,20 +4,22 @@ import csrfFetch from "../store/csrf"
 export const postBooking = async booking => {
     const res = await csrfFetch('/api/bookings', {
         method: 'POST',
-        body: JSON.stringify({booking})
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ booking })
     })
-    // return await res.json()
-    return res
-    // if(res.ok){
-
-    // }
+    return res;
 }
 
 // update a booking
-export const patchBooking = async bookingBata => {
-    const res = await csrfFetch(`/api/bookings/${bookingBata.id}`, {
+export const patchBooking = async bookingData => {
+    const res = await csrfFetch(`/api/bookings/${bookingData.id}`, {
         method: 'PATCH',
-        body: JSON.stringify(bookingBata)
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ booking: bookingData })
     })
     return await res.json()
 }

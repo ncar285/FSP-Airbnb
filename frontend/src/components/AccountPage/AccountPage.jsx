@@ -14,6 +14,7 @@ import EditForm from "./EditForm"
 
 import success from "../../assets/7efs.gif"
 import ReviewFormModal from "../ReviewForm/ReviewFormModal"
+import LoadingAccountPage from "../LoadingAccountPage/LoadingAccountPage"
 
 const AccountPage = () => {
 
@@ -36,13 +37,20 @@ const AccountPage = () => {
     const upcomingsBookings = Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate)
     const previousBookings = Object.values(bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate)
     
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if (user){
-            dispatch(fetchUserShow(user.id));
-        }
-    }, [dispatch, user]);
 
+        const fetchData = async () => {
+            if (user){
+                await dispatch(fetchUserShow(user.id));
+            }
+            setIsLoading(false);
+        };
+
+        fetchData();
+    }, [dispatch, user]);
+   
 
 
     const cancelBooking =  () => {
@@ -54,9 +62,13 @@ const AccountPage = () => {
         }, 1900)
     }
 
+    // if (true) {
+    //     return <LoadingAccountPage/>;
+    // }
 
-    if (!user) {
-        return <p>loading</p>;
+
+    if (isLoading) {
+        return <LoadingAccountPage/>;
     }
 
 

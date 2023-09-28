@@ -1,0 +1,45 @@
+.loading-account-container {
+    flex: 1;
+    margin: 0px var(--show_margin);
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lac-left {
+    margin-top: 5rem;
+    width: 40%;
+}
+
+.lac-right{
+    width: 100%;
+    margin-left: 6vh;
+}
+
+.lac-left-inner {
+    width: 100%;
+    height: 15rem;
+    border-radius: 2rem;
+    background-color: var(--light_grey);
+}
+
+.lac-right-header {
+    height: 2rem;
+    width: 10rem;
+    background-color: var(--light_grey);
+    margin: 2rem 0;
+}
+
+.lac-right-subheader {
+    height: 1rem;
+    width: 20rem;
+    background-color: var(--light_grey);
+    margin: 1rem 0;
+}
+
+.lac-loading-booking{
+    height: 25vh;
+    background-color: var(--light_grey);
+    margin: 1rem 0;
+    border-radius: 2rem;
+}

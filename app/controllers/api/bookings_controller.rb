@@ -22,6 +22,7 @@ class Api::BookingsController < ApplicationController
     
 
     def update
+        debugger
         @booking = Booking.find_by(id: params[:id])
         if @booking && current_user && @booking.update(booking_params)
             render :show 
@@ -45,6 +46,9 @@ class Api::BookingsController < ApplicationController
     def booking_params 
         params.require(:booking).permit(:id, :user_id, :listing_id, :start_date, :end_date, :guests)
     end
+    # def booking_update_params 
+    #     params.require(:booking).permit(:start_date, :end_date, :guests)
+    # end
     
 
     

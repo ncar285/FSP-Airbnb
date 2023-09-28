@@ -18,7 +18,7 @@ class Booking < ApplicationRecord
 
     # validate :valid_booking_dates
 
-    validate :valid_guests
+    # validate :valid_guests
 
     validates :price, numericality: {greater_than: 0}, allow_nil: true
 
