@@ -59,14 +59,12 @@ export const getBooking = id => state => state.bookings[id]
 
 // THUNK ACTION CREATORS
 export const createBooking = (bookingData) => async (dispatch) => {
-    // debugger
     try {
         const res = await postBooking(UTCDateBooking(bookingData));
         const booking = await res.json();
         dispatch(receiveBooking(booking));
         return { ok: true };
     } catch (err) {
-        debugger
         const errors = await err.json();
         dispatch(receiveError(errors));
         return { ok: false, errors };
@@ -88,21 +86,16 @@ export const convertUTCDateToLocal = (bookingDate) => {
     const utcDate = DateTime.fromISO(bookingDate, { zone: 'UTC' });
     const localDate = utcDate.setZone(timeZone);
 
-    // debugger
-
     // return new Date(localDate)
     return localDate.toFormat('MM/dd/yyyy');
     
 }
 
 export const convertLocalDateToUTC = (inputDate) => {
-    // debugger
     const parts = inputDate.split("/");
     const day = parseInt(parts[1], 10);
     const month = parseInt(parts[0], 10);
     const year = parseInt(parts[2], 10);
-
-    // debugger
 
     // Get the user's time zone from the browser
     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -129,6 +122,12 @@ export const UTCDateBooking = (booking) => {
     }
 }
 
+export const reactDayAdd = (dateString) => {
+    const date = new Date(dateString);
+    date.setDate(date.getDate() + 1);
+    return date;
+}
+
 
 // REDUCER
 const initialState = {};
@@ -136,7 +135,8 @@ const bookingsReducer = (state = initialState, action) => {
     let newState = {...state}
     switch (action.type) {
         case RECEIVE_BOOKING:
-            return { ...state, [action.payload.id]: localDatesBooking(action.payload) };
+            return { ...state, [action.payload.id]: action.payload}
+                // localDatesBooking(action.payload) };
         case ADD_REVIEW_TO_BOOKING:
             const bookingId = action.payload.bookingId
             state[bookingId].myReview = action.payload

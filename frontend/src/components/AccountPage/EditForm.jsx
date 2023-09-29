@@ -50,7 +50,6 @@ const EditForm = ( { booking, setSuccessMessage, setModifyModal} ) => {
             startDate: updatedBooking.startDate, 
             endDate: updatedBooking.endDate
         }
-        // debugger
         const res = await dispatch(updateBooking(updateObj))
         if (res){
             setSuccessMessage(true)

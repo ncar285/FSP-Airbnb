@@ -76,7 +76,6 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
     return (
 
         <>
-
             {successMessage && 
                 <div className="basic-modal-background success-gif" >
                     <div className="basic-modal success-container">

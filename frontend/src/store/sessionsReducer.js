@@ -21,10 +21,9 @@ const removeCurrentUser = () => {
 // SELECTORS
 export const getCurrentUser = state => state.session.user ? state.session.user : null
 
-// THUNK ACTION CREATORS
 
+// THUNK ACTION CREATORS
 export const createUser = userData => async (dispatch) => {
-  // debugger
   const user = await postUser(userData);
   sessionStorage.setItem("currentUser", JSON.stringify(user))
   dispatch(setCurrentUser(user));

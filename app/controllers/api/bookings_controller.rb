@@ -12,7 +12,6 @@ class Api::BookingsController < ApplicationController
 
 
     def create 
-        # debugger
         @booking = Booking.new(booking_params)
         if @booking.save
             render :show
@@ -23,7 +22,6 @@ class Api::BookingsController < ApplicationController
     
 
     def update
-        # debugger
         @booking = Booking.find_by(id: params[:id])
         if @booking && current_user && @booking.update(booking_params)
             render :show 

@@ -22,7 +22,6 @@ const AccountPage = () => {
     const dispatch = useDispatch()
     const data = useSelector(selectUserData)
     const bookings  = useSelector(getBookings)
-    // debugger
 
     const [cancelModal, setCancelModal] = useState(false);
     const [modifyModal, setModifyModal] = useState(false);
@@ -33,9 +32,15 @@ const AccountPage = () => {
 
 
     const today = new Date()
-    const currentBookings = Object.values(bookings).filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today)
-    const upcomingsBookings = Object.values(bookings).filter(booking => new Date(booking.startDate) > today).sort(booking => booking.startDate)
-    const previousBookings = Object.values(bookings).filter(booking => new Date(booking.endDate) < today).sort(booking => booking.startDate)
+    const currentBookings = Object.values(bookings).
+        filter(booking => new Date(booking.startDate) <= today && new Date(booking.endDate) >= today)
+        .sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
+    const upcomingsBookings = Object.values(bookings).
+        filter(booking => new Date(booking.startDate) > today)
+        .sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
+    const previousBookings = Object.values(bookings).
+        filter(booking => new Date(booking.endDate) < today)
+        .sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
     
     const [isLoading, setIsLoading] = useState(true);
 
@@ -50,7 +55,6 @@ const AccountPage = () => {
 
         fetchData();
     }, [dispatch, user]);
-   
 
 
     const cancelBooking =  () => {
@@ -62,12 +66,8 @@ const AccountPage = () => {
         }, 1900)
     }
 
-    // if (true) {
-    //     return <LoadingAccountPage/>;
-    // }
 
-
-    if (isLoading) {
+    if (isLoading || !user) {
         return <LoadingAccountPage/>;
     }
 

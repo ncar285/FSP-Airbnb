@@ -53,7 +53,6 @@ export const getListingRevews = createSelector(
 // THUNK ACTION CREATORS
 
 export const createReview = reviewData => async (dispatch) => {
-    debugger
     const review = await postReview(reviewData);
     // receiveReview(review)
     dispatch(addReviewToBooking(review))
