@@ -3,7 +3,7 @@
 Fairbnb is a full-stack web application designed to emulate the Airbnb experience. Users can seamlessly discover and book accommodations. The application is engineered with a responsive React/Redux frontend, complemented by a Rails backend for seamless data operations. It integrates Google Maps API for location-based features and is anchored on a PostgreSQL database.
 
 
-# [LIVE]([https://fairbnb-36c07c3f3067.herokuapp.com/])
+# [LIVE](https://fairbnb-36c07c3f3067.herokuapp.com/)
 
 ## Technology Stack & Rationale
 
