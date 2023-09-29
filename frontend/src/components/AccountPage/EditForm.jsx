@@ -4,7 +4,7 @@ import { getCurrentUser } from '../../store/sessionsReducer'
 import { useEffect, useState } from 'react'
 import { fetchListing, selectListing } from '../../store/listingsReducer'
 import DRRSimplified from '../Calendar/DRRSimplified'
-import { convertLocalDateToUTC, updateBooking } from '../../store/bookingsReducer'
+import { convertLocalDateToUTC, reactDayAdd, updateBooking } from '../../store/bookingsReducer'
 import { fetchUserShow } from '../../store/usersReducer'
 // import success from "../../assets/success.gif"
 
@@ -22,8 +22,8 @@ const EditForm = ( { booking, setSuccessMessage, setModifyModal} ) => {
 
     const [range, setRange] = useState([
         {
-            startDate: new Date(booking.startDate), 
-            endDate: new Date(booking.endDate),
+            startDate: reactDayAdd(booking.startDate), 
+            endDate: reactDayAdd(booking.endDate),
             key: 'selection'
         }
     ])

@@ -1,18 +1,18 @@
 import './BookingItem.css'
 import { useDispatch } from 'react-redux'
-import { deleteBooking } from './../../store/bookingsReducer'
+import { deleteBooking, reactDayAdd } from './../../store/bookingsReducer'
 
 const BookingItem = ({ booking, type, setCancelModal, setModifyModal, setModalId ,modalBooking, setModalBooking}) => {
 
     const dispatch = useDispatch();
 
-    const startDate = new Date(booking.startDate);
+    const startDate = reactDayAdd(booking.startDate);
     const startDay = startDate.getDate();
     const startMonth = startDate.toLocaleString('en-US', { month: 'short' });
 
     const year = startDate.getFullYear();
 
-    const endDate = new Date(booking.endDate);
+    const endDate = reactDayAdd(booking.endDate);
     const endDay = endDate.getDate();
     const endMonth = endDate.toLocaleString('en-US', { month: 'short' });
 
