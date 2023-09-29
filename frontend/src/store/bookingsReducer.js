@@ -1,6 +1,7 @@
 import { postBooking, patchBooking, destroyBooking } from "../utils/bookingApiUtils";
 import { RECEIVE_USER } from "./usersReducer";
 import { receiveError } from "./errorsReducer";
+import { DateTime } from 'luxon';
 
 export const RECEIVE_BOOKING = 'RECEIVE_BOOKING'
 export const REMOVE_BOOKING  = 'REMOVE_BOOKING'
@@ -58,12 +59,14 @@ export const getBooking = id => state => state.bookings[id]
 
 // THUNK ACTION CREATORS
 export const createBooking = (bookingData) => async (dispatch) => {
+    // debugger
     try {
-        const res = await postBooking(bookingData);
+        const res = await postBooking(UTCDateBooking(bookingData));
         const booking = await res.json();
         dispatch(receiveBooking(booking));
         return { ok: true };
     } catch (err) {
+        debugger
         const errors = await err.json();
         dispatch(receiveError(errors));
         return { ok: false, errors };
@@ -71,15 +74,60 @@ export const createBooking = (bookingData) => async (dispatch) => {
 };
 
 export const updateBooking = bookingData => async (dispatch) => {
-    const booking = await patchBooking(bookingData);
+    const booking = await patchBooking(UTCDateBooking(bookingData));
     return booking
 };
 
 export const deleteBooking = bookingId => async (dispatch) => {
-   
     await destroyBooking(bookingId);
     dispatch(removeBooking(bookingId));
 };
+
+export const convertUTCDateToLocal = (bookingDate) => {
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const utcDate = DateTime.fromISO(bookingDate, { zone: 'UTC' });
+    const localDate = utcDate.setZone(timeZone);
+
+    // debugger
+
+    // return new Date(localDate)
+    return localDate.toFormat('MM/dd/yyyy');
+    
+}
+
+export const convertLocalDateToUTC = (inputDate) => {
+    // debugger
+    const parts = inputDate.split("/");
+    const day = parseInt(parts[1], 10);
+    const month = parseInt(parts[0], 10);
+    const year = parseInt(parts[2], 10);
+
+    // debugger
+
+    // Get the user's time zone from the browser
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    const localDate = DateTime.fromObject({ day, month, year }).setZone(timeZone);
+
+    const utcDate = localDate.toUTC();
+
+    // Format the UTC date in 'MM/DD/YYYY' format (or use 'yyyy-MM-dd' for ISO format)
+    return utcDate.toFormat('dd/MM/yyyy');
+}
+
+export const localDatesBooking = (booking) => {
+    return {...booking, 
+        startDate: convertUTCDateToLocal(booking.startDate), 
+        endDate: convertUTCDateToLocal(booking.endDate) 
+    }
+}
+
+export const UTCDateBooking = (booking) => {
+    return {...booking, 
+        startDate: convertLocalDateToUTC(booking.startDate), 
+        endDate: convertLocalDateToUTC(booking.endDate) 
+    }
+}
 
 
 // REDUCER
@@ -88,7 +136,7 @@ const bookingsReducer = (state = initialState, action) => {
     let newState = {...state}
     switch (action.type) {
         case RECEIVE_BOOKING:
-            return { ...state, [action.payload.id]: action.payload };
+            return { ...state, [action.payload.id]: localDatesBooking(action.payload) };
         case ADD_REVIEW_TO_BOOKING:
             const bookingId = action.payload.bookingId
             state[bookingId].myReview = action.payload

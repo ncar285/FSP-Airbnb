@@ -26,6 +26,8 @@ const DRRSimplified = ({ booking, setBooking, listing, duration, open, setOpen, 
         setBooking({ ...booking, startDate: start, endDate: end})
     }, [range[0]])
 
+
+
     const hideOnEscape = (e) => {
         if (e.key === "Escape"){
             setOpen(false)
@@ -50,11 +52,11 @@ const DRRSimplified = ({ booking, setBooking, listing, duration, open, setOpen, 
     }
 
     const updateStartDate = () => {
-        const date = format(range[0].startDate, 'MM/dd/yyy')
+        const date = format(range[0].startDate, 'MM/dd/yyyy')
         setBooking({ ...booking, startDate: date})
     }
     const updateEndDate = () => {
-        const date = format(range[0].endDate, 'MM/dd/yyy')
+        const date = format(range[0].endDate, 'MM/dd/yyyy')
         setBooking({ ...booking, endDate: date})
     }
 

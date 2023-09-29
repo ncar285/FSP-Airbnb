@@ -24,11 +24,11 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
     
     const handleSubmitBooking = async (e) => {
         e.preventDefault();
-        const bookingObj = createBookingObject();
         let res = { ok: false };
     
         if (user) {
-            res = await dispatch(createBooking(bookingObj));
+            // res = await dispatch(createBooking(bookingObj));
+            res = await dispatch(createBooking(booking));
         } else {
             await setConfirmBooking(false)
             dispatch(activateRegisterModal());
@@ -50,18 +50,6 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
         }
     };
 
-
-    const createBookingObject = () => {
-        if (user){
-            const start = new Date(booking.startDate);
-            const end = new Date(booking.endDate);
-            return {userId: user.id, listingId: parseInt(listing.id, 10), startDate: start, endDate: end, guests: booking.guests }
-        } 
-        // else {
-        //     setOpen(false)
-        //     dispatch(activateRegisterModal)
-        // }
-    }
 
     const createModalBookingObj = () => {
         return {

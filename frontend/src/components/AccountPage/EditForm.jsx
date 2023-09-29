@@ -4,7 +4,7 @@ import { getCurrentUser } from '../../store/sessionsReducer'
 import { useEffect, useState } from 'react'
 import { fetchListing, selectListing } from '../../store/listingsReducer'
 import DRRSimplified from '../Calendar/DRRSimplified'
-import { updateBooking } from '../../store/bookingsReducer'
+import { convertLocalDateToUTC, updateBooking } from '../../store/bookingsReducer'
 import { fetchUserShow } from '../../store/usersReducer'
 // import success from "../../assets/success.gif"
 
@@ -37,10 +37,21 @@ const EditForm = ( { booking, setSuccessMessage, setModifyModal} ) => {
         guests: booking.guests
     })
 
+     
+
+   
+
+
     const handleUpdateBooking = async () => {
         setModifyModal(false)
+
+        const updateObj = 
+        {...updatedBooking, 
+            startDate: updatedBooking.startDate, 
+            endDate: updatedBooking.endDate
+        }
         // debugger
-        const res = await dispatch(updateBooking(updatedBooking))
+        const res = await dispatch(updateBooking(updateObj))
         if (res){
             setSuccessMessage(true)
             setTimeout(()=>{
