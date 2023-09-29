@@ -60,6 +60,7 @@ export const getBooking = id => state => state.bookings[id]
 // THUNK ACTION CREATORS
 export const createBooking = (bookingData) => async (dispatch) => {
     try {
+        debugger
         const res = await postBooking(UTCDateBooking(bookingData));
         const booking = await res.json();
         dispatch(receiveBooking(booking));

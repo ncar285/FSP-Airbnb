@@ -3,13 +3,14 @@ import './FlatBookingItem.css'
 
 const FlatBookingItem = ({ booking, mode}) => {
 
-    const startDate = reactDayAdd(booking.startDate);
+
+    const startDate = mode === 'confirm' ? new Date(booking.startDate) : reactDayAdd(booking.startDate);
     const startDay = startDate.getDate();
     const startMonth = startDate.toLocaleString('en-US', { month: 'short' });
 
     const year = startDate.getFullYear();
 
-    const endDate = reactDayAdd(booking.endDate);
+    const endDate = mode === 'confirm' ? new Date(booking.endDate) : reactDayAdd(booking.endDate);
     const endDay = endDate.getDate();
     const endMonth = endDate.toLocaleString('en-US', { month: 'short' });
 

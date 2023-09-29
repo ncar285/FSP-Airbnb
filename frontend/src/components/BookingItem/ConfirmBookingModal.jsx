@@ -46,7 +46,8 @@ const ConfirmBookingModal = ( {booking, listing, duration, setConfirmBooking, se
     
         if (user) {
             // res = await dispatch(createBooking(bookingObj));
-            res = await dispatch(createBooking(booking));
+            const bookingObj = createBookingObj()
+            res = await dispatch(createBooking(bookingObj));
         } else {
             await setConfirmBooking(false)
             dispatch(activateRegisterModal());
@@ -69,17 +70,13 @@ const ConfirmBookingModal = ( {booking, listing, duration, setConfirmBooking, se
     };
 
 
-    const createModalBookingObj = () => {
+    const createBookingObj = () => {
         return {
-            address: listing.address,
-            city: listing.city,
-            startDate: new Date(booking.startDate),
-            endDate: new Date(booking.endDate),
-            guests: booking.guests, 
-            listingId: listing.id,
-            owner: listing.owner.firstname,
-            photoUrl: listing.photoUrls[0],
-            state: listing.state           
+            user_id: user.id, 
+            listing_id: listing.id,
+            start_date: booking.startDate.format("MM/dd/yyyy"),
+            end_date: booking.endDate.format("MM/dd/yyyy"),
+            guests: booking.guests
         }
     }
 

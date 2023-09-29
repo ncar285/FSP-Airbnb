@@ -11,7 +11,6 @@ import { RxCross2 } from 'react-icons/rx'
 import FlatBookingItem from '../BookingItem/FlatBookingItem'
 import success from "../../assets/7efs.gif"
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
-import ConfirmBookingModal from '../BookingItem/ConfirmBookingModal'
 
 const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration,  range, setRange } ) => {
 
@@ -52,6 +51,7 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
     };
 
 
+
     const createModalBookingObj = () => {
         return {
             address: listing.address,
@@ -77,6 +77,7 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
     return (
 
         <>
+
             {successMessage && 
                 <div className="basic-modal-background success-gif" >
                     <div className="basic-modal success-container">
@@ -86,6 +87,30 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
             }
 
             {confirmBooking &&
+                <div className='basic-modal-background' onClick={()=>setConfirmBooking(false)}>
+                    <div className='basic-modal' onClick={(e) => e.stopPropagation()}>
+                        <div className="modify-title">
+                            <button className='close-button' onClick={()=>setConfirmBooking(false)}>
+                                <RxCross2/>
+                            </button>
+                            <p className="header-1 modify-cancel">Confirm your reservation details</p>
+                        </div>
+                        <div className='modify-modal-container'>
+                            <FlatBookingItem mode='confirm' booking={createModalBookingObj()}/>
+                        </div>
+                        <div className='confirm-booking-buttons'>
+                            <button className="airbnb-button" onClick={handleSubmitBooking}>
+                                Confirm & book
+                            </button>
+                            <button className="airbnb-button" onClick={()=>setConfirmBooking(false)}>
+                                Change booking
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+
+           {/* {confirmBooking &&
                <ConfirmBookingModal 
                booking = {createModalBookingObj()} 
                listing = {listing} 
@@ -93,7 +118,7 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
                setConfirmBooking = {setConfirmBooking}
                setSuccessMessage = {setSuccessMessage}
                />
-            }
+            } */}
 
        
         
