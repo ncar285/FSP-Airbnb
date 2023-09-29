@@ -79,11 +79,12 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
 
     const reviewRadioButtons = ( initialCategory ) => {
         let category
-        if (initialCategory === 'check_in') {
-            category = 'checkIn';
+        if (initialCategory === 'check_in' || initialCategory === 'check_in') {
+            category = review['checkIn'] ? 'checkIn' : 'check_in';
         } else {
             category = initialCategory;
         }
+
         return (
             <>
                 <div className='star-rating-selection'>
@@ -110,11 +111,13 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
 
     const viewReviewRadio = ( initialCategory ) => {
         let category
-        if (initialCategory === 'check_in') {
-            category = 'checkIn';
+        if (initialCategory === 'check_in' || initialCategory === 'check_in') {
+            category = review['checkIn'] ? 'checkIn' : 'check_in';
         } else {
             category = initialCategory;
         }
+
+
         return (
             <>
                 <div className='star-rating-selection'>
@@ -255,8 +258,11 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
                     </div>
 
 
-                    {(mode === 'create' || mode === 'edit') &&
+                    {(mode === 'create') &&
                         <button type='submit'>Submit Review</button>
+                    }
+                    {(mode === 'edit') &&
+                        <button type='submit'>Save Changes</button>
                     }
 
 
