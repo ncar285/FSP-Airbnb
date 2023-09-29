@@ -3,7 +3,7 @@
 Fairbnb is a full-stack web application designed to emulate the Airbnb experience. Users can seamlessly discover and book accommodations. The application is engineered with a responsive React/Redux frontend, complemented by a Rails backend for seamless data operations. It integrates Google Maps API for location-based features and is anchored on a PostgreSQL database.
 
 
-# [LIVE]([https://reps-n-recipes-d98cf03910d0.herokuapp.com/](https://fairbnb-36c07c3f3067.herokuapp.com/)
+# [LIVE]([https://fairbnb-36c07c3f3067.herokuapp.com/])
 
 ## Technology Stack & Rationale
 
@@ -23,23 +23,72 @@ Fairbnb is a full-stack web application designed to emulate the Airbnb experienc
 
 Users can make bookings using virtual tokens and manage those reservations without hassle.
 
-#### Challenges and Solutions
-- **Calendar Incompatibility**: Initially chose the React-dates package for the booking calendar, but found it incompatible with React 18. Had to pivot and use an alternative calendar library to achieve similar functionality.
-- **Confirmation Email**: Integrated an automated email system to send users a confirmation email with the booking details.
-
 ---
 
 ### Reviews
 
 After a stay, users can leave reviews that will be displayed on the property's listing page.
 
-#### Challenges and Solutions
-- **User Review Management**: Faced the challenge of featuring a user's own review separately on a listing's show page. Solved it by manipulating the review array and inserting the user's review at the top.
-
 ---
 
-## Future Directions
+## Code Snippets
 
-- **Payment Integration**: Planning to add a real payment gateway for transactions.
-- **Search Functionality**: Working on implementing an advanced search feature to filter listings based on user preferences.
+### Issue: Date Uniformity Between Frotend and Backend
+
+#### Problem:
+When sending a date (in the format of a string) to the backend, there's potential for timezone-related inconsistencies. This stems from the fact that when the date is saved in the backend as a **\`yyyy-mm-dd`** formatted string, timezone data is lost. Consequently, when the date is later retrieved, React may adjust it based on the local browser's timezone, potentially leading to discrepancies.
+
+#### Solution:
+1. #### Saving to the Database:
+Before committing any date to the database, I first process it through a function to standardize the date to UTC. This approach ensures consistency across timezones.
+
+```js
+export const updateBooking = bookingData => async (dispatch) => {
+    const booking = await patchBooking(UTCDateBooking(bookingData));
+    return booking
+};
+export const convertLocalDateToUTC = (inputDate) => {
+    const parts = inputDate.split("/");
+    const day = parseInt(parts[1], 10);
+    const month = parseInt(parts[0], 10);
+    const year = parseInt(parts[2], 10);
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const localDate = DateTime.fromObject({ day, month, year }).setZone(timeZone);
+    const utcDate = localDate.toUTC();
+    return utcDate.toFormat('dd/MM/yyyy');
+}
+export const UTCDateBooking = (booking) => {
+    return {...booking, 
+        startDate: convertLocalDateToUTC(booking.startDate), 
+        endDate: convertLocalDateToUTC(booking.endDate) 
+    }
+}
+```
+
+2. #### Retrieving from Database:
+When dates are fetched from the database, they are converted from UTC to the local timezone of the user's browser. This ensures that the user perceives the date accurately, relative to their local context.
+
+```js
+export const convertUTCDateToLocal = (bookingDate) => {
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const utcDate = DateTime.fromISO(bookingDate, { zone: 'UTC' });
+    const localDate = utcDate.setZone(timeZone);
+    return localDate.toFormat('MM/dd/yyyy');
+}
+export const localDatesBooking = (booking) => {
+    return {...booking, 
+        startDate: convertUTCDateToLocal(booking.startDate), 
+        endDate: convertUTCDateToLocal(booking.endDate) 
+    }
+}
+// REDUCER
+const initialState = {};
+const bookingsReducer = (state = initialState, action) => {
+    let newState = {...state}
+    switch (action.type) {
+        case RECEIVE_BOOKING:
+            return { ...state, [action.payload.id]: localDatesBooking(action.payload) };
+//...
+```
+
 
