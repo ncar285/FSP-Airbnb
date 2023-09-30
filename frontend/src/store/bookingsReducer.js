@@ -82,31 +82,30 @@ export const deleteBooking = bookingId => async (dispatch) => {
     dispatch(removeBooking(bookingId));
 };
 
-export const convertUTCDateToLocal = (bookingDate) => {
-    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const utcDate = DateTime.fromISO(bookingDate, { zone: 'UTC' });
-    const localDate = utcDate.setZone(timeZone);
-
-    // return new Date(localDate)
-    return localDate.toFormat('MM/dd/yyyy');
-    
-}
 
 export const convertLocalDateToUTC = (inputDate) => {
     const parts = inputDate.split("/");
     const day = parseInt(parts[1], 10);
     const month = parseInt(parts[0], 10);
     const year = parseInt(parts[2], 10);
-
-    // Get the user's time zone from the browser
     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
     const localDate = DateTime.fromObject({ day, month, year }).setZone(timeZone);
-
     const utcDate = localDate.toUTC();
-
-    // Format the UTC date in 'MM/DD/YYYY' format (or use 'yyyy-MM-dd' for ISO format)
     return utcDate.toFormat('dd/MM/yyyy');
+}
+
+export const UTCDateBooking = (booking) => {
+    return {...booking, 
+        startDate: convertLocalDateToUTC(booking.startDate), 
+        endDate: convertLocalDateToUTC(booking.endDate) 
+    }
+}
+
+export const convertUTCDateToLocal = (bookingDate) => {
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const utcDate = DateTime.fromISO(bookingDate, { zone: 'UTC' });
+    const localDate = utcDate.setZone(timeZone);
+    return localDate.toFormat('MM/dd/yyyy');
 }
 
 export const localDatesBooking = (booking) => {
@@ -116,12 +115,6 @@ export const localDatesBooking = (booking) => {
     }
 }
 
-export const UTCDateBooking = (booking) => {
-    return {...booking, 
-        startDate: convertLocalDateToUTC(booking.startDate), 
-        endDate: convertLocalDateToUTC(booking.endDate) 
-    }
-}
 
 export const reactDayAdd = (dateString) => {
     const date = new Date(dateString);
@@ -136,8 +129,7 @@ const bookingsReducer = (state = initialState, action) => {
     let newState = {...state}
     switch (action.type) {
         case RECEIVE_BOOKING:
-            return { ...state, [action.payload.id]: action.payload}
-                // localDatesBooking(action.payload) };
+            return { ...state, [action.payload.id]: localDatesBooking(action.payload) };
         case ADD_REVIEW_TO_BOOKING:
             const bookingId = action.payload.bookingId
             state[bookingId].myReview = action.payload
