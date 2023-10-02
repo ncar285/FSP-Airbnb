@@ -1,8 +1,22 @@
 import {BsFillGrid3X3GapFill} from 'react-icons/bs'
 import './PhotoAlbum.css'
+import { useState } from 'react'
+import SlideShow from '../SlideShow/SlideShow'
 
 const PhotoAlbum = ({ listing }) => {
+
+    const [slideShowOpen, setSlideShowOpen] = useState(false)
+
     return (
+
+        <>
+
+        { slideShowOpen && 
+            <SlideShow photos={listing.photoUrls} 
+            setSlideShowOpen={setSlideShowOpen}
+            />
+        }
+        
         <div className="photo-album">
             <div className='LHS-show'>
                 <img className='main-show-image' src={listing.photoUrls[0]}  alt="" />
@@ -26,12 +40,16 @@ const PhotoAlbum = ({ listing }) => {
                 </div>
             </div>
 
-            <div className='slideshow-button'>
+            <div className='slideshow-button'
+            onClick = {() => setSlideShowOpen(true)}
+            >
                 <BsFillGrid3X3GapFill id='slideshow-icon'/>
                 <p>Show all photos</p>
             </div>
 
         </div>
+
+        </>
     )
 }
 

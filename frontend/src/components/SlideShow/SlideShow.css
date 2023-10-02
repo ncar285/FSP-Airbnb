@@ -1,0 +1,84 @@
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 150;
+    /* background-color: black; */
+}
+
+.slideshow-container * {
+    color: white;
+}
+
+.fixed-subcontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+}
+
+
+
+/* !close button */
+
+.close-slideshow {
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+    color: white;
+    display: flex;
+    padding: 0 0.5rem;
+    height: 2rem;
+    border-radius: 0.4em;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+}
+
+#cross-icon-slideshow {
+    margin-right: 0.5rem;
+    /* font-weight: 100; */
+    font-size: 1.4rem;
+}
+
+.close-slideshow:hover {
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.5);
+}
+
+/* slide show phot num 4/10 */
+#slideshow-index {
+    position: absolute;
+    left: 50%;
+    top: 3rem;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    font-family: 'airbnb2';
+}
+
+/* slideshow image */
+
+.slideshow-image-container {
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.slideshow-image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+}
+
+/* left anf right arrows */
+
+.slideshow-arrow {
+    position: absolute;
+}
