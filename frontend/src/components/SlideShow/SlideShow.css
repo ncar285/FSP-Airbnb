@@ -1,4 +1,4 @@
-.slideshow-container {
+.fullscreen-slideshow-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -8,7 +8,7 @@
     /* background-color: black; */
 }
 
-.slideshow-container * {
+.fullscreen-slideshow-container * {
     color: white;
 }
 
@@ -102,4 +102,23 @@
 }
 .slideshow-arrow.right {
     right: 2.5rem;
+}
+
+/* hover effects */
+
+.RHS-img, 
+.LHS-show {
+    position: relative;
+}
+
+.RHS-img:hover .img-overlay, 
+.LHS-show:hover .img-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.1);
+    
 }
