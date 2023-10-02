@@ -1,3 +1,4 @@
+import {BsFillGrid3X3GapFill} from 'react-icons/bs'
 import './PhotoAlbum.css'
 
 const PhotoAlbum = ({ listing }) => {
@@ -23,6 +24,11 @@ const PhotoAlbum = ({ listing }) => {
                         <img src={listing.photoUrls[4]}  alt="" />
                     </div>
                 </div>
+            </div>
+
+            <div className='slideshow-button'>
+                <BsFillGrid3X3GapFill id='slideshow-icon'/>
+                <p>Show all photos</p>
             </div>
 
         </div>

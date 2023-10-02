@@ -2,26 +2,18 @@ import { reactDayAdd } from '../../store/bookingsReducer';
 import './FlatBookingItem.css'
 
 const FlatBookingItem = ({ booking, mode, totalBeforeTax}) => {
-
-
     const startDate = mode === 'confirm' ? new Date(booking.startDate) : reactDayAdd(booking.startDate);
     const startDay = startDate.getDate();
     const startMonth = startDate.toLocaleString('en-US', { month: 'short' });
-
     const year = startDate.getFullYear();
-
     const endDate = mode === 'confirm' ? new Date(booking.endDate) : reactDayAdd(booking.endDate);
     const endDay = endDate.getDate();
     const endMonth = endDate.toLocaleString('en-US', { month: 'short' });
-
     const formattedStartDate = `${startDay} ${startMonth}`;
     const formattedEndDate = `${endDay} ${endMonth}`;
     const formattedYear = `${year}`;
-
     const longAddress = `${booking.address}, ${booking.city}`
     const country = (booking.state === 'California') ? 'United States' : booking.state
-    
-    console.log(booking)
 
     return (
         <>
@@ -42,9 +34,7 @@ const FlatBookingItem = ({ booking, mode, totalBeforeTax}) => {
                             <p>{country}</p>
 
                             { mode === 'confirm' &&
-                                // <div className='booking-confirm-details'>
-                                <>
-                                
+                                <>                        
                                     <div id='BCD-guests'>
                                         <p>Guests:</p>
                                         <p>{booking.guests}</p>
@@ -53,9 +43,9 @@ const FlatBookingItem = ({ booking, mode, totalBeforeTax}) => {
                                         <p>Total price before tax:</p>
                                         <p>${totalBeforeTax.toLocaleString()}</p>
                                     </div>
-                                {/* // </div> */}
                                 </>
                             }
+                            
                         </div>
                     </div>
                 </div>

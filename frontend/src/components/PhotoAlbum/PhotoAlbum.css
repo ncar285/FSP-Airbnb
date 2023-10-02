@@ -1,4 +1,5 @@
 .photo-album {
+    position: relative;
     width: 100%;
     height: calc(var(--show_width)/2);
     border-radius: 20px;
@@ -50,4 +51,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* ! Slideshow button */
+
+.slideshow-button {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: white;
+    padding: 0 0.5rem;
+    border-radius: 0.4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+}
+
+.slideshow-button:hover {
+    cursor: pointer;
+}
+
+#slideshow-icon {
+    margin-right: 0.5rem;
 }
