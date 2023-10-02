@@ -194,10 +194,26 @@ body {
     padding: 2rem;
     font-family: 'airbnb2';
     overflow: hidden;
-    /* overflow-y: auto; */
     max-height: 90vh;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
+    /* position: relative; */
 }
+
+.modify-title {
+    position: sticky;
+    height: 5rem;
+    top: 0;
+    background-color: white;
+    z-index: 102; 
+}
+
+.modal-scrollable-content {
+    position: relative;
+    overflow-y: auto;
+    max-height: calc(90vh - 5rem);
+    z-index: 101;
+}
+
 
 
 /* !headers and fonts */

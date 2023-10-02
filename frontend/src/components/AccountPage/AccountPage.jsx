@@ -89,8 +89,10 @@ const AccountPage = () => {
                     setModalBooking(null)
                     setModifyModal(false)}}
                 >
+
                     <div className='basic-modal' onClick={(e) => e.stopPropagation()}>
-                        <div className="modify-title">
+
+                        <div className="modify-title modal-title">
                             <button className='close-button'
                                 onClick={()=>{
                                     setModalBooking(null)
@@ -100,22 +102,28 @@ const AccountPage = () => {
                             </button>
                             <p className="header-1 modify-cancel">Edit your upcoming booking</p>
                         </div>
-                        
-                        <div className='modify-modal-container'>
-                            <div>
-                                <FlatBookingItem booking={modalBooking}/>
+
+
+                        <div className="modal-scrollable-content">
+                            
+                            <div className='modify-modal-container'>
+                                <div>
+                                    <FlatBookingItem booking={modalBooking}/>
+                                </div>
+
+                                <div className="standard-spacer"></div>
+
+                                {/* <p className="subheader">Change the dates</p> */}
+                                <div><EditForm booking={modalBooking} 
+                                setSuccessMessage={setSuccessMessage}
+                                setModifyModal={setModifyModal}
+                                /></div>
+
                             </div>
-
-                            <div className="standard-spacer"></div>
-
-                            {/* <p className="subheader">Change the dates</p> */}
-                            <div><EditForm booking={modalBooking} 
-                            setSuccessMessage={setSuccessMessage}
-                            setModifyModal={setModifyModal}
-                            /></div>
-
                         </div>
                     </div>
+
+
                 </div>
             }
 

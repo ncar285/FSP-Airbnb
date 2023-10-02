@@ -169,22 +169,24 @@ const ReviewFormModal = ({setOpenModal, setSuccessMessage}) => {
             onClick={(e)=>e.stopPropagation()}>
                 <form onSubmit={handleSubmitReview}>
                     
-                    <div className='header-1'>
-                        {getHeaderText(mode)}
-                        {(mode === 'view') && 
-                        <>
-                        <div className='edit-delete-buttons'>
-                            <AiTwotoneEdit onClick={()=>{setMode('edit')}}/> 
-                            <BsTrash3 className="trash-button" onClick={handleTrashCanClick}/>
+                    {/* <div className='relative-header-container'> */}
+                        <div className='header-1'>
+                            {getHeaderText(mode)}
+                            {(mode === 'view') && 
+                            <>
+                            <div className='edit-delete-buttons'>
+                                <AiTwotoneEdit onClick={()=>{setMode('edit')}}/> 
+                                <BsTrash3 className="trash-button" onClick={handleTrashCanClick}/>
+                            </div>
+                            </>
+                            }
+                            {(mode === 'edit') && 
+                            <>
+                                <AiFillEye onClick={()=>{setMode('view')}}/>
+                            </>
+                            }
                         </div>
-                        </>
-                        }
-                        {(mode === 'edit') && 
-                        <>
-                            <AiFillEye onClick={()=>{setMode('view')}}/>
-                        </>
-                         }
-                    </div>
+                    {/* </div> */}
 
                     <div className='score-inputs'>
                         
