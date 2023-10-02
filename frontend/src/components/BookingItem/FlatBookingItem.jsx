@@ -1,7 +1,7 @@
 import { reactDayAdd } from '../../store/bookingsReducer';
 import './FlatBookingItem.css'
 
-const FlatBookingItem = ({ booking, mode}) => {
+const FlatBookingItem = ({ booking, mode, totalBeforeTax}) => {
 
 
     const startDate = mode === 'confirm' ? new Date(booking.startDate) : reactDayAdd(booking.startDate);
@@ -21,6 +21,7 @@ const FlatBookingItem = ({ booking, mode}) => {
     const longAddress = `${booking.address}, ${booking.city}`
     const country = (booking.state === 'California') ? 'United States' : booking.state
     
+    console.log(booking)
 
     return (
         <>
@@ -44,13 +45,13 @@ const FlatBookingItem = ({ booking, mode}) => {
                                 // <div className='booking-confirm-details'>
                                 <>
                                 
-                                    <div className='BCD-guests'>
+                                    <div id='BCD-guests'>
                                         <p>Guests:</p>
                                         <p>{booking.guests}</p>
                                     </div>
-                                    <div className='BCD-price'>
+                                    <div id='BCD-price'>
                                         <p>Total price before tax:</p>
-                                        {/* <p>${totalBeforeTax.toLocaleString()}</p> */}
+                                        <p>${totalBeforeTax.toLocaleString()}</p>
                                     </div>
                                 {/* // </div> */}
                                 </>

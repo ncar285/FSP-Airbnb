@@ -96,7 +96,7 @@ const ReserveBlock = ( { listing, count, rating, booking, setBooking, duration, 
                             <p className="header-1 modify-cancel">Confirm your reservation details</p>
                         </div>
                         <div className='modify-modal-container'>
-                            <FlatBookingItem mode='confirm' booking={createModalBookingObj()}/>
+                            <FlatBookingItem mode='confirm' booking={createModalBookingObj()} totalBeforeTax={totalBeforeTax}/>
                         </div>
                         <div className='confirm-booking-buttons'>
                             <button className="airbnb-button" onClick={handleSubmitBooking}>

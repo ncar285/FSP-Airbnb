@@ -6,8 +6,15 @@
     overflow: hidden;
 }
 
-.BCD-guests,
-.BCD-price {
+#BCD-guests,
+#BCD-price {
     display: flex;
 }
 
+
+#BCD-guests p,
+#BCD-price p {
+    line-height: 1.25rem;
+    font-size: 1rem;
+    margin-right: 1rem;
+}
