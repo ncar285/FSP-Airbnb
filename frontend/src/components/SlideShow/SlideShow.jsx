@@ -1,6 +1,8 @@
 import './SlideShow.css'
 import { useState } from "react"
 import {RxCross2} from 'react-icons/rx'
+import {AiOutlineLeft} from 'react-icons/ai'
+import {AiOutlineRight} from 'react-icons/ai'
 
 const SlideShow = ({photos, setSlideShowOpen}) => {
 
@@ -27,11 +29,11 @@ const SlideShow = ({photos, setSlideShowOpen}) => {
                     </div>
 
                     <div className='slideshow-arrow left'>
-
+                        <AiOutlineLeft/>
                     </div>
 
                     <div className='slideshow-arrow right'>
-
+                        <AiOutlineRight/>
                     </div>
 
                 
