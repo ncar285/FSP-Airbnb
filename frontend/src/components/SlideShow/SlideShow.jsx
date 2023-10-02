@@ -25,16 +25,23 @@ const SlideShow = ({photos, setSlideShowOpen}) => {
                     {/* <p id="slideshow-index">hellow</p> */}
 
                     <div className='slideshow-image-container'>
-                        <img src={photos[photoIndex]}  alt="" />
+                        <img src={photos[photoIndex - 1]}  alt="" />
                     </div>
 
-                    <div className='slideshow-arrow left'>
-                        <AiOutlineLeft/>
-                    </div>
+                    { photoIndex !== 1 &&
+                        <div className='slideshow-arrow left'
+                        onClick={()=>{setPhotoIndex(ind => ind - 1)}}
+                        >
+                            <AiOutlineLeft/>
+                        </div>
+                    }
 
-                    <div className='slideshow-arrow right'>
-                        <AiOutlineRight/>
-                    </div>
+                    { photoIndex !== photos.length &&
+                        <div className='slideshow-arrow right'
+                        onClick={()=>{setPhotoIndex(ind => ind + 1)}}>
+                            <AiOutlineRight/>
+                        </div>
+                    }
 
                 
 
