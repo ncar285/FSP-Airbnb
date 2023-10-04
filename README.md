@@ -1,22 +1,88 @@
 # Fairbnb
 
-Fairbnb is a full-stack web application designed to emulate the Airbnb experience. Users can seamlessly discover and book accommodations. The application is engineered with a responsive React/Redux frontend, complemented by a Rails backend for seamless data operations. It integrates Google Maps API for location-based features and is anchored on a PostgreSQL database.
+Fairbnb is a full-stack web application designed to emulate the Airbnb experience. Users can seamlessly discover and book accommodations. The application is engineered with a responsive React/Redux frontend, complemented by a Ruby on Rails backend for seamless data operations. It integrates Google Maps API for location-based features and is anchored on a PostgreSQL database.
+
+I prioritized user integrity through encapsulation:
+
+- Users can only review listings they've stayed at.
+- Bookings cannot be modified or deleted post-experience.
+- Booking a listing adheres strictly to homeowner-defined parameters, such as the maximum number of guests.
+
+Fairbnb boasts a diverse array of features:
+
+- Browse listings directly on an integrated map.
+- Key word search for listings
+- Engage with immersive photo slideshows for each listing.
+- Use the build in calendar to select or modify booking dates
+- Expand and minimise listing descriptions and user reviews.
+- Success and error messages across all features.
+
+Encapsulation is used by peventing users from being able to review a listing they have not stayed at or update or deleting bookings after they have occured. A user also is permitted only to book a listing within the contraints outlined byt the home owner such as maximum number of guests.
 
 # <a href="https://fairbnb-36c07c3f3067.herokuapp.com/" target="_blank">LIVE</a>
 
 ## Technology Stack & Rationale
 
-- **Ruby on Rails:** Used as the backend framework, Rails provides a convention-over-configuration paradigm that speeds up development. Given its relational nature, it's ideal for structured, vertically scalable data—a necessity for platforms like Airbnb with growing user bases.
+### Backend
 
-- **PostgreSQL:** A powerful, open-source relational database management system (RDBMS). It ensures data integrity and supports complex operations, making it apt for storing user data, booking details, and property listings.
+- **Ruby on Rails:** Chosen for its convention-over-configuration paradigm, Rails accelerates development. It thrives when managing structured and vertically scalable data, making it particularly suitable for platforms like Fairbnb that anticipate expanding user bases.
 
-- **Active Record:** Rails' built-in ORM (Object-Relational Mapping) tool. It abstracts database operations, making it easier to interact with data in an object-oriented manner. 
+### Database
 
-- **React.js:** Selected for its ability to craft dynamic and modular user interfaces. React's component-based architecture promotes reusability and efficient state management, enhancing user experience.
+- **PostgreSQL:** This robust, open-source RDBMS guarantees data integrity and can handle intricate operations. It's a prime choice for maintaining user data, reservation details, and property listings.
 
-- **Redux:** An indispensable state management library when paired with React. It offers a centralized store for global state, ensuring consistency and predictability, especially vital for large-scale applications like Fairbnb.
+- **Active Record:** An integral ORM tool within Rails. Active Record simplifies database operations, allowing for seamless interactions with data in an object-oriented fashion.
 
-## Features
+### Frontend
+
+- **React.js:** Adopted for its prowess in building dynamic and modular user interfaces. React's component-centric design encourages code reusability and efficient state management, translating to a superior user experience.
+
+- **Redux:** When integrated with React, Redux becomes an invaluable state management tool. Its centralized store ensures consistent and predictable global state management, an essential feature for ambitious projects like Fairbnb.
+
+- **NPM:** A dependable system for handling the application's dependencies.
+
+### APIs & Libraries
+
+- **Date Range Picker:** Integrated for the calendar functionality in booking creation and updates. Several elements and styles were refined to align with Fairbnb's aesthetic.
+
+- **Google Maps API** Implemented to visually showcase listing locations on an interactive map. We've customized the infoWindow and added enhanced logic to clickable labels, offering a more intuitive user experience.
+
+- **AWS S3:** To ensure speedy retrieval and rendering of listing photos, we leveraged AWS S3 buckets. By employing a thoughtful naming convention, we streamlined the seeding process, automating it with loops instead of specifying each URL manually. This strategy prevents storing images directly on the application, bypassing potential scalability issues.
+
+## Key Features
+
+### User Authentication
+
+#### 1. Secure Account Management:
+- Users can sign up for personalized accounts, complete with secure login and logout functionalities.
+- Backend security is bolstered with CSRF tokens for request validation.
+
+#### 2. Intelligent Email Routing:
+- Upon entering an email, a custom route checks its presence in the database.
+    - Existing emails lead users to the login process.
+    - New emails guide users through the sign-up procedure.
+ 
+#### 3. Password Policies & Feedback:
+- During sign-up, if a password is:
+    - Below 6 characters,
+    - Lacking numerical values, or
+    - Fulfills both aforementioned criteria,
+Users receive a clear feedback outlining the missing requirements.
+
+#### 4.  Incorrect Credential Handling:
+- If login credentials don't match records, users are promptly informed.
+
+#### 5. Demo User Access:
+- Users can swiftly explore the platform using a demo login, bypassing the need for personal credentials.
+
+#### 6. Feature Access Control:
+- While all features are viewable to every visitor, certain functionalities require user authentication.
+- For instance, viewing one's profile, existing reviews, or reservations necessitates being logged in.
+
+#### 7. Prompted Authentication for Bookings:
+- Any attempt to book a listing without authentication will activate the registration modal, prompting the user to log in.
+
+<img src="./readmeGifs/UserAuth.gif" alt="User Authentication GIF" style="width: 100%;">
 
 ### Booking/Reservation
 
