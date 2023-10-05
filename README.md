@@ -84,6 +84,13 @@ Users receive a clear feedback outlining the missing requirements.
 
 <img src="./readmeGifs/UserAuth.gif" alt="User Authentication GIF" style="width: 100%;">
 
+### Listing Show
+- On a listing's show page, logged in users can create a reservation for that listing.
+- The calendar for the reservations utilize d the React Date Range Picker library.
+- Initially using React Dates caused problems with incompatibility with React 18 which required the change to React Date range.
+- Also restyling the date picker proved chalenging as the css was imported, and hover and other such momentary styles were hard to find in the browser.
+
+
 ### Booking/Reservation
 
 Users can make bookings using virtual tokens and manage those reservations without hassle.
