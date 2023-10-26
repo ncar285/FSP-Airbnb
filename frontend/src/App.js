@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch  } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Splash from "./components/Splash/Splash.jsx"
 import RegisterForm from './components/RegisterForm/RegisterForm.jsx';
 import NavBar from './components/NavBar/NavBar.jsx';
@@ -14,8 +14,27 @@ import MapPage from './components/MapPage/MapPage.jsx';
 export const SearchContext = React.createContext();
 
 function App() {
+
   const [searchParams, setSearchParams] = useState({})
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    const mobileDeviceRegex = /iPhone|iPad|iPod|Android/i;
+    if (mobileDeviceRegex.test(navigator.userAgent)) {
+      setIsDesktop(false);
+    }
+  }, []);
+
+  if (!isDesktop) {
+    return (
+      <div id="non-desktop-message">
+        Sorry, this app is only optimized for a desktop right now.
+      </div>
+    );
+  }
+
   return (
+
     <SearchContext.Provider value={{ searchParams, setSearchParams }}>
     <Router>
       <Switch>
@@ -52,6 +71,7 @@ function App() {
       </Switch>
   </Router>
   </SearchContext.Provider>
+
   );
 }
 
